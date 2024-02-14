@@ -1005,7 +1005,7 @@ var ability_dict = {
 	// 17 - clear weather/clear skies (lines from 4 to 6) should have two options for a player to choose from. First one is as it is now, remove all active weather cards from the board(frost AND fog aAND rain)
 	// other options is to play a random unit card from his deck ( no hero/gold or special cards)
 	
-	// 18 - add ability to chose and play a specific card from your deck OR a diferent specific card from your deck
+	// 18 - add ability to chose and play a specific card from your deck OR a diferent specific card from your deck.
 	
 	// 19 - add ability of a card to return to your hand if you lose the round (if you win or it is a draw it goes as usual to players graveyard, MONSTER deck ability takes priority, it should override this cards ability)
 	// ciri return from our printed card game
@@ -1102,7 +1102,59 @@ var ability_dict = {
 
 	// 50 - when using medic on a agile or mobile unit player should chose where resurected unit should be placed (now it is random)
 
-	// 51 - North realms spy (goes to opponents board) 
+	// 51 - North realms spy (goes to opponents board) Draw 1 random card from your deck, draw 1 random card from the opponent's deck, take one into your hand, and return the other to its owner's deck
+	// Prince stanis from our printed card game 
+
+	// 52 - Reveal 1 card in your hand. Then play Frost or Fog or Rain or Clear Skies (weather clear effect only)
+	//If you dont have other card in hand, or if you do not have 1 card in hand that is not revealed, nothing happends/ability is not triggered.
+	// Aeromancy from our printed card game 
+
+	// 53 - When your unit goes from board to graveyard (not on round end, so any kind of removal by you or opponent) 
+	//this card will go from your hand to the board automatically, then you draw 1 random card from your Deck to your hand. ( if you already passed nothing happends)
+	// Radovid NR from our printed card game 
+
+	// 54 - If your opponent did not pass. Reenable your Leader or draw a random card from the deck to hand ( Your opponent will have the same choices) if opponent has passed, nothing happends.
+	//North Realm Elite Assassin from our printed card game
+
+	// 55 - Target 1 opponents unit with 6 or less CURRENT value or less, then steal/moe it to your side of the board 
+	//(no commanders horn units, if unit has any ability it is not retrigered)
+	// Succubus from our printed card game 
+
+	// 56 - Take one unit on your side of the board back to your hand.(basicaly hero/gold decoy with points)
+	//Caranthir from our printed card game 
+
+	// 57 - Return both player's highest unit on the board back to their decks (if there is a draw between units, it is a random decision)
+	//Rat Plauge Maiden from our printed card game 
+
+	// 58 - Opponent steals your unit, you steal the opponent's unit  
+	//(Can not be the same unit or commanders horn units, no ability of stolen units will be reactivated) Works on any player's empty board, if only 1 card is pressent it gets stolen, other playe gets nothing.
+
+	// 59 - sigradifa skeligas new leader , Play any special (non weather) card from your deck.
+	
+	// 60 - King bran remake - If your opponent did not pass. Draw 1 random card from both decks. Take one into your hand, other will go to opponents hand.
+
+	// 61 - skeligas leade morkvarg - If your opponent did not pass. Draw 2 random cards from your deck to hand, opponent draws 1.
+
+	// 62 - skeligas leader harald the criple - Draw 4 random cards from deck to hand, then move 4 cards from hand to your graveyard.
+
+	// 63 - Play 1 random unit from your deck then, play 1 more random unit from your deck
+	//Great Sword Warrior from our printed card game 
+	
+	// 64 - Take 1 unit on your side of the board back to hand, then play 1 card from your hand. (like decoy but instant and you can play diferent card, it does not have to be the one you picked up)
+	//DJenge from our printed card game 
+
+	//65 - Move up to max of 2 of your units to a different rows. (select one unit then move to a diferent row, then repeat)
+	//Franchesca The organiser scoiatel leader upgrade
+
+	//66 - Reveal 1 random card in your hand. Then select any gold card from your deck, with 2 or more value and play it to the board
+	//Elven Dragon from our printed card game 
+
+	// 67 - Replace a card in your hand (goes to your graveyard) with Scorch from your deck.
+	//Skojatel Pyro technician from our printed card game 
+
+	// 68 - Resurrect any unit from your graveyard OR reveal 1 random card in your hand, and resurrect any unit in opponents graveyard.
+	//Ida Emean from our printed card game 
+
 
 
 };

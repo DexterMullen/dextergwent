@@ -7,7 +7,8 @@ var default_cards = {
         "ability": "hero spy",
         "filename": "mysterious_elf",
         "count": "1",
-        "quote": "You humans have... unusual tastes."
+        "quote": "You humans have... unusual tastes.",
+        "sound": "51 Avallac'h_GOLD 6 SPY You will see it… in your dream.ogg",
     },
     "spe_decoy": {
         "name": "Decoy",
@@ -37,7 +38,8 @@ var default_cards = {
         "ability": "hero",
         "filename": "ciri",
         "count": "1",
-        "quote": "Know when fairy tales cease to be tales? When people start believing in them."
+        "quote": "Know when fairy tales cease to be tales? When people start believing in them.",
+        "sound": "42 Ciri_GOLD 15 You’ve talked enough..ogg",
     },
     "spe_clear": {
         "name": "Clear Weather",
@@ -67,7 +69,8 @@ var default_cards = {
         "ability": "horn",
         "filename": "dandelion",
         "count": "1",
-        "quote": "Dandelion, you're a cynic, a lecher, a whoremonger, a liar - and my best friend."
+        "quote": "Dandelion, you're a cynic, a lecher, a whoremonger, a liar - and my best friend.",
+        "sound": "48 Dandelion_For you, my friend, always.ogg",
     },
     "ntr_emiel": {
         "name": "Emiel Regis Rohellec Terzieff",
@@ -77,7 +80,8 @@ var default_cards = {
         "ability": "",
         "filename": "emiel",
         "count": "1",
-        "quote": "Men, the polites ones at least, would call me a monster. A blood-drinking freak."
+        "quote": "Men, the polites ones at least, would call me a monster. A blood-drinking freak.",
+        "sound": "31 Regis_SPECIAL Your powers of deduction seem to have waned not one bit..ogg",
     },
     "ntr_geralt": {
         "name": "Geralt of Rivia",
@@ -87,7 +91,8 @@ var default_cards = {
         "ability": "hero",
         "filename": "geralt",
         "count": "1",
-        "quote": "If that's what it takes to save the world, it's better to let that world die."
+        "quote": "If that's what it takes to save the world, it's better to let that world die.",
+        "sound":"43 Geralt_GOLD 15 I hate portals.ogg",
     },
     "spe_fog": {
         "name": "Impenetrable Fog",
@@ -119,7 +124,7 @@ var default_cards = {
         "count": "2",
         "quote": "Even the rain in this land smells like piss."
     },
-    "ntr_triss": {
+    "ntr_triss": { //triss cow
         "name": "Triss Merigold",
         "deck": "neutral",
         "row": "ranged",
@@ -128,7 +133,8 @@ var default_cards = {
         "filename": "triss",
         "count": "1",
         "target": "ntr_chort",
-        "quote": "I can take care of myself. Trust me."
+        "quote": "I can take care of myself. Trust me.",
+        "sound":"45 Triss_COW I sense strong magic.ogg",
     },
     "ntr_vesemir": {
         "name": "Vesemir",
@@ -138,9 +144,10 @@ var default_cards = {
         "ability": "",
         "filename": "vesemir",
         "count": "1",
-        "quote": "If you're to be hanged, ask for water. Anything can happen before they fetch it."
+        "quote": "If you're to be hanged, ask for water. Anything can happen before they fetch it.",
+        "sound":"52 Vesemir_I’m too old for this shit.ogg",
     },
-    "ntr_villen": {
+    "ntr_villen": { //geralnt IGNI
         "name": "Geralt Igni",
         "deck": "neutral",
         "row": "close",
@@ -148,7 +155,9 @@ var default_cards = {
         "ability": "hero scorch_c",
         "filename": "villen",
         "count": "1",
-        "quote": "Also calls himself Borkh Three Jackdaws... he's not the best at names."
+        "quote": "Burn!",
+        "sound":"59 Geralt_IGNI Let’s get this over with.ogg",
+
     },
     "ntr_yennefer": {
         "name": "Yennefer of Vengerberg",
@@ -158,7 +167,8 @@ var default_cards = {
         "ability": "hero medic",
         "filename": "yennefer",
         "count": "1",
-        "quote": "Magic is Chaos, Art and Science. It is a curse, a blessing and a progression."
+        "quote": "Magic is Chaos, Art and Science. It is a curse, a blessing and a progression.",
+        "sound":"5 Yennefer_SWAP There'll be nothing to pick up when I’m done with you!.ogg",
     },
     "ntr_zoltan": {
         "name": "Zoltan Chivay",
@@ -168,7 +178,8 @@ var default_cards = {
         "ability": "",
         "filename": "zoltan",
         "count": "1",
-        "quote": "Life without old mates and booze is like a woman without a rump."
+        "quote": "Life without old mates and booze is like a woman without a rump.",
+        "sound":"58 Zoltan_vanila Oh-ho-ho, I could use a pint.ogg",
     },
     "ntr_olgierd": {
         "name": "Olgierd von Everec",
@@ -178,7 +189,8 @@ var default_cards = {
         "ability": "morale",
         "filename": "olgierd",
         "count": "1",
-        "quote": "At least you now know I don't easily lose my head."
+        "quote": "At least you now know I don't easily lose my head.",
+        "sound":"50 Olgierd I’m in no mood for jests..ogg",
     },
     "ntr_gaunter_odimm": {
         "name": "Gaunter O'Dimm",
@@ -190,7 +202,9 @@ var default_cards = {
         "filename": "gaunter_odimm",
         "count": "1",
         "target": "ntr_gaunter_odimm",
-        "quote": "He always grants exactly what you wish for. That's the problem."
+        "quote": "He always grants exactly what you wish for. That's the problem.",
+        "sound":"61 Gaunter_O'Dimm You wished to play So let us play.ogg",
+
     },
     "ntr_gaunter_odimm_darkness": {
         "name": "Gaunter O'Dimm - Darkness",
@@ -202,7 +216,8 @@ var default_cards = {
         "filename": "gaunter_odimm_darkness",
         "count": "3",
         "target": "ntr_gaunter_odimm",
-        "quote": "Fear not the shadows, but the light."
+        "quote": "Fear not the shadows, but the light.",
+        "sound":"63 Gaunter_SHADOWS.WAV",
     },
     "ntr_cow": {
         "name": "Cow",
@@ -213,7 +228,8 @@ var default_cards = {
         "filename": "cow",
         "count": "1",
         "target": "ntr_chort",
-        "quote": "Mooo!"
+        "quote": "Mooo!",
+        "sound":"55 cow.mp3",
     },
     "ntr_chort": {
         "name": "Bovine Defense Force",
@@ -254,7 +270,7 @@ var default_cards = {
         "filename": "foltest_siegemaster",
         "count": "1",
         "quote": "A well-aimed ballista razes not just the enemy's wall, but his morale as well.",
-        "sound": "Eredin_Any last words.ogg"
+        "sound": ""
     },
     "nr_foltest_steelforged": {
         "name": "Foltest - The Steel-Forged",
@@ -284,7 +300,8 @@ var default_cards = {
         "ability": "",
         "filename": "ballista",
         "count": "1",
-        "quote": "'Usually we give 'em female names.' 'Like Jenny?' 'More like Bertha.'"
+        "quote": "'Usually we give 'em female names.' 'Like Jenny?' 'More like Bertha.'",
+        "sound": "Balista.mp3"
     },
     "nr_blue_stripes_1": {
         "name": "Blue Stripes Commando",
@@ -296,7 +313,8 @@ var default_cards = {
         "filename": "blue_stripes_1",
         "count": "1",
         "target": "nr_blue_stripes",
-        "quote": "I'd do anything for Temeria. Mostly, though, I kill for her."
+        "quote": "I'd do anything for Temeria. Mostly, though, I kill for her.",
+        "sound": "Blue_Stripe_Commando_Death to the enemy.mp3",
     },
     "nr_blue_stripes_2": {
         "name": "Blue Stripes Commando",
@@ -308,7 +326,8 @@ var default_cards = {
         "filename": "blue_stripes_2",
         "count": "1",
         "target": "nr_blue_stripes",
-        "quote": "I'd do anything for Temeria. Mostly, though, I kill for her."
+        "quote": "I'd do anything for Temeria. Mostly, though, I kill for her.",
+        "sound": "Blue_Stripe_Commando_Death to the enemy.mp3",
     },
     "nr_blue_stripes_3": {
         "name": "Blue Stripes Commando",
@@ -320,7 +339,8 @@ var default_cards = {
         "filename": "blue_stripes_3",
         "count": "1",
         "target": "nr_blue_stripes",
-        "quote": "I'd do anything for Temeria. Mostly, though, I kill for her."
+        "quote": "I'd do anything for Temeria. Mostly, though, I kill for her.",
+        "sound": "Blue_Stripe_Commando_Death to the enemy.mp3",
     },
     "nr_catapult_1": {
         "name": "Grand Catapult",
@@ -356,7 +376,8 @@ var default_cards = {
         "filename": "crinfrid_1",
         "count": "1",
         "target": "nr_crinfrid",
-        "quote": "Haven't had much luck with monsters of late, so we enlisted."
+        "quote": "Haven't had much luck with monsters of late, so we enlisted.",
+        "sound": "Reaver_Hunter_Dont recognize your old mates.ogg",
     },
     "nr_crinfrid_2": {
         "name": "Crinfrid Reavers Dragon Hunter",
@@ -368,7 +389,8 @@ var default_cards = {
         "filename": "crinfrid_2",
         "count": "1",
         "target": "nr_crinfrid",
-        "quote": "Haven't had much luck with monsters of late, so we enlisted."
+        "quote": "Haven't had much luck with monsters of late, so we enlisted.",
+        "sound": "Reaver_Hunter_Dont recognize your old mates.ogg",
     },
     "nr_crinfrid_3": {
         "name": "Crinfrid Reavers Dragon Hunter",
@@ -380,7 +402,8 @@ var default_cards = {
         "filename": "crinfrid_3",
         "count": "1",
         "target": "nr_crinfrid",
-        "quote": "Haven't had much luck with monsters of late, so we enlisted."
+        "quote": "Haven't had much luck with monsters of late, so we enlisted.",
+        "sound": "Reaver_Hunter_Dont recognize your old mates.ogg",
     },
     "nr_dethmold": {
         "name": "Dethmold",
@@ -390,7 +413,8 @@ var default_cards = {
         "ability": "",
         "filename": "dethmold",
         "count": "1",
-        "quote": "I conce made a prisoner vomit his own entrails... Ah, good times..."
+        "quote": "I conce made a prisoner vomit his own entrails... Ah, good times...",
+        "sound": "Dethmold_As you command, your Majesty.ogg",
     },
     "nr_banner_nurse": {
         "name": "Dun Banner Medic",
@@ -400,7 +424,8 @@ var default_cards = {
         "ability": "medic",
         "filename": "banner_nurse",
         "count": "1",
-        "quote": "Stitch red to red, white to white, and everything will be all right."
+        "quote": "Stitch red to red, white to white, and everything will be all right.",
+        "sound": "Dun_Banner_Medic Aye aye sir.ogg",
     },
     "nr_esterad": {
         "name": "Esterad Thyssen",
@@ -410,7 +435,8 @@ var default_cards = {
         "ability": "hero",
         "filename": "esterad",
         "count": "1",
-        "quote": "Like all Thyssen men, he was tall, powerfully built and criminally handsome"
+        "quote": "Like all Thyssen men, he was tall, powerfully built and criminally handsome",
+        "sound":"Esterad_ Ester garemnyth.ogg",
     },
     "nr_natalis": {
         "name": "John Natalis",
@@ -420,7 +446,8 @@ var default_cards = {
         "ability": "hero",
         "filename": "natalis",
         "count": "1",
-        "quote": "That square should bear the names of my soldiers, of the dead. Not mine."
+        "quote": "That square should bear the names of my soldiers, of the dead. Not mine.",
+        "sound":"John_Natalis_Dark clouds gather over Temeria.ogg",
     },
     "nr_kaedwen_siege": {
         "name": "Kaedweni Siege Expert",
@@ -430,7 +457,8 @@ var default_cards = {
         "ability": "morale",
         "filename": "kaedwen_siege",
         "count": "1",
-        "quote": "'You gotta recalibrate the arm by five degrees.' 'Do what by the what now?'"
+        "quote": "'You gotta recalibrate the arm by five degrees.' 'Do what by the what now?'",
+        "sound":"Siege_Support_What do you want.ogg",
     },
     "nr_kaedwen_siege_1": {
         "name": "Kaedweni Siege Expert",
@@ -440,7 +468,8 @@ var default_cards = {
         "ability": "morale",
         "filename": "kaedwen_siege_1",
         "count": "1",
-        "quote": "'You gotta recalibrate the arm by five degrees.' 'Do what by the what now?'"
+        "quote": "'You gotta recalibrate the arm by five degrees.' 'Do what by the what now?'",
+        "sound":"Siege_Support_What do you want.ogg",
     },
     "nr_kaedwen_siege_2": {
         "name": "Kaedweni Siege Expert",
@@ -450,7 +479,8 @@ var default_cards = {
         "ability": "morale",
         "filename": "kaedwen_siege_2",
         "count": "1",
-        "quote": "'You gotta recalibrate the arm by five degrees.' 'Do what by the what now?'"
+        "quote": "'You gotta recalibrate the arm by five degrees.' 'Do what by the what now?'",
+        "sound":"Siege_Support_What do you want.ogg",
     },
     "nr_keira": {
         "name": "Keira Metz",
@@ -470,7 +500,8 @@ var default_cards = {
         "ability": "hero",
         "filename": "philippa",
         "count": "1",
-        "quote": "Soon the power of kings will wither, and the Lodge shall seize its rightful place."
+        "quote": "Soon the power of kings will wither, and the Lodge shall seize its rightful place.",
+        "sound": "Philippa_Eilhart_You do not deserve to live.ogg",
     },
     "nr_poor_infantry_1": {
         "name": "Poor Fucking Infantry",
@@ -482,7 +513,8 @@ var default_cards = {
         "filename": "poor_infantry_1",
         "count": "1",
         "target": "nr_poor_infantry",
-        "quote": "I's a war veteran! ... spare me a crown?"
+        "quote": "I's a war veteran! ... spare me a crown?",
+        "sound":"Poor_Fuckinging_Infantry_Got any vittles Hungry like a wolf I am.ogg",
     },
     "nr_poor_infantry_2": {
         "name": "Poor Fucking Infantry",
@@ -494,7 +526,8 @@ var default_cards = {
         "filename": "poor_infantry_2",
         "count": "1",
         "target": "nr_poor_infantry",
-        "quote": "I's a war veteran! ... spare me a crown?"
+        "quote": "I's a war veteran! ... spare me a crown?",
+        "sound":"Poor_Fuckinging_Infantry_Got any vittles Hungry like a wolf I am.ogg",
     },
     "nr_poor_infantry_3": {
         "name": "Poor Fucking Infantry",
@@ -506,7 +539,8 @@ var default_cards = {
         "filename": "poor_infantry_3",
         "count": "1",
         "target": "nr_poor_infantry",
-        "quote": "I's a war veteran! ... spare me a crown?"
+        "quote": "I's a war veteran! ... spare me a crown?",
+        "sound":"Poor_Fuckinging_Infantry_Got any vittles Hungry like a wolf I am.ogg",
     },
     "nr_stennis": {
         "name": "Prince Stennis",
@@ -516,7 +550,8 @@ var default_cards = {
         "ability": "spy",
         "filename": "stennis",
         "count": "1",
-        "quote": "He ploughin' wears the golden armor. Golden. 'Course he's an arsehole."
+        "quote": "He ploughin' wears the golden armor. Golden. 'Course he's an arsehole.",
+        "sound":"Prince_Stennis_You stand before royal Majesty.ogg",
     },
     "nr_redania": {
         "name": "Redanian Foot Soldier",
@@ -526,7 +561,8 @@ var default_cards = {
         "ability": "",
         "filename": "redania",
         "count": "1",
-        "quote": "I've bled for Redania! I've killed for Redania... Dammit, I've even raped for Redania!"
+        "quote": "I've bled for Redania! I've killed for Redania... Dammit, I've even raped for Redania!",
+        "sound":"Redenian Foot_Soldier_Rach sheyss Yn twe.ogg",
     },
     "nr_redania_1": {
         "name": "Redanian Foot Soldier",
@@ -536,7 +572,8 @@ var default_cards = {
         "ability": "",
         "filename": "redania_1",
         "count": "1",
-        "quote": "I've bled for Redania! I've killed for Redania... Dammit, I've even raped for Redania!"
+        "quote": "I've bled for Redania! I've killed for Redania... Dammit, I've even raped for Redania!",
+        "sound":"Redenian Foot_Soldier_Rach sheyss Yn twe.ogg",
     },
     "nr_sheldon": {
         "name": "Sheldon Skaggs",
@@ -546,7 +583,9 @@ var default_cards = {
         "ability": "",
         "filename": "sheldon",
         "count": "1",
-        "quote": "I was there, on the front lines! Right where the fightin' was the thickest!"
+        "quote": "I was there, on the front lines! Right where the fightin' was the thickest!",
+        "sound":"Sheldon_Skaggs_Aye, aye, soon as I finish my pint.ogg",
+
     },
     "nr_siege_tower": {
         "name": "Siege Tower",
@@ -566,7 +605,8 @@ var default_cards = {
         "ability": "",
         "filename": "siegfried",
         "count": "1",
-        "quote": "We're on the same side, witcher. You'll realize this one day."
+        "quote": "We're on the same side, witcher. You'll realize this one day.",
+        "sound":"siegfierd_Remember what I taught you.ogg",
     },
     "nr_dijkstra": {
         "name": "Sigismund Dijkstra",
@@ -576,7 +616,8 @@ var default_cards = {
         "ability": "spy",
         "filename": "dijkstra",
         "count": "1",
-        "quote": "Gwent's like politics, just more honest."
+        "quote": "Gwent's like politics, just more honest.",
+        "sound":"5 Harald_the_Cripple_Up and at ‘em lazy mingers! Ye’ll sleep when you’re dead.ogg", //just test sound get a proper one
     },
     "nr_sheala": {
         "name": "Síle de Tansarville",
@@ -586,7 +627,8 @@ var default_cards = {
         "ability": "",
         "filename": "sheala",
         "count": "1",
-        "quote": "The Lodge lacks humility. Our lust for power may yet be our undoing."
+        "quote": "The Lodge lacks humility. Our lust for power may yet be our undoing.",
+        "sound":"Sile_de_Tansarville_My studies are more important than… this.ogg",
     },
     "nr_thaler": {
         "name": "Thaler",
@@ -596,7 +638,8 @@ var default_cards = {
         "ability": "spy",
         "filename": "thaler",
         "count": "1",
-        "quote": "Fuck off! We aren't all ploughin' philanderers. Some of us have depth..."
+        "quote": "Fuck off! We aren't all ploughin' philanderers. Some of us have depth...",
+        "sound":"Thaler_Ah, I see you thought about this.ogg",
     },
     "nr_sabrina": {
         "name": "Sabrina Glevissig",
@@ -606,7 +649,8 @@ var default_cards = {
         "ability": "",
         "filename": "sabrina",
         "count": "1",
-        "quote": "The Daughter of the Kaedweni Wilderness."
+        "quote": "The Daughter of the Kaedweni Wilderness.",
+        "sound":"Sabrina_Glevissig_Battles are won or lost by the commanders, not by sorceresses.ogg",
     },
     "nr_vernon": {
         "name": "Vernon Roche",
@@ -616,7 +660,8 @@ var default_cards = {
         "ability": "hero",
         "filename": "vernon",
         "count": "1",
-        "quote": "A partiot... and a real son of a bitch."
+        "quote": "A partiot... and a real son of a bitch.",
+        "sound":"Roche_Temeria - thats what matters - Copy.ogg",
     },
     "nr_ves": {
         "name": "Ves",
@@ -626,7 +671,8 @@ var default_cards = {
         "ability": "",
         "filename": "ves",
         "count": "1",
-        "quote": "Better to live one day as a king than a whole life as a beggar."
+        "quote": "Better to live one day as a king than a whole life as a beggar.",
+        "sound":"Ves_Temeria.ogg",
     },
     "nr_yarpen": {
         "name": "Yarpen Zigrin",
@@ -636,7 +682,8 @@ var default_cards = {
         "ability": "",
         "filename": "yarpen",
         "count": "1",
-        "quote": "The world belongs to whoever's best at crackin' skulls and impregnatin' lasses."
+        "quote": "The world belongs to whoever's best at crackin' skulls and impregnatin' lasses.",
+        "sound":"7 Nausica calvary rider Off to the front yet again.ogg", //just a test sound get a proper one
     },
     "nr_trebuchet": {
         "name": "Trebuchet",
@@ -1125,7 +1172,8 @@ var default_cards = {
         "ability": "eredin_destroyer",
         "filename": "eredin_destroyer",
         "count": "1",
-        "quote": "I've long awaited this..."
+        "quote": "I've long awaited this...",
+        "sound": "Philippa_Eilhart_You do not deserve to live.ogg",
     },
     "mo_eredin_king": {
         "name": "Eredin - King of the Wild Hunt",
@@ -1157,7 +1205,8 @@ var default_cards = {
         "filename": "arachas",
         "count": "1",
         "target": "mo_arachas",
-        "quote": "Ugly - nature's way of saying 'Stay the fuck away'"
+        "quote": "Ugly - nature's way of saying 'Stay the fuck away'",
+        "sound":"Arakhas.mp3",
     },
     "mo_arachas_1": {
         "name": "Arachas ",
@@ -1169,7 +1218,8 @@ var default_cards = {
         "filename": "arachas_1",
         "count": "1",
         "target": "mo_arachas",
-        "quote": "Ugly - nature's way of saying 'Stay the fuck away'"
+        "quote": "Ugly - nature's way of saying 'Stay the fuck away'",
+        "sound":"Arakhas.mp3",
     },
     "mo_arachas_2": {
         "name": "Arachas ",
@@ -1181,7 +1231,8 @@ var default_cards = {
         "filename": "arachas_2",
         "count": "1",
         "target": "mo_arachas",
-        "quote": "Ugly - nature's way of saying 'Stay the fuck away'"
+        "quote": "Ugly - nature's way of saying 'Stay the fuck away'",
+        "sound":"Arakhas.mp3",
     },
     "mo_arachas_behemoth": {
         "name": "Arachas- Behemoth",
@@ -1193,7 +1244,8 @@ var default_cards = {
         "filename": "arachas_behemoth",
         "count": "1",
         "target": "mo_arachas",
-        "quote": "Like a cross between a crab, a spider... and a ploughin' moutain."
+        "quote": "Like a cross between a crab, a spider... and a ploughin' moutain.",
+        "sound":"Arakhas.mp3",
     },
     "mo_botchling": {
         "name": "Botchling",
@@ -1204,7 +1256,7 @@ var default_cards = {
         "filename": "botchling",
         "count": "1",
         "target": "mo_lubberkin",
-        "quote": "Admit your mistakes and bury them proper - else they'll come back to haunt you."
+        "quote": "Admit your mistakes and bury them proper - else they'll come back to haunt you.",
     },
     "mo_celaeno_harpy": {
         "name": "Celaeno Harpy",
@@ -1214,7 +1266,8 @@ var default_cards = {
         "ability": "",
         "filename": "celaeno_harpy",
         "count": "1",
-        "quote": "Common harpies feed on carrion. Calaeno harpies... they feed on dreams."
+        "quote": "Common harpies feed on carrion. Calaeno harpies... they feed on dreams.",
+        "sound":"Harpy.WAV",
     },
     "mo_cockatrice": {
         "name": "Cockatrice",
@@ -1224,7 +1277,9 @@ var default_cards = {
         "ability": "",
         "filename": "cockatrice",
         "count": "1",
-        "quote": "Born of an egg laid by a cockerel... if you believe such peasant drivel."
+        "quote": "Born of an egg laid by a cockerel... if you believe such peasant drivel.",
+        "sound":"vran warrior.mp3",
+
     },
     "mo_witch_velen": {
         "name": "Crone - Brewess",
@@ -1236,7 +1291,8 @@ var default_cards = {
         "filename": "witch_velen",
         "count": "1",
         "target": "mo_witch_velen",
-        "quote": "We'll cut you up, boy. A fina broth you will make."
+        "quote": "We'll cut you up, boy. A fina broth you will make.",
+        "sound":"Brewess_ I’d suck every last drop out of you.ogg",
     },
     "mo_witch_velen_1": {
         "name": "Crone - Weavess",
@@ -1248,7 +1304,8 @@ var default_cards = {
         "filename": "witch_velen_1",
         "count": "1",
         "target": "mo_witch_velen",
-        "quote": "I sense your pain. I see your fear..."
+        "quote": "I sense your pain. I see your fear...",
+        "sound":"Weavess_I sense your pain, I see your fear.ogg",
     },
     "mo_witch_velen_2": {
         "name": "Crone - Whispess",
@@ -1260,17 +1317,19 @@ var default_cards = {
         "filename": "witch_velen_2",
         "count": "1",
         "target": "mo_witch_velen",
-        "quote": "I'l be your best - and last."
+        "quote": "I'l be your best - and last.",
+        "sound":"Whispess_A word once given we never break.ogg",
     },
     "mo_draug": {
         "name": "Draug",
         "deck": "monsters",
         "row": "close",
-        "strength": "10",
+        "strength": "12",
         "ability": "hero",
         "filename": "draug",
         "count": "1",
-        "quote": "Some men cannot admit defeat. Some keep fighting from beyond the grave."
+        "quote": "Some men cannot admit defeat. Some keep fighting from beyond the grave.",
+        "sound":"Draug_My Lords, to your banners.ogg",
     },
     "mo_earth_elemental": {
         "name": "Earth Elemental",
@@ -1280,7 +1339,8 @@ var default_cards = {
         "ability": "",
         "filename": "earth_elemental",
         "count": "1",
-        "quote": "How to fight an earth elemental? You don't. You run. Fast as you can."
+        "quote": "How to fight an earth elemental? You don't. You run. Fast as you can.",
+        "sound":"fire and earth elementals.WAV",
     },
     "mo_endrega": {
         "name": "Endrega",
@@ -1290,7 +1350,8 @@ var default_cards = {
         "ability": "",
         "filename": "endrega",
         "count": "1",
-        "quote": "The nest! Take out the nest, or the bastard'll just keep coming!"
+        "quote": "The nest! Take out the nest, or the bastard'll just keep coming!",
+        "sound":"Endrega.mp3",
     },
     "mo_fiend": {
         "name": "Fiend",
@@ -1300,7 +1361,8 @@ var default_cards = {
         "ability": "",
         "filename": "fiend",
         "count": "1",
-        "quote": "A fiend looks like a deer. An enormous, evil deer."
+        "quote": "A fiend looks like a deer. An enormous, evil deer.",
+        "sound":"Fiend.mp3",
     },
     "mo_fire_elemental": {
         "name": "Fire Elemental",
@@ -1310,7 +1372,9 @@ var default_cards = {
         "ability": "",
         "filename": "fire_elemental",
         "count": "1",
-        "quote": "Fire is so delightful."
+        "quote": "Fire is so delightful.",
+        "sound":"fire and earth elementals.WAV",
+        
     },
     "mo_fogling": {
         "name": "Foglet",
@@ -1320,7 +1384,8 @@ var default_cards = {
         "ability": "",
         "filename": "fogling",
         "count": "1",
-        "quote": "Fog creeps on little cat feet. Foglets creep over the bodies of their victims."
+        "quote": "Fog creeps on little cat feet. Foglets creep over the bodies of their victims.",
+        "sound":"Foglet.WAV",
     },
     "mo_forktail": {
         "name": "Forktail",
@@ -1330,7 +1395,8 @@ var default_cards = {
         "ability": "",
         "filename": "forktail",
         "count": "1",
-        "quote": "Fork tail.. Bah! Fuckers' tails're more like cleavers."
+        "quote": "Fork tail.. Bah! Fuckers' tails're more like cleavers.",
+        "sound":"Forktail.WAV",
     },
     "mo_frightener": {
         "name": "Frightener",
@@ -1340,7 +1406,8 @@ var default_cards = {
         "ability": "",
         "filename": "frightener",
         "count": "1",
-        "quote": "'What have I done?' the mage cried out, frightened of his own creation."
+        "quote": "'What have I done?' the mage cried out, frightened of his own creation.",
+        "sound":"Frightener.WAV",
     },
     "mo_gargoyle": {
         "name": "Gargoyle",
@@ -1350,7 +1417,8 @@ var default_cards = {
         "ability": "",
         "filename": "gargoyle",
         "count": "1",
-        "quote": "Ancient sculptors' nightmarish fantasies brought to life by bored mages."
+        "quote": "Ancient sculptors' nightmarish fantasies brought to life by bored mages.",
+        "sound":"Gargojl.WAV",
     },
     "mo_ghoul": {
         "name": "Ghoul",
@@ -1362,7 +1430,8 @@ var default_cards = {
         "filename": "ghoul",
         "count": "1",
         "target": "mo_ghoul",
-        "quote": "If ghouls are part of the Circle of Life... then it's a damn vicious circle."
+        "quote": "If ghouls are part of the Circle of Life... then it's a damn vicious circle.",
+        "sound":"ghouls.WAV",
     },
     "mo_ghoul_1": {
         "name": "Ghoul",
@@ -1374,7 +1443,8 @@ var default_cards = {
         "filename": "ghoul_1",
         "count": "1",
         "target": "mo_ghoul",
-        "quote": "If ghouls are part of the Circle of Life... then it's a damn vicious circle."
+        "quote": "If ghouls are part of the Circle of Life... then it's a damn vicious circle.",
+        "sound":"ghouls.WAV",
     },
     "mo_ghoul_2": {
         "name": "Ghoul",
@@ -1386,7 +1456,8 @@ var default_cards = {
         "filename": "ghoul_2",
         "count": "1",
         "target": "mo_ghoul",
-        "quote": "If ghouls are part of the Circle of Life... then it's a damn vicious circle."
+        "quote": "If ghouls are part of the Circle of Life... then it's a damn vicious circle.",
+        "sound":"ghouls.WAV",
     },
     "mo_gravehag": {
         "name": "Grave Hag",
@@ -1396,7 +1467,8 @@ var default_cards = {
         "ability": "",
         "filename": "gravehag",
         "count": "1",
-        "quote": "Their long tongues're for slurping marrow - and whipping prey."
+        "quote": "Their long tongues're for slurping marrow - and whipping prey.",
+        "sound":"water hag.mp3",
     },
     "mo_gryffin": {
         "name": "Griffin",
@@ -1406,7 +1478,8 @@ var default_cards = {
         "ability": "",
         "filename": "gryffin",
         "count": "1",
-        "quote": "Griffins like to toy with their prey. Eat 'em alive, piece by piece."
+        "quote": "Griffins like to toy with their prey. Eat 'em alive, piece by piece.",
+        "sound":"Griphin.WAV",
     },
     "mo_harpy": {
         "name": "Harpy",
@@ -1416,7 +1489,8 @@ var default_cards = {
         "ability": "",
         "filename": "harpy",
         "count": "1",
-        "quote": "There are many species of harpy, and all are klepmaniacs."
+        "quote": "There are many species of harpy, and all are klepmaniacs.",
+        "sound":"Harpy.WAV",
     },
     "mo_frost_giant": {
         "name": "Ice Giant",
@@ -1426,17 +1500,19 @@ var default_cards = {
         "ability": "",
         "filename": "frost_giant",
         "count": "1",
-        "quote": "Fled one time in my life. From the Ice Giant. And I'm not a bit ashamed."
+        "quote": "Fled one time in my life. From the Ice Giant. And I'm not a bit ashamed.",
+        "sound":"ice Giant.mp3",
     },
     "mo_imlerith": {
         "name": "Imlerith",
         "deck": "monsters",
         "row": "close",
-        "strength": "10",
+        "strength": "12",
         "ability": "hero",
         "filename": "imlerith",
         "count": "1",
-        "quote": "Ladd nahw! Kill them! Litter the earth with their entrails!"
+        "quote": "Ladd nahw! Kill them! Litter the earth with their entrails!",
+        "sound":"Imlerith_ Who taught you to fight like this.ogg",
     },
     "mo_kayran": {
         "name": "Kayran",
@@ -1446,17 +1522,19 @@ var default_cards = {
         "ability": "hero morale",
         "filename": "kayran",
         "count": "1",
-        "quote": "Kill a kayran? Simple. Take your best sword... then sell it and hire a witcher."
+        "quote": "Kill a kayran? Simple. Take your best sword... then sell it and hire a witcher.",
+        "sound":"Kayran.WAV",
     },
     "mo_leshen": {
         "name": "Leshen",
         "deck": "monsters",
         "row": "ranged",
-        "strength": "10",
+        "strength": "12",
         "ability": "hero",
         "filename": "leshen",
         "count": "1",
-        "quote": "We never hunt in these woods. Not even if it means the whole village starves."
+        "quote": "We never hunt in these woods. Not even if it means the whole village starves.",
+        "sound":"woodland spirit leshen.mp3",
     },
     "mo_nekker": {
         "name": "Nekker",
@@ -1468,7 +1546,8 @@ var default_cards = {
         "filename": "nekker",
         "count": "1",
         "target": "mo_nekker",
-        "quote": "Damn things are almost cute, if you ignore the whole vicious killer aspect."
+        "quote": "Damn things are almost cute, if you ignore the whole vicious killer aspect.",
+        "sound":"nekkers.WAV",
     },
     "mo_nekker_1": {
         "name": "Nekker",
@@ -1480,7 +1559,8 @@ var default_cards = {
         "filename": "nekker_1",
         "count": "1",
         "target": "mo_nekker",
-        "quote": "Damn things are almost cute, if you ignore the whole vicious killer aspect."
+        "quote": "Damn things are almost cute, if you ignore the whole vicious killer aspect.",
+        "sound":"nekkers.WAV",
     },
     "mo_nekker_2": {
         "name": "Nekker",
@@ -1492,7 +1572,8 @@ var default_cards = {
         "filename": "nekker_2",
         "count": "1",
         "target": "mo_nekker",
-        "quote": "Damn things are almost cute, if you ignore the whole vicious killer aspect."
+        "quote": "Damn things are almost cute, if you ignore the whole vicious killer aspect.",
+        "sound":"nekkers.WAV",
     },
     "mo_mighty_maiden": {
         "name": "Plague Maiden",
@@ -1502,7 +1583,8 @@ var default_cards = {
         "ability": "",
         "filename": "mighty_maiden",
         "count": "1",
-        "quote": "The sick rave about a boil-pocked woman surrounded by herds of rabid rats..."
+        "quote": "The sick rave about a boil-pocked woman surrounded by herds of rabid rats...",
+        "sound":"plauge maidens.WAV",
     },
     "mo_bruxa": {
         "name": "Vampire - Bruxa",
@@ -1514,7 +1596,8 @@ var default_cards = {
         "filename": "bruxa",
         "count": "1",
         "target": "mo_vampire",
-        "quote": "A vile, bloodthirsty, man-eating hag. Kind of like my mother-in-law."
+        "quote": "A vile, bloodthirsty, man-eating hag. Kind of like my mother-in-law.",
+        "sound":"Vampires.WAV",
     },
     "mo_ekkima": {
         "name": "Vampire - Ekimmara",
@@ -1526,7 +1609,8 @@ var default_cards = {
         "filename": "ekkima",
         "count": "1",
         "target": "mo_vampire",
-        "quote": "Who would think overgrown bats would have a taste for gaudy jewelry?"
+        "quote": "Who would think overgrown bats would have a taste for gaudy jewelry?",
+        "sound":"Vampires.WAV",
     },
     "mo_fleder": {
         "name": "Vampire - Fleder",
@@ -1538,7 +1622,8 @@ var default_cards = {
         "filename": "fleder",
         "count": "1",
         "target": "mo_vampire",
-        "quote": "Higher vampieres embrace their victims. Fleders rim them to shreds."
+        "quote": "Higher vampieres embrace their victims. Fleders rim them to shreds.",
+        "sound":"Vampires.WAV",
     },
     "mo_garkain": {
         "name": "Vampire - Garkain",
@@ -1550,7 +1635,8 @@ var default_cards = {
         "filename": "garkain",
         "count": "1",
         "target": "mo_vampire",
-        "quote": "Blood-drinkers and corpse-eaters so foul their very ugliness paralyses foes."
+        "quote": "Blood-drinkers and corpse-eaters so foul their very ugliness paralyses foes.",
+        "sound":"Vampires.WAV",
     },
     "mo_katakan": {
         "name": "Vampire - Katakan",
@@ -1562,7 +1648,8 @@ var default_cards = {
         "filename": "katakan",
         "count": "1",
         "target": "mo_vampire",
-        "quote": "Drinking the blood of the Continent since the Conjunction."
+        "quote": "Drinking the blood of the Continent since the Conjunction.",
+        "sound":"Vampires.WAV",
     },
     "mo_werewolf": {
         "name": "Werewolf",
@@ -1582,17 +1669,20 @@ var default_cards = {
         "ability": "",
         "filename": "wyvern",
         "count": "1",
-        "quote": "Imagine a cross between a winged snake and a nightmare. Wyverns are worse."
+        "quote": "Imagine a cross between a winged snake and a nightmare. Wyverns are worse.",
+        "sound":"Wyvern.WAV",
     },
     "mo_toad": {
         "name": "Toad",
         "deck": "monsters",
         "row": "ranged",
         "strength": "7",
-        "ability": "scorch_c",
+        "ability": "scorch_r",
         "filename": "toad",
         "count": "1",
-        "quote": "Big. Bad. Ugly. Squats in the sewers."
+        "quote": "Big. Bad. Ugly. Squats in the sewers.",
+        "sound":"Toad.WAV",
+
     },
     "sc_francesca_queen": {
         "name": "Francesca Findabair - Queen of Dol Blathanna",
@@ -2494,7 +2584,8 @@ var ext_nr_cards = {
         "ability": "spy",
         "filename": "stripes_scout",
         "count": "1",
-        "quote": "Blue Stripes and Scoia'Tael are similar in one regard - hatred fuels both."
+        "quote": "Blue Stripes and Scoia'Tael are similar in one regard - hatred fuels both.",
+        
     },
     "nr_tridam_infantry": {
         "name": "Tridam Infantry",
@@ -4340,13 +4431,14 @@ var ext_mo_cards = {
         "name": "Alghoul",
         "id": 4,
         "deck": "monsters",
-        "row": "close",
-        "strength": "6",
+        "row": "ranged",
+        "strength": "2",
         "ability": "muster",
         "filename": "alghoul",
         "count": "1",
         "target": "mo_ghoul",
-        "quote": "A particularly large ghoul that is fattened and craves warm meat is called an alghoul."
+        "quote": "A particularly large ghoul that is fattened and craves warm meat is called an alghoul.",
+        "sound":"ghouls.WAV",
     },
     "mo_archgriffin": {
         "name": "Archgriffin",
@@ -5779,7 +5871,8 @@ var ext_wu_cards = {
         "ability": "witcher_wolf_school",
         "filename": "vesemir",
         "count": "1",
-        "quote": "If you're to be hanged, ask for water. Anything can happen before they fetch it."
+        "quote": "If you're to be hanged, ask for water. Anything can happen before they fetch it.",
+        "sound":"52 Vesemir_I’m too old for this shit.ogg",
     },
     "wu_haern_caduch": {
         "name": "Haern Caduch",
@@ -8767,7 +8860,8 @@ var ext_sy_cards = {
         "ability": "",
         "filename": "arena_endrega",
         "count": "1",
-        "quote": "Strong as an ox, dumb as a box."
+        "quote": "Strong as an ox, dumb as a box.",
+        "sound":"",
     },
     "sy_arena_ghoul": {
         "name": "Arena Ghoul",
