@@ -253,7 +253,8 @@ var default_cards = {
         "ability": "foltest_siegemaster",
         "filename": "foltest_siegemaster",
         "count": "1",
-        "quote": "A well-aimed ballista razes not just the enemy's wall, but his morale as well."
+        "quote": "A well-aimed ballista razes not just the enemy's wall, but his morale as well.",
+        "sound": "Eredin_Any last words.ogg"
     },
     "nr_foltest_steelforged": {
         "name": "Foltest - The Steel-Forged",
@@ -6302,7 +6303,7 @@ var ext_wu_cards = {
         "ability": "muster",
         "filename": "tea_vea_1",
         "count": "1",
-        "target" :"wu_tea_vea",
+        "target": "wu_tea_vea",
         "quote": "Her sabre, drawn faster than they eye could see, cut through the air."
     },
     "wu_tea_vea_2": {
@@ -7213,7 +7214,7 @@ var ext_to_cards = {
         "ability": "avenger",
         "filename": "vampire_invasion",
         "count": "1",
-        "target" : "to_lacerate",
+        "target": "to_lacerate",
         "quote": "Drinking the blood of the Continent since the Conjunction."
     },
     "to_ducal_guard_1": {
