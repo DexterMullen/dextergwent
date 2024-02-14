@@ -1723,6 +1723,10 @@ class Board {
 
 	async moveTo(card, dest, source = null) {
 		if (isString(dest)) dest = this.getRow(card, dest);
+		
+		if (dest instanceof Row || dest instanceof Weather) {
+			this.playCardSound(card);
+		}
 		try {
 			cartaNaLinha(dest.elem.id, card);
 		} catch(err) {}
@@ -1774,6 +1778,13 @@ class Board {
 				return player.hand;
 			default:
 				console.error(card.name + " sent to incorrect row \"" + row_name + "\" by " + card.holder.name);
+		}
+	}
+
+	playCardSound(card) {
+		if(card.sound) {
+			let sound = new Audio('sounds/' + card.sound);
+			sound.play();
 		}
 	}
 
@@ -3329,7 +3340,7 @@ class DeckMaker {
 	startNewGame(fullAI = false) {
 		if (fullAI) document.getElementsByTagName("main")[0].classList.add("noclick");
 		game.fullAI = fullAI;
-		openFullscreen();
+		// openFullscreen();
 		let warning = "";
 		if (this.stats.units < 22) warning += "Your deck must have at least 22 unit cards. \n";
 		if (this.stats.special > 10) warning += "Your deck must have no more than 10 special cards. \n";
@@ -3487,7 +3498,7 @@ class DeckMaker {
 		}
 		fr.readAsText(files.item(0));
 		document.getElementById("add-file").value = "";
-		openFullscreen();
+		// openFullscreen();
 	}
 
 	deckFromJSON(json,parse) {
@@ -3803,7 +3814,7 @@ var player_me, player_op;
 ui.enablePlayer(false);
 let dm = new DeckMaker();
 
-document.addEventListener('contextmenu', event => event.preventDefault());
+// document.addEventListener('contextmenu', event => event.preventDefault());
 
 const elem_principal = document.documentElement;
 
@@ -3911,7 +3922,7 @@ function inicio() {
 	for (var i = 0; i < classe.length; i++) classe[i].style.display = "none";
 	iniciou = true;
 	tocar("menu_opening", false);
-	openFullscreen();
+	// openFullscreen();
 	iniciarMusica();
 }
 
