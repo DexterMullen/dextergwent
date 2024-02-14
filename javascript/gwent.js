@@ -1725,7 +1725,7 @@ class Board {
 		if (isString(dest)) dest = this.getRow(card, dest);
 		
 		if (dest instanceof Row || dest instanceof Weather) {
-			this.playCardSound(card);
+			setTimeout(() => this.playCardSound(card), 1500);
 		}
 		try {
 			cartaNaLinha(dest.elem.id, card);
@@ -1783,7 +1783,9 @@ class Board {
 
 	playCardSound(card) {
 		if(card.sound) {
+			console.log('sounds/' + card.sound);
 			let sound = new Audio('sounds/' + card.sound);
+			sound.volume = 0.5;
 			sound.play();
 		}
 	}
@@ -2063,6 +2065,7 @@ class Card {
 		if (card_data.id) this.id = Number(card_data.id);
 		this.key = key;
 		this.name = card_data.name;
+		this.sound = card_data.sound;
 		this.basePower = this.power = Number(card_data.strength);
 		this.faction = card_data.deck;
 		if (this.faction.startsWith("weather") || this.faction.startsWith("special")) this.faction = this.faction.split(" ")[0];
@@ -3974,12 +3977,16 @@ function cartaNaLinha(id, carta) {
 function tocar(arquivo, pararMusica) {
 	if (arquivo != lastSound && arquivo != "") {
 		var s = new Audio("sfx/" + arquivo + ".mp3");
+		s.volume = 0.1;
 		if (pararMusica && ui.youtube && ui.youtube.getPlayerState() === YT.PlayerState.PLAYING) {
 			ui.youtube.pauseVideo();
 			ui.toggleMusic_elem.classList.add("fade");
 		}
 		lastSound = arquivo;
-		if (iniciou) s.play();
+		if (iniciou) {
+			s.volume = 0.1;
+			s.play();
+		}
 		setTimeout(function() {
 			lastSound = "";
 		}, 50);
@@ -3989,7 +3996,7 @@ function tocar(arquivo, pararMusica) {
 function iniciarMusica() {
 	try {
 		if (ui.youtube.getPlayerState() !== YT.PlayerState.PLAYING) {
-			ui.youtube.playVideo();
+			// ui.youtube.playVideo();
 			ui.toggleMusic_elem.classList.remove("fade");
 		}
 	} catch(err) {}
