@@ -964,5 +964,145 @@ var ability_dict = {
 		name: "Inspire",
 		description: "All units with Inspire ability take the highest base strength of the Inspire units on your side of the board. Still affected by weather.",
 	},
+	//0 - add any kind of sorting when building/creating/adding cards before the game starts, it can be special, then gold, then ability units, then units with no ability OR
+	// special and then on top sorted by card numbers/strenght/power, it is a mess in this state.
+	
+	// 1 - create agile2 and agile3, curent agile (LINE 89) is sword OR bow, agile2 should be sword OR catapult, agile3 should be bow OR catapult.
+	
+	// 2 - create full mobile ability, those cards can go anywhere on your side of the board, sword OR bow OR catapult
+	
+	// 3 - All leader cards should have numbers/value and should be mobile, they should no longer be just ability but they go out on the board same as regular or gold units
+	
+	// 4 - add mouse scroll up and down to card selecter/card picker/carusel
+	
+	// 5 - add option not just to turn ON and OFF music but also to increase and decrease volume
+	
+	// 6 - select X amount of cards from your deck(you choose, not random) and put them in your graveyard. (change nilfgardian leader that cancels opponents leader) eredin (lines 326 to 349) has similar
+	// but it goes from hand to graveyard then from deck to hand
+	
+	// 7 - add condition to line/single row scorch (lines from 74 to 89) 
+	// if I place it in swords/close, destroys only on the opponents opisite side, close/sword only. Same logic if I place my line/row scorch on bow and catapult line/row.
+	
+	// 8 - add reveal ability of opponents X amount of random cards (lines from 260 to 275 have this)
+	
+	// 9 - add reveal ability of your cards, X amount (in your hand) of random cards (lines from 260 to 275 have this)
+	
+	// 10 - add new option and single card selection/targeting on the entire board by the player (decoy can now target and select single card, so same ability of targeting but on entire board)
+	
+	// 11 - add Target opponents unit of players choice with X value or less, and destoy it. (destroyed unit goes to opponents graveyard) use this new ability instead of lines from 301 to  303
+	
+	// 12 - in javascript/factions lines from 94 to 105 should be added to scoiatel deck faction ability also (draw a random card from deck to hand when you lose a round)
+	
+	// 13 - add 4 special card scorch so the maximum amount goes from 3 to 4 but only for scoiatel deck
+	
+	// 14 - commanders horn can not be played if the player does not have 2 cards in his hand to reveal (commanders horn does not reveal it self)
+	
+	// 15 - add 2 abilities to a card a choice so the player can choose 1 or the other ability ( standard carosel /card selector is open when choosing betwen two abilities)
+	
+	// 16 - every commanders horn special card should have two coises play it on your board(as it is now) OR destroy any commaders horn card (of players choice if there are multiple) on the opponents side of the board
+	// can destroy both units or special (this already exists in 727 to 740)
+	
+	// 17 - clear weather/clear skies (lines from 4 to 6) should have two options for a player to choose from. First one is as it is now, remove all active weather cards from the board(frost AND fog aAND rain)
+	// other options is to play a random unit card from his deck ( no hero/gold or special cards)
+	
+	// 18 - add ability to chose and play a specific card from your deck OR a diferent specific card from your deck
+	
+	// 19 - add ability of a card to return to your hand if you lose the round (if you win or it is a draw it goes as usual to players graveyard, MONSTER deck ability takes priority, it should override this cards ability)
+	// ciri return from our printed card game
+	
+	// 20 - a new spy card (goes to opponents board) then the player draws X amount of random cards from his deck, gets to see them, chose 1 that goes to his hand, other are returned back to deck.
+	// misterius Elf from our printed card game 
+	
+	// 21 - add sacrifice ability, Target your unit, move it to graveyard, this card will take its place. ( can not be played if there are no units, can not target goold/hero cards) 
+	// Sabrina sacrifice from our printed card game 
+	
+	// 22 - dandelion card should be full mobile and it can not be played if the player is not able to reveal 2 random cards in his hand
+	
+	// 23 - Add new ability, play any special ( non weather ) card of your choice from your deck.  Here maybe we need to create two categories of special cards (weather : frost fog rain clear skies, AND all others)
+	// Golem special from our printed card game  
+	
+	// 24 - a new spy card (goes to opponents board) then the player draws X amount of random cards from his deck, some face down(not revealed to the player, deck background should be visibile) 
+	// some face up revealed to the player,chose 1 that goes to his hand, other are returned back to deck.
+	// Avalach cursed from our printed card game 
+	
+	// 25 - add ability to unreveal(hide again) X amount of cards in YOUR hand.
+	// ambasador (nilfgard) from our printed card game 
+	
+	// 26 - a new condition for ability to be trigered or not, Only If opponent did not pass, chose and destroy 1 of his unit, but then opponent draws 1 random card from his deck to his hand OR 
+	// destroy 1 of your unit, then play 1 random card from deck to board.
+	// Vilgefortz (nilfgard) from our printed card game 
+	
+	// 27 - update for some nilfgardian spyes (new spy basicaly)  Goes on opponents board. Draw 2 random cards from your deck, take 1 into your hand, other will go to your graveyard.
+	
+	// 28 - Target unit on YOUR side of the board, then play unit from your deck with the same base value as your target card.
+	// Zoltan target from our printed card game 
+	
+	// 29 - Cancel the effect of only 1 active weather card of your choice. 
+	// Triss weather from our printed card game 
+	
+	// 30 - Play any special card from your hand, then draw random card from your deck to your hand. (if the player has no special cards in his hand, nothing happends)
+	// Regis special from our printed card game 
+	
+	// 31 - a new spy card (goes to opponents board) Draw X random cards from opponents deck, chose and play 1 instantly, (other two will go to opponents graveyard)
+	// Operater from our printed card game 
+	
+	// 32 - Move 1 opponents unit of your choice, to a different row of your choice.(ability of the moved card is not retrigered)
+	// Geralt aard from our printed card game 
+	
+	// 33 - If this card is on the board when the round ends, it will go to your oppoents hand if you won the round. Draw/Lost it goes to your graveyard.
+	//Saskia Dragon from our printed card game
+	
+	// 34 - Draw 3 random cards from your deck, 2 face up, 1 face down, select and play one, return other 2 to your deck.
+	// Priscilla from our printed card game
+	
+	// 35 - Move 2 of your units(player gets to chose wich 2) to this cards row. (does not affect gold/hero cards)
+	// Golem from our printed card game
+	
+	// 36 - Draw 2 random cards from your deck to your hand, them move 2 cards of your choice, from your hand to your graveyard.
+	// Yennefer swap from our printed card game
+	
+	// 37 - Select 1 unit from ANY graveyard, and move it to the other/opposite graveyard.(nothing happends if both graveyards are empty)
+	// bloddy baron from our printed card game
+	
+	// 38 - Destroy the weakest unit(s) on entire board. afects both players basicaly scorch just for the all weakest /lowest instead of strongest/highest
+	// Borkh dragon from our printed card game
+	
+	// 39 - Target a unit on your side of the board, Remove unit from your board(unit goes to your graveyard) 
+	//Then draw 3 random cards from your deck, chose and play 1, return other 2 to your deck. (similar to priscilla but all cards are revealed and kiling of your own unit is nessesary) 
+	// if there are no your own units to kill/destroy, nothing happends
+	// Ciri target from our printed card game 
+	
+	// 40 - Destroy one opponents weakest unit of your choice on the oposite row
+	// Sinthia the Mage(nilfgard) from our printed card game 
+	
+	// 41 - add ability to play FROST card from your deck (if you do not have it in your deck, nothing happends)
+
+	// 42 - add ability to play FOG card from your deck (if you do not have it in your deck, nothing happends)
+
+	// 43 - add ability to play RAIN card from your deck (if you do not have it in your deck, nothing happends)
+
+	// 44 - Move any 2 units from any graveyard to the other, OR  Move two units from any graveyard back to current owners deck
+	//Nilfgard Mage Knight from our printed card game 
+
+	// 45 - Play unit from your hand, then draw 1 random card from your deck to your hand.
+	// cantarela nilfgard  from our printed card game
+
+	// 46 - Target any unit on the entire board and turn it permanently into Jade Figurine. Jade Figurine should be a new card(gold) that will take the place of the targeted card
+	// targeted card is banished from the game(does not go to graveyard) jade figurine permanatly until the end of the game takes its place.
+	//Nilfgard Knight Mage from our printed card game 
+
+	// 47 - Select 1 card in your hand, the selected card goes to your graveyard, then draw a random card from your deck of the same type as your selected card.(Gold/hero, Special or Unit) to your hand
+	// Jan Calviet (nilfgard) from our printed card game 
+
+	// 48 - If the opponent did not pass, both players draw 1 random card from their deck to hand. The opponent's card is revealed.
+	// Albrich (nilfgard) from our printed card game 
+
+	// 49 - Draw X amount of random units from the opponent's graveyard, instatly play 1 card of your choise, return the others to the opponents graveyard
+	// Caretaker from our printed card game 
+
+	// 50 - when using medic on a agile or mobile unit player should chose where resurected unit should be placed (now it is random)
+
+	// 51 - North realms spy (goes to opponents board) 
+
 
 };
