@@ -3892,6 +3892,19 @@ document.onkeydown = function (e) {
 	} else return false;
 }
 
+// Add mouse wheel scrolling functionality on card selection carousel
+window.onwheel = function(e) {
+	if (document.getElementById("carousel").className != "hide") {
+		if (e.deltaY > 0) {
+			// down
+			Carousel.curr.shift(e, -1);
+		} else {
+			// up
+			Carousel.curr.shift(e, 1);
+		}
+	}
+}
+
 window.onload = function() {
 	dimensionar();
 	playingOnline = window.location.href == "https://randompianist.github.io/gwent-classic-v3.1/";
