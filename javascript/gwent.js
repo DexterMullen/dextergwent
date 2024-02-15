@@ -2204,10 +2204,6 @@ class Card {
 			return c.faction === "special" ? -2 : (c.faction === "weather") ? -1 : 0;
 		}
 	}
-	
-	static compare2(a, b) {
-		return a.name.localeCompare(b.name);
-	}
 
 	createCardElem(card) {
 		let elem = document.createElement("div");
@@ -3173,7 +3169,7 @@ class DeckMaker {
 				basePower: -b.strength,
 				faction: b.deck.split(" ")[0]
 			};
-			return Card.compare2(c1, c2);
+			return Card.compare(c1, c2);
 		});
 		let deckMap = {};
 		if (deck) {
