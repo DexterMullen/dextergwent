@@ -2204,10 +2204,6 @@ class Card {
 			return c.faction === "special" ? -2 : (c.faction === "weather") ? -1 : 0;
 		}
 	}
-	
-	static compare2(a, b) {
-		return a.name.localeCompare(b.name);
-	}
 
 	createCardElem(card) {
 		let elem = document.createElement("div");
@@ -3173,7 +3169,7 @@ class DeckMaker {
 				basePower: -b.strength,
 				faction: b.deck.split(" ")[0]
 			};
-			return Card.compare2(c1, c2);
+			return Card.compare(c1, c2);
 		});
 		let deckMap = {};
 		if (deck) {
@@ -3890,6 +3886,19 @@ document.onkeydown = function (e) {
 			}
 		} else if (!iniciou && isLoaded && (e.keyCode == 13 || e.keyCode == 69)) inicio();
 	} else return false;
+}
+
+// Add mouse wheel scrolling functionality on card selection carousel
+window.onwheel = function(e) {
+	if (document.getElementById("carousel").className != "hide") {
+		if (e.deltaY > 0) {
+			// down
+			Carousel.curr.shift(e, -1);
+		} else {
+			// up
+			Carousel.curr.shift(e, 1);
+		}
+	}
 }
 
 window.onload = function() {
