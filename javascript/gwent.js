@@ -1717,7 +1717,7 @@ class Board {
 	}
 
 	async toRow(card, source) {
-		let row = (card.row === "agile") ? "close" : card.row ? card.row : "close";
+		let row = (card.row === "agile" || card.row === "agile_close_siege" || card.row === "agile_ranged_siege") ? "close" : card.row ? card.row : "close";
 		await this.moveTo(card, row, source);
 	}
 
