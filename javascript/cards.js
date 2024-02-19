@@ -4,7 +4,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "close",
         "strength": "6",
-        "ability": "hero spy",
+        "ability": "hero spy", //ABILITY1 draw 2 random cards from your deck, take 1 to your hand, return other to your deck
         "filename": "mysterious_elf",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -40,6 +40,19 @@ var default_cards = {
         "count": "1",
         "quote": "Know when fairy tales cease to be tales? When people start believing in them.",
         "sound": "42 Ciri_GOLD 15 You’ve talked enough..ogg",
+    },
+    "ntr_caed_myrkvid_druid_1": { //Aeromancy
+        "name": "Aeromancy",
+        "id": 1,
+        "deck": "neutral",
+        "row": "ranged",
+        "strength": "0",
+        "ability": "hero", //ABILITY1 must reveal 1 card in your hand, then play any weather card from your deck(clear weather efect only)
+        "filename": "caed_myrkvid_druid_1",
+        "count": "1",
+        "target": "to_caed_myrkvid_druid",
+        "quote": "We fled here to escape people such as you.",
+        "sound": "35 AEROMANCY_ Keep close! My magic shall protect you.ogg",
     },
     "nr_avalah_cursed": {
         "name": "Avalah Cursed",
@@ -148,6 +161,17 @@ var default_cards = {
         "count": "1",
         "quote": "If that's what it takes to save the world, it's better to let that world die.",
         "sound":"43 Geralt_GOLD 15 I hate portals.ogg",
+    },
+    "ntr_geralt_aard": {
+        "name": "Geralt AARD",
+        "deck": "neutral",
+        "row": "close",
+        "strength": "5",
+        "ability": "", //AARD ABILITY1 select any of the opponents unit on his side of the board, and then move it to the diferent row of your choice.
+        "filename": "geralt_aard",
+        "count": "1",
+        "quote": "If that's what it takes to save the world, it's better to let that world die.",
+        "sound":"11 Geralt_AARD Any last words.ogg",
     },
     "spe_fog": {
         "name": "Impenetrable Fog",
@@ -7408,19 +7432,7 @@ var ext_to_cards = {
         "filename": "barnabas",
         "count": "1",
         "quote": "I shall serve you as majordomo of Corvo Bianco."
-    },
-    "to_caed_myrkvid_druid_1": {
-        "name": "Caed Myrkvid Druid",
-        "id": 1,
-        "deck": "toussaint",
-        "row": "ranged",
-        "strength": "4",
-        "ability": "bond",
-        "filename": "caed_myrkvid_druid_1",
-        "count": "1",
-        "target": "to_caed_myrkvid_druid",
-        "quote": "We fled here to escape people such as you."
-    },
+    },    
     "to_caed_myrkvid_druid_2": {
         "name": "Caed Myrkvid Druid",
         "id": 2,
