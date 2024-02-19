@@ -41,6 +41,17 @@ var default_cards = {
         "quote": "Know when fairy tales cease to be tales? When people start believing in them.",
         "sound": "42 Ciri_GOLD 15 You’ve talked enough..ogg",
     },
+    "nr_avalah_cursed": {
+        "name": "Avalah Cursed",
+        "deck": "realms",
+        "row": "siege",
+        "strength": "8",
+        "ability": "hero spy",// ABILITY1 new spy, draw 2 random cards from your deck, 1 face up 1 face down, chose and take 1 to your hand return the other to your deck
+        "filename": "avalah_cursed",
+        "count": "1",
+        "quote": "Curses can be lifted",
+        "sound": "29 Avallac'h_11 SPY Appearances can be deceiving.ogg",
+    },
     "ntr_ciri_target": {
         "name": "Cirilla Fiona Elen Riannon",
         "deck": "neutral",
@@ -179,6 +190,17 @@ var default_cards = {
         "target": "ntr_chort",
         "quote": "I can take care of myself. Trust me.",
         "sound":"45 Triss_COW I sense strong magic.ogg",
+    },
+    "ntr_triss_weather": { //triss weather
+        "name": "Triss weather",
+        "deck": "neutral",
+        "row": "ranged",
+        "strength": "5",
+        "ability": "", //ABILITY1 cancel / remove only 1 active weather card from the board
+        "filename": "triss_weather",
+        "count": "1",
+        "quote": "I can take care of myself. Trust me.",
+        "sound":"18 Triss_WEATHER I’ll do what I can.ogg",
     },
     "ntr_vesemir": {
         "name": "Vesemir",
