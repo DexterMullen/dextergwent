@@ -2856,12 +2856,13 @@ var ext_nr_cards = {
     "nr_ban_ard_tutor": {
         "name": "Ban Ard Tutor",
         "deck": "realms",
-        "row": "ranged",
-        "strength": "10",
-        "ability": "hero",
+        "row": "siege",
+        "strength": "1",
+        "ability": "hero", //ABILITY1 play rain from your deck
         "filename": "ban_ard_tutor",
         "count": "1",
-        "quote": "Ban Ard deserved a mention, for it is famous for the school of young adepts of the magical arts."
+        "quote": "Ban Ard deserved a mention, for it is famous for the school of young adepts of the magical arts.",
+        "sound":"",
     },
     "nr_demavend": {
         "name": "Sabrina Fire Mage",//7 siege no ability Sabrina Fire Mage from printed version
@@ -2895,11 +2896,11 @@ var ext_nr_cards = {
         "quote": "Always wondered... how the blazes do those lads handle nature's call...?"
     },
     "nr_dun_banner_heavy_cavalry_2": {
-        "name": "Dun Banner Heavy Cavalry",
+        "name": "Dun Banner Heavy Cavalry", //north realms wolf warrior
         "deck": "realms",
-        "row": "ranged",
-        "strength": "7",
-        "ability": "",
+        "row": "agile",//mobile
+        "strength": "6",
+        "ability": "hero",//ABILITY1 destroy 1 of the oppoents weakest unit of your choice on the opposite row
         "filename": "dun_banner_heavy_cavalry_2",
         "count": "1",
         "quote": "Always wondered... how the blazes do those lads handle nature's call...?"
@@ -3622,6 +3623,17 @@ var ext_nr_cards = {
         "filename": "radovid_ruthless",
         "count": "1",
         "quote": "A king should be merciless towards his enemies and generous to his friends."
+    },
+    "nr_radovid_ruthless_unit": {
+        "name": "Radovid V: the Ruthless",
+        "deck": "realms",
+        "row": "agile",//mobile
+        "strength": "8",
+        "ability": "hero", //ABILITY1 if you did not pass! when any of your units goes from board to graveyard (not on round end) this card will go from your hand to the board on a random row automaticaly, then draw 1 random card from your deck to your hand
+        "filename": "radovid_ruthless_unit",
+        "count": "1",
+        "quote": "A king should be merciless towards his enemies and generous to his friends.",
+        "sound":"King_Radovid_V_Do not test my patience.ogg",
     },
     "nr_redanian_elite": {
         "name": "Redanian Elite",
