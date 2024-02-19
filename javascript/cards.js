@@ -41,6 +41,17 @@ var default_cards = {
         "quote": "Know when fairy tales cease to be tales? When people start believing in them.",
         "sound": "42 Ciri_GOLD 15 You’ve talked enough..ogg",
     },
+    "ntr_ciri_target": {
+        "name": "Cirilla Fiona Elen Riannon",
+        "deck": "neutral",
+        "row": "close",
+        "strength": "5",
+        "ability": "hero",
+        "filename": "ciri",
+        "count": "1",
+        "quote": "TARGET CHOICE ABILITY1 Know when fairy tales cease to be tales? When people start believing in them.",
+        "sound": "2 Ciri_RETURN Yield and save me some time!.ogg",
+    },
     "spe_clear": {
         "name": "Clear Weather",
         "deck": "weather",
