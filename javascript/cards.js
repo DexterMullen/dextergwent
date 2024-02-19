@@ -51,20 +51,18 @@ var default_cards = {
         "count": "1",
         "quote": "There are more things in heaven and earth than all the world's philosophers have dreamt.",
         "sound": "20 Caretaker_Resistance is futile..ogg",
-    },
-    /*       
+    },     
     "ntr_priscilla": {
         "name": "Priscilla",
         "deck": "neutral",
-        "row": "range",
+        "row": "ranged",
         "strength": "1",
         "ability": "", //ABILITY1 draw 3 random cards from you deck, 1 face down, chose and play 1, return others to your deck.
         "filename": "priscilla",
         "count": "1",
-        "quote": "How about a game of gwent.",
+        "quote": "How about a game of gwent?",
         "sound": "25 Priscilla_Well, how about a game of gwent.ogg",
-    },
-    */    
+    },    
     "ntr_sabrina_sacrifice": {
         "name": "Sabrina Sacrifice",
         "deck": "neutral",
@@ -735,10 +733,10 @@ var default_cards = {
         "sound":"Redenian Foot_Soldier_Rach sheyss Yn twe.ogg",
     },
     "nr_redania_1": {
-        "name": "Redanian Foot Soldier",
+        "name": "Redanian Foot Soldier", //from printed deck
         "deck": "realms",
-        "row": "close",
-        "strength": "1",
+        "row": "siege",
+        "strength": "4",
         "ability": "",
         "filename": "redania_1",
         "count": "1",
@@ -770,8 +768,8 @@ var default_cards = {
     "nr_siegfried": {
         "name": "Siegfried of Denesle",
         "deck": "realms",
-        "row": "close",
-        "strength": "5",
+        "row": "siege",
+        "strength": "6",
         "ability": "",
         "filename": "siegfried",
         "count": "1",
@@ -2726,15 +2724,16 @@ var ext_nr_cards = {
         "target": "nr_temerian_soldier",
         "quote": "Temeria! Gods shed all grace on thee! And smite thy foes with horrid woes, for all eternity!"
     },
-    "nr_reaver_scout": {
-        "name": "Reaver Scout",
+    "nr_reaver_scout": { //Keira Metz default
+        "name": "Keira Metz",
         "deck": "realms",
         "row": "ranged",
-        "strength": "6",
-        "ability": "spy",
+        "strength": "5",
+        "ability": "",
         "filename": "reaver_scout",
         "count": "1",
-        "quote": "Haven't had much luck with monsters of late, so we enlisted."
+        "quote": "I don’t like men who turn me down.",
+        "sound":"Keira_Metz_I don’t like men who turn me down.ogg",
     },
     "nr_temerian_drummer": {
         "name": "Temerian Drummer",
@@ -3192,15 +3191,16 @@ var ext_nr_cards = {
         "count": "2",
         "quote": "There's a time to reap, at time to sow ...and a time to die."
     },
-    "nr_windhalm": {
-        "name": "Windhalm of Attre",
-        "deck": "realms",
+    "ntr_windhalm": { //regis vampire
+        "name": "Regis Vampire",
+        "deck": "neutral",
         "row": "close",
-        "strength": "6",
+        "strength": "5",
         "ability": "",
         "filename": "windhalm",
         "count": "1",
-        "quote": "Off with his head! But slowly, drag it out, put on a show for all to see."
+        "quote": "Raaaaaaaaaaaaaa",
+        "sound":"54 Regis vampire.mp3",
     },
     "nr_queen_meve": {
         "name": "Queen Meve",
