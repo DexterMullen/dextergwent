@@ -52,6 +52,17 @@ var default_cards = {
         "quote": "Know when fairy tales cease to be tales? When people start believing in them.",
         "sound": "32 Ciri_TARGET Ho-ho, I sense trouble..ogg",
     },
+    "ntr_golem_special": {
+        "name": "Golem Special",
+        "deck": "neutral",
+        "row": "close", //mobile
+        "strength": "0",
+        "ability": "hero",//special ABILITY1 play any special (non weather card) from your deck
+        "filename": "golem_special",
+        "count": "1",
+        "quote": "Rise Rise!",
+        "sound": "39 Magic golem_ I exist, because master Dearhenna wills it so.ogg",
+    },
     "ntr_ciri_return": {
         "name": "Cirilla Fiona Elen Riannon",
         "deck": "neutral",
