@@ -619,11 +619,11 @@ var default_cards = {
         "sound":"Siege_Support_What do you want.ogg",
     },
     "nr_keira": {
-        "name": "Keira Metz",
+        "name": "Keira Metz Master Mage",
         "deck": "realms",
         "row": "ranged",
-        "strength": "5",
-        "ability": "",
+        "strength": "4",
+        "ability": "hero", //ABILITY1 Target any unit on entire board and turn it into jade figurine (jade figurine should be sumoner pile like cow and bowing defence)
         "filename": "keira",
         "count": "1",
         "quote": "If I'm to die today, I wish to look smashing for the occasion."
