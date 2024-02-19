@@ -47,7 +47,7 @@ var default_cards = {
         "row": "close",
         "strength": "5",
         "ability": "hero",
-        "filename": "ciri",
+        "filename": "ciri_target",
         "count": "1",
         "quote": "TARGET CHOICE ABILITY1 Know when fairy tales cease to be tales? When people start believing in them.",
         "sound": "2 Ciri_RETURN Yield and save me some time!.ogg",
