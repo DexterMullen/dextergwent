@@ -46,11 +46,22 @@ var default_cards = {
         "deck": "neutral",
         "row": "ranged",
         "strength": "1",
-        "ability": "",//ABILITY Draw X amount of random cards from opponents graeyard, play 1 return others to opponents graveyard.
+        "ability": "",//ABILITY Draw X amount of random cards from opponents graeyard, play 1 return others to opponents graveyard. 
         "filename": "caretaker",
         "count": "1",
         "quote": "There are more things in heaven and earth than all the world's philosophers have dreamt.",
         "sound": "20 Caretaker_Resistance is futile..ogg",
+    },
+    "ntr_sabrina_sacrifice": {
+        "name": "Sabrina Sacrifice",
+        "deck": "neutral",
+        "row": "ranged", //Mobile
+        "strength": "10",
+        "ability": "",//ABILITY Draw X amount of random cards from opponents graeyard, play 1 return others to opponents graveyard. neutral_sabrina_sacrifice
+        "filename": "sabrina_sacrifice",
+        "count": "1",
+        "quote": "There are more things in heaven and earth than all the world's philosophers have dreamt.",
+        "sound": "40 Sabrina_Glevissig_ I am ready.ogg",
     },
     "ntr_caed_myrkvid_druid_1": { //Aeromancy
         "name": "Aeromancy",
@@ -2711,9 +2722,9 @@ var ext_nr_cards = {
     "nr_kaedweni_siege_support_1": {
         "name": "Kaedweni Siege Support",
         "deck": "realms",
-        "row": "siege",
-        "strength": "2",
-        "ability": "morale",
+        "row": "siege",//mobile
+        "strength": "1",
+        "ability": "hero",//play specific card from deck OR play some other specific card from deck (grant catapult 8 tight bond) or dragon hunters (5 tight bond) 
         "filename": "kaedweni_siege_support_1",
         "count": "1",
         "quote": "I never miss twice."
@@ -2855,14 +2866,15 @@ var ext_nr_cards = {
         "quote": "Seltkirk of Gulet was Demavend champion, known as the invincible white knight."
     },
     "nr_kaedweni_sergeant": {
-        "name": "Kaedweni Sergeant",
+        "name": "Kaedweni Sergeant", //redenian elite knight from printed version
         "deck": "realms",
         "row": "siege",
         "strength": "5",
-        "ability": "morale",
+        "ability": "",
         "filename": "kaedweni_sergeant",
         "count": "1",
-        "quote": "Forward, you sorry sods! Or you'll see the Nilfgaardians are the least of your worries!"
+        "quote": "Forward, you sorry sods! Or you'll see the Nilfgaardians are the least of your worries!",
+        "sound":"Redenian Foot_Soldier_Rach sheyss Yn twe.ogg",
     },
     "nr_queen_calanthe": {
         "name": "Queen Calanthe: Lioness of Cintra",
@@ -3796,12 +3808,12 @@ var ext_ne_cards = {
         "count": "1",
         "quote": "They call us the Death's Heads. Care to find out why?"
     },
-    "ne_imperial_golem": {
+    "ntr_imperial_golem": {
         "name": "Imperial Golem",
-        "deck": "nilfgaard",
-        "row": "close",
-        "strength": "8",
-        "ability": "hero",
+        "deck": "neutral",
+        "row": "close", //mobile
+        "strength": "2",
+        "ability": "hero", //ABILITY1 target two of your units from any rows, and move them to where you played this card/her row.
         "filename": "imperial_golem",
         "count": "1",
         "quote": "The most powerful of Nilfgaard's mages have mastered the oart of creating golems."
@@ -5903,12 +5915,12 @@ var ext_wu_cards = {
         "count": "1",
         "quote": "The scar will remain, of course. A new one for your collection."
     },
-    "wu_operator": {
+    "ntr_operator": {
         "name": "Operator",
-        "deck": "witcher_universe",
-        "row": "ranged",
-        "strength": "5",
-        "ability": "scorch_c",
+        "deck": "neutral",
+        "row": "siege",
+        "strength": "4",
+        "ability": "spy", // ABILITY1 draw 3 random crds from opponets deck, chose and play 1, other to will go to opponents graveyard.
         "filename": "operator",
         "count": "1",
         "quote": "As time and space collapse before us, they expand behind us..."
