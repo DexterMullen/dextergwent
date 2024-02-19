@@ -611,8 +611,8 @@ var default_cards = {
         "name": "Kaedweni Siege Expert",
         "deck": "realms",
         "row": "siege",
-        "strength": "3",
-        "ability": "morale",
+        "strength": "1",
+        "ability": "morale",//ABILITY1 play poor fucking infantry OR blue stripes commando from your deck
         "filename": "kaedwen_siege",
         "count": "1",
         "quote": "'You gotta recalibrate the arm by five degrees.' 'Do what by the what now?'",
@@ -622,8 +622,8 @@ var default_cards = {
         "name": "Kaedweni Siege Expert",
         "deck": "realms",
         "row": "siege",
-        "strength": "3",
-        "ability": "morale",
+        "strength": "1",
+        "ability": "morale", //ABILITY1 play poor fucking infantry OR blue stripes commando from your deck
         "filename": "kaedwen_siege_1",
         "count": "1",
         "quote": "'You gotta recalibrate the arm by five degrees.' 'Do what by the what now?'",
@@ -633,8 +633,8 @@ var default_cards = {
         "name": "Kaedweni Siege Expert",
         "deck": "realms",
         "row": "siege",
-        "strength": "3",
-        "ability": "morale",
+        "strength": "1",
+        "ability": "morale", //ABILITY1 play poor fucking infantry OR blue stripes commando from your deck
         "filename": "kaedwen_siege_2",
         "count": "1",
         "quote": "'You gotta recalibrate the arm by five degrees.' 'Do what by the what now?'",
@@ -724,11 +724,11 @@ var default_cards = {
         "sound":"Prince_Stennis_You stand before royal Majesty.ogg",
     },
     "nr_redania": {
-        "name": "Redanian Foot Soldier",
+        "name": "Redanian Foot Soldier", // Siege knight engeneer
         "deck": "realms",
-        "row": "close",
-        "strength": "1",
-        "ability": "",
+        "row": "siege",
+        "strength": "0",
+        "ability": "hero",//ABILITY1 play grand catapult (8 tight bond) from your deck OR from your graveyard
         "filename": "redania",
         "count": "1",
         "quote": "I've bled for Redania! I've killed for Redania... Dammit, I've even raped for Redania!",
@@ -815,8 +815,8 @@ var default_cards = {
         "name": "Sabrina Glevissig",
         "deck": "realms",
         "row": "ranged",
-        "strength": "4",
-        "ability": "",
+        "strength": "1",
+        "ability": "hero", //ABILITY1 play fog from your deck
         "filename": "sabrina",
         "count": "1",
         "quote": "The Daughter of the Kaedweni Wilderness.",
@@ -848,11 +848,11 @@ var default_cards = {
         "name": "Yarpen Zigrin",
         "deck": "realms",
         "row": "close",
-        "strength": "2",
-        "ability": "",
+        "strength": "1",
+        "ability": "hero",//ABILITY1 play frost from your deck
         "filename": "yarpen",
         "count": "1",
-        "quote": "The world belongs to whoever's best at crackin' skulls and impregnatin' lasses.",
+        "quote": "ABILITY1 play frost from your deck The world belongs to whoever's best at crackin' skulls and impregnatin' lasses.",
         "sound":"7 Nausica calvary rider Off to the front yet again.ogg", //just a test sound get a proper one
     },
     "nr_trebuchet": {
@@ -3785,14 +3785,15 @@ var ext_nr_cards = {
         "quote": "Join me King Ravodid army. Order got – guard boatses."
     },
     "nr_royal_decree": {
-        "name": "Royal Decree",
+        "name": "Royal Decree",//north realm elite assassin
         "deck": "realms",
         "row": "siege",
-        "strength": "1",
-        "ability": "horn",
+        "strength": "9",
+        "ability": "hero", //ABILITY1 If your opponent did not pass, Reenable your leader OR draw random card from your deck to your hand (oppenet will have the same choices)
         "filename": "royal_decree",
         "count": "1",
-        "quote": "...do hereby decree the following..."
+        "quote": "...do hereby decree the following...",
+        "sound":"",//add this later
     },
     "nr_voymir": {
         "name": "Voymir",
