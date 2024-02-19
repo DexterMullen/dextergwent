@@ -2831,14 +2831,15 @@ var ext_nr_cards = {
         "quote": "Ban Ard deserved a mention, for it is famous for the school of young adepts of the magical arts."
     },
     "nr_demavend": {
-        "name": "Demavend",
+        "name": "Sabrina Fire Mage",//7 siege no ability Sabrina Fire Mage from printed version
         "deck": "realms",
         "row": "siege",
-        "strength": "10",
-        "ability": "hero",
+        "strength": "7",
+        "ability": "",
         "filename": "demavend",
         "count": "1",
-        "quote": "War's crux lies in winning, not in being persistent."
+        "quote": "Battles are won or lost by the commanders, not by sorceresses.ogg",
+        "sound": "Sabrina_Glevissig_Battles are won or lost by the commanders, not by sorceresses.ogg",
     },
     "nr_kaedweni_knight": {
         "name": "Kaedweni Knight",
