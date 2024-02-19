@@ -6722,15 +6722,16 @@ var ext_wu_cards = {
         "target": "wu_deserter",
         "quote": "It is interesting that every second deserter is a volunteer."
     },
-    "wu_bloody_baron": {
+    "ntr_bloody_baron": {
         "name": "Bloody Baron",
-        "deck": "witcher_universe",
+        "deck": "neutral",
         "row": "close",
-        "strength": "5",
-        "ability": "",
+        "strength": "7",
+        "ability": "", //ABILITY1 Select 1 unit from 1 graveyard, and move it to the other
         "filename": "bloody_baron",
         "count": "1",
-        "quote": "I've not been a good father, I know, but… perhaps it's not too late."
+        "quote": "I've not been a good father, I know, but… perhaps it's not too late.",
+        "sound": "24 Bloody_Baron_ I’ve nothing to lose.ogg",
     },
     "wu_essi_daven": {
         "name": "Essi Daven",
