@@ -46,10 +46,10 @@ var default_cards = {
         "deck": "neutral",
         "row": "close",
         "strength": "5",
-        "ability": "hero",
+        "ability": "hero",//TARGET CHOICE ABILITY1 chose and destroy 1 your unit, then draw 3 random cards from your deck, play 1, return other 2 to your deck.
         "filename": "ciri_target",
         "count": "1",
-        "quote": "TARGET CHOICE ABILITY1 Know when fairy tales cease to be tales? When people start believing in them.",
+        "quote": "Know when fairy tales cease to be tales? When people start believing in them.",
         "sound": "32 Ciri_TARGET Ho-ho, I sense trouble..ogg",
     },
     "ntr_ciri_return": {
@@ -57,10 +57,10 @@ var default_cards = {
         "deck": "neutral",
         "row": "siege",
         "strength": "6",
-        "ability": "",
+        "ability": "", //RETURN ON LOSS ABILITY1 goes back to your hand if you lost the round, on win or draw goes back to your graveyard
         "filename": "ciri_return",
         "count": "1",
-        "quote": "RETURN ON LOSS ABILITY1 Know when fairy tales cease to be tales? When people start believing in them.",
+        "quote": "Know when fairy tales cease to be tales? When people start believing in them.",
         "sound": "2 Ciri_RETURN Yield and save me some time!.ogg",
     },
     "spe_clear": {
@@ -94,12 +94,12 @@ var default_cards = {
         "quote": "Dandelion, you're a cynic, a lecher, a whoremonger, a liar - and my best friend.",
         "sound": "48 Dandelion_For you, my friend, always.ogg",
     },
-    "ntr_emiel": {
+    "ntr_emiel": { 
         "name": "Emiel Regis Rohellec Terzieff",
         "deck": "neutral",
-        "row": "close",
-        "strength": "5",
-        "ability": "",
+        "row": "siege",
+        "strength": "2",
+        "ability": "", //ABILITY1 play any special card from your hand, then draw random card from your deck to hand
         "filename": "emiel",
         "count": "1",
         "quote": "Men, the polites ones at least, would call me a monster. A blood-drinking freak.",
@@ -602,10 +602,10 @@ var default_cards = {
         "deck": "realms",
         "row": "siege",
         "strength": "3",
-        "ability": "",
+        "ability": "", //AARD ABILITY1 select any of the opponents unit on his side of the board, and then move it to the diferent row of your choice.
         "filename": "sheldon",
         "count": "1",
-        "quote": "AARD ABILITY1 I was there, on the front lines! Right where the fightin' was the thickest!",
+        "quote": "I was there, on the front lines! Right where the fightin' was the thickest!",
         "sound":"Sheldon_Skaggs_Aye, aye, soon as I finish my pint.ogg",
 
     },
@@ -3570,10 +3570,10 @@ var ext_nr_cards = {
         "deck": "realms",
         "row": "close",
         "strength": "8",
-        "ability": "hero",
+        "ability": "hero",//REVEAL ABILITY1 reveal X amount of cards in opponents hand.
         "filename": "shani",
         "count": "1",
-        "quote": "REVEAL ABILITY1 I'm a medic. I tend to know what I'm doing when I prescribe something.",
+        "quote": "I'm a medic. I tend to know what I'm doing when I prescribe something.",
         "sound": "Shani_It’s war. Severed limbs, blood and guts.ogg",
     },
     "nr_milo_vanderbeck": {
@@ -4752,13 +4752,14 @@ var ext_st_cards = {
     "sc_saesenthessis_saskia": {
         "name": "Saesenthessis: Saskia",
         "deck": "scoiatael",
-        "row": "ranged",
-        "strength": "10",
+        "row": "siege",
+        "strength": "15",
         "ability": "hero avenger",
         "filename": "saesenthessis_saskia",
         "count": "1",
         "target": "sc_saesenthessis_dragon",
-        "quote": "Beautiful, pure, fierce... the perfect icon for a rebellion."
+        "quote": "Beautiful, pure, fierce... the perfect icon for a rebellion.",//ABILITY1 goes to opponents hand when round ends, if you win the round.
+        "sound":"30 saskia dragon form.mp3",
     },
     "sc_saesenthessis_dragon": {
         "name": "Saesenthessis: Dragon",
