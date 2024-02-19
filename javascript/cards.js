@@ -10,6 +10,19 @@ var default_cards = {
         "quote": "You humans have... unusual tastes.",
         "sound": "51 Avallac'h_GOLD 6 SPY You will see it… in your dream.ogg",
     },
+    /*
+    "ntr_priscilla": {
+        "name": "Priscilla",
+        "deck": "neutral",
+        "row": "range",
+        "strength": "1",
+        "ability": "", //ABILITY1 draw 3 random cards from you deck, 1 face down, chose and play 1, return others to your deck.
+        "filename": "priscilla",
+        "count": "1",
+        "quote": "How about a game of gwent.",
+        "sound": "25 Priscilla_Well, how about a game of gwent.ogg",
+    },
+    */
     "spe_decoy": {
         "name": "Decoy",
         "deck": "special",
