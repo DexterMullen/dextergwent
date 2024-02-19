@@ -127,7 +127,7 @@ var default_cards = {
         "strength": "",
         "ability": "clear",
         "filename": "clear",
-        "count": "2",
+        "count": "3",
         "quote": "The sun' shinin', Dromle! The sun's shinin'! Maybe there's hope left after all..."
     },
     "spe_horn": {
@@ -211,7 +211,7 @@ var default_cards = {
         "strength": "",
         "ability": "rain",
         "filename": "rain",
-        "count": "2",
+        "count": "3",
         "quote": "Even the rain in this land smells like piss."
     },
     "ntr_triss": { //triss cow
@@ -2491,7 +2491,7 @@ var default_cards = {
         "count": "1",
         "quote": "Many've tried to defeat Olaf. But wont' hear about it from them - they're dead."
     },
-    "spe_storm": {
+    /*"spe_storm": {
         "name": "Skellige Storm",
         "deck": "weather realms skellige",
         "row": "",
@@ -2500,7 +2500,7 @@ var default_cards = {
         "filename": "storm",
         "count": "3",
         "quote": "This ain't no normal storm. This here's the wrath of the gods."
-    },
+    },*/
     "sk_svanrige": {
         "name": "Svanrige",
         "deck": "skellige",
@@ -2940,7 +2940,7 @@ var ext_nr_cards = {
         "count": "2",
         "quote": "I will raise Cintra from the ashes no matter how great the cost."
     },
-    "spe_slaughther_cintra_1": {
+    /*"spe_slaughther_cintra_1": {
         "name": "Slaughter of Cintra",
         "deck": "special realms",
         "row": "",
@@ -2969,7 +2969,7 @@ var ext_nr_cards = {
         "filename": "slaughter_cintra_3",
         "count": "1",
         "quote": "The battle of Cintra, which Nordlings call the Slaughter of Cintra because of the very cruel actions of the Nilfgaardian army."
-    },
+    },*/
     "nr_eist_tuirseach": {
         "name": "Eist Tuirseach",
         "id": 4,
