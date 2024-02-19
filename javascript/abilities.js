@@ -297,7 +297,7 @@ var ability_dict = {
 			}, c => c.isUnit(), true);
 		},
 		weight: (card, ai, max, data) => ai.weightMedic(data, 0, card.holder.opponent())
-	},
+	},	
 	emhyr_invader: {
 		description: "Abilities that restore a unit to the battlefield restore a randomly-chosen unit. Affects both players.",
 		gameStart: () => game.randomRespawn = true
