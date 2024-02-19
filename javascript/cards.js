@@ -52,6 +52,17 @@ var default_cards = {
         "quote": "Know when fairy tales cease to be tales? When people start believing in them.",
         "sound": "32 Ciri_TARGET Ho-ho, I sense trouble..ogg",
     },
+    "ntr_zoltan_target": {
+        "name": "Zoltan Target",
+        "deck": "neutral",
+        "row": "close",
+        "strength": "1",
+        "ability": "hero",//TARGET CHOICE ABILITY1 chose and target any unit on your side of the board, then play any unit of your choice from your eck that has the same value/strenght as your targeted card
+        "filename": "zoltan_target",
+        "count": "1",
+        "quote": "Help is on the way!",
+        "sound": "33 Zoltan_TARGET Come to pappy.ogg",
+    },
     "ntr_golem_special": {
         "name": "Golem Special",
         "deck": "neutral",
