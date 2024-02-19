@@ -76,6 +76,17 @@ var default_cards = {
         "quote": "There are more things in heaven and earth than all the world's philosophers have dreamt.",
         "sound": "40 Sabrina_Glevissig_ I am ready.ogg",
     },
+    "ntr_yennefer_swap": {
+        "name": "Yennefer Swap",
+        "deck": "neutral",
+        "row": "ranged", 
+        "strength": "5",
+        "ability": "",//ABILITY Draw X amount of random cards from your deck to your hand, then move the same X amount of cards from your hand to your graveyard
+        "filename": "yennefer_swap",
+        "count": "1",
+        "quote": "There'll be nothing to pick up when I’m done with you!",
+        "sound": "5 Yennefer_SWAP There'll be nothing to pick up when I’m done with you!.ogg",
+    },
     "ntr_caed_myrkvid_druid_1": { //Aeromancy
         "name": "Aeromancy",
         "id": 1,
