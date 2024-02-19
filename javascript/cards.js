@@ -111,16 +111,38 @@ var default_cards = {
         "quote": "Curses can be lifted",
         "sound": "29 Avallac'h_11 SPY Appearances can be deceiving.ogg",
     },
+    "nr_nenneke": {
+        "name": "Nenneke",
+        "deck": "realms",
+        "row": "siege",
+        "strength": "5",
+        "ability": "", //ABILITY1 UNREVEAL x amount of cards in your hand
+        "filename": "nenneke",
+        "count": "1",
+        "quote": "Few know more about healing than Nenneke.",
+        "sound":"", //Find and download / add sound to this new card
+    },
     "ntr_ciri_target": {
         "name": "Cirilla Fiona Elen Riannon",
         "deck": "neutral",
         "row": "close",
         "strength": "5",
-        "ability": "hero",//TARGET CHOICE ABILITY1 chose and destroy 1 your unit, then draw 3 random cards from your deck, play 1, return other 2 to your deck.
+        "ability": "hero",//TARGET CHOICE ABILITY1 chose and destroy 1 your unit, then draw 3 random cards from your deck, play 1, return other 2 to your deck. 
         "filename": "ciri_target",
         "count": "1",
         "quote": "Know when fairy tales cease to be tales? When people start believing in them.",
         "sound": "32 Ciri_TARGET Ho-ho, I sense trouble..ogg",
+    },
+    "ntr_regis_reveal": {
+        "name": "Regis Reveal",
+        "deck": "neutral",
+        "row": "siege",
+        "strength": "4",
+        "ability": "",//ABILITY1 reveal 2 cards in your opponents hand 
+        "filename": "regis_reveal",
+        "count": "1",
+        "quote": "Anything in particular interest you?",
+        "sound": "9 Regis_REVEAL Anything in particular interest you.ogg",        
     },
     "ntr_zoltan_target": {
         "name": "Zoltan Target",
@@ -635,6 +657,17 @@ var default_cards = {
         "row": "ranged",
         "strength": "12",
         "ability": "hero",
+        "filename": "philippa",
+        "count": "1",
+        "quote": "Soon the power of kings will wither, and the Lodge shall seize its rightful place.",
+        "sound": "Philippa_Eilhart_You do not deserve to live.ogg",
+    },
+    "nr_philippa_mastermage": {
+        "name": "Philippa Master Mage",
+        "deck": "realms",
+        "row": "ranged",
+        "strength": "7",
+        "ability": "hero", //ABILITY1 move any two units from any graveyard to the other OR move any two units from any graveyard back to owners deck
         "filename": "philippa",
         "count": "1",
         "quote": "Soon the power of kings will wither, and the Lodge shall seize its rightful place.",
@@ -6548,16 +6581,6 @@ var ext_wu_cards = {
         "count": "1",
         "quote": "War's not so horrific when you put a catchy tune to it."
     },
-    "wu_nenneke": {
-        "name": "Nenneke",
-        "deck": "witcher_universe",
-        "row": "siege",
-        "strength": "1",
-        "ability": "medic",
-        "filename": "nenneke",
-        "count": "1",
-        "quote": "Few know more about healing than Nenneke."
-    },
     "wu_roach": {
         "name": "Roach",
         "deck": "witcher_universe",
@@ -9164,15 +9187,16 @@ var ext_ze_cards = {
         "count": "1",
         "quote": "Fierce deity of fire and warm sky, it is believed to be the polar opposite of Baal-Zebuth."
     },
-    "ze_villentretenmerth": {
-        "name": "Villentretenmerth",
-        "deck": "zerrikania",
-        "row": "close",
-        "strength": "9",
-        "ability": "whorshipped",
+    "ntr_villentretenmerth": { //Bork
+        "name": "Bork Fire Dragon",
+        "deck": "neutral",
+        "row": "siege",
+        "strength": "6",
+        "ability": "", //ABILITY1 scorch weakest unit(s) on the entire board
         "filename": "villentretenmerth",
         "count": "1",
-        "quote": "Also calls himself Borkh Three Jackdaws... he's not the best at names."
+        "quote": "Also calls himself Borkh Three Jackdaws... he's not the best at names.",
+        "sound":"19 Bork.mp3",
     },
     "ze_myrgtabrakke": {
         "name": "Myrgtabrakke",
