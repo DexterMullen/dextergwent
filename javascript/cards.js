@@ -626,7 +626,8 @@ var default_cards = {
         "ability": "hero", //ABILITY1 Target any unit on entire board and turn it into jade figurine (jade figurine should be sumoner pile like cow and bowing defence)
         "filename": "keira",
         "count": "1",
-        "quote": "If I'm to die today, I wish to look smashing for the occasion."
+        "quote": "If I'm to die today, I wish to look smashing for the occasion.",
+        "sound": "Keira_Metz_I don’t like men who turn me down.ogg",
     },
     "nr_philippa": {
         "name": "Philippa Eilhart",
