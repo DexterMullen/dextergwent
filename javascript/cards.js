@@ -578,12 +578,12 @@ var default_cards = {
     "nr_sheldon": {
         "name": "Sheldon Skaggs",
         "deck": "realms",
-        "row": "ranged",
-        "strength": "4",
+        "row": "siege",
+        "strength": "3",
         "ability": "",
         "filename": "sheldon",
         "count": "1",
-        "quote": "I was there, on the front lines! Right where the fightin' was the thickest!",
+        "quote": "AARD ABILITY1 I was there, on the front lines! Right where the fightin' was the thickest!",
         "sound":"Sheldon_Skaggs_Aye, aye, soon as I finish my pint.ogg",
 
     },
@@ -3546,12 +3546,13 @@ var ext_nr_cards = {
     "nr_shani": {
         "name": "Shani",
         "deck": "realms",
-        "row": "agile",
-        "strength": "2",
-        "ability": "medic",
+        "row": "close",
+        "strength": "8",
+        "ability": "hero",
         "filename": "shani",
         "count": "1",
-        "quote": "I'm a medic. I tend to know what I'm doing when I prescribe something."
+        "quote": "REVEAL ABILITY1 I'm a medic. I tend to know what I'm doing when I prescribe something.",
+        "sound": "Shani_It’s war. Severed limbs, blood and guts.ogg",
     },
     "nr_milo_vanderbeck": {
         "name": "Milo Vanderbeck",
