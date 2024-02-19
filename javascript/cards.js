@@ -4748,28 +4748,17 @@ var ext_st_cards = {
         "filename": "aelirenn",
         "count": "1",
         "quote": "Was also known as the White Rose of Shaerrawedd."
-    },
-    "sc_saesenthessis_saskia": {
-        "name": "Saesenthessis: Saskia",
-        "deck": "scoiatael",
-        "row": "siege",
-        "strength": "15",
-        "ability": "hero avenger",
-        "filename": "saesenthessis_saskia",
-        "count": "1",
-        "target": "sc_saesenthessis_dragon",
-        "quote": "Beautiful, pure, fierce... the perfect icon for a rebellion.",//ABILITY1 goes to opponents hand when round ends, if you win the round.
-        "sound":"30 saskia dragon form.mp3",
-    },
+    },   
     "sc_saesenthessis_dragon": {
         "name": "Saesenthessis: Dragon",
-        "deck": "scoiatael",
-        "row": "close",
-        "strength": "11",
-        "ability": "hero",
+        "deck": "neutral",
+        "row": "siege",
+        "strength": "15",
+        "ability": "hero",//ABILITY1 goes to opponents hand when round ends, if you win the round.
         "filename": "saesenthessis_dragon",
         "count": "1",
-        "quote": "I care not for kings and their titles. In the east lives one who truly deserves a crown."
+        "quote": "I care not for kings and their titles. In the east lives one who truly deserves a crown.",
+        "sound":"30 saskia dragon form.mp3",
     },
     "sc_neophyte": {
         "name": "Commando Neophyte",
