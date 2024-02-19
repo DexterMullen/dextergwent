@@ -2653,8 +2653,8 @@ var ext_nr_cards = {
         "name": "Henselt",
         "deck": "realms",
         "row": "siege",
-        "strength": "10",
-        "ability": "hero",
+        "strength": "8",
+        "ability": "",
         "filename": "henselt",
         "count": "1",
         "quote": "King Henselt did not look like a thief, but, with all due respect, that's really what he was."
@@ -2670,25 +2670,13 @@ var ext_nr_cards = {
         "quote": "Sound the retreat! Regroup! And wait for reinforcements!"
     },
     "nr_reinforced_ballista_1": {
-        "name": "Reinforced Ballista",
+        "name": "Reinforced Ballista", //redenian mage solider from PRINTED deck
         "id": 1,
         "deck": "realms",
         "row": "siege",
-        "strength": "4",
-        "ability": "bond",
+        "strength": "5",
+        "ability": "",
         "filename": "reinforced_ballista_1",
-        "count": "1",
-        "target": "nr_reinforced_ballista",
-        "quote": "Never manages to hit the same place twice, which might constitute a real problem."
-    },
-    "nr_reinforced_ballista_2": {
-        "name": "Reinforced Ballista",
-        "id": 2,
-        "deck": "realms",
-        "row": "siege",
-        "strength": "4",
-        "ability": "bond",
-        "filename": "reinforced_ballista_2",
         "count": "1",
         "target": "nr_reinforced_ballista",
         "quote": "Never manages to hit the same place twice, which might constitute a real problem."
@@ -3446,7 +3434,7 @@ var ext_nr_cards = {
         "quote": "The latest rage in assaults on walled cities."
     },
     "nr_battering_ram": {
-        "name": "Battering Ram",
+        "name": "Battering Ram", //rouch from PRINTED deck
         "deck": "realms",
         "row": "siege",
         "strength": "6",
