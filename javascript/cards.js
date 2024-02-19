@@ -50,6 +50,17 @@ var default_cards = {
         "filename": "ciri_target",
         "count": "1",
         "quote": "TARGET CHOICE ABILITY1 Know when fairy tales cease to be tales? When people start believing in them.",
+        "sound": "32 Ciri_TARGET Ho-ho, I sense trouble..ogg",
+    },
+    "ntr_ciri_return": {
+        "name": "Cirilla Fiona Elen Riannon",
+        "deck": "neutral",
+        "row": "siege",
+        "strength": "6",
+        "ability": "",
+        "filename": "ciri_return",
+        "count": "1",
+        "quote": "RETURN ON LOSS ABILITY1 Know when fairy tales cease to be tales? When people start believing in them.",
         "sound": "2 Ciri_RETURN Yield and save me some time!.ogg",
     },
     "spe_clear": {
