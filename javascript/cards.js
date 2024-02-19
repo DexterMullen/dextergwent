@@ -41,6 +41,17 @@ var default_cards = {
         "quote": "Know when fairy tales cease to be tales? When people start believing in them.",
         "sound": "42 Ciri_GOLD 15 You’ve talked enough..ogg",
     },
+    "ntr_caretaker": {
+        "name": "Caretaker",
+        "deck": "neutral",
+        "row": "ranged",
+        "strength": "1",
+        "ability": "",//ABILITY Draw X amount of random cards from opponents graeyard, play 1 return others to opponents graveyard.
+        "filename": "caretaker",
+        "count": "1",
+        "quote": "There are more things in heaven and earth than all the world's philosophers have dreamt.",
+        "sound": "20 Caretaker_Resistance is futile..ogg",
+    },
     "ntr_caed_myrkvid_druid_1": { //Aeromancy
         "name": "Aeromancy",
         "id": 1,
@@ -240,9 +251,9 @@ var default_cards = {
     "ntr_villen": { //geralnt IGNI
         "name": "Geralt Igni",
         "deck": "neutral",
-        "row": "close",
-        "strength": "7",
-        "ability": "hero scorch_c",
+        "row": "close", // should be mobile
+        "strength": "5",
+        "ability": "hero scorch_c", //ABILITY1 row scorch on the opposite row if value is 15 or more
         "filename": "villen",
         "count": "1",
         "quote": "Burn!",
