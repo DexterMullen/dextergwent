@@ -91,7 +91,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "ranged",
         "strength": "0",
-        "ability": "hero", //ABILITY1 must reveal 1 card in your hand, then play any weather card from your deck(clear weather efect only)
+        "ability": "hero anyweather", //ABILITY1 must reveal 1 card in your hand, then play any weather card from your deck(clear weather efect only)
         "filename": "caed_myrkvid_druid_1",
         "count": "1",
         "target": "to_caed_myrkvid_druid",

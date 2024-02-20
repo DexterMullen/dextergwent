@@ -420,6 +420,36 @@ var ability_dict = {
 			};
 		}
 	},
+	anyweather: {
+		anyweather: "anyweather",
+		description: "Pick any weather card from your deck and play it instantly.",
+		placed: async card => {
+			let deck = board.getRow(card, "deck", card.holder);
+			if (card.holder.controller instanceof ControllerAI) await ability_dict["anyweather"].helper(card).card.autoplay(card.holder.deck);
+			else {
+				try {
+					Carousel.curr.cancel();
+				} catch (err) { }
+				await ui.queueCarousel(deck, 1, (c,i) => board.toWeather(c.cards[i], deck), c => c.faction === "weather", true);
+			}
+		},
+		weight: (card, ai, max) => ability_dict["anyweather"].helper(card).weight,
+		helper: card => {
+			let weather = card.holder.deck.cards.filter(c => c.row === "weather").reduce((a,c) => a.map(c => c.name).includes(c.name) ? a : a.concat([c]), []);
+			let out, weight = -1;
+			weather.forEach(c => {
+				let w = card.holder.controller.weightWeatherFromDeck(c, c.abilities[0]);
+				if (w > weight) {
+					weight = w;
+					out = c;
+				}
+			});
+			return {
+				card: out,
+				weight: weight
+			};
+		}
+	},
 	eredin_treacherous: {
 		description: "Doubles the strength of all spy cards (affects both players).",
 		gameStart: () => game.spyPowerMult = 2
