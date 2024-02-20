@@ -95,7 +95,7 @@ var default_cards = {
         "filename": "caed_myrkvid_druid_1",
         "count": "1",
         "target": "to_caed_myrkvid_druid",
-        "quote": "We fled here to escape people such as you.",
+        "quote": "Play FROST or FOG or RAIN or Clear Skies from your deck",//original quote "We fled here to escape people such as you." return it once we have proper icon and ability description
         "sound": "35 AEROMANCY_ Keep close! My magic shall protect you.ogg",
     },
     "nr_avalah_cursed": {
@@ -827,7 +827,7 @@ var default_cards = {
         "ability": "hero", //ABILITY1 play fog from your deck
         "filename": "sabrina",
         "count": "1",
-        "quote": "The Daughter of the Kaedweni Wilderness.",
+        "quote": "Play FOG from your deck",//original quote "The Daughter of the Kaedweni Wilderness."
         "sound":"Sabrina_Glevissig_Battles are won or lost by the commanders, not by sorceresses.ogg",
     },
     "nr_vernon": {
@@ -860,7 +860,7 @@ var default_cards = {
         "ability": "hero play_frost",//ABILITY1 play frost from your deck ADD frost icon to this card!
         "filename": "yarpen",
         "count": "1",
-        "quote": "ABILITY1 play frost from your deck The world belongs to whoever's best at crackin' skulls and impregnatin' lasses.",
+        "quote": "Play FROST from your deck",//"The world belongs to whoever's best at crackin' skulls and impregnatin' lasses."
         "sound":"7 Nausica calvary rider Off to the front yet again.ogg", //just a test sound get a proper one
     },
     "nr_trebuchet": {
@@ -1557,12 +1557,12 @@ var default_cards = {
     "mo_fogling": {
         "name": "Foglet",
         "deck": "monsters",
-        "row": "close",
-        "strength": "2",
+        "row": "ranged",
+        "strength": "1",
         "ability": "hero play_fog",//ABILITY1 play fog from your deck ADD ability fog icon to this card
         "filename": "fogling",
         "count": "1",
-        "quote": "Fog creeps on little cat feet. Foglets creep over the bodies of their victims.",
+        "quote": "Play FOG from your deck",//Fog creeps on little cat feet. Foglets creep over the bodies of their victims.
         "sound":"Foglet.WAV",
     },
     "mo_forktail": {
@@ -1638,14 +1638,14 @@ var default_cards = {
         "sound":"ghouls.WAV",
     },
     "mo_gravehag": {
-        "name": "Grave Hag",
+        "name": "water Hag",
         "deck": "monsters",
-        "row": "ranged",
-        "strength": "5",
-        "ability": "",
+        "row": "siege",
+        "strength": "1",
+        "ability": "hero play_rain",
         "filename": "gravehag",
         "count": "1",
-        "quote": "Their long tongues're for slurping marrow - and whipping prey.",
+        "quote": "Play RAIN from your deck",//Their long tongues're for slurping marrow - and whipping prey.
         "sound":"water hag.mp3",
     },
     "mo_gryffin": {
@@ -2870,7 +2870,7 @@ var ext_nr_cards = {
         "ability": "hero play_rain", //ABILITY1 play rain from your deck !! ADD radin ability icon to this card
         "filename": "ban_ard_tutor",
         "count": "1",
-        "quote": "Ban Ard deserved a mention, for it is famous for the school of young adepts of the magical arts.",
+        "quote": "Play RAIN from your deck",//Ban Ard deserved a mention, for it is famous for the school of young adepts of the magical arts.
         "sound":"",
     },
     "nr_demavend": {
@@ -4787,15 +4787,16 @@ var ext_mo_cards = {
         "count": "1",
         "quote": "Those seduced by her charms find themselves willing to pay any price."
     },
-    "mo_moonlight": {
-        "name": "Moonlight",
+    "mo_moonlight": { //wild hund frost houd
+        "name": "Frost Hound of the Wild Hunt",
         "deck": "monsters",
-        "row": "agile",
-        "strength": "2",
-        "ability": "scorch_c",
+        "row": "close",
+        "strength": "1",
+        "ability": "hero play_frost",//ability1 add frost icon for this card
         "filename": "moonlight",
         "count": "1",
-        "quote": "When the moon is full, nightmares crawl out of the dark nooks and crannies of the world."
+        "quote": "Play FROST from your deck",//remove this once we have ability and icon description
+        "sound": "",
     },
     "mo_dagon": {
         "name": "Dagon",
