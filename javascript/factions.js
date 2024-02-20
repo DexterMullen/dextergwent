@@ -16,7 +16,7 @@ var factions = {
 	},
 	nilfgaard: {
 		name: "Nilfgaardian Empire",
-		description: "Wins any round that ends in a draw.",
+		description: "Wins any round that ends in a draw.", //ability1 this needs to be programed and changed to "After every round (if you chosee to) you can swap a card from your hand with random card from your deck"
 		activeAbility: false,
 		abilityUses: 0
 	},
@@ -36,7 +36,7 @@ var factions = {
 			});
 			return false;
 		}),
-		description: "Keeps a random Unit Card out after each round.",
+		description: "Keeps a random Unit Card out after each round.", //ability1 this nees to override all other card abilities like cow and ciri return
 		activeAbility: false,
 		abilityUses: 0
 	},
