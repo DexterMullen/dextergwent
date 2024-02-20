@@ -136,7 +136,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "siege",
         "strength": "4",
-        "ability": "",//ABILITY1 reveal 2 cards in your opponents hand 
+        "ability": "reveal3",//ABILITY1 reveal 2 cards in your opponents hand 
         "filename": "regis_reveal",
         "count": "1",
         "quote": "Anything in particular interest you?",
@@ -1559,7 +1559,7 @@ var default_cards = {
         "deck": "monsters",
         "row": "close",
         "strength": "2",
-        "ability": "emhyr_imperiall",
+        "ability": "hero play_fog",//ABILITY1 play fog from your deck ADD ability fog icon to this card
         "filename": "fogling",
         "count": "1",
         "quote": "Fog creeps on little cat feet. Foglets creep over the bodies of their victims.",

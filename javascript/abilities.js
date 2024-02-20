@@ -275,9 +275,35 @@ var ability_dict = {
 		},
 		weight: (card, ai) => ai.weightWeatherFromDeck(card, "rain")
 	},
+	play_fog: { // ABILITY1 Play frost from your deck
+		play_fog: "play_fog",
+		description: "Pick a Biting Frost card from your deck and play it instantly.",
+		placed: async card => {
+			let out = card.holder.deck.findCard(c => c.name === "Impenetrable Fog");
+			if (out) await out.autoplay(card.holder.deck);
+		},
+		weight: (card, ai) => ai.weightWeatherFromDeck(card, "rain")
+	},
 	emhyr_emperor: {
 		description: "Look at 3 random cards from your opponent's hand.",
 		activated: async card => {
+			if (card.holder.controller instanceof ControllerAI) return;
+			let container = new CardContainer();
+			container.cards = card.holder.opponent().hand.findCardsRandom(() => true, 3);
+			try {
+				Carousel.curr.cancel();
+			} catch (err) {}
+			await ui.viewCardsInContainer(container);
+		},
+		weight: card => {
+			let count = card.holder.opponent().hand.cards.length;
+			return count === 0 ? 0 : Math.max(10, 10 * (8 - count));
+		}
+	},
+	reveal3: {
+		reveal3: "reveal3",
+		description: "Look at 3 random cards from your opponent's hand.",
+		placed: async card => {
 			if (card.holder.controller instanceof ControllerAI) return;
 			let container = new CardContainer();
 			container.cards = card.holder.opponent().hand.findCardsRandom(() => true, 3);
