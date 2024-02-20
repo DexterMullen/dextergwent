@@ -106,7 +106,7 @@ var default_cards = {
         "ability": "hero spy",// ABILITY1 new spy, draw 2 random cards from your deck, 1 face up 1 face down, chose and take 1 to your hand return the other to your deck
         "filename": "avalah_cursed",
         "count": "1",
-        "quote": "Curses can be lifted",
+        "quote": "Appearances can be deceiving",
         "sound": "29 Avallac'h_11 SPY Appearances can be deceiving.ogg",
     },
     "nr_nenneke": {
@@ -128,7 +128,7 @@ var default_cards = {
         "ability": "hero",//TARGET CHOICE ABILITY1 chose and destroy 1 your unit, then draw 3 random cards from your deck, play 1, return other 2 to your deck. 
         "filename": "ciri_target",
         "count": "1",
-        "quote": "Know when fairy tales cease to be tales? When people start believing in them.",
+        "quote": "Ho-ho, I sense trouble..",
         "sound": "32 Ciri_TARGET Ho-ho, I sense trouble..ogg",
     },
     "ntr_regis_reveal": {
@@ -150,7 +150,7 @@ var default_cards = {
         "ability": "hero",//TARGET CHOICE ABILITY1 chose and target any unit on your side of the board, then play any unit of your choice from your eck that has the same value/strenght as your targeted card
         "filename": "zoltan_target",
         "count": "1",
-        "quote": "Help is on the way!",
+        "quote": "Come to pappy!",
         "sound": "33 Zoltan_TARGET Come to pappy.ogg",
     },
     "ntr_golem_special": {
@@ -161,7 +161,7 @@ var default_cards = {
         "ability": "hero",//special ABILITY1 play any special (non weather card) from your deck
         "filename": "golem_special",
         "count": "1",
-        "quote": "Rise Rise!",
+        "quote": "I exist, because master Dearhenna wills it so!",
         "sound": "39 Magic golem_ I exist, because master Dearhenna wills it so.ogg",
     },
     "ntr_ciri_return": {
@@ -172,7 +172,7 @@ var default_cards = {
         "ability": "", //RETURN ON LOSS ABILITY1 goes back to your hand if you lost the round, on win or draw goes back to your graveyard
         "filename": "ciri_return",
         "count": "1",
-        "quote": "Know when fairy tales cease to be tales? When people start believing in them.",
+        "quote": "Yield and save me some time!",
         "sound": "2 Ciri_RETURN Yield and save me some time!.ogg",
     },
     "spe_clear": {
@@ -214,7 +214,7 @@ var default_cards = {
         "ability": "", //ABILITY1 play any special card from your hand, then draw random card from your deck to hand
         "filename": "emiel",
         "count": "1",
-        "quote": "Men, the polites ones at least, would call me a monster. A blood-drinking freak.",
+        "quote": "Your powers of deduction seem to have waned not one bit.",
         "sound": "31 Regis_SPECIAL Your powers of deduction seem to have waned not one bit..ogg",
     },
     "ntr_geralt": {
