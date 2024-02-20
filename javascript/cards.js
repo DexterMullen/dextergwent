@@ -987,8 +987,8 @@ var default_cards = {
         "name": "Cynthia",
         "deck": "nilfgaard",
         "row": "ranged",
-        "strength": "4",
-        "ability": "",
+        "strength": "1",
+        "ability": "hero play_fog",//ability1 add icon for this card
         "filename": "cynthia",
         "count": "1",
         "quote": "Cynthia's talents can be deadly. She needs a tight leash."
@@ -1170,9 +1170,9 @@ var default_cards = {
     "ne_rainfarn": {
         "name": "Rainfarn",
         "deck": "nilfgaard",
-        "row": "close",
-        "strength": "4",
-        "ability": "",
+        "row": "siege",
+        "strength": "1",
+        "ability": "hero play_rain",//add icon for this ability to the card
         "filename": "rainfarn",
         "count": "1",
         "quote": "You'll die as painfully as the pathetic traitor Windhalm did."
@@ -1261,9 +1261,9 @@ var default_cards = {
     "ne_vanhemar": {
         "name": "Vanhemar",
         "deck": "nilfgaard",
-        "row": "ranged",
-        "strength": "4",
-        "ability": "",
+        "row": "close",
+        "strength": "1",
+        "ability": "hero play_frost",//ability1 add icon
         "filename": "vanhemar",
         "count": "1",
         "quote": "For a fire mage, he's not very... flamboyant."
@@ -4112,10 +4112,10 @@ var ext_ne_cards = {
         "deck": "nilfgaard",
         "row": "close",
         "strength": "8",
-        "ability": "hero playunit_drawcard",//ABILITY1 play unit from your hand, then draw random card from deck to hand !! add icon for this ablity to the card
+        "ability": "hero playunit_drawcard",//ABILITY1 play a unit from your hand, then draw random card from deck to hand !! add icon for this ablity to the card
         "filename": "cantarella",
         "count": "1",
-        "quote": "Men require constant alluring. Mystique and refinement do the job quite well."
+        "quote": "play a unit from your hand, then draw random card from deck to hand."//Men require constant alluring. Mystique and refinement do the job quite well
     },
     "ne_treason": {
         "name": "Treason",
@@ -4747,16 +4747,18 @@ var ext_mo_cards = {
         "count": "1",
         "quote": "He saw their weapons – short spears with wide tips."
     },
+    /*
     "mo_caretaker": {
         "name": "Caretaker",
         "deck": "monsters",
         "row": "close",
         "strength": "5",
-        "ability": "scorch",
+        "ability": "",
         "filename": "caretaker",
         "count": "1",
         "quote": "There are more things in heaven and earth than all the world's philosophers have dreamt."
     },
+    */
     "mo_lubberkin": {
         "name": "Lubberkin",
         "deck": "monsters",

@@ -552,9 +552,9 @@ var ability_dict = {
 			return 15;
 		}
 	},
-	playunit_drawcard: {
+	playunit_drawcard: { //cantarela from nilfgard card
 		playunit_drawcard: "playunit_drawcard",
-		description: "Play a unit then draw a card from you deck.",
+		description: "Play a unit then draw a random card from you deck.",
 		placed: async card => {
 			let units = card.holder.hand.cards.filter(c => c.isUnit());
 			if (units.length === 0) return;
@@ -572,7 +572,7 @@ var ability_dict = {
 			if (units.length === 0) return 0;
 			return 15;
 		}
-	},
+	},	
 	fake_ciri: {
 		description: "Discard a card from your hand and then draw two cards from your deck.",
 		activated: async card => {
