@@ -302,7 +302,7 @@ var ability_dict = {
 	},
 	reveal3: {
 		reveal3: "reveal3",
-		description: "Look at 3 random cards from your opponent's hand.",
+		description: "Permanantly reveal 3 random cards from your opponent's hand.",
 		placed: async card => {
 			if (card.holder.controller instanceof ControllerAI) return;
 			let container = new CardContainer();
@@ -535,6 +535,27 @@ var ability_dict = {
 	queen_calanthe: {
 		description: "Play a unit then draw a card from you deck.",
 		activated: async card => {
+			let units = card.holder.hand.cards.filter(c => c.isUnit());
+			if (units.length === 0) return;
+			let wrapper = {
+				card: null
+			};
+			if (card.holder.controller instanceof ControllerAI) wrapper.card = units[randomInt(units.length)];
+			else await ui.queueCarousel(board.getRow(card, "hand", card.holder), 1, (c, i) => wrapper.card = c.cards[i], c => c.isUnit(), true);
+			wrapper.card.autoplay();
+			card.holder.hand.removeCard(wrapper.card);
+			if (card.holder.deck.cards.length > 0) await card.holder.deck.draw(card.holder.hand);
+		},
+		weight: (card, ai) => {
+			let units = card.holder.hand.cards.filter(c => c.isUnit());
+			if (units.length === 0) return 0;
+			return 15;
+		}
+	},
+	playunit_drawcard: {
+		playunit_drawcard: "playunit_drawcard",
+		description: "Play a unit then draw a card from you deck.",
+		placed: async card => {
 			let units = card.holder.hand.cards.filter(c => c.isUnit());
 			if (units.length === 0) return;
 			let wrapper = {
@@ -799,7 +820,7 @@ var ability_dict = {
 		weight: (card, ai) => ai.weightCard(card_dict["spe_clear"])
 	},
 	anna_henrietta_duchess: {
-		description: "Destroy one Commander's Horn in any opponent's row of your choice.",
+		description: "Destroy one Commander's Horn in any opponent's row of your choice.", //@ability1 this can be used for commandrs horn second option, once we have chose to play it or remove opponents
 		activated: (card, player) => {
 			player.endTurnAfterAbilityUse = false;
 			ui.showPreviewVisuals(card);
@@ -902,7 +923,7 @@ var ability_dict = {
 		}
 	},
 	cyprian_wiley: {
-		description: "Seize the unit(s) with the lowest strength of the opponents melee row.",
+		description: "Seize the unit(s) with the lowest strength of the opponents melee row.",//ability1 this can be used for sucubus to steal unit but one more condition, 6 curent power or less, and no commanders horn units
 		activated: async card => {
 			let opCloseRow = board.getRow(card, "close", card.holder.opponent());
 			let meCloseRow = board.getRow(card, "close", card.holder);
@@ -979,7 +1000,7 @@ var ability_dict = {
 		description: "Amount of worshippers boost is doubled.",
 		gameStart: () => game.whorshipBoost *= 2
 	},
-	baal_zebuth: {
+	baal_zebuth: { //ability we need this for printed card we have but also one more option for you or opponents graveyard
 		description: "Select 2 cards from your opponent's discard pile and shuffle them back into his/her deck.",
 		activated: async (card) => {
 			let grave = card.holder.opponent().grave;

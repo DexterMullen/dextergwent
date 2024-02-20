@@ -4111,8 +4111,8 @@ var ext_ne_cards = {
         "name": "Cantarella",
         "deck": "nilfgaard",
         "row": "close",
-        "strength": "10",
-        "ability": "hero spy",
+        "strength": "8",
+        "ability": "hero playunit_drawcard",//ABILITY1 play unit from your hand, then draw random card from deck to hand !! add icon for this ablity to the card
         "filename": "cantarella",
         "count": "1",
         "quote": "Men require constant alluring. Mystique and refinement do the job quite well."
