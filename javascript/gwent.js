@@ -1717,7 +1717,7 @@ class Board {
 	}
 
 	async toRow(card, source) {
-		let row = (card.row === "agile") ? "close" : card.row ? card.row : "close";
+		let row = (card.row === "agile" || card.row === "agile_close_siege" || card.row === "agile_ranged_siege") ? "close" : card.row ? card.row : "close";
 		await this.moveTo(card, row, source);
 	}
 
@@ -2100,10 +2100,20 @@ class Card {
 		else if (this.abilities.length > 0) {
 			this.desc_name = ability_dict[this.abilities[this.abilities.length - 1]].name;
 			if (this.abilities.length > 1) this.desc_name += " / " + ability_dict[this.abilities[this.abilities.length - 2]].name;
-		} else if (this.row === "agile") this.desc_name = "Agile";
-		else if (this.hero) this.desc_name = "Hero";
-		else this.desc_name = "";
-		this.desc = this.row === "agile" ? "<p><b>Agile:</b> " + ability_dict["agile"].description + "</p>" : "";
+		} else if (this.row === "agile") {
+			this.desc_name = "Agile"
+			this.desc = "<p><b>Agile:</b> " + ability_dict["agile"].description + "</p>"
+		} else if (this.row === "agile_close_siege") {
+			this.desc_name = "Agile - Close and Siege"
+			this.desc = "<p><b>Agile:</b> " + ability_dict["agile_close_siege"].description + "</p>"
+		} else if (this.row === "agile_ranged_siege") {
+			this.desc_name = "Agile - Ranged and Siege"
+			this.desc = "<p><b>Agile:</b> " + ability_dict["agile_ranged_siege"].description + "</p>"
+		} else if (this.hero) this.desc_name = "Hero";
+		else {
+			this.desc_name = ""
+			this.desc = ""
+		}
 		for (let i = this.abilities.length - 1; i >= 0; --i) {
 			let abi_name = (ability_dict[this.abilities[i]].name ? ability_dict[this.abilities[i]].name : "Leader Ability");
 			this.desc += "<p><b>" + abi_name + ":</b> " + ability_dict[this.abilities[i]].description + "</p>";
@@ -2182,7 +2192,7 @@ class Card {
 	}
 
 	isUnit() {
-		return !this.hero && (this.row === "close" || this.row === "ranged" || this.row === "siege" || this.row === "agile");
+		return !this.hero && (this.row === "close" || this.row === "ranged" || this.row === "siege" || this.row === "agile" || this.row === "agile_close_siege" || this.row === "agile_ranged_siege");
 	}
 
 	isSpecial() {
@@ -2228,7 +2238,7 @@ class Card {
 		power.style.backgroundImage = iconURL(bg);
 		let row = document.createElement("div");
 		elem.appendChild(row);
-		if (card.row === "close" || card.row === "ranged" || card.row === "siege" || card.row === "agile") {
+		if (card.row === "close" || card.row === "ranged" || card.row === "siege" || card.row === "agile" || card.row === "agile_close_siege" || card.row === "agile_ranged_siege") {
 			let num = document.createElement("div");
 			num.appendChild(document.createTextNode(card.basePower));
 			num.classList.add("center");
@@ -2245,6 +2255,8 @@ class Card {
 			else if (str === "shield_c" || str == "shield_r" || str === "shield_s") str = "shield";
 			abi.style.backgroundImage = iconURL("card_ability_" + str);
 		} else if (card.row === "agile") abi.style.backgroundImage = iconURL("card_ability_agile");
+		else if (card.row === "agile_close_siege") abi.style.backgroundImage = iconURL("card_ability_agile_close_siege");
+		else if (card.row === "agile_ranged_siege") abi.style.backgroundImage = iconURL("card_ability_agile_ranged_siege");
 		if (card.abilities.length > 1) {
 			let abi2 = document.createElement("div");
 			abi2.classList.add("card-ability-2");
@@ -2532,15 +2544,28 @@ class UI {
 	}
 
 	setDescription(card, desc) {
-		if (card.hero || card.row === "agile" || card.abilities.length > 0 || card.faction === "faction") {
+		if (card.hero || card.row === "agile" || card.row === "agile_close_siege" || card.row === "agile_ranged_siege" || card.abilities.length > 0 || card.faction === "faction") {
 			desc.classList.remove("hide");
-			let str = card.row === "agile" ? "agile" : "";
+			let str = ""
+			switch(card.row) {
+				case "agile":
+					str = "agile"
+					break;
+				case "agile_close_siege":
+					str = "agile_close_siege"
+					break;
+				case "agile_ranged_siege":
+					str = "agile_ranged_siege"
+					break;
+				default:
+					str = ""
+			}
 			if (card.abilities.length) str = card.abilities[card.abilities.length - 1];
 			if (str === "cerys") str = "muster";
 			if (str.startsWith("avenger")) str = "avenger";
 			if (str === "scorch_c" || str == "scorch_r" || str === "scorch_s") str = "scorch_combat";
 			else if (str === "shield_c" || str == "shield_r" || str === "shield_s") str = "shield";
-			if (card.faction === "faction" || card.abilities.length === 0 && card.row !== "agile") desc.children[0].style.backgroundImage = "";
+			if (card.faction === "faction" || card.abilities.length === 0 && (card.row !== "agile" && card.row !== "agile_close_siege" && card.row !== "agile_ranged_siege")) desc.children[0].style.backgroundImage = "";
 			else if (card.row === "leader") desc.children[0].style.backgroundImage = iconURL("deck_shield_" + card.faction);
 			else desc.children[0].style.backgroundImage = iconURL("card_ability_" + str);
 			desc.children[1].innerHTML = card.desc_name;
@@ -2771,7 +2796,7 @@ class UI {
 					r.elem.classList.remove("card-selectable");
 				} else {
 					if (card.abilities.includes("decoy") && card.row.length > 0) {
-						if ((card.row === "close" && i === 3) || (card.row === "ranged" && i === 4) || (card.row === "siege" && i === 5) || (card.row === "agile" && i > 2 && i < 5)) {
+						if ((card.row === "close" && i === 3) || (card.row === "ranged" && i === 4) || (card.row === "siege" && i === 5) || (card.row === "agile" && i > 2 && i < 5) || (card.row === "agile_close_siege" && (i === 3 || i === 5)) || (card.row === "agile_ranged_siege" && i > 3 && i < 6)) {
 							r.elem.classList.add("row-selectable");
 							if (units.length === 0) r.elem.classList.remove("noclick");
 							alteraClicavel(r, true);
@@ -2832,7 +2857,22 @@ class UI {
 			}
 			return;
 		}
-		let currRows = card.row === "agile" ? [board.getRow(card, "close", card.holder), board.getRow(card, "ranged", card.holder)] : [board.getRow(card, card.row, card.holder)];
+		let currRows = ''
+
+			switch (card.row) {
+				case "agile":
+					currRows = [board.getRow(card, "close", card.holder), board.getRow(card, "ranged", card.holder)];
+					break;
+				case "agile_close_siege":
+					currRows = [board.getRow(card, "close", card.holder), board.getRow(card, "siege", card.holder)]; 
+					break;
+				case "agile_ranged_siege":
+					currRows = [board.getRow(card, "ranged", card.holder), board.getRow(card, "siege", card.holder)]; 
+					break;
+				default: 
+					currRows = [board.getRow(card, card.row, card.holder)];
+			}
+
 		for (let i = 0; i < 6; i++) {
 			let row = board.row[i];
 			if (currRows.includes(row)) {
@@ -3738,7 +3778,7 @@ function getPreviewElem(elem, card, nb = 0) {
 	let row = document.createElement("div");
 	row.classList.add("card-large-row");
 	elem.appendChild(row);
-	if (card.row === "close" || card.row === "ranged" || card.row === "siege" || card.row === "agile") {
+	if (card.row === "close" || card.row === "ranged" || card.row === "siege" || card.row === "agile" || card.row === "agile_close_siege" || card.row === "agile_ranged_siege") {
 		let num = document.createElement("div");
 		if ("strength" in card) num.appendChild(document.createTextNode(card.strength));
 		else num.appendChild(document.createTextNode(card.basePower));
@@ -3758,6 +3798,8 @@ function getPreviewElem(elem, card, nb = 0) {
 			else if (str === "shield_c" || str == "shield_r" || str === "shield_s") str = "shield";
 			abi.style.backgroundImage = iconURL("card_ability_" + str);
 		} else if (card.row === "agile") abi.style.backgroundImage = iconURL("card_ability_agile");
+		else if (card.row === "agile_close_siege") abi.style.backgroundImage = iconURL("card_ability_agile_close_siege");
+		else if (card.row === "agile_ranged_siege") abi.style.backgroundImage = iconURL("card_ability_agile_ranged_siege");
 		if ((c_abilities.length > 1 && !(c_abilities[0] === "hero")) || (c_abilities.length > 2 && c_abilities[0] === "hero")) {
 			let abi2 = document.createElement("div");
 			abi2.classList.add("card-large-ability-2");

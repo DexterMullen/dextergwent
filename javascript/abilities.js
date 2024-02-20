@@ -90,6 +90,14 @@ var ability_dict = {
 		name:"Agile", 
 		description: "Can be placed in either the Close Combat or the Ranged Combat row. Cannot be moved once placed. "
 	},
+	agile_close_siege: {
+		name:"Agile - Close and Siege", 
+		description: "Can be placed in either the Close Combat or the Siege Combat row. Cannot be moved once placed. "
+	},
+	agile_ranged_siege: {
+		name:"Agile - Ranged and Siege", 
+		description: "Can be placed in either the Ranged Combat or the Siege Combat row. Cannot be moved once placed. "
+	},
 	muster: {
 		name:"Muster", 
 		description: "Find any cards with the same name in your deck and play them instantly. ",
