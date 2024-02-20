@@ -4202,10 +4202,10 @@ var ext_ne_cards = {
         "deck": "nilfgaard",
         "row": "ranged",
         "strength": "5",
-        "ability": "",
+        "ability": "backto_deck",//ability1 Select any two units from opponents graveyard and put them back to his deck
         "filename": "impera_enforcers",
         "count": "1",
-        "quote": "Members of the emperor's fanatic body guard fight to the bitter end."
+        "quote": "Select any two units from opponents graveyard and put them back to his deck."//Members of the emperor's fanatic body guard fight to the bitter end
     },
     "ne_mangonel": {
         "name": "Mangonel",

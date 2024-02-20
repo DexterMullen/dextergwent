@@ -1020,6 +1020,27 @@ var ability_dict = {
 			else return 20;
 		}
 	},
+	backto_deck: { //ability we need this for printed card we have but also one more option for you or opponents graveyard
+		backto_deck:"backto_deck",
+		description: "Select 2 cards from your opponent's discard pile and shuffle them back into his/her deck.",
+		placed: async (card) => {
+			let grave = card.holder.opponent().grave;
+			if (card.holder.controller instanceof ControllerAI) {
+				let cards = grave.findCardsRandom(false,2);
+				await Promise.all(cards.map(async c => await board.toDeck(c, c.holder.grave)));
+				return;
+			} else {
+				try {
+					Carousel.curr.exit();
+				} catch (err) {}
+			}
+			await ui.queueCarousel(grave, 2, (c, i) => board.toDeck(c.cards[i], c), () => true);
+		},
+		weight: (card) => {
+			if (card.holder.opponent().grave.cards.length < 5) return 0;
+			else return 20;
+		}
+	},
 	rarog: {
 		description: "Draw a random card from the discard pile to your hand (any card) and then shuffle the rest back into the deck.",
 		activated: async (card) => {
@@ -1249,7 +1270,4 @@ var ability_dict = {
 
 	// 68 - Resurrect any unit from your graveyard OR reveal 1 random card in your hand, and resurrect any unit in opponents graveyard.
 	//Ida Emean from our printed card game 
-
-
-
 };
