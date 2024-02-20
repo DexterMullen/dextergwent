@@ -41,7 +41,20 @@ var factions = {
 		abilityUses: 0
 	},
 	scoiatael: {
-		name: "Scoia'tael",
+		name: "Toussaint",//ability1 need to rename this so the game message is scoiatel , not toussaint
+		factionAbility: player => game.roundStart.push(async () => {
+			if (game.roundCount > 1 && !(game.roundHistory[game.roundCount - 2].winner === player)) {
+				player.deck.draw(player.hand);
+				await ui.notification("toussaint", 1200);
+			}
+			return false;
+		}),
+		activeAbility: false,
+		abilityUses: 0,
+		description: "Draw a card from your deck whenever you lose a round."
+		
+		//default scoiatel ability that sucks
+		/*name: "Scoia'tael",
 		factionAbility: player => game.gameStart.push(async () => {
 			let notif = "";
 			if (player === player_me && !(player.controller instanceof ControllerAI)) {
@@ -62,6 +75,7 @@ var factions = {
 		description: "Decides who takes first turn.",
 		activeAbility: false,
 		abilityUses: 0
+		*/
 	},
 	skellige: {
 		name: "Skellige",
