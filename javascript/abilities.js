@@ -110,7 +110,7 @@ var ability_dict = {
 		placed: async (card) => {
 			if (card.isLocked()) return;
 			await card.animate("spy");
-			for (let i = 0; i < 1; i++) {
+			for (let i = 0; i < 3; i++) { //ABILITY1 change this from "i < 3" to "i < 1" once done testing
 				if (card.holder.deck.cards.length > 0) await card.holder.deck.draw(card.holder.hand);
 			}
 			card.holder = card.holder.opponent();
@@ -253,6 +253,24 @@ var ability_dict = {
 		description: "Pick a Torrential Rain card from your deck and play it instantly.",
 		activated: async card => {
 			let out = card.holder.deck.findCard(c => c.name === "Torrential Rain");
+			if (out) await out.autoplay(card.holder.deck);
+		},
+		weight: (card, ai) => ai.weightWeatherFromDeck(card, "rain")
+	},
+	play_rain: { // ABILITY1 Play rain from your deck
+		play_rain: "play_rain",
+		description: "Pick a Torrential Rain card from your deck and play it instantly.",
+		placed: async card => {
+			let out = card.holder.deck.findCard(c => c.name === "Torrential Rain");
+			if (out) await out.autoplay(card.holder.deck);
+		},
+		weight: (card, ai) => ai.weightWeatherFromDeck(card, "rain")
+	},
+	play_frost: { // ABILITY1 Play frost from your deck
+		play_frost: "play_frost",
+		description: "Pick a Biting Frost card from your deck and play it instantly.",
+		placed: async card => {
+			let out = card.holder.deck.findCard(c => c.name === "Biting Frost");
 			if (out) await out.autoplay(card.holder.deck);
 		},
 		weight: (card, ai) => ai.weightWeatherFromDeck(card, "rain")

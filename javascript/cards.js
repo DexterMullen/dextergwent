@@ -388,7 +388,7 @@ var default_cards = {
         "sound":"55 cow.mp3",
     },
     "ntr_chort": {
-        "name": "Bovine Defense Force",
+        "name": "Bovine Defense Force", //cow calls this card when round ends.
         "deck": "neutral",
         "row": "close",
         "strength": "8",
@@ -396,6 +396,16 @@ var default_cards = {
         "filename": "chort",
         "count": "0",
         "quote": "Grrrrr!"
+    },
+    "ntr_jade_figurine": {
+        "name": "Jade_Figurine",
+        "deck": "neutral",
+        "row": "close",//mobile takes the palce of the target card,same as decoy logic.
+        "strength": "3",
+        "ability": "hero",
+        "filename": "jade_figurine",
+        "count": "0",
+        "quote": "Turned to jade, forever...!"
     },
     "nr_foltest_king": {
         "name": "Foltest - King of Temeria",
@@ -847,7 +857,7 @@ var default_cards = {
         "deck": "realms",
         "row": "close",
         "strength": "1",
-        "ability": "hero",//ABILITY1 play frost from your deck
+        "ability": "hero play_frost",//ABILITY1 play frost from your deck ADD frost icon to this card!
         "filename": "yarpen",
         "count": "1",
         "quote": "ABILITY1 play frost from your deck The world belongs to whoever's best at crackin' skulls and impregnatin' lasses.",
@@ -1549,7 +1559,7 @@ var default_cards = {
         "deck": "monsters",
         "row": "close",
         "strength": "2",
-        "ability": "",
+        "ability": "emhyr_imperiall",
         "filename": "fogling",
         "count": "1",
         "quote": "Fog creeps on little cat feet. Foglets creep over the bodies of their victims.",
@@ -2857,7 +2867,7 @@ var ext_nr_cards = {
         "deck": "realms",
         "row": "siege",
         "strength": "1",
-        "ability": "hero", //ABILITY1 play rain from your deck
+        "ability": "hero play_rain", //ABILITY1 play rain from your deck !! ADD radin ability icon to this card
         "filename": "ban_ard_tutor",
         "count": "1",
         "quote": "Ban Ard deserved a mention, for it is famous for the school of young adepts of the magical arts.",
