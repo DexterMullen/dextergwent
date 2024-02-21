@@ -9225,7 +9225,7 @@ var ext_ze_cards = {
         "deck": "neutral",
         "row": "siege",
         "strength": "6",
-        "ability": "", //ABILITY1 scorch weakest unit(s) on the entire board
+        "ability": "scorchmin", //ABILITY1 scorch weakest unit(s) on the entire board
         "filename": "villentretenmerth",
         "count": "1",
         "quote": "Also calls himself Borkh Three Jackdaws... he's not the best at names.",

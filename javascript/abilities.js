@@ -71,6 +71,25 @@ var ability_dict = {
 			await Promise.all(cards.map(async u => await board.toGrave(u[1], u[0])));
 		}
 	},
+	scorchmin: {
+		name: "scorchmin",
+		description: "Discard after playing. Kills the weakest card(s) on the battlefield. ",
+		activated: async card => {
+			await ability_dict["scorch"].placed(card);
+			await board.toGrave(card, card.holder.hand);
+		},
+		placed: async (card, row) => {
+			if (card.isLocked() || game.scorchCancelled) return;
+			if (row !== undefined) row.cards.splice(row.cards.indexOf(card), 1);
+			let minUnits = board.row.map(r => [r, r.minUnits()]).filter(p => p[1].length > 0).filter(p => !p[0].isShielded());
+			if (row !== undefined) row.cards.push(card);
+			let minPower = minUnits.reduce((a, p) => Math.min(a, p[1][0].power), Infinity); // Changed Math.max to Math.min
+			let scorched = minUnits.filter(p => p[1][0].power === minPower); // Changed max to min
+			let cards = scorched.reduce((a, p) => a.concat(p[1].map(u => [p[0], u])), []);
+			await Promise.all(cards.map(async u => await u[1].animate("scorch", true, false)));
+			await Promise.all(cards.map(async u => await board.toGrave(u[1], u[0])));
+		}
+	},
 	scorch_c: {
 		name: "Scorch - Close Combat",
 		description: "Destroy your enemy's strongest Close Combat unit(s) if the combined strength of all his or her Close Combat units is 10 or more. ",
