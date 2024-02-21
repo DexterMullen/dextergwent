@@ -79,7 +79,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "ranged", 
         "strength": "5",
-        "ability": "",//ABILITY Draw X amount of random cards from your deck to your hand, then move the same X amount of cards from your hand to your graveyard
+        "ability": "Spy2",//ABILITY Draw X amount of random cards from your deck to your hand, then move the same X amount of cards from your hand to your graveyard
         "filename": "yennefer_swap",
         "count": "1",
         "quote": "There'll be nothing to pick up when I’m done with you!",
@@ -824,7 +824,7 @@ var default_cards = {
         "deck": "realms",
         "row": "ranged",
         "strength": "1",
-        "ability": "hero", //ABILITY1 play fog from your deck
+        "ability": "hero play_fog", //ABILITY1 play fog from your deck
         "filename": "sabrina",
         "count": "1",
         "quote": "Play FOG from your deck",//original quote "The Daughter of the Kaedweni Wilderness."
