@@ -523,6 +523,43 @@ var ability_dict = {
 			};
 		}
 	},
+	anyspecial: { //FIXFIX half the ability works, it filters for only special (non weather) but then once selected from the carusel , that special card does not play, need help. abilities.js 526 to 562
+		anyspecial: "anyspecial",
+		description: "Pick any special card from your deck and play it instantly.",
+		placed: async card => {
+			let deck = board.getRow(card, "deck", card.holder);
+			if (card.holder.controller instanceof ControllerAI) {
+				// For AI, autoplay the selected card
+				let selectedCard = ability_dict["anyspecial"].helper(card).card;
+				await board.playCard(selectedCard, deck); // Assuming there's a function to play a card from hand to a row
+			} else {
+				try {
+					Carousel.curr.cancel();
+				} catch (err) { }
+				// For player, allow selection from deck using carousel
+				await ui.queueCarousel(deck, 1, async (c, i) => {
+					let selectedCard = c.cards[i];
+					await board.playCardFromDeck(selectedCard, deck);
+				}, c => c.faction === "special", true);
+			}
+		},
+		weight: (card, ai, max) => ability_dict["anyspecial"].helper(card).weight,
+		helper: card => {
+			let specialCards = card.holder.deck.cards.filter(c => c.row === "special");
+			let out, weight = -1;
+			specialCards.forEach(c => {
+				let w = card.holder.controller.weightWeatherFromDeck(c, c.abilities[0]);
+				if (w > weight) {
+					weight = w;
+					out = c;
+				}
+			});
+			return {
+				card: out,
+				weight: weight
+			};
+		}
+	},
 	eredin_treacherous: {
 		description: "Doubles the strength of all spy cards (affects both players).",
 		gameStart: () => game.spyPowerMult = 2
