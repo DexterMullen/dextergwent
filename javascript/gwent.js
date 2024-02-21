@@ -2547,7 +2547,7 @@ class UI {
 			desc.children[2].innerHTML = card.desc;
 		} else desc.classList.add("hide");
 	}
-
+	
 	async notification(name, duration) {
 		var guia1 = {
 			"notif-nilfgaard-wins-draws": "Nilfgaard wins draws",

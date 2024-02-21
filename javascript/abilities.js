@@ -129,10 +129,37 @@ var ability_dict = {
 		placed: async (card) => {
 			if (card.isLocked()) return;
 			await card.animate("spy");
-			for (let i = 0; i < 3; i++) { //ABILITY1 change this from "i < 3" to "i < 1" once done testing
+			for (let i = 0; i < 2; i++) { //ABILITY1 change this from "i < 3" to "i < 1" once done testing
 				if (card.holder.deck.cards.length > 0) await card.holder.deck.draw(card.holder.hand);
 			}
 			card.holder = card.holder.opponent();
+		}
+	},
+	spy_eredin_hybrid: {
+		name: "spy_eredin_hybrid",
+		description: "Place on your opponent's battlefield (counts towards your opponent's total) and draw 2 cards from your deck. Then, choose 2 cards from your hand to move to the graveyard.",
+		placed: async (card) => {
+			if (card.isLocked()) return;
+			await card.animate("spy");
+			let hand = card.holder.hand;
+			let deck = card.holder.deck;
+			
+			// Draw 2 random cards from deck to hand
+			for (let i = 0; i < 2; i++) {
+				if (deck.cards.length > 0) await deck.draw(hand);
+			}
+	
+			// Prompt player to choose 2 cards from hand to move to graveyard
+			if (card.holder.controller instanceof ControllerAI) {
+				let cardsToDiscard = card.holder.controller.discardOrder(card).splice(0, 2);
+				await Promise.all(cardsToDiscard.map(async c => await board.toGrave(c, hand)));
+				return;
+			} else {
+				try {
+					Carousel.curr.exit();
+				} catch (err) {}
+			}
+			await ui.queueCarousel(hand, 2, (c,i) => board.toGrave(c.cards[i], c), () => true);
 		}
 	},
 	medic: {
