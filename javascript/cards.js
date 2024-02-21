@@ -1936,8 +1936,8 @@ var default_cards = {
         "name": "Dennis Cranmer",
         "deck": "scoiatael",
         "row": "close",
-        "strength": "6",
-        "ability": "",
+        "strength": "10",
+        "ability": "morale",
         "filename": "dennis",
         "count": "1",
         "quote": "I know how to carry out orders, so you can shove you advice up your coal chute."
@@ -1987,7 +1987,7 @@ var default_cards = {
         "id": 1,
         "deck": "scoiatael",
         "row": "close",
-        "strength": "3",
+        "strength": "5",
         "ability": "muster",
         "filename": "dwarf",
         "count": "1",
@@ -1999,7 +1999,7 @@ var default_cards = {
         "id": 2,
         "deck": "scoiatael",
         "row": "close",
-        "strength": "3",
+        "strength": "5",
         "ability": "muster",
         "filename": "dwarf_1",
         "count": "1",
@@ -2011,7 +2011,7 @@ var default_cards = {
         "id": 3,
         "deck": "scoiatael",
         "row": "close",
-        "strength": "3",
+        "strength": "5",
         "ability": "muster",
         "filename": "dwarf_2",
         "count": "1",
@@ -2022,7 +2022,7 @@ var default_cards = {
         "name": "Eithné",
         "deck": "scoiatael",
         "row": "ranged",
-        "strength": "10",
+        "strength": "12",
         "ability": "hero",
         "filename": "eithne",
         "count": "1",
@@ -2033,7 +2033,7 @@ var default_cards = {
         "id": 1,
         "deck": "scoiatael",
         "row": "ranged",
-        "strength": "2",
+        "strength": "5",
         "ability": "muster",
         "filename": "elf_skirmisher",
         "count": "1",
@@ -2045,7 +2045,7 @@ var default_cards = {
         "id": 2,
         "deck": "scoiatael",
         "row": "ranged",
-        "strength": "2",
+        "strength": "5",
         "ability": "muster",
         "filename": "elf_skirmisher_1",
         "count": "1",
@@ -2057,7 +2057,7 @@ var default_cards = {
         "id": 3,
         "deck": "scoiatael",
         "row": "ranged",
-        "strength": "2",
+        "strength": "5",
         "ability": "muster",
         "filename": "elf_skirmisher_2",
         "count": "1",
@@ -2155,7 +2155,7 @@ var default_cards = {
         "deck": "scoiatael",
         "row": "ranged",
         "strength": "10",
-        "ability": "hero",
+        "ability": "hero morale",
         "filename": "iorveth",
         "count": "1",
         "quote": "King or beggar, what's the difference? One dh'oine less."
@@ -2244,7 +2244,7 @@ var default_cards = {
         "name": "Saesenthessis",
         "deck": "scoiatael",
         "row": "ranged",
-        "strength": "10",
+        "strength": "12",
         "ability": "hero",
         "filename": "saskia",
         "count": "1",
@@ -2353,15 +2353,17 @@ var default_cards = {
         "count": "2",
         "quote": "So ye can hit a movin' target at two hundred paces. Me, too. In a storm."
     },
-    "sk_dimun_pirate": {
-        "name": "Clan Dimun Pirate",
-        "deck": "skellige",
+    "sk_dimun_pirate": { //Elf Scorch Dragon Rider 
+        "name": "Elf Scorch Dragon Rider",
+        "deck": "scoiatael",
         "row": "ranged",
-        "strength": "6",
+        "strength": "1",
         "ability": "scorch",
         "filename": "dimun_pirate",
         "count": "1",
-        "quote": "Can see the fear in their eyes. Fear o' me... fer o' Clan Dimun!"
+        "quote": "Can see the fear in their eyes. Fear o' me... fear the dragon breath!",
+        "sound":"19 Bork.mp3",
+
     },
     "sk_shield_maiden_1": {
         "name": "Clan Drummond Shield Maiden",
@@ -5003,14 +5005,15 @@ var ext_st_cards = {
         "quote": "I do not live in the forst of Brokilon. I am part of it."
     },
     "sc_brouver_hoog": {
-        "name": "Brouver Hoog",
+        "name": "Elven Dragon",
         "deck": "scoiatael",
         "row": "agile",
-        "strength": "10",
-        "ability": "hero",
+        "strength": "0",
+        "ability": "hero",// play any gold with 3 or more power from your deck
         "filename": "brouver_hoog",
         "count": "1",
-        "quote": "That doddery dolt? Ye cannae even tell if he's alive or stuffed!"
+        "quote": "Burn!",
+        "sound":"19 Bork.mp3",
     },
     "sc_dol_blathanna_guard_1": {
         "name": "Dol Blathanna Guard",
@@ -5082,8 +5085,8 @@ var ext_st_cards = {
         "name": "Mahakam Pyrotechnician",
         "deck": "scoiatael",
         "row": "siege",
-        "strength": "8",
-        "ability": "",
+        "strength": "5",
+        "ability": "hero",//ability1 Replace a card in your hand (goes to your graveyard) with Scorch from your deck.
         "filename": "mahakam_pyrotechnician",
         "count": "1",
         "quote": "An extraordinarily risky, and thus much revered, Mahakam trade. Its best-known practitioner was a dwarf by the name of Mikkel Bay."
@@ -5112,25 +5115,26 @@ var ext_st_cards = {
         "target": "sc_mahakam_guard",
         "quote": "Only one punishment for disturbin' the peace in Mahakam: a hammer to the heid."
     },
-    "sc_mahakam_ale": {
-        "name": "Mahakam Ale",
+    "sc_mahakam_ale": { //Aglais
+        "name": "Aglais",
         "deck": "scoiatael",
-        "row": "agile",
-        "strength": "3",
-        "ability": "morale",
+        "row": "siege",
+        "strength": "5",
+        "ability": "hero medic",//Ability1 draw 3 from deck to hand then discard 3 to graveyard
         "filename": "mahakam_ale",
         "count": "1",
         "quote": "Considered to be the dwarves' greatest contribution to world culture."
     },
-    "sc_yannick_brass": {
-        "name": "Yannick Brass",
+    "sc_yannick_brass": { //Iorveth Destroyer
+        "name": "Iorveth Destroyer",
         "deck": "scoiatael",
-        "row": "close",
-        "strength": "8",
-        "ability": "hero",
+        "row": "close",//mobile
+        "strength": "4",
+        "ability": "hero",//ability1 jade figurine 
         "filename": "yannick_brass",
         "count": "1",
-        "quote": "Any of uz wanna gud luk at mah axe?!"
+        "quote": "Enough of this farce! Vedrai! Ennle",
+        "sound": "Iorveth_Enough of this farce! Vedrai! Ennle.ogg",
     },
     "sc_dol_blathanna_trapper": {
         "name": "Dol Blathanna Trapper",
@@ -5166,8 +5170,8 @@ var ext_st_cards = {
         "name": "Ithlinne Aegli aep Aevenien",
         "deck": "scoiatael",
         "row": "agile",
-        "strength": "10",
-        "ability": "hero",
+        "strength": "5",
+        "ability": "",//ability1 unreveal X amount of cards in your hand
         "filename": "ithlinne",
         "count": "1",
         "quote": "Famed for constantly prophesying the world's doom. Not much fun at parties."
@@ -5207,14 +5211,15 @@ var ext_st_cards = {
         "quote": "The key's mixin' pleasure an' business – like smackin' foes and gettin' coin for it."
     },
     "sc_hawker_smuggler": {
-        "name": "Hawker Smuggler",
+        "name": "Armored Elf Mercenary",
         "deck": "scoiatael",
         "row": "agile",
-        "strength": "3",
-        "ability": "morale",
+        "strength": "8",
+        "ability": "",
         "filename": "hawker_smuggler",
         "count": "1",
-        "quote": "I fight for whoever's paying the best. Or whoever's easiest to rob."
+        "quote": "I fight for whoever's paying the best. Or whoever's easiest to rob.",
+
     },
     "sc_dwarven_agitator": {
         "name": "Dwarven Agitator",
@@ -5226,13 +5231,13 @@ var ext_st_cards = {
         "count": "1",
         "quote": "Mark me words, if ye dinnae get up off yer arses, humans're gonnae come here an' steal our wenches!"
     },
-    "sc_mahakam_marauder": {
-        "name": "Mahakam Marauder",
+    "sc_mahakam_marauder": { //Hattori
+        "name": "Hattori",
         "deck": "scoiatael",
         "row": "agile",
         "strength": "6",
         "ability": "",
-        "filename": "mahakam_marauder",
+        "filename": "mahakam_marauder", //Hattori
         "count": "1",
         "quote": "Hunting on Mahakam's craggy cliffs is not particularly easy… but nor are dwarves particularly put off by danger."
     },
@@ -5276,15 +5281,16 @@ var ext_st_cards = {
         "count": "1",
         "quote": "Mona…? No… no. I'm Braenn. A daughter of Brokilon."
     },
-    "sc_hawker_support": {
-        "name": "Hawker Support",
+    "sc_hawker_support": { //ida emean
+        "name": "Ida Emead",
         "deck": "scoiatael",
         "row": "siege",
         "strength": "4",
-        "ability": "medic",
+        "ability": "hero medic",//
         "filename": "hawker_support",
         "count": "1",
-        "quote": "Elf, dwarf, makes no difference – long as they've got coin."
+        "quote": "Ida_The time of the White Frost and White Light is nigh.ogg.",
+        "sound":"The time of the White Frost and White Light is nigh.ogg",
     },
     "sc_eldain": {
         "name": "Eldain",
@@ -5296,15 +5302,16 @@ var ext_st_cards = {
         "count": "1",
         "quote": "The king once dispatched an envoy to Eldain… despite my advice to the contrary."
     },
-    "sc_giantslayer": {
-        "name": "Giantslayer",
+    "sc_giantslayer": { //Schirru Hero Scorch
+        "name": "Schirru Hero Scorch",
         "deck": "scoiatael",
-        "row": "agile",
-        "strength": "5",
-        "ability": "scorch",
+        "row": "agile",//ability1 mobile
+        "strength": "4",
+        "ability": "hero scorch",
         "filename": "giantslayer",
         "count": "1",
-        "quote": "Aye, they call me the Giantslayer, and nay, it ain't from bein' a humongous bastard now, is it?"
+        "quote": "Oh… How lovely it burns",
+        "sound":"Schirrú_Oh… How lovely it burns.ogg",
     },
     "sc_elven_scout": {
         "name": "Elven Scout",

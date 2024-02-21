@@ -465,7 +465,7 @@ var ability_dict = {
 		weight: (card, ai) => ai.weightHornRow(card, board.getRow(card, "ranged", card.holder))
 	},
 	francesca_daisy: {
-		description: "Draw an extra card at the beginning of the battle.",
+		description: "Draw an extra card at the beginning of the battle.",//play scorch from your deck
 		placed: card => game.gameStart.push(() => {
 			let draw = card.holder.deck.removeCard(0);
 			card.holder.hand.addCard(draw);
