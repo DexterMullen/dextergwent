@@ -2677,6 +2677,16 @@ var default_cards = {
         "count": "0",
         "quote": "No one can replace Bran. Though they're sure to try."
     },
+    "sk_harald": {
+        "name": "Harald The Criple",
+        "deck": "skellige",
+        "row": "leader",
+        "strength": "",
+        "ability": "crach_an_craite",
+        "filename": "harald",
+        "count": "0",
+        "quote": "No one know how he got his nickname, no one dares to ask"        
+    },
     "sc_schirru": {
         "name": "Schirru",
         "deck": "scoiatael",
@@ -5381,6 +5391,7 @@ var ext_sk_cards = {
         "count": "1",
         "quote": "Not all are worthy of Svalblod's blessing."
     },
+    /*    
     "sk_harald_cripple": {
         "name": "Harald the Cripple",
         "deck": "skellige",
@@ -5391,6 +5402,7 @@ var ext_sk_cards = {
         "count": "1",
         "quote": "He did not stop until the islands were his and the head of the old jarl lay on the ground before him."
     },
+    */
     "sk_drummond_warmonger": {
         "name": "Drummond Warmonger",
         "deck": "skellige",
@@ -5495,6 +5507,7 @@ var ext_sk_cards = {
         "count": "1",
         "quote": "Haul together, hoist the colors high!"
     },
+    /*
     "sk_vigi_loon": {
         "name": "Vigi the Loon",
         "deck": "skellige",
@@ -5505,6 +5518,7 @@ var ext_sk_cards = {
         "count": "1",
         "quote": "Even for Skelligers Vigi's fearlessness went far beyond the pale of bravery."
     },
+    */
     "sk_tuirseach_warrior_1": {
         "name": "Clan Tuirseach Warrior",
         "id": 1,
