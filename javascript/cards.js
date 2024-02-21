@@ -5052,16 +5052,18 @@ var ext_st_cards = {
         "target": "sc_dol_blathanna_guard",
         "quote": "We are the drops of rain that together make a ferocious storm."
     },
+    
     "sc_aglais": {
         "name": "Aglais",
         "deck": "scoiatael",
-        "row": "agile",
-        "strength": "8",
-        "ability": "hero medic",
+        "row": "siege",
+        "strength": "5",
+        "ability": "hero draw3discard3",//Ability1 draw 3 from deck to hand then discard 3 to graveyard
         "filename": "aglais",
         "count": "1",
         "quote": "Brokilon bleeds… and not even I can heal it."
     },
+    
     "sc_elven_deadeye": {
         "name": "Elven Deadeye",
         "deck": "scoiatael",
@@ -5116,16 +5118,18 @@ var ext_st_cards = {
         "target": "sc_mahakam_guard",
         "quote": "Only one punishment for disturbin' the peace in Mahakam: a hammer to the heid."
     },
+    /*
     "sc_mahakam_ale": { //Aglais
         "name": "Aglais",
         "deck": "scoiatael",
         "row": "siege",
         "strength": "5",
-        "ability": "hero medic",//Ability1 draw 3 from deck to hand then discard 3 to graveyard
+        "ability": "hero spy_eredin_hybrid2",//Ability1 draw 3 from deck to hand then discard 3 to graveyard
         "filename": "mahakam_ale",
         "count": "1",
         "quote": "Considered to be the dwarves' greatest contribution to world culture."
     },
+    */
     "sc_yannick_brass": { //Iorveth Destroyer
         "name": "Iorveth Destroyer",
         "deck": "scoiatael",
