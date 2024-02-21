@@ -79,7 +79,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "ranged", 
         "strength": "5",
-        "ability": "spy_eredin_hybrid",//ABILITY Draw X amount of random cards from your deck to your hand, then move the same X amount of cards from your hand to your graveyard
+        "ability": "draw2discard2",//ABILITY Draw X amount of random cards from your deck to your hand, then move the same X amount of cards from your hand to your graveyard
         "filename": "yennefer_swap",
         "count": "1",
         "quote": "There'll be nothing to pick up when I’m done with you!",

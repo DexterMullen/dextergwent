@@ -135,7 +135,7 @@ var ability_dict = {
 			card.holder = card.holder.opponent();
 		}
 	},
-	spy_eredin_hybrid: { //Draw 2 random cards from your deck to your hand, then move 2 cards of your choice from hand to your graveyard 
+	draw2discard2: { //Draw 2 random cards from your deck to your hand, then move 2 cards of your choice from hand to your graveyard 
 		name: "Draw 2 Discard 2",
 		description: "Draw 2 random cards from your deck to your hand, then move 2 cards of your choice from hand to your graveyard",
 		placed: async (card) => {
