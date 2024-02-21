@@ -5446,9 +5446,9 @@ var ext_sk_cards = {
     "sk_morkvarg": {
         "name": "Morkvarg",
         "deck": "skellige",
-        "row": "close",
-        "strength": "7",
-        "ability": "",
+        "row": "leader",
+        "strength": "0",
+        "ability": "crach_an_craite",
         "filename": "morkvarg",
         "count": "1",
         "quote": "The vilest man Skellige's ever known."
@@ -5586,12 +5586,12 @@ var ext_sk_cards = {
     "sk_sigrdrifa": {
         "name": "Sigrdrifa",
         "deck": "skellige",
-        "row": "ranged",
-        "strength": "0",
-        "ability": "medic",
+        "row": "leader",
+        "strength": "",
+        "ability": "crach_an_craite",
         "filename": "sigrdrifa",
-        "count": "1",
-        "quote": "Fall on your knees and beg Modron Freya for forgiveness."
+        "count": "0",
+        "quote": "Fall on your knees and beg Modron Freya for forgiveness.",
     },
     "sk_jutta": {
         "name": "Jutta an Dimun",

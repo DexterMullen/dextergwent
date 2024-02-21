@@ -172,13 +172,13 @@ var ability_dict = {
 			let deck = card.holder.deck;
 			
 			// Draw 2 random cards from deck to hand
-			for (let i = 0; i < 2; i++) {
+			for (let i = 0; i < 3; i++) {
 				if (deck.cards.length > 0) await deck.draw(hand);
 			}
 	
 			// Prompt player to choose 2 cards from hand to move to graveyard
 			if (card.holder.controller instanceof ControllerAI) {
-				let cardsToDiscard = card.holder.controller.discardOrder(card).splice(0, 2);
+				let cardsToDiscard = card.holder.controller.discardOrder(card).splice(0, 3);
 				await Promise.all(cardsToDiscard.map(async c => await board.toGrave(c, hand)));
 				return;
 			} else {
@@ -186,7 +186,7 @@ var ability_dict = {
 					Carousel.curr.exit();
 				} catch (err) {}
 			}
-			await ui.queueCarousel(hand, 2, (c,i) => board.toGrave(c.cards[i], c), () => true);
+			await ui.queueCarousel(hand, 3, (c,i) => board.toGrave(c.cards[i], c), () => true);
 		}
 	},
 	medic: {
