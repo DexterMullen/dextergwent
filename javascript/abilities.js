@@ -292,7 +292,7 @@ var ability_dict = {
 			let out = card.holder.deck.findCard(c => c.name === "Biting Frost");
 			if (out) await out.autoplay(card.holder.deck);
 		},
-		weight: (card, ai) => ai.weightWeatherFromDeck(card, "rain")
+		weight: (card, ai) => ai.weightWeatherFromDeck(card, "frost")
 	},
 	play_fog: { // ABILITY1 Play frost from your deck
 		play_fog: "play_fog",
@@ -301,7 +301,7 @@ var ability_dict = {
 			let out = card.holder.deck.findCard(c => c.name === "Impenetrable Fog");
 			if (out) await out.autoplay(card.holder.deck);
 		},
-		weight: (card, ai) => ai.weightWeatherFromDeck(card, "rain")
+		weight: (card, ai) => ai.weightWeatherFromDeck(card, "fog")
 	},
 	emhyr_emperor: {
 		description: "Look at 3 random cards from your opponent's hand.",

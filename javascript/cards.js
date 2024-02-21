@@ -198,7 +198,7 @@ var default_cards = {
     "ntr_dandelion": {
         "name": "Dandelion",
         "deck": "neutral",
-        "row": "close",
+        "row": "agile",
         "strength": "2",
         "ability": "horn",
         "filename": "dandelion",
@@ -4500,12 +4500,13 @@ var ext_mo_cards = {
     "mo_caranthir": {
         "name": "Caranthir Ar-Feiniel",
         "deck": "monsters",
-        "row": "ranged",
-        "strength": "10",
-        "ability": "hero",
+        "row": "siege",
+        "strength": "6",
+        "ability": "hero decoy",
         "filename": "caranthir",
         "count": "1",
-        "quote": "Zirael! I await."
+        "quote": "Zirael! I await.",
+        "sound":"Caranthir_There is no escape.ogg",
     },
     "mo_jotunn": {
         "name": "Jotunnl",
