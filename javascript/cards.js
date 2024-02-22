@@ -158,7 +158,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "close", //mobile
         "strength": "0",
-        "ability": "hero anyspecial",//special ABILITY1 play any special (non weather card) from your deck
+        "ability": "hero anyweathertospecial",//special ABILITY1 play any special (non weather card) from your deck
         "filename": "golem_special",
         "count": "1",
         "quote": "I exist, because master Dearhenna wills it so!",
