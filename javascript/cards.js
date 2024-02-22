@@ -391,7 +391,7 @@ var default_cards = {
         "name": "Bovine Defense Force", //cow calls this card when round ends.
         "deck": "neutral",
         "row": "close",
-        "strength": "8",
+        "strength": "10",
         "ability": "",
         "filename": "chort",
         "count": "0",
