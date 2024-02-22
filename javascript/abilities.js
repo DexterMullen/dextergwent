@@ -899,7 +899,7 @@ var ability_dict = {
 			) score = Math.floor(board.getRow(card, "close", card.holder.opponent()).cards.filter(c => c.isUnit()).reduce((a, c) => a + c.power, 0) * 0.5);
 			return Math.max(1, score);
 		}
-	},
+	},	
 	alzur_maker: {
 		description: "Destroy one of your units on the board and summon a Koshchey.",
 		activated: (card, player) => {
