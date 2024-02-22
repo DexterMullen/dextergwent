@@ -523,32 +523,25 @@ var ability_dict = {
 			};
 		}
 	},
-	anyspecial: { //FIXFIX half the ability works, it filters for only special (non weather) but then once selected from the carusel , that special card does not play, need help. abilities.js 526 to 562
-		anyspecial: "anyspecial",
-		description: "Pick any special card from your deck and play it instantly.",
+	anyweathertospecial: {
+		anyweathertospecial: "anyweathertospecial",
+		description: "Pick any special non weather card from your deck and play it instantly.",
 		placed: async card => {
 			let deck = board.getRow(card, "deck", card.holder);
-			if (card.holder.controller instanceof ControllerAI) {
-				// For AI, autoplay the selected card
-				let selectedCard = ability_dict["anyspecial"].helper(card).card;
-				await board.autoplay(selectedCard, deck); // Assuming there's a function to play a card from hand to a row
-			} else {
+			if (card.holder.controller instanceof ControllerAI) await ability_dict["anyspecial"].helper(card).card.autoplay(card.holder.deck);
+			else {
 				try {
 					Carousel.curr.cancel();
 				} catch (err) { }
-				// For player, allow selection from deck using carousel
-				await ui.queueCarousel(deck, 1, async (c, i) => {
-					let selectedCard = c.cards[i];
-					await card.autoplay(selectedCard);
-				}, c => c.faction === "special", true);
+				await ui.queueCarousel(deck, 1, (c,i) => board.autoplay(c.cards[i], deck), c => c.faction === "special", true);
 			}
 		},
 		weight: (card, ai, max) => ability_dict["anyspecial"].helper(card).weight,
 		helper: card => {
-			let specialCards = card.holder.deck.cards.filter(c => c.row === "special");
+			let special = card.holder.deck.cards.filter(c => c.row === "special").reduce((a,c) => a.map(c => c.name).includes(c.name) ? a : a.concat([c]), []);
 			let out, weight = -1;
-			specialCards.forEach(c => {
-				let w = card.holder.controller.weightWeatherFromDeck(c, c.abilities[0]);
+			special.forEach(c => {
+				let w = card.holder.controller.weightSpecialFromDeck(c, c.abilities[0]);
 				if (w > weight) {
 					weight = w;
 					out = c;
@@ -559,7 +552,7 @@ var ability_dict = {
 				weight: weight
 			};
 		}
-	},
+	},	
 	eredin_treacherous: {
 		description: "Doubles the strength of all spy cards (affects both players).",
 		gameStart: () => game.spyPowerMult = 2
@@ -1189,7 +1182,7 @@ var ability_dict = {
 	inspire: {
 		name: "Inspire",
 		description: "All units with Inspire ability take the highest base strength of the Inspire units on your side of the board. Still affected by weather.",
-	},
+	},	
 	//0 - add any kind of sorting when building/creating/adding cards before the game starts, it can be special, then gold, then ability units, then units with no ability OR
 	// special and then on top sorted by card numbers/strenght/power, it is a mess in this state.
 	
