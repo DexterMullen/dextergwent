@@ -274,10 +274,10 @@ var default_cards = {
         "deck": "neutral",
         "row": "ranged",
         "strength": "7",
-        "ability": "hero muster",
+        "ability": "hero",//ability needs to be able to call the cow fron deck OR graveyard
         "filename": "triss",
         "count": "1",
-        "target": "ntr_cow",
+        "target": "",
         "quote": "I can take care of myself. Trust me.",
         "sound":"45 Triss_COW I sense strong magic.ogg",
     },
