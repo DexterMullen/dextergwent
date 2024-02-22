@@ -363,7 +363,7 @@ class ControllerAI {
 				board.getRow(card, "siege", this.player);
 		await this.player.playCardToRow(card, row);
 	}
-
+	
 	async scorch(card, max, data) {
 		await this.player.playScorch(card);
 	}
