@@ -539,7 +539,7 @@ var ability_dict = {
 				// For player, allow selection from deck using carousel
 				await ui.queueCarousel(deck, 1, async (c, i) => {
 					let selectedCard = c.cards[i];
-					await board.autoplay(selectedCard, deck);
+					await card.autoplay(selectedCard);
 				}, c => c.faction === "special", true);
 			}
 		},
