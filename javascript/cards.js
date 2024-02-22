@@ -46,7 +46,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "ranged",
         "strength": "1",
-        "ability": "medicc",//ABILITY Draw X amount of random cards from opponents graeyard, play 1 return others to opponents graveyard. 
+        "ability": "",//ABILITY Draw X amount of random cards from opponents graeyard, play 1 return others to opponents graveyard. 
         "filename": "caretaker",
         "count": "1",
         "quote": "There are more things in heaven and earth than all the world's philosophers have dreamt.",
