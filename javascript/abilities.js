@@ -228,7 +228,7 @@ var ability_dict = {
 				await res.autoplay(grave);
 			}));
 		}
-	},
+	},	
 	morale: {
 		name: "Morale Boost",
 		description: "Adds +1 to all units in the row (excluding itself). ",
@@ -414,7 +414,7 @@ var ability_dict = {
 			}, c => c.isUnit(), true);
 		},
 		weight: (card, ai, max, data) => ai.weightMedic(data, 0, card.holder.opponent())
-	},	
+	},
 	emhyr_invader: {
 		description: "Abilities that restore a unit to the battlefield restore a randomly-chosen unit. Affects both players.",
 		gameStart: () => game.randomRespawn = true
@@ -531,7 +531,7 @@ var ability_dict = {
 			if (card.holder.controller instanceof ControllerAI) {
 				// For AI, autoplay the selected card
 				let selectedCard = ability_dict["anyspecial"].helper(card).card;
-				await board.playCard(selectedCard, deck); // Assuming there's a function to play a card from hand to a row
+				await board.autoplay(selectedCard, deck); // Assuming there's a function to play a card from hand to a row
 			} else {
 				try {
 					Carousel.curr.cancel();
@@ -539,7 +539,7 @@ var ability_dict = {
 				// For player, allow selection from deck using carousel
 				await ui.queueCarousel(deck, 1, async (c, i) => {
 					let selectedCard = c.cards[i];
-					await board.playCardFromDeck(selectedCard, deck);
+					await board.autoplay(selectedCard, deck);
 				}, c => c.faction === "special", true);
 			}
 		},
