@@ -2682,7 +2682,7 @@ var default_cards = {
         "deck": "skellige",
         "row": "leader",
         "strength": "",
-        "ability": "crach_an_craite",
+        "ability": "eredin_destroyer_developer",
         "filename": "harald",
         "count": "0",
         "quote": "No one know how he got his nickname, no one dares to ask"        
@@ -5475,15 +5475,15 @@ var ext_sk_cards = {
         "target": "sk_champion_svalblod",
         "quote": "Strike me! C'mon, harder! You call this pain?! "
     },
-    "sk_champion_svalblod": {
-        "name": "Champion of Svalblod",
+    "sk_cratos": {
+        "name": "Frost Axe Warrior",
         "deck": "skellige",
         "row": "agile",
-        "strength": "14",
-        "ability": "scorch_c",
-        "filename": "champion_svalblod",
+        "strength": "6",
+        "ability": "hero destroy1weakest",
+        "filename": "cratos",
         "count": "1",
-        "quote": "This bear taste funny to you? "
+        "quote": "Mind your tone BOY!"
     },
     "sk_war_longship_3": {
         "name": "War Longship",
