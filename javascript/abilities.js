@@ -109,6 +109,24 @@ var ability_dict = {
 		name:"Agile", 
 		description: "Can be placed in either the Close Combat or the Ranged Combat row. Cannot be moved once placed. "
 	},
+	destroy1weakest: {
+		name: "destroy1weakest",
+		description: "Destroy only 1 weakest unit on the opposite row",
+		placed: async card => {
+			let row = card.currentLocation.getOppositeRow();
+			if (row.isShielded() || game.scorchCancelled) return;
+			let units = row.minUnits();
+	
+			// Find the weakest unit
+			let weakestUnit = units.reduce((minUnit, currentUnit) => {
+				return currentUnit.power < minUnit.power ? currentUnit : minUnit;
+			});
+	
+			// Destroy the weakest unit
+			await weakestUnit.animate("scorch", true, false);
+			await board.toGrave(weakestUnit, row);
+		}
+	},
 	muster: {
 		name:"Muster", 
 		description: "Find any cards with the same name in your deck and play them instantly. ",
@@ -457,6 +475,29 @@ var ability_dict = {
 			}
 			await ui.queueCarousel(hand, 1, (c,i) => board.toGrave(c.cards[i], c), () => true);
 			await ui.queueCarousel(deck, 1, (c,i) => board.toHand(c.cards[i], deck), () => true, true);
+		},
+		weight: (card, ai) => {
+			let cards = ai.discardOrder(card).splice(0,2).filter(c => c.basePower < 7);
+			if (cards.length < 2) return 0;
+			return cards[0].abilities.includes("muster") ? 50 : 25;
+		}
+	},	eredin_destroyer_developer: {
+		description: "Discard 5 cards and draw 5 card of your choice from your deck.",
+		activated: async (card) => {
+			let hand = board.getRow(card, "hand", card.holder);
+			let deck = board.getRow(card, "deck", card.holder);
+			if (card.holder.controller instanceof ControllerAI) {
+				let cards = card.holder.controller.discardOrder(card).splice(0, 2).filter(c => c.basePower < 7);
+				await Promise.all(cards.map(async c => await board.toGrave(c, card.holder.hand)));
+				card.holder.deck.draw(card.holder.hand);
+				return;
+			} else {
+				try {
+					Carousel.curr.exit();
+				} catch (err) {}
+			}
+			await ui.queueCarousel(hand, 5, (c,i) => board.toGrave(c.cards[i], c), () => true);
+			await ui.queueCarousel(deck, 5, (c,i) => board.toHand(c.cards[i], deck), () => true, true);
 		},
 		weight: (card, ai) => {
 			let cards = ai.discardOrder(card).splice(0,2).filter(c => c.basePower < 7);
