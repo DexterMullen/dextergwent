@@ -44,7 +44,7 @@ var default_cards = {
     "ntr_caretaker": {
         "name": "Caretaker",
         "deck": "neutral",
-        "row": "ranged",
+        "row": "close",
         "strength": "1",
         "ability": "",//ABILITY Draw X amount of random cards from opponents graeyard, play 1 return others to opponents graveyard. 
         "filename": "caretaker",
@@ -2564,7 +2564,7 @@ var default_cards = {
         "name": "Olaf",
         "deck": "skellige",
         "row": "agile",
-        "strength": "12",
+        "strength": "10",
         "ability": "morale",
         "filename": "olaf",
         "count": "1",
@@ -3742,7 +3742,7 @@ var ext_nr_cards = {
         "deck": "realms",
         "row": "close",
         "strength": "8",
-        "ability": "hero",//REVEAL ABILITY1 reveal X amount of cards in opponents hand.
+        "ability": "hero reveal3",//REVEAL ABILITY1 reveal X amount of cards in opponents hand.
         "filename": "shani",
         "count": "1",
         "quote": "I'm a medic. I tend to know what I'm doing when I prescribe something.",
@@ -4761,13 +4761,13 @@ var ext_mo_cards = {
         "quote": "He saw their weapons – short spears with wide tips."
     },
     /*
-    "mo_caretaker": {
-        "name": "Caretaker",
+    "mo_caretakerr": {
+        "name": "Caretakerr",
         "deck": "monsters",
         "row": "close",
         "strength": "5",
         "ability": "",
-        "filename": "caretaker",
+        "filename": "caretakerr",
         "count": "1",
         "quote": "There are more things in heaven and earth than all the world's philosophers have dreamt."
     },
@@ -4836,12 +4836,13 @@ var ext_mo_cards = {
     "mo_succubus": {
         "name": "Succubus",
         "deck": "monsters",
-        "row": "siege",
+        "row": "close",
         "strength": "6",
-        "ability": "",
+        "ability": "succubuss",
         "filename": "succubus",
         "count": "1",
-        "quote": "Why fight? There are much better ways to work off excess energy..."
+        "quote": "Why fight? There are much better ways to work off excess energy...",
+        "sound":"Sacubus_ I shall sssssavour your death.ogg",
     }
 };
 
@@ -6803,7 +6804,7 @@ var ext_wu_cards = {
         "deck": "neutral",
         "row": "close",
         "strength": "7",
-        "ability": "", //ABILITY1 Select 1 unit from 1 graveyard, and move it to the other
+        "ability": "gravetograve1", //ABILITY1 Select 1 unit from 1 graveyard, and move it to the other
         "filename": "bloody_baron",
         "count": "1",
         "quote": "I've not been a good father, I know, but… perhaps it's not too late.",

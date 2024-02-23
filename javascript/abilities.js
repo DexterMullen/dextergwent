@@ -29,6 +29,12 @@ var ability_dict = {
 		name: "Decoy",
 		description: "Swap with a card on the battlefield to return it to your hand. "
 	},
+	//delete down
+	decoyyy: {
+		name: "decoyyy",
+		description: "SACRIFACE with a card on the battlefield to return it to your hand. "//testing sacrifice ability, targeg a unit, that unit goes to graveyard, sacrifice card takes its place(same as decoy)
+	},
+	//delete up
 	horn: {
 		name: "Commander's Horn",
 		description: "Doubles the strength of all unit cards in that row. Limited to 1 per row. ",
@@ -246,7 +252,7 @@ var ability_dict = {
 				await res.autoplay(grave);
 			}));
 		}
-	},	
+	},
 	morale: {
 		name: "Morale Boost",
 		description: "Adds +1 to all units in the row (excluding itself). ",
@@ -432,7 +438,31 @@ var ability_dict = {
 			}, c => c.isUnit(), true);
 		},
 		weight: (card, ai, max, data) => ai.weightMedic(data, 0, card.holder.opponent())
+	},
+	
+	gravetograve1: { //Choose 1 of opponents unit cards in his graveyard, and move it to yours bloody baron 
+		description: "Move 2 units of your choice, from your opponent's graveyard, to your graveyard.",
+		placed: async card => {
+			let grave = board.getRow(card, "grave", card.holder.opponent());
+			if (grave.findCards(c => c.isUnit()).length === 0) return;
+			if (card.holder.controller instanceof ControllerAI) {
+				let newCard = card.holder.controller.medic(card, grave);
+				newCard.holder = card.holder;
+				await board.toGrave(newCard, grave);
+				return;
+			}
+			try {
+				Carousel.curr.cancel();
+			} catch (err) {}
+			await ui.queueCarousel(grave, 2, (c,i) => {
+				let newCard = c.cards[i];
+				newCard.holder = card.holder;
+				board.toGrave(newCard, grave);
+			}, c => c.isUnit(), true);
+		},
+		weight: (card, ai, max, data) => ai.weightMedic(data, 0, card.holder.opponent())
 	},	
+		
 	emhyr_invader: {
 		description: "Abilities that restore a unit to the battlefield restore a randomly-chosen unit. Affects both players.",
 		gameStart: () => game.randomRespawn = true
@@ -955,6 +985,7 @@ var ability_dict = {
 			return ai.weightScorchRow(card, max, "close");
 		}
 	},
+
 	vilgefortz_sorcerer: {
 		description: "Clear all weather effects in play.",
 		activated: async () => {
@@ -997,6 +1028,7 @@ var ability_dict = {
 		},
 		weight: (card, ai, max, data) => ai.weightMedic(data, 0, card.holder)
 	},
+
 	anna_henrietta_grace: {
 		description: "Cancel Decoy ability for one round.",
 		activated: async card => {
@@ -1085,6 +1117,28 @@ var ability_dict = {
 			return card.holder.opponent().getAllRows()[0].minUnits().reduce((a, c) => a + c.power, 0) * 2
 		}
 	},
+	
+	succubuss: {
+		name:"succubuss",
+		description: "Seize the unit(s) with the lowest strength of the opponents melee row.",//ability1 this can be used for sucubus to steal unit but one more condition, 6 curent power or less, and no commanders horn units
+		placed: async card => {
+			let opCloseRow = board.getRow(card, "close", card.holder.opponent());
+			let meCloseRow = board.getRow(card, "close", card.holder);
+			if (opCloseRow.isShielded()) return;
+			let units = opCloseRow.minUnits();
+			if (units.length === 0) return;
+			await Promise.all(units.map(async c => await c.animate("seize")));
+			units.forEach(async c => {
+				c.holder = card.holder;
+				await board.moveToNoEffects(c, meCloseRow, opCloseRow);
+			});
+		},
+		weight: (card) => {
+			if (card.holder.opponent().getAllRows()[0].isShielded()) return 0;
+			return card.holder.opponent().getAllRows()[0].minUnits().reduce((a, c) => a + c.power, 0) * 2
+		}
+	},
+	
 	gudrun_bjornsdottir: {
 		description: "Summon Flyndr's Crew",
 		activated: async (card, player) => {
