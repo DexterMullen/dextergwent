@@ -1159,6 +1159,19 @@ var ability_dict = {
 		},
 		weight: (card) => 20
 	},
+	//delete down if it does not work! 
+	PlayShacklesFromDeck: {
+		name:"cyrus_hemmelfart",
+		description: "Play a Dimeritum Shackles card in any of the opponent's row.", //help marko!
+		placed: async (card, player) => {
+			player.endTurnAfterAbilityUse = false;
+			ui.showPreviewVisuals(card);
+			ui.enablePlayer(true);
+			if (!(player.controller instanceof ControllerAI)) ui.setSelectable(card, true);
+		},
+		weight: (card) => 20
+	},
+	//delete up if it does not work!
 	azar_javed: {
 		description: "Destroy the enemy's weakest hero card (max 1 card).",
 		activated: async (card, player) => {
