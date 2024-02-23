@@ -5483,7 +5483,8 @@ var ext_sk_cards = {
         "ability": "hero destroy1weakest",
         "filename": "cratos",
         "count": "1",
-        "quote": "Mind your tone BOY!"
+        "quote": "Mind your tone BOY!",
+        "sound":"63 cratosfrostaxewarrior.mp3",
     },
     "sk_war_longship_3": {
         "name": "War Longship",
