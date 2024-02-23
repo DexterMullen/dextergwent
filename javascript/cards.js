@@ -46,7 +46,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "close",
         "strength": "1",
-        "ability": "",//ABILITY Draw X amount of random cards from opponents graeyard, play 1 return others to opponents graveyard. 
+        "ability": "cyrus_hemmelfart",//ABILITY Draw X amount of random cards from opponents graeyard, play 1 return others to opponents graveyard. 
         "filename": "caretaker",
         "count": "1",
         "quote": "There are more things in heaven and earth than all the world's philosophers have dreamt.",
@@ -8186,7 +8186,7 @@ var ext_sy_cards = {
     },
     "spe_dimeritium_shackles": {
         "name": "Dimeritium Shackles",
-        "deck": "special syndicate",
+        "deck": "special",
         "row": "",
         "strength": "",
         "ability": "lock",
