@@ -159,6 +159,15 @@ var ability_dict = {
 			card.holder = card.holder.opponent();
 		}
 	},
+	play_cow: { // ABILITY1 Play cow from your deck we need to add also play cow from graveyard later
+		play_cow: "play_cow",
+		description: "Pick cow card from your deck and play it instantly.",
+		placed: async card => {
+			let out = card.holder.deck.findCard(c => c.name === "Cow");
+			if (out) await out.autoplay(card.holder.deck);
+		},
+		weight: (card, ai) => ai.weightWeatherFromDeck(card, "Cow")
+	},
 	draw2discard2: { //Draw 2 random cards from your deck to your hand, then move 2 cards of your choice from hand to your graveyard 
 		name: "Draw 2 Discard 2",
 		description: "Draw 2 random cards from your deck to your hand, then move 2 cards of your choice from hand to your graveyard",
@@ -1291,6 +1300,31 @@ var ability_dict = {
 		name: "Inspire",
 		description: "All units with Inspire ability take the highest base strength of the Inspire units on your side of the board. Still affected by weather.",
 	},	
+	haraldthecriple: { //Draw 4 random to hand, then discard 4 of your choice from hand to your graveyard 
+		description: "Draw 4 random cards from your deck to your hand, then move 4 cards of your choice from hand to your graveyard.",
+		activated: async (card) => {
+			if (card.isLocked()) return;
+			let hand = card.holder.hand;
+			let deck = card.holder.deck;
+			
+			// Draw 2 random cards from deck to hand
+			for (let i = 0; i < 4; i++) {
+				if (deck.cards.length > 0) await deck.draw(hand);
+			}
+	
+			// Prompt player to choose 2 cards from hand to move to graveyard
+			if (card.holder.controller instanceof ControllerAI) {
+				let cardsToDiscard = card.holder.controller.discardOrder(card).splice(0, 4);
+				await Promise.all(cardsToDiscard.map(async c => await board.toGrave(c, hand)));
+				return;
+			} else {
+				try {
+					Carousel.curr.exit();
+				} catch (err) {}
+			}
+			await ui.queueCarousel(hand, 4, (c,i) => board.toGrave(c.cards[i], c), () => true);
+		}
+	},
 	//0 - add any kind of sorting when building/creating/adding cards before the game starts, it can be special, then gold, then ability units, then units with no ability OR
 	// special and then on top sorted by card numbers/strenght/power, it is a mess in this state.
 	
