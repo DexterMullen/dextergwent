@@ -58,6 +58,44 @@ var ability_dict = {
 	
 	
 	//delete down	
+	play_cow: { // ABILITY1 Play cow from your deck we need to add also play cow from graveyard later
+		name: "play_cow",
+		description: "Pick cow card from your deck and play it instantly.",
+		placed: async card => {
+			let out = card.holder.deck.findCard(c => c.name === "Cow");
+			if (out) await out.autoplay(card.holder.deck);
+		},
+		weight: (card, ai) => ai.weightWeatherFromDeck(card, "Cow")
+	},
+
+	foltest_kingg: {
+		description: "Pick an Impenetrable Fog card from your deck and play it instantly.",
+
+		activated: async card => {
+			
+			let test = card.holder.deck.findCard(c => c.name === "foltest_kinggg");
+			if (test) await test.autoplay(card.holder.deck);
+			
+			let out = card.holder.deck.findCard(c => c.name === "Impenetrable Fog");
+			if (out) await out.autoplay(card.holder.deck);
+		},
+		weight: (card, ai) => ai.weightWeatherFromDeck(card, "fog")
+	},
+
+	alzur_makerrr: {
+		description: "Destroy one of your units on the board and summon a Koshchey.",
+		activated: (card, player) => {
+			//player.endTurnAfterAbilityUse = false;
+			//ui.showPreviewVisuals(card);
+			ui.enablePlayer(true);
+			if(!(player.controller instanceof ControllerAI)) ui.setSelectable(card, true);
+		},
+		target: "nr_foltest_kinggg",
+		weight: (card, ai, max) => {
+			if (ai.player.getAllRowCards().filter(c => c.isUnit()).length === 0) return 0;
+		//	return ai.weightScorchRow(card, max, "close");
+		}
+	},
 
 	//delete up
 

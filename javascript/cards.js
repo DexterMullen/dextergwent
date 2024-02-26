@@ -1,5 +1,18 @@
 var default_cards = {
     //devvcards to test abilities ntr_devclose ntr_devranged ntr_devsiege
+        //delete down
+        "nr_foltest_kinggg": {
+            "name": "foltest_kinggg",
+            "deck": "realms",
+            "row": "close",
+            "strength": "5",
+            "ability": "hero",
+            "filename": "foltest_king",
+            "count": "0",
+            "quote": "It is natural and beautiful that a man should love his sisterrr."
+        },
+        //delete up
+    
     "ntr_devcoun0": {
         "name": "devcoun0",
         "deck": "neutral",
@@ -469,23 +482,11 @@ var default_cards = {
         "deck": "realms",
         "row": "leader",
         "strength": "",
-        "ability": "foltest_king",
+        "ability": "alzur_makerrr",
         "filename": "foltest_king",
         "count": "1",
         "quote": "It is natural and beautiful that a man should love his sister."
     },
-    //delete down
-    "nr_foltest_kinggg": {
-        "name": "Foltest - Kinggg of Temeria",
-        "deck": "realms",
-        "row": "close",
-        "strength": "5",
-        "ability": "hero",
-        "filename": "foltest_king",
-        "count": "1",
-        "quote": "It is natural and beautiful that a man should love his sisterrr."
-    },
-    //delete up
     "nr_foltest_lord": {
         "name": "Foltest - Lord Commander of the North",
         "deck": "realms",
@@ -6413,7 +6414,7 @@ var ext_wu_cards = {
         "deck": "witcher_universe",
         "row": "close",
         "strength": "9",
-        "ability": "//scorch_c",
+        "ability": "scorch_c",
         "filename": "koshchey",
         "count": "0",
         "quote": "If I tell you koshchey is death, you'll go to the creek anyway, right?"
