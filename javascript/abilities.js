@@ -29,7 +29,7 @@ var ability_dict = {
 		name: "Decoy",
 		description: "Swap with a card on the battlefield to return it to your hand. "
 	},
-	developerleader: {
+	developerleader: { //add this to a leader card in cards.js, in ability section to test fast and easy
 		description: "Discard 5 cards and draw 5 card of your choice from your deck.",
 		activated: async (card) => {
 			let hand = board.getRow(card, "hand", card.holder);
@@ -53,6 +53,19 @@ var ability_dict = {
 			return cards[0].abilities.includes("muster") ? 50 : 25;
 		}
 	},
+	
+	
+	
+	
+	//delete down	
+
+	//delete up
+
+
+
+
+
+
 	horn: {
 		name: "Commander's Horn",
 		description: "Doubles the strength of all unit cards in that row. Limited to 1 per row. ",
@@ -178,7 +191,7 @@ var ability_dict = {
 		}
 	},
 	play_cow: { // ABILITY1 Play cow from your deck we need to add also play cow from graveyard later
-		play_cow: "play_cow",
+		name: "play_cow",
 		description: "Pick cow card from your deck and play it instantly.",
 		placed: async card => {
 			let out = card.holder.deck.findCard(c => c.name === "Cow");
