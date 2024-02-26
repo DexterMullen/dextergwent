@@ -274,7 +274,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "ranged",
         "strength": "7",
-        "ability": "hero",//ability needs to be able to call the cow fron deck OR graveyard
+        "ability": "hero play_cow",//ability needs to be able to call the cow fron deck OR graveyard
         "filename": "triss",
         "count": "1",
         "target": "",
@@ -2682,7 +2682,7 @@ var default_cards = {
         "deck": "skellige",
         "row": "leader",
         "strength": "",
-        "ability": "eredin_destroyer_developer",
+        "ability": "haraldthecriple",
         "filename": "harald",
         "count": "0",
         "quote": "No one know how he got his nickname, no one dares to ask"        
