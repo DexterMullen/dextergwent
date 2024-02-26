@@ -29,12 +29,30 @@ var ability_dict = {
 		name: "Decoy",
 		description: "Swap with a card on the battlefield to return it to your hand. "
 	},
-	//delete down
-	decoyyy: {
-		name: "decoyyy",
-		description: "SACRIFACE with a card on the battlefield to return it to your hand. "//testing sacrifice ability, targeg a unit, that unit goes to graveyard, sacrifice card takes its place(same as decoy)
+	developerleader: {
+		description: "Discard 5 cards and draw 5 card of your choice from your deck.",
+		activated: async (card) => {
+			let hand = board.getRow(card, "hand", card.holder);
+			let deck = board.getRow(card, "deck", card.holder);
+			if (card.holder.controller instanceof ControllerAI) {
+				let cards = card.holder.controller.discardOrder(card).splice(0, 2).filter(c => c.basePower < 7);
+				await Promise.all(cards.map(async c => await board.toGrave(c, card.holder.hand)));
+				card.holder.deck.draw(card.holder.hand);
+				return;
+			} else {
+				try {
+					Carousel.curr.exit();
+				} catch (err) {}
+			}
+			await ui.queueCarousel(hand, 5, (c,i) => board.toGrave(c.cards[i], c), () => true);
+			await ui.queueCarousel(deck, 5, (c,i) => board.toHand(c.cards[i], deck), () => true, true);
+		},
+		weight: (card, ai) => {
+			let cards = ai.discardOrder(card).splice(0,2).filter(c => c.basePower < 7);
+			if (cards.length < 2) return 0;
+			return cards[0].abilities.includes("muster") ? 50 : 25;
+		}
 	},
-	//delete up
 	horn: {
 		name: "Commander's Horn",
 		description: "Doubles the strength of all unit cards in that row. Limited to 1 per row. ",
@@ -520,30 +538,8 @@ var ability_dict = {
 			if (cards.length < 2) return 0;
 			return cards[0].abilities.includes("muster") ? 50 : 25;
 		}
-	},	eredin_destroyer_developer: {
-		description: "Discard 5 cards and draw 5 card of your choice from your deck.",
-		activated: async (card) => {
-			let hand = board.getRow(card, "hand", card.holder);
-			let deck = board.getRow(card, "deck", card.holder);
-			if (card.holder.controller instanceof ControllerAI) {
-				let cards = card.holder.controller.discardOrder(card).splice(0, 2).filter(c => c.basePower < 7);
-				await Promise.all(cards.map(async c => await board.toGrave(c, card.holder.hand)));
-				card.holder.deck.draw(card.holder.hand);
-				return;
-			} else {
-				try {
-					Carousel.curr.exit();
-				} catch (err) {}
-			}
-			await ui.queueCarousel(hand, 5, (c,i) => board.toGrave(c.cards[i], c), () => true);
-			await ui.queueCarousel(deck, 5, (c,i) => board.toHand(c.cards[i], deck), () => true, true);
-		},
-		weight: (card, ai) => {
-			let cards = ai.discardOrder(card).splice(0,2).filter(c => c.basePower < 7);
-			if (cards.length < 2) return 0;
-			return cards[0].abilities.includes("muster") ? 50 : 25;
-		}
-	},
+	},	
+	
 	eredin_king: {
 		description: "Pick any weather card from your deck and play it instantly.",
 		activated: async card => {
