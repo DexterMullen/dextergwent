@@ -1,36 +1,20 @@
 var default_cards = {
     //devvcards to test abilities ntr_devclose ntr_devranged ntr_devsiege
-        //delete down
-        "nr_foltest_kinggg": {
-            "name": "foltest_kinggg",
-            "deck": "realms",
-            "row": "close",
-            "strength": "5",
-            "ability": "hero",
-            "filename": "foltest_king",
-            "count": "0",
-            "quote": "It is natural and beautiful that a man should love his sisterrr."
-        },
-        //delete up
-    
-    "ntr_devcoun0": {
-        "name": "devcoun0",
-        "deck": "neutral",
-        "row": "close",
-        "strength": "14",
-        "ability": "", 
-        "filename": "devclose",
-        "count": "0",
-        "quote": "You humans have... unusual tastes.",
         
-    },
+    
+    //delete down
+
+    //delete up
+    
+
+
 
     "ntr_devclose": {
         "name": "devclose",
         "deck": "neutral",
         "row": "close",
         "strength": "14",
-        "ability": "play_2specific", 
+        "ability": "", 
         "filename": "devclose",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -116,7 +100,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "close",
         "strength": "1",
-        "ability": "cyrus_hemmelfart",//ABILITY Draw X amount of random cards from opponents graeyard, play 1 return others to opponents graveyard. 
+        "ability": "",//ABILITY Draw X amount of random cards from opponents graeyard, play 1 return others to opponents graveyard. 
         "filename": "caretaker",
         "count": "1",
         "quote": "There are more things in heaven and earth than all the world's philosophers have dreamt.",
@@ -482,7 +466,7 @@ var default_cards = {
         "deck": "realms",
         "row": "leader",
         "strength": "",
-        "ability": "alzur_makerrr",
+        "ability": "foltest_king",
         "filename": "foltest_king",
         "count": "1",
         "quote": "It is natural and beautiful that a man should love his sister."
@@ -958,7 +942,7 @@ var default_cards = {
         "deck": "nilfgaard",
         "row": "leader",
         "strength": "",
-        "ability": "emhyr_imperial",
+        "ability": "emhyr_imperial", //play rain from your deck
         "filename": "emhyr_imperial",
         "count": "1",
         "quote": "The skies wept when my Pavetta died. They will not weep for me."
@@ -968,7 +952,7 @@ var default_cards = {
         "deck": "nilfgaard",
         "row": "leader",
         "strength": "",
-        "ability": "emhyr_emperor",
+        "ability": "emhyr_emperor", //reveal 3
         "filename": "emhyr_emperor",
         "count": "1",
         "quote": "Your motives do not interest me. Only results."
@@ -978,7 +962,7 @@ var default_cards = {
         "deck": "nilfgaard",
         "row": "leader",
         "strength": "",
-        "ability": "emhyr_whiteflame",
+        "ability": "emhyr_relentless",
         "filename": "emhyr_whiteflame",
         "count": "1",
         "quote": "A sword is but one of many tools at a ruler's disposal."
@@ -988,7 +972,7 @@ var default_cards = {
         "deck": "nilfgaard",
         "row": "leader",
         "strength": "",
-        "ability": "emhyr_relentless",
+        "ability": "emhyr_relentless", //steal to hand from opponenets graveyard
         "filename": "emhyr_relentless",
         "count": "1",
         "quote": "They do not call me the Patient. Take care they do not call you the Headless."
@@ -998,7 +982,7 @@ var default_cards = {
         "deck": "nilfgaard",
         "row": "leader",
         "strength": "",
-        "ability": "emhyr_invader",
+        "ability": "any2decktograveyard", //  emhyr_invader
         "filename": "emhyr_invader_of_the_north",
         "count": "1",
         "quote": "Emperors command multitudes, yet cannot control two things: their time and their hearts."
@@ -1174,12 +1158,13 @@ var default_cards = {
     "ne_morteisen": {
         "name": "Morteisen",
         "deck": "nilfgaard",
-        "row": "close",
-        "strength": "3",
-        "ability": "",
+        "row": "ranged",
+        "strength": "5",
+        "ability": "onecardfromdecktograve",
         "filename": "morteisen",
         "count": "1",
-        "quote": "No Nordling pikemen or dwarven spearbearers can hope to best trained cavalary."
+        "quote": "No Nordling pikemen or dwarven spearbearers can hope to best trained cavalary.",
+        "sound": "14 Morteisen You've no chance. Do you not see that.ogg",
     },
     "ne_moorvran": {
         "name": "Morvran Voorhis",
@@ -1197,7 +1182,7 @@ var default_cards = {
         "deck": "nilfgaard",
         "row": "close",
         "strength": "4",
-        "ability": "bond",
+        "ability": "muster",
         "filename": "nauzicaa_1",
         "count": "1",
         "target": "ne_nauzicaa",
@@ -1209,7 +1194,7 @@ var default_cards = {
         "deck": "nilfgaard",
         "row": "ranged",
         "strength": "4",
-        "ability": "bond",
+        "ability": "muster",
         "filename": "nauzicaa_2",
         "count": "1",
         "target": "ne_nauzicaa",
@@ -1221,7 +1206,7 @@ var default_cards = {
         "deck": "nilfgaard",
         "row": "siege",
         "strength": "4",
-        "ability": "bond",
+        "ability": "muster",
         "filename": "nauzicaa_3",
         "count": "1",
         "target": "ne_nauzicaa",
@@ -1417,7 +1402,7 @@ var default_cards = {
         "deck": "monsters",
         "row": "leader",
         "strength": "",
-        "ability": "eredin_destroyer",
+        "ability": "developerleader",
         "filename": "eredin_destroyer",
         "count": "1",
         "quote": "I've long awaited this...",
@@ -1957,7 +1942,7 @@ var default_cards = {
         "deck": "scoiatael",
         "row": "leader",
         "strength": "",
-        "ability": "francesca_daisy",
+        "ability": "scorch", //edit this so it plays scorch from deck, not imaginary from nowhere.
         "filename": "francesca_daisy",
         "count": "1",
         "quote": "Do not let my beauty distract your aim."
@@ -2762,7 +2747,7 @@ var default_cards = {
         "deck": "scoiatael",
         "row": "siege",
         "strength": "8",
-        "ability": "scorch_c",
+        "ability": "scorch_s",
         "filename": "schirru",
         "count": "1",
         "quote": "Time to look death in the face."
@@ -5519,7 +5504,7 @@ var ext_sk_cards = {
         "deck": "skellige",
         "row": "leader",
         "strength": "0",
-        "ability": "developerleader",
+        "ability": "radovid_ruthless",
         "filename": "morkvarg",
         "count": "1",
         "quote": "The vilest man Skellige's ever known."

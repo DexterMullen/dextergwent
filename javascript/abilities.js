@@ -32,8 +32,9 @@ var ability_dict = {
 	developerleader: { //add this to a leader card in cards.js, in ability section to test fast and easy
 		description: "Discard 5 cards and draw 5 card of your choice from your deck.",
 		activated: async (card) => {
-			let hand = board.getRow(card, "hand", card.holder);
 			let deck = board.getRow(card, "deck", card.holder);
+			let hand = board.getRow(card, "hand", card.holder);
+			
 			if (card.holder.controller instanceof ControllerAI) {
 				let cards = card.holder.controller.discardOrder(card).splice(0, 2).filter(c => c.basePower < 7);
 				await Promise.all(cards.map(async c => await board.toGrave(c, card.holder.hand)));
@@ -44,8 +45,9 @@ var ability_dict = {
 					Carousel.curr.exit();
 				} catch (err) {}
 			}
-			await ui.queueCarousel(hand, 5, (c,i) => board.toGrave(c.cards[i], c), () => true);
 			await ui.queueCarousel(deck, 5, (c,i) => board.toHand(c.cards[i], deck), () => true, true);
+			await ui.queueCarousel(hand, 5, (c,i) => board.toGrave(c.cards[i], c), () => true);
+			
 		},
 		weight: (card, ai) => {
 			let cards = ai.discardOrder(card).splice(0,2).filter(c => c.basePower < 7);
@@ -58,44 +60,17 @@ var ability_dict = {
 	
 	
 	//delete down	
-	play_cow: { // ABILITY1 Play cow from your deck we need to add also play cow from graveyard later
-		name: "play_cow",
+
+	play_coww: { // ABILITY1 Play cow from your deck we need to add also play cow from graveyard later
+		name: "play_coww",
 		description: "Pick cow card from your deck and play it instantly.",
 		placed: async card => {
-			let out = card.holder.deck.findCard(c => c.name === "Cow");
-			if (out) await out.autoplay(card.holder.deck);
+			let out = card.holder.grave.findCard(c => c.name === "Cow"); //this plays cow from graveyard add play from deck so it is FROM DECK or FROM GRAVEYARD
+			if (out) await out.autoplay(card.holder.grave);{}
 		},
 		weight: (card, ai) => ai.weightWeatherFromDeck(card, "Cow")
 	},
-
-	foltest_kingg: {
-		description: "Pick an Impenetrable Fog card from your deck and play it instantly.",
-
-		activated: async card => {
-			
-			let test = card.holder.deck.findCard(c => c.name === "foltest_kinggg");
-			if (test) await test.autoplay(card.holder.deck);
-			
-			let out = card.holder.deck.findCard(c => c.name === "Impenetrable Fog");
-			if (out) await out.autoplay(card.holder.deck);
-		},
-		weight: (card, ai) => ai.weightWeatherFromDeck(card, "fog")
-	},
-
-	alzur_makerrr: {
-		description: "Destroy one of your units on the board and summon a Koshchey.",
-		activated: (card, player) => {
-			//player.endTurnAfterAbilityUse = false;
-			//ui.showPreviewVisuals(card);
-			ui.enablePlayer(true);
-			if(!(player.controller instanceof ControllerAI)) ui.setSelectable(card, true);
-		},
-		target: "nr_foltest_kinggg",
-		weight: (card, ai, max) => {
-			if (ai.player.getAllRowCards().filter(c => c.isUnit()).length === 0) return 0;
-		//	return ai.weightScorchRow(card, max, "close");
-		}
-	},
+	
 
 	//delete up
 
@@ -148,7 +123,7 @@ var ability_dict = {
 	},
 	scorchmin: {
 		name: "scorchmin",
-		description: "Discard after playing. Kills the weakest card(s) on the battlefield. ",
+		description: "Kills the weakest card(s) on the battlefield.(can not target himself) ",
 		activated: async card => {
 			await ability_dict["scorch"].placed(card);
 			await board.toGrave(card, card.holder.hand);
@@ -222,7 +197,7 @@ var ability_dict = {
 		placed: async (card) => {
 			if (card.isLocked()) return;
 			await card.animate("spy");
-			for (let i = 0; i < 2; i++) { //ABILITY1 change this from "i < 3" to "i < 1" once done testing
+			for (let i = 0; i < 1; i++) { //ABILITY1 change this from "i < 3" to "i < 1" once done testing
 				if (card.holder.deck.cards.length > 0) await card.holder.deck.draw(card.holder.hand);
 			}
 			card.holder = card.holder.opponent();
@@ -681,7 +656,7 @@ var ability_dict = {
 		}
 	},	
 	eredin_treacherous: {
-		description: "Doubles the strength of all spy cards (affects both players).",
+		description: "Doubles the strength of all spy cards (affects both players).", //should be 15 strenght with no ability 
 		gameStart: () => game.spyPowerMult = 2
 	},
 	francesca_queen: {
@@ -851,7 +826,7 @@ var ability_dict = {
 		}
 	},
 	radovid_ruthless: {
-		description: "Cancel the scorch ability for one round",
+		description: "Cancel ALL scorching ability's for one round",
 		activated: async card => {
 			game.scorchCancelled = true;
 			await ui.notification("north-scorch-cancelled", 1200);
@@ -1372,6 +1347,62 @@ var ability_dict = {
 			await ui.queueCarousel(hand, 4, (c,i) => board.toGrave(c.cards[i], c), () => true);
 		}
 	},
+
+	any2decktograveyard: {  //LEADER NILFGARD Emhyr var Emreis - Invader of the North",
+		description: "Chose Any 3 cards from your deck, and move them to your graveyard",
+		activated: async (card) => {
+			let deck = board.getRow(card, "deck", card.holder);
+			
+	
+			if (card.holder.controller instanceof ControllerAI) {
+				let cards = card.holder.controller.discardOrder(card).splice(0, 2).filter(c => c.basePower < 7);
+				await Promise.all(cards.map(async c => await board.toGrave(c, card.holder.hand)));
+				card.holder.deck.draw(card.holder.hand);
+				return;
+			} else {
+				try {
+					Carousel.curr.exit();
+				} catch (err) {}
+			}
+	
+			await ui.queueCarousel(deck, 3, (c, i) => board.toGrave(c.cards[i], deck), () => true, true);
+			
+		},
+		weight: (card, ai) => {
+			let cards = ai.discardOrder(card).splice(0, 2).filter(c => c.basePower < 7);
+			if (cards.length < 2) return 0;
+			return cards[0].abilities.includes("muster") ? 50 : 25;
+		}
+	},
+
+	onecardfromdecktograve: {  //mortiersen unit ability same as nilfgard leader
+		name: "onecardfromdecktograve",
+		description: "Chose 1 card from your deck, and move it to your graveyard",
+		placed: async (card) => {
+			let deck = board.getRow(card, "deck", card.holder);
+			
+	
+			if (card.holder.controller instanceof ControllerAI) {
+				let cards = card.holder.controller.discardOrder(card).splice(0, 2).filter(c => c.basePower < 7);
+				await Promise.all(cards.map(async c => await board.toGrave(c, card.holder.hand)));
+				card.holder.deck.draw(card.holder.hand);
+				return;
+			} else {
+				try {
+					Carousel.curr.exit();
+				} catch (err) {}
+			}
+	
+			await ui.queueCarousel(deck, 1, (c, i) => board.toGrave(c.cards[i], deck), () => true, true);
+			
+		},
+		weight: (card, ai) => {
+			let cards = ai.discardOrder(card).splice(0, 2).filter(c => c.basePower < 7);
+			if (cards.length < 2) return 0;
+			return cards[0].abilities.includes("muster") ? 50 : 25;
+		}
+	},
+
 	//0 - add any kind of sorting when building/creating/adding cards before the game starts, it can be special, then gold, then ability units, then units with no ability OR
 	// special and then on top sorted by card numbers/strenght/power, it is a mess in this state.
 	
