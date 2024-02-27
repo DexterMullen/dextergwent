@@ -1960,7 +1960,7 @@ var default_cards = {
         "deck": "scoiatael",
         "row": "leader",
         "strength": "",
-        "ability": "francesca_daisy",
+        "ability": "scorch",
         "filename": "francesca_daisy",
         "count": "1",
         "quote": "Do not let my beauty distract your aim."

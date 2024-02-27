@@ -60,14 +60,13 @@ var ability_dict = {
 	
 	
 	//delete down	
-	play_cow: { // ABILITY1 Play cow from your deck we need to add also play cow from graveyard later
-		name: "play_cow",
-		description: "Pick cow card from your deck and play it instantly.",
-		placed: async card => {
-			let out = card.holder.deck.findCard(c => c.name === "Cow");
+	play_Scorch_from_deck: { // ABILITY1 Play cow from your deck we need to add also play cow from graveyard later
+		description: "Pick Scorch card from your deck and play it instantly.",
+		activated: async card => {
+			let out = card.holder.deck.findCard(c => c.name === "Scorch");
 			if (out) await out.autoplay(card.holder.deck);
 		},
-		weight: (card, ai) => ai.weightWeatherFromDeck(card, "Cow")
+		weight: (card, ai) => ai.weightWeatherFromDeck(card, "Scorch")
 	},
 
 	foltest_kingg: {
@@ -1406,7 +1405,7 @@ var ability_dict = {
 		}
 	},
 
-	onecardfromdecktograve: {  
+	onecardfromdecktograve: {  //mortiersen unit ability same as nilfgard leader
 		name: "onecardfromdecktograve",
 		description: "Chose 1 card from your deck, and move it to your graveyard",
 		placed: async (card) => {
