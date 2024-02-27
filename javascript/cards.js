@@ -1,6 +1,8 @@
 var default_cards = {
     //devvcards to test abilities ntr_devclose ntr_devranged ntr_devsiege
-        //delete down
+        
+    
+    //delete down
         "nr_foltest_kinggg": {
             "name": "foltest_kinggg",
             "deck": "realms",
@@ -30,7 +32,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "close",
         "strength": "14",
-        "ability": "play_2specific", 
+        "ability": "", 
         "filename": "devclose",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -958,7 +960,7 @@ var default_cards = {
         "deck": "nilfgaard",
         "row": "leader",
         "strength": "",
-        "ability": "emhyr_imperial",
+        "ability": "emhyr_imperial", //play rain from your deck
         "filename": "emhyr_imperial",
         "count": "1",
         "quote": "The skies wept when my Pavetta died. They will not weep for me."
@@ -968,7 +970,7 @@ var default_cards = {
         "deck": "nilfgaard",
         "row": "leader",
         "strength": "",
-        "ability": "emhyr_emperor",
+        "ability": "emhyr_emperor", //reveal 3
         "filename": "emhyr_emperor",
         "count": "1",
         "quote": "Your motives do not interest me. Only results."
@@ -988,7 +990,7 @@ var default_cards = {
         "deck": "nilfgaard",
         "row": "leader",
         "strength": "",
-        "ability": "emhyr_relentless",
+        "ability": "emhyr_relentless", //steal to hand from opponenets graveyard
         "filename": "emhyr_relentless",
         "count": "1",
         "quote": "They do not call me the Patient. Take care they do not call you the Headless."
@@ -998,7 +1000,7 @@ var default_cards = {
         "deck": "nilfgaard",
         "row": "leader",
         "strength": "",
-        "ability": "emhyr_invader",
+        "ability": "any2decktograveyard", //  emhyr_invader
         "filename": "emhyr_invader_of_the_north",
         "count": "1",
         "quote": "Emperors command multitudes, yet cannot control two things: their time and their hearts."
@@ -1174,12 +1176,13 @@ var default_cards = {
     "ne_morteisen": {
         "name": "Morteisen",
         "deck": "nilfgaard",
-        "row": "close",
-        "strength": "3",
-        "ability": "",
+        "row": "ranged",
+        "strength": "5",
+        "ability": "onecardfromdecktograve",
         "filename": "morteisen",
         "count": "1",
-        "quote": "No Nordling pikemen or dwarven spearbearers can hope to best trained cavalary."
+        "quote": "No Nordling pikemen or dwarven spearbearers can hope to best trained cavalary.",
+        "sound": "14 Morteisen You've no chance. Do you not see that.ogg",
     },
     "ne_moorvran": {
         "name": "Morvran Voorhis",
