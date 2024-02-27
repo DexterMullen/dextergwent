@@ -61,7 +61,15 @@ var ability_dict = {
 	
 	//delete down	
 
-
+	play_coww: { // ABILITY1 Play cow from your deck we need to add also play cow from graveyard later
+		name: "play_coww",
+		description: "Pick cow card from your deck and play it instantly.",
+		placed: async card => {
+			let out = card.holder.grave.findCard(c => c.name === "Cow"); //this plays cow from graveyard add play from deck so it is FROM DECK or FROM GRAVEYARD
+			if (out) await out.autoplay(card.holder.grave);{}
+		},
+		weight: (card, ai) => ai.weightWeatherFromDeck(card, "Cow")
+	},
 	
 
 	//delete up
