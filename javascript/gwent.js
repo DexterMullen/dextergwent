@@ -2471,6 +2471,15 @@ class UI {
 			await board.addCardToRow(target, target.row, card.holder);
 			pCard.holder.endTurn();
 		}
+		else if (pCard.abilities.includes("alzur_makerrr")) {
+			this.hidePreview(card);
+			this.enablePlayer(false);
+			console.log(pCard);
+			//await board.toGrave(card, row);
+			let target = new Card(ability_dict["alzur_makerrr"].target, card_dict[ability_dict["alzur_makerrr"].target], card.holder);
+			await board.addCardToRow(target, target.row, card.holder);
+			pCard.holder.endTurn();
+		}
 	}
 
 	async selectRow(row, isSpecial = false) {

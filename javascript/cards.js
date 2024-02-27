@@ -1,5 +1,20 @@
 var default_cards = {
     //devvcards to test abilities ntr_devclose ntr_devranged ntr_devsiege
+        
+    
+    //delete down
+        "nr_foltest_kinggg": {
+            "name": "foltest_kinggg",
+            "deck": "realms",
+            "row": "close",
+            "strength": "5",
+            "ability": "hero",
+            "filename": "foltest_king",
+            "count": "0",
+            "quote": "It is natural and beautiful that a man should love his sisterrr."
+        },
+        //delete up
+    
     "ntr_devcoun0": {
         "name": "devcoun0",
         "deck": "neutral",
@@ -17,7 +32,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "close",
         "strength": "14",
-        "ability": "play_2specific", 
+        "ability": "", 
         "filename": "devclose",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -469,23 +484,11 @@ var default_cards = {
         "deck": "realms",
         "row": "leader",
         "strength": "",
-        "ability": "foltest_king",
+        "ability": "alzur_makerrr",
         "filename": "foltest_king",
         "count": "1",
         "quote": "It is natural and beautiful that a man should love his sister."
     },
-    //delete down
-    "nr_foltest_kinggg": {
-        "name": "Foltest - Kinggg of Temeria",
-        "deck": "realms",
-        "row": "close",
-        "strength": "5",
-        "ability": "hero",
-        "filename": "foltest_king",
-        "count": "1",
-        "quote": "It is natural and beautiful that a man should love his sisterrr."
-    },
-    //delete up
     "nr_foltest_lord": {
         "name": "Foltest - Lord Commander of the North",
         "deck": "realms",
@@ -957,7 +960,7 @@ var default_cards = {
         "deck": "nilfgaard",
         "row": "leader",
         "strength": "",
-        "ability": "emhyr_imperial",
+        "ability": "emhyr_imperial", //play rain from your deck
         "filename": "emhyr_imperial",
         "count": "1",
         "quote": "The skies wept when my Pavetta died. They will not weep for me."
@@ -967,7 +970,7 @@ var default_cards = {
         "deck": "nilfgaard",
         "row": "leader",
         "strength": "",
-        "ability": "emhyr_emperor",
+        "ability": "emhyr_emperor", //reveal 3
         "filename": "emhyr_emperor",
         "count": "1",
         "quote": "Your motives do not interest me. Only results."
@@ -987,7 +990,7 @@ var default_cards = {
         "deck": "nilfgaard",
         "row": "leader",
         "strength": "",
-        "ability": "emhyr_relentless",
+        "ability": "emhyr_relentless", //steal to hand from opponenets graveyard
         "filename": "emhyr_relentless",
         "count": "1",
         "quote": "They do not call me the Patient. Take care they do not call you the Headless."
@@ -997,7 +1000,7 @@ var default_cards = {
         "deck": "nilfgaard",
         "row": "leader",
         "strength": "",
-        "ability": "emhyr_invader",
+        "ability": "any2decktograveyard", //  emhyr_invader
         "filename": "emhyr_invader_of_the_north",
         "count": "1",
         "quote": "Emperors command multitudes, yet cannot control two things: their time and their hearts."
@@ -1173,12 +1176,13 @@ var default_cards = {
     "ne_morteisen": {
         "name": "Morteisen",
         "deck": "nilfgaard",
-        "row": "close",
-        "strength": "3",
-        "ability": "",
+        "row": "ranged",
+        "strength": "5",
+        "ability": "onecardfromdecktograve",
         "filename": "morteisen",
         "count": "1",
-        "quote": "No Nordling pikemen or dwarven spearbearers can hope to best trained cavalary."
+        "quote": "No Nordling pikemen or dwarven spearbearers can hope to best trained cavalary.",
+        "sound": "14 Morteisen You've no chance. Do you not see that.ogg",
     },
     "ne_moorvran": {
         "name": "Morvran Voorhis",
@@ -1956,7 +1960,7 @@ var default_cards = {
         "deck": "scoiatael",
         "row": "leader",
         "strength": "",
-        "ability": "francesca_daisy",
+        "ability": "scorch", //edit this so it plays scorch from deck, not imaginary from nowhere.
         "filename": "francesca_daisy",
         "count": "1",
         "quote": "Do not let my beauty distract your aim."
@@ -6413,7 +6417,7 @@ var ext_wu_cards = {
         "deck": "witcher_universe",
         "row": "close",
         "strength": "9",
-        "ability": "//scorch_c",
+        "ability": "scorch_c",
         "filename": "koshchey",
         "count": "0",
         "quote": "If I tell you koshchey is death, you'll go to the creek anyway, right?"
