@@ -3,29 +3,11 @@ var default_cards = {
         
     
     //delete down
-        "nr_foltest_kinggg": {
-            "name": "foltest_kinggg",
-            "deck": "realms",
-            "row": "close",
-            "strength": "5",
-            "ability": "hero",
-            "filename": "foltest_king",
-            "count": "0",
-            "quote": "It is natural and beautiful that a man should love his sisterrr."
-        },
-        //delete up
+
+    //delete up
     
-    "ntr_devcoun0": {
-        "name": "devcoun0",
-        "deck": "neutral",
-        "row": "close",
-        "strength": "14",
-        "ability": "", 
-        "filename": "devclose",
-        "count": "0",
-        "quote": "You humans have... unusual tastes.",
-        
-    },
+
+
 
     "ntr_devclose": {
         "name": "devclose",
@@ -118,7 +100,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "close",
         "strength": "1",
-        "ability": "cyrus_hemmelfart",//ABILITY Draw X amount of random cards from opponents graeyard, play 1 return others to opponents graveyard. 
+        "ability": "",//ABILITY Draw X amount of random cards from opponents graeyard, play 1 return others to opponents graveyard. 
         "filename": "caretaker",
         "count": "1",
         "quote": "There are more things in heaven and earth than all the world's philosophers have dreamt.",
@@ -484,7 +466,7 @@ var default_cards = {
         "deck": "realms",
         "row": "leader",
         "strength": "",
-        "ability": "alzur_makerrr",
+        "ability": "foltest_king",
         "filename": "foltest_king",
         "count": "1",
         "quote": "It is natural and beautiful that a man should love his sister."
@@ -980,7 +962,7 @@ var default_cards = {
         "deck": "nilfgaard",
         "row": "leader",
         "strength": "",
-        "ability": "emhyr_whiteflame",
+        "ability": "emhyr_relentless",
         "filename": "emhyr_whiteflame",
         "count": "1",
         "quote": "A sword is but one of many tools at a ruler's disposal."
@@ -2765,7 +2747,7 @@ var default_cards = {
         "deck": "scoiatael",
         "row": "siege",
         "strength": "8",
-        "ability": "scorch_c",
+        "ability": "scorch_s",
         "filename": "schirru",
         "count": "1",
         "quote": "Time to look death in the face."
@@ -5522,7 +5504,7 @@ var ext_sk_cards = {
         "deck": "skellige",
         "row": "leader",
         "strength": "0",
-        "ability": "developerleader",
+        "ability": "radovid_ruthless",
         "filename": "morkvarg",
         "count": "1",
         "quote": "The vilest man Skellige's ever known."

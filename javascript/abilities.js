@@ -60,47 +60,9 @@ var ability_dict = {
 	
 	
 	//delete down	
-	play_Scorch_from_deck: { // ABILITY1 Play cow from your deck we need to add also play cow from graveyard later
-		description: "Pick Scorch card from your deck and play it instantly.",
-		activated: async card => {
-			let out = card.holder.deck.findCard(c => c.name === "Scorch");
-			if (out) await out.autoplay(card.holder.deck);
-		},
-		weight: (card, ai) => ai.weightWeatherFromDeck(card, "Scorch")
-	},
 
-	foltest_kingg: {
-		description: "Pick an Impenetrable Fog card from your deck and play it instantly.",
-
-		activated: async card => {
-			
-			let test = card.holder.count0.findCard(c => c.name === "foltest_kinggg");
-			if (test) await test.autoplay(card.holder.count0);
-			
-			let out = card.holder.deck.findCard(c => c.name === "Impenetrable Fog");
-			if (out) await out.autoplay(card.holder.deck);
-		},
-		weight: (card, ai) => ai.weightWeatherFromDeck(card, "fog")
-	},
-
-	alzur_makerrr: {
-		description: "Destroy one of your units on the board and summon a Koshchey.",
-		activated: (card, player) => {
-			//player.endTurnAfterAbilityUse = false;
-			//ui.showPreviewVisuals(card);
-			ui.enablePlayer(true);
-			if(!(player.controller instanceof ControllerAI)) ui.setSelectable(card, true);
-		},
-		target: "chort",
-		weight: (card, ai, max) => {
-			if (ai.player.getAllRowCards().filter(c => c.isUnit()).length === 0) return 0;
-		//	return ai.weightScorchRow(card, max, "close");
-		}
-	},
 
 	
-
-
 
 	//delete up
 
@@ -227,7 +189,7 @@ var ability_dict = {
 		placed: async (card) => {
 			if (card.isLocked()) return;
 			await card.animate("spy");
-			for (let i = 0; i < 2; i++) { //ABILITY1 change this from "i < 3" to "i < 1" once done testing
+			for (let i = 0; i < 1; i++) { //ABILITY1 change this from "i < 3" to "i < 1" once done testing
 				if (card.holder.deck.cards.length > 0) await card.holder.deck.draw(card.holder.hand);
 			}
 			card.holder = card.holder.opponent();
@@ -686,7 +648,7 @@ var ability_dict = {
 		}
 	},	
 	eredin_treacherous: {
-		description: "Doubles the strength of all spy cards (affects both players).",
+		description: "Doubles the strength of all spy cards (affects both players).", //should be 15 strenght with no ability 
 		gameStart: () => game.spyPowerMult = 2
 	},
 	francesca_queen: {
@@ -856,7 +818,7 @@ var ability_dict = {
 		}
 	},
 	radovid_ruthless: {
-		description: "Cancel the scorch ability for one round",
+		description: "Cancel ALL scorching ability's for one round",
 		activated: async card => {
 			game.scorchCancelled = true;
 			await ui.notification("north-scorch-cancelled", 1200);
