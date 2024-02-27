@@ -1960,7 +1960,7 @@ var default_cards = {
         "deck": "scoiatael",
         "row": "leader",
         "strength": "",
-        "ability": "scorch",
+        "ability": "scorch", //edit this so it plays scorch from deck, not imaginary from nowhere.
         "filename": "francesca_daisy",
         "count": "1",
         "quote": "Do not let my beauty distract your aim."
