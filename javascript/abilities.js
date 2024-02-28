@@ -58,17 +58,34 @@ var ability_dict = {
 	
 	
 	
-	//TESTING SECTION delete once done with testing
+	//TESTING SECTION delete once done with testing, keep it clean
 	//delete everything DWON from "delete down" and everything UP from delete up
+	
+	
 	//delete down	
 
 
-
-
-
-
-
-
+	playunit_drawcard: { //cantarela from nilfgard card
+		playunit_drawcard: "playunit_drawcard",
+		description: "Play a unit from your hand, then draw a random card from you deck to your hand.",
+		placed: async card => {
+			let units = card.holder.hand.cards.filter(c => c.isUnit());
+			if (units.length === 0) return;
+			let wrapper = {
+				card: null
+			};
+			if (card.holder.controller instanceof ControllerAI) wrapper.card = units[randomInt(units.length)];
+			else await ui.queueCarousel(board.getRow(card, "hand", card.holder), 1, (c, i) => wrapper.card = c.cards[i], c => c.isUnit(), true);
+			wrapper.card.autoplay();
+			card.holder.hand.removeCard(wrapper.card);
+			if (card.holder.deck.cards.length > 0) await card.holder.deck.draw(card.holder.hand);
+		},
+		weight: (card, ai) => {
+			let units = card.holder.hand.cards.filter(c => c.isUnit());
+			if (units.length === 0) return 0;
+			return 15;
+		}
+	},	
 
 
 
@@ -103,36 +120,133 @@ var ability_dict = {
 
 
 
-	//TO DO SECTION down
+	//TO DO SECTION DOWN !!!
 	//here are all abilities listed and they appear on the cards with proper description and icons but they do nothing at the moment and they need to be implemented
 
 
-	//UNITS !!
-	HighestBackToDeck :{ //new monster printed card from printed version
+	//UNITS ON HOLD!!
+	//NO WORK SO FAR
+	HighestBackToDeck :{ //new monster printed card from printed version +++
 		name: "HighestBackToDeck",
 		description: "Return both player's highest unit on the board back to their decks (if there is a draw between units, it is a random decision)",
 		},	
 	
-	CancleOneActiveWeatherCard:{//triss wweather universal card from printed version
+	CancleOneActiveWeatherCard:{//triss wweather universal card from printed version +++
 		name: "CancleOneActiveWeatherCard",
 		description: "Cancel the effect of 1 active weather card.",
 	},
 	sacrifice : {
-		name:"sacrifice",//Sabrina Sacrifice universal card from printed version
+		name:"sacrifice",//Sabrina Sacrifice universal card from printed version +++
 		description:"Target your unit, move it to graveyard, this card will take its place.",
 	},
 	
+	ReturnToHandOnLoss :{
+		name:"ReturnToHandOnLoss",//ciri return universal card from printed version +++
+		description:"Returns to your hand if you lost the round, if you won/draw goes to your graveyard",
+	},
+
+	ToOpponentHandOnWin :{
+		name:"ToOpponentHandOnWin",//saskia dragon universal card from printed version +++
+		description:"Goes to your opponents hand if you win the round, if you lost/draw, goes to your graveyard",
+	},
+
+	aard :{
+		name:"aard",//geralt aard universal card from printed version +++
+		description:"Select any unit on the opponenets side, any move it to any diferent row of your choice",
+	},
+
+	TargetSameValue :{
+		name:"Target Same Value",//zoltan target universal card from printed version +++
+		description:"Target any unit on your side of the board, then play any unit from your deck with same targeted value/points/strenght",
+	},
+
+	TargeDestroyChoice :{
+		name:"Targe Destroy Choice",//ciri target universal card from printed version +++
+		description:"Target any unit on your side of the board, destoy it(targeted unit goes to your graveyard, then draw 3 random cards from your deck, chose and play one",
+	},
+
+	Choice :{
+		name:"Choice",//priscila choice universal card from printed version +++
+		description:"Draw 3 random cards from your deck, 2 face up, 1 face down, chose and play one, other cards go back to your deck",
+	},
+
+	ChoiceFromOpponent :{
+		name:"Choice From Opponent",//operator choice universal card from printed version +++
+		description:"Draw 3 random cards from opponents deck, 1 face down, 2 face up, chose and play one, other cards go back to opponents deck",
+	},
+
+	FromOpponentGraveToBoard :{
+		name:"From opponents grave to board",//Caretaker gold universal card from printed version 
+		description:"Choose any unit from opponents graveyard and play it instantly",
+	},
+
+	AnySpecialFromDeck :{
+		name:"Any Special (non weather) From Deck",//magic golem universal card from printed version 
+		description:"Play any special (non weather) card from your deck to board",
+	},
+
+	MoveToThisRow :{
+		name:"Move To This Row",//move golem universal card from printed version 
+		description:"Move 2 of your units to this cards row.",
+	},
+
+	SpecialFromHandDrawCard :{ //regis special universal card from printed version 
+		name:"Special From Hand Draw Card",
+		description:"Play a special card from your hand, then draw a random card from you deck to your hand.",
+	},
+
+	ChooseFrom2Specific :{ //sweers nilfgard card from printed version 
+		name:"Choose From 2 Specific",
+		description:"Play BlueStripes Commando or Poor Fucking Infantry from your deck.",
+	},
 
 
 
-	//LEADERS !!
-	
+
+
+
+	//WORKED ON SEMI WORKING SECTION
+	anyweathertospecial: {
+		anyweathertospecial: "anyweathertospecial",
+		description: "Pick any special non weather card from your deck and play it instantly.",//last step is not working, selected card is not played at all
+		placed: async card => {
+			let deck = board.getRow(card, "deck", card.holder);
+			if (card.holder.controller instanceof ControllerAI) await ability_dict["anyspecial"].helper(card).card.autoplay(card.holder.deck);
+			else {
+				try {
+					Carousel.curr.cancel();
+				} catch (err) { }
+				await ui.queueCarousel(deck, 1, (c,i) => board.autoplay(c.cards[i], deck), c => c.faction === "special", true);
+			}
+		},
+		weight: (card, ai, max) => ability_dict["anyspecial"].helper(card).weight,
+		helper: card => {
+			let special = card.holder.deck.cards.filter(c => c.row === "special").reduce((a,c) => a.map(c => c.name).includes(c.name) ? a : a.concat([c]), []);
+			let out, weight = -1;
+			special.forEach(c => {
+				let w = card.holder.controller.weightSpecialFromDeck(c, c.abilities[0]);
+				if (w > weight) {
+					weight = w;
+					out = c;
+				}
+			});
+			return {
+				card: out,
+				weight: weight
+			};
+		}
+	},	
 
 
 
 
 
-	//TO DO SECTION up
+
+
+
+
+
+	//TO DO SECTION UP !!!
 
 
 
@@ -832,7 +946,7 @@ var ability_dict = {
 	},
 	playunit_drawcard: { //cantarela from nilfgard card
 		playunit_drawcard: "playunit_drawcard",
-		description: "Play a unit then draw a random card from you deck.",
+		description: "Play a unit from your hand, then draw a random card from you deck to your hand.",
 		placed: async card => {
 			let units = card.holder.hand.cards.filter(c => c.isUnit());
 			if (units.length === 0) return;

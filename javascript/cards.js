@@ -115,7 +115,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "ranged",
         "strength": "1",
-        "ability": "", //ABILITY1 draw 3 random cards from you deck, 1 face down, chose and play 1, return others to your deck.
+        "ability": "Choice", //ABILITY1 draw 3 random cards from you deck, 1 face down, chose and play 1, return others to your deck.
         "filename": "priscilla",
         "count": "1",
         "quote": "How about a game of gwent?",
@@ -183,7 +183,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "close",
         "strength": "5",
-        "ability": "hero",//TARGET CHOICE ABILITY1 chose and destroy 1 your unit, then draw 3 random cards from your deck, play 1, return other 2 to your deck. 
+        "ability": "hero TargeDestroyChoice",//TARGET CHOICE ABILITY1 chose and destroy 1 your unit, then draw 3 random cards from your deck, play 1, return other 2 to your deck. 
         "filename": "ciri_target",
         "count": "1",
         "quote": "Ho-ho, I sense trouble..",
@@ -205,7 +205,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "close",
         "strength": "1",
-        "ability": "hero",//TARGET CHOICE ABILITY1 chose and target any unit on your side of the board, then play any unit of your choice from your eck that has the same value/strenght as your targeted card
+        "ability": "hero TargetSameValue",//TARGET CHOICE ABILITY1 chose and target any unit on your side of the board, then play any unit of your choice from your eck that has the same value/strenght as your targeted card
         "filename": "zoltan_target",
         "count": "1",
         "quote": "Come to pappy!",
@@ -227,7 +227,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "siege",
         "strength": "6",
-        "ability": "", //RETURN ON LOSS ABILITY1 goes back to your hand if you lost the round, on win or draw goes back to your graveyard
+        "ability": "ReturnToHandOnLoss", //RETURN ON LOSS ABILITY1 goes back to your hand if you lost the round, on win or draw goes back to your graveyard
         "filename": "ciri_return",
         "count": "1",
         "quote": "Yield and save me some time!",
@@ -291,7 +291,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "close",
         "strength": "5",
-        "ability": "", //AARD ABILITY1 select any of the opponents unit on his side of the board, and then move it to the diferent row of your choice.
+        "ability": "aard", //AARD ABILITY1 select any of the opponents unit on his side of the board, and then move it to the diferent row of your choice.
         "filename": "geralt_aard",
         "count": "1",
         "quote": "If that's what it takes to save the world, it's better to let that world die.",
@@ -5012,7 +5012,7 @@ var ext_st_cards = {
         "deck": "neutral",
         "row": "siege",
         "strength": "15",
-        "ability": "hero",//ABILITY1 goes to opponents hand when round ends, if you win the round.
+        "ability": "hero ToOpponentHandOnWin",//ABILITY1 goes to opponents hand when round ends, if you win the round.
         "filename": "saesenthessis_dragon",
         "count": "1",
         "quote": "I care not for kings and their titles. In the east lives one who truly deserves a crown.",
@@ -5670,7 +5670,7 @@ var ext_sk_cards = {
         "deck": "skellige",
         "row": "leader",
         "strength": "",
-        "ability": "crach_an_craite",
+        "ability": "developerleader",
         "filename": "sigrdrifa",
         "count": "0",
         "quote": "Fall on your knees and beg Modron Freya for forgiveness.",
@@ -6113,7 +6113,7 @@ var ext_wu_cards = {
         "deck": "neutral",
         "row": "siege",
         "strength": "4",
-        "ability": "spy", // ABILITY1 draw 3 random crds from opponets deck, chose and play 1, other to will go to opponents graveyard.
+        "ability": "spy ChoiceFromOpponent", // ABILITY1 draw 3 random crds from opponets deck, chose and play 1, other to will go to opponents graveyard.
         "filename": "operator",
         "count": "1",
         "quote": "As time and space collapse before us, they expand behind us..."
