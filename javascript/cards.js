@@ -1,8 +1,12 @@
 var default_cards = {
     //devvcards to test abilities ntr_devclose ntr_devranged ntr_devsiege
         
-    
+    //test cards section
     //delete down
+
+
+
+
 
     //delete up
     
@@ -14,7 +18,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "close",
         "strength": "14",
-        "ability": "play_coww", 
+        "ability": "", 
         "filename": "devclose",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -122,7 +126,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "ranged", //Mobile
         "strength": "10",
-        "ability": "",//ABILITY Draw X amount of random cards from opponents graeyard, play 1 return others to opponents graveyard. neutral_sabrina_sacrifice
+        "ability": "sacrifice",//ABILITY Draw X amount of random cards from opponents graeyard, play 1 return others to opponents graveyard. neutral_sabrina_sacrifice
         "filename": "sabrina_sacrifice",
         "count": "1",
         "quote": "There are more things in heaven and earth than all the world's philosophers have dreamt.",
@@ -4914,7 +4918,7 @@ var ext_mo_cards = {
         "deck": "monsters",
         "row": "close",
         "strength": "6",
-        "ability": "succubus",
+        "ability": "hero succubus",
         "filename": "succubus",
         "count": "1",
         "quote": "Why fight? There are much better ways to work off excess energy...",
@@ -6451,6 +6455,16 @@ var ext_wu_cards = {
         "row": "ranged",
         "strength": "9",
         "ability": "hero",
+        "filename": "iris_von_everec",
+        "count": "1",
+        "quote": "I remember so little... Yet when I think of my rose, I begin to recall what was."
+    },
+    "mo_iris_von_everec": {
+        "name": "Iris von Everec",
+        "deck": "monsters",
+        "row": "agile",
+        "strength": "0",
+        "ability": "hero horn",
         "filename": "iris_von_everec",
         "count": "1",
         "quote": "I remember so little... Yet when I think of my rose, I begin to recall what was."
