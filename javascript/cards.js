@@ -313,6 +313,16 @@ var default_cards = {
         "count": "3",
         "quote": "Pillars of flame turn the mightiest to ash. All others tremble in shock and awe."
     },
+    "spe_scorchh": {
+        "name": "Scorchh",
+        "deck": "special scoiatael",
+        "row": "",
+        "strength": "",
+        "ability": "scorch",
+        "filename": "scorch",
+        "count": "1",
+        "quote": "Pillars of flame turn the mightiest to ash. All others tremble in shock and awe."
+    },
     "spe_rain": {
         "name": "Torrential Rain",
         "deck": "weather",
@@ -340,7 +350,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "ranged",
         "strength": "5",
-        "ability": "", //ABILITY1 cancel / remove only 1 active weather card from the board
+        "ability": "CancleOneActiveWeatherCard", //ABILITY1 cancel / remove only 1 active weather card from the board
         "filename": "triss_weather",
         "count": "1",
         "quote": "I can take care of myself. Trust me.",
@@ -4573,6 +4583,17 @@ var ext_mo_cards = {
         "quote": "Zirael! I await.",
         "sound":"Caranthir_There is no escape.ogg",
     },
+    "mo_caranthir_destroyer": {
+        "name": "Caranthir Destroyer",
+        "deck": "monsters",
+        "row": "agile",//should be mobile because opposite row is important for his ability
+        "strength": "6",
+        "ability": "hero destroy1weakest",
+        "filename": "caranthirdestroyer",
+        "count": "1",
+        "quote": "Zirael! I await.",
+        "sound":"Caranthir_There is no escape.ogg",
+    },
     "mo_jotunn": {
         "name": "Jotunnl",
         "deck": "monsters",
@@ -4800,10 +4821,10 @@ var ext_mo_cards = {
         "deck": "monsters",
         "row": "close",
         "strength": "6",
-        "ability": "",
+        "ability": "hero HighestBackToDeck", //ability1 add this: Return both player's highest unit on the board back to their decks (if there is a draw between units, it is a random decision)
         "filename": "noonwraith",
         "count": "1",
-        "quote": "They are born of some horrible tragedy tied to ill-fated love."
+        "quote": "They are born of some horrible tragedy tied to ill-fated love.)"//
     },
     "mo_vran_warrior": {
         "name": "Vran Warrior",
@@ -4893,7 +4914,7 @@ var ext_mo_cards = {
         "deck": "monsters",
         "row": "close",
         "strength": "6",
-        "ability": "succubuss",
+        "ability": "succubus",
         "filename": "succubus",
         "count": "1",
         "quote": "Why fight? There are much better ways to work off excess energy...",
