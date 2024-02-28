@@ -30,7 +30,7 @@ var ability_dict = {
 		description: "Swap with a card on the battlefield to return it to your hand. "
 	},
 	developerleader: { //add this to a leader card in cards.js, in ability section to test fast and easy
-		description: "Discard 5 cards and draw 5 card of your choice from your deck.",
+		description: "Discard 3 cards and draw 3 card of your choice from your deck.",
 		activated: async (card) => {
 			let deck = board.getRow(card, "deck", card.holder);
 			let hand = board.getRow(card, "hand", card.holder);
@@ -45,8 +45,8 @@ var ability_dict = {
 					Carousel.curr.exit();
 				} catch (err) {}
 			}
-			await ui.queueCarousel(deck, 5, (c,i) => board.toHand(c.cards[i], deck), () => true, true);
-			await ui.queueCarousel(hand, 5, (c,i) => board.toGrave(c.cards[i], c), () => true);
+			await ui.queueCarousel(deck, 3, (c,i) => board.toHand(c.cards[i], deck), () => true, true);
+			await ui.queueCarousel(hand, 3, (c,i) => board.toGrave(c.cards[i], c), () => true);
 			
 		},
 		weight: (card, ai) => {
@@ -58,14 +58,69 @@ var ability_dict = {
 	
 	
 	
-	
+	//TESTING SECTION delete once done with testing
+	//delete everything DWON from "delete down" and everything UP from delete up
 	//delete down	
 
 
-	
+
+
+
+
+
+
+
 
 
 	//delete up
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	//TO DO SECTION down
+	//here are all abilities listed and they appear on the cards with proper description and icons but they do nothing at the moment and they need to be implemented
+
+	HighestBackToDeck :{ //new monster printed card
+		name: "HighestBackToDeck",
+		description: "Return both player's highest unit on the board back to their decks (if there is a draw between units, it is a random decision)",
+		},	
+	
+	CancleOneActiveWeatherCard:{//triss wweather
+		name: "CancleOneActiveWeatherCard",
+		description: "Cancel the effect of 1 active weather card.",
+	},
+	
+	
+	//TO DO SECTION up
+
+
+
 
 
 
@@ -1152,24 +1207,31 @@ var ability_dict = {
 		}
 	},
 	
-	succubuss: {
-		name:"succubuss",
-		description: "Seize the unit(s) with the lowest strength of the opponents melee row.",//ability1 this can be used for sucubus to steal unit but one more condition, 6 curent power or less, and no commanders horn units
+	succubus: {
+		name: "succubus",
+		description: "Seize a random unit with the lowest strength of the opponent's melee row.",
 		placed: async card => {
 			let opCloseRow = board.getRow(card, "close", card.holder.opponent());
 			let meCloseRow = board.getRow(card, "close", card.holder);
 			if (opCloseRow.isShielded()) return;
+	
 			let units = opCloseRow.minUnits();
 			if (units.length === 0) return;
-			await Promise.all(units.map(async c => await c.animate("seize")));
-			units.forEach(async c => {
-				c.holder = card.holder;
-				await board.moveToNoEffects(c, meCloseRow, opCloseRow);
-			});
+	
+			// Select a random unit from the array of weakest units
+			let randomIndex = Math.floor(Math.random() * units.length);
+			let randomUnit = units[randomIndex];
+	
+			await randomUnit.animate("seize");
+			randomUnit.holder = card.holder;
+			await board.moveToNoEffects(randomUnit, meCloseRow, opCloseRow);
 		},
 		weight: (card) => {
-			if (card.holder.opponent().getAllRows()[0].isShielded()) return 0;
-			return card.holder.opponent().getAllRows()[0].minUnits().reduce((a, c) => a + c.power, 0) * 2
+			let opMeleeRow = card.holder.opponent().getRow("close");
+			if (opMeleeRow.isShielded()) return 0;
+	
+			let minUnitPowerSum = opMeleeRow.minUnits().reduce((a, c) => a + c.power, 0);
+			return minUnitPowerSum * 2;
 		}
 	},
 	
