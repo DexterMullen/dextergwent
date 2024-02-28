@@ -106,17 +106,32 @@ var ability_dict = {
 	//TO DO SECTION down
 	//here are all abilities listed and they appear on the cards with proper description and icons but they do nothing at the moment and they need to be implemented
 
-	HighestBackToDeck :{ //new monster printed card
+
+	//UNITS !!
+	HighestBackToDeck :{ //new monster printed card from printed version
 		name: "HighestBackToDeck",
 		description: "Return both player's highest unit on the board back to their decks (if there is a draw between units, it is a random decision)",
 		},	
 	
-	CancleOneActiveWeatherCard:{//triss wweather
+	CancleOneActiveWeatherCard:{//triss wweather universal card from printed version
 		name: "CancleOneActiveWeatherCard",
 		description: "Cancel the effect of 1 active weather card.",
 	},
+	sacrifice : {
+		name:"sacrifice",//Sabrina Sacrifice universal card from printed version
+		description:"Target your unit, move it to graveyard, this card will take its place.",
+	},
 	
+
+
+
+	//LEADERS !!
 	
+
+
+
+
+
 	//TO DO SECTION up
 
 
