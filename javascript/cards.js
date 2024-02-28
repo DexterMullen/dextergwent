@@ -14,7 +14,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "close",
         "strength": "14",
-        "ability": "", 
+        "ability": "play_coww", 
         "filename": "devclose",
         "count": "1",
         "quote": "You humans have... unusual tastes.",

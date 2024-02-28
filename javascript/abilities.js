@@ -61,16 +61,9 @@ var ability_dict = {
 	
 	//delete down	
 
-	play_coww: { // ABILITY1 Play cow from your deck we need to add also play cow from graveyard later
-		name: "play_coww",
-		description: "Pick cow card from your deck and play it instantly.",
-		placed: async card => {
-			let out = card.holder.grave.findCard(c => c.name === "Cow"); //this plays cow from graveyard add play from deck so it is FROM DECK or FROM GRAVEYARD
-			if (out) await out.autoplay(card.holder.grave);{}
-		},
-		weight: (card, ai) => ai.weightWeatherFromDeck(card, "Cow")
-	},
+
 	
+
 
 	//delete up
 
@@ -203,12 +196,22 @@ var ability_dict = {
 			card.holder = card.holder.opponent();
 		}
 	},
-	play_cow: { // ABILITY1 Play cow from your deck we need to add also play cow from graveyard later
+	play_cow: {
 		name: "play_cow",
-		description: "Pick cow card from your deck and play it instantly.",
+		description: "Pick Cow card from your deck or graveyard and play it instantly.",
 		placed: async card => {
 			let out = card.holder.deck.findCard(c => c.name === "Cow");
-			if (out) await out.autoplay(card.holder.deck);
+			if (out) {
+				await out.autoplay(card.holder.deck);
+			} else {
+				// If "Cow" card is not found in deck, try to find and autoplay it from the graveyard
+				out = card.holder.grave.findCard(c => c.name === "Cow");
+				if (out) {
+					await out.autoplay(card.holder.grave);
+				} else {
+					console.log("Cow card not found in deck or graveyard."); // Add error handling if needed
+				}
+			}
 		},
 		weight: (card, ai) => ai.weightWeatherFromDeck(card, "Cow")
 	},
