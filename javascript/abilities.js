@@ -60,42 +60,15 @@ var ability_dict = {
 	
 	//TESTING SECTION delete once done with testing, keep it clean
 	//delete everything DWON from "delete down" and everything UP from delete up
+
 	
-	
+
 	//delete down	
 
 
+	
 
-	play_two_random_from_deck: {
-		name: "play_two_random_from_deck",
-		description: "Play two random units from your deck to the board.",
-		placed: async card => {
-			let deck = card.holder.deck;
-	
-			// Filter the deck for unit cards
-			let unitCards = deck.cards.filter(card => card.isUnit());
-	
-			// Check if there are enough unit cards in the deck to draw
-			if (unitCards.length < 2) {
-				console.log("Not enough unit cards in the deck.");
-				return;
-			}
-	
-			// Draw and autoplay the first random unit card
-			let firstRandomIndex = Math.floor(Math.random() * unitCards.length);
-			let firstRandomCard = unitCards.splice(firstRandomIndex, 1)[0];
-			await firstRandomCard.autoplay(card.holder.board);
-	
-			// Draw and autoplay the second random unit card after the first one
-			let secondRandomIndex = Math.floor(Math.random() * unitCards.length);
-			let secondRandomCard = unitCards.splice(secondRandomIndex, 1)[0];
-			await secondRandomCard.autoplay(card.holder.board);
-		},
-		weight: (card, ai) => {
-			// Adjust the weight based on the specific game logic or strategy
-			return 50;
-		}
-	},
+
 
 
 	//delete up
@@ -1643,6 +1616,37 @@ var ability_dict = {
 			let cards = ai.discardOrder(card).splice(0, 2).filter(c => c.basePower < 7);
 			if (cards.length < 2) return 0;
 			return cards[0].abilities.includes("muster") ? 50 : 25;
+		}
+	},
+
+	play_two_random_from_deck: { //greatsword from printed version of the game
+		name: "play_two_random_from_deck",
+		description: "Play two random units from your deck to the board.",
+		placed: async card => {
+			let deck = card.holder.deck;
+	
+			// Filter the deck for unit cards
+			let unitCards = deck.cards.filter(card => card.isUnit());
+	
+			// Check if there are enough unit cards in the deck to draw
+			if (unitCards.length < 2) {
+				console.log("Not enough unit cards in the deck.");
+				return;
+			}
+	
+			// Draw and autoplay the first random unit card
+			let firstRandomIndex = Math.floor(Math.random() * unitCards.length);
+			let firstRandomCard = unitCards.splice(firstRandomIndex, 1)[0];
+			await firstRandomCard.autoplay(card.holder.board);
+	
+			// Draw and autoplay the second random unit card after the first one
+			let secondRandomIndex = Math.floor(Math.random() * unitCards.length);
+			let secondRandomCard = unitCards.splice(secondRandomIndex, 1)[0];
+			await secondRandomCard.autoplay(card.holder.board);
+		},
+		weight: (card, ai) => {
+			// Adjust the weight based on the specific game logic or strategy
+			return 50;
 		}
 	},
 
