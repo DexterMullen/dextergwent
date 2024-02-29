@@ -104,7 +104,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "close",
         "strength": "1",
-        "ability": "",//ABILITY Draw X amount of random cards from opponents graeyard, play 1 return others to opponents graveyard. 
+        "ability": "hero FromOpponentGraveToBoard",//ABILITY Draw X amount of random cards from opponents graeyard, play 1 return others to opponents graveyard. 
         "filename": "caretaker",
         "count": "1",
         "quote": "There are more things in heaven and earth than all the world's philosophers have dreamt.",
@@ -216,7 +216,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "close", //mobile
         "strength": "0",
-        "ability": "hero anyweathertospecial",//special ABILITY1 play any special (non weather card) from your deck
+        "ability": "hero AnySpecialFromDeck",//special ABILITY1 play any special (non weather card) from your deck
         "filename": "golem_special",
         "count": "1",
         "quote": "I exist, because master Dearhenna wills it so!",
@@ -269,7 +269,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "siege",
         "strength": "2",
-        "ability": "", //ABILITY1 play any special card from your hand, then draw random card from your deck to hand
+        "ability": "SpecialFromHandDrawCard", //ABILITY1 play any special card from your hand, then draw random card from your deck to hand
         "filename": "emiel",
         "count": "1",
         "quote": "Your powers of deduction seem to have waned not one bit.",
@@ -3720,7 +3720,7 @@ var ext_nr_cards = {
         "deck": "realms",
         "row": "agile",//mobile
         "strength": "8",
-        "ability": "hero", //ABILITY1 if you did not pass! when any of your units goes from board to graveyard (not on round end) this card will go from your hand to the board on a random row automaticaly, then draw 1 random card from your deck to your hand
+        "ability": "hero PlayFromHandIfboardDesrtoyed", //ABILITY1 if you did not pass! when any of your units goes from board to graveyard (not on round end) this card will go from your hand to the board on a random row automaticaly, then draw 1 random card from your deck to your hand
         "filename": "radovid_ruthless_unit",
         "count": "1",
         "quote": "A king should be merciless towards his enemies and generous to his friends.",
@@ -3975,8 +3975,8 @@ var ext_ne_cards = {
         "name": "Imperial Golem",
         "deck": "neutral",
         "row": "close", //mobile
-        "strength": "2",
-        "ability": "hero", //ABILITY1 target two of your units from any rows, and move them to where you played this card/her row.
+        "strength": "1",
+        "ability": "hero MoveToThisRow", //ABILITY1 target two of your units from any rows, and move them to where you played this card/her row.
         "filename": "imperial_golem",
         "count": "1",
         "quote": "The most powerful of Nilfgaard's mages have mastered the oart of creating golems."
@@ -5499,7 +5499,7 @@ var ext_sk_cards = {
         "deck": "skellige",
         "row": "close",
         "strength": "6",
-        "ability": "",
+        "ability": "play_two_random_from_deck",
         "filename": "an_craite_greatsword",
         "count": "1",
         "quote": "Ahh, ye gave me a good laugh there, Nordling! Why, this bastard, ye couldn't even grip it, let alone gut me with it."
