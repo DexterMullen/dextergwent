@@ -5498,8 +5498,8 @@ var ext_sk_cards = {
         "name": "Clan an Craite Greatsword",
         "deck": "skellige",
         "row": "close",
-        "strength": "6",
-        "ability": "play_two_random_from_deck",
+        "strength": "1",
+        "ability": "hero play_two_random_from_deck",
         "filename": "an_craite_greatsword",
         "count": "1",
         "quote": "Ahh, ye gave me a good laugh there, Nordling! Why, this bastard, ye couldn't even grip it, let alone gut me with it."
