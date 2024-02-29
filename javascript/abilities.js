@@ -66,7 +66,10 @@ var ability_dict = {
 	//delete down	
 
 
-	
+
+
+
+
 
 
 
@@ -82,14 +85,68 @@ var ability_dict = {
 
 
 
+	//WORKED ON SEMI WORKING SECTION need help down
+	//WORKED ON SEMI WORKING SECTION need help down
+	//WORKED ON SEMI WORKING SECTION need help down
+	AnySpecialFromDeck: {
+		name: "Any Special (non weather) From Deck",
+		description: "Pick any special (non weather) card from your deck and play it instantly.",//last step is not working, selected special card is not played at all, nothing happends.
+		placed: async card => {
+			let deck = board.getRow(card, "deck", card.holder);
+			if (card.holder.controller instanceof ControllerAI) await ability_dict["anyspecial"].helper(card).card.autoplay(card.holder.deck);
+			else {
+				try {
+					Carousel.curr.cancel();
+				} catch (err) { }
+				await ui.queueCarousel(deck, 1, (c,i) => board.autoplay(c.cards[i], deck), c => c.faction === "special", true);
+			}
+		},
+		weight: (card, ai, max) => ability_dict["anyspecial"].helper(card).weight,
+		helper: card => {
+			let special = card.holder.deck.cards.filter(c => c.row === "special").reduce((a,c) => a.map(c => c.name).includes(c.name) ? a : a.concat([c]), []);
+			let out, weight = -1;
+			special.forEach(c => {
+				let w = card.holder.controller.autoplaySpecialFromDeck(c, c.abilities[0]);
+				if (w > weight) {
+					weight = w;
+					out = c;
+				}
+			});
+			return {
+				card: out,
+				weight: weight
+			};
+		}
+	},	
+
+	ReturnBothPlayersStrongestToDeck: {
+		name: "Strongest Back Deck",//need help so this affects players separatly, like regualr schorch but for separatly for player 1 only, then for player 2 only, also if there are multiple cards with the same value, one random should be selected.
+		description: "Return Both Players Strongest Unit(not multiple) Back To Their Deck, on draw it is random",
+		activated: async card => {	
+			await ability_dict["ReturnBothPlayersStrongestToDeck"].placed(card);
+			await board.toDeck(card, card.holder.hand); //managed to remake it so cards go back to players decks instead of their graveyards
+		},
+		placed: async (card, row) => {
+			if (card.isLocked() || game.scorchCancelled) return;
+			if (row !== undefined) row.cards.splice(row.cards.indexOf(card), 1);
+			let maxUnits = board.row.map(r => [r, r.maxUnits()]).filter(p => p[1].length > 0).filter(p => !p[0].isShielded());
+			if (row !== undefined) row.cards.push(card);
+			let maxPower = maxUnits.reduce((a,p) => Math.max(a, p[1][0].power), 0);
+			let scorched = maxUnits.filter(p => p[1][0].power === maxPower);
+			let cards = scorched.reduce((a, p) => a.concat(p[1].map(u => [p[0], u])), []);
+			await Promise.all(cards.map(async u => await u[1].animate("scorch", true, false)));
+			await Promise.all(cards.map(async u => await board.toDeck(u[1], u[0])));
+		}
+	},
+
+	//WORKED ON SEMI WORKING SECTION need help up
+	//WORKED ON SEMI WORKING SECTION need help up
+	//WORKED ON SEMI WORKING SECTION need help up
 
 
 
 
-
-
-
-
+	
 
 
 
@@ -104,10 +161,7 @@ var ability_dict = {
 
 	//TO DO SECTION DOWN !!!
 	//here are all abilities listed and they appear on the cards with proper description and icons but they do nothing at the moment and they need to be implemented
-
-
-	//UNITS ON HOLD!!
-	//NO WORK SO FAR
+	//UNITS ON HOLD!! NOT WORKED ON SO FAR BUT ICONS ADDED AND LINKED TO PROPER CARDS
 	HighestBackToDeck :{ //new monster printed card from printed version +++
 		name: "HighestBackToDeck",
 		description: "Return both player's highest unit on the board back to their decks (if there is a draw between units, it is a random decision)",
@@ -197,81 +251,13 @@ var ability_dict = {
 		description:"(if opponent did not pass) draw 2 random cards from you and opponents deck, take one to your hand, give one to your oppoenent",
 	},
 
-
-
-	//WORKED ON SEMI WORKING SECTION
-	anyweathertospecial: {
-		anyweathertospecial: "anyweathertospecial",
-		description: "Pick any special non weather card from your deck and play it instantly.",//last step is not working, selected card is not played at all
-		placed: async card => {
-			let deck = board.getRow(card, "deck", card.holder);
-			if (card.holder.controller instanceof ControllerAI) await ability_dict["anyspecial"].helper(card).card.autoplay(card.holder.deck);
-			else {
-				try {
-					Carousel.curr.cancel();
-				} catch (err) { }
-				await ui.queueCarousel(deck, 1, (c,i) => board.autoplay(c.cards[i], deck), c => c.faction === "special", true);
-			}
-		},
-		weight: (card, ai, max) => ability_dict["anyspecial"].helper(card).weight,
-		helper: card => {
-			let special = card.holder.deck.cards.filter(c => c.row === "special").reduce((a,c) => a.map(c => c.name).includes(c.name) ? a : a.concat([c]), []);
-			let out, weight = -1;
-			special.forEach(c => {
-				let w = card.holder.controller.weightSpecialFromDeck(c, c.abilities[0]);
-				if (w > weight) {
-					weight = w;
-					out = c;
-				}
-			});
-			return {
-				card: out,
-				weight: weight
-			};
-		}
-	},	
-
-
-	play_two_random_from_deckkk: { //needs fuxing, a bit time out between card 1 and 2, cards like commanders horn or decoy should ask the player what and where to do/target
-		name: "play_two_random_from_deckkk",
-		description: "Play two random units from your deck to the board.",
-		placed: async card => {
-			let deck = card.holder.deck;
-	
-			// Check if there are enough cards in the deck to draw
-			if (deck.cards.length < 2) {
-				console.log("Not enough cards in the deck.");
-				return;
-			}
-	
-			// Draw and autoplay the first random card
-			let firstRandomIndex = Math.floor(Math.random() * deck.cards.length);
-			let firstRandomCard = deck.cards.splice(firstRandomIndex, 1)[0];
-			await firstRandomCard.autoplay(card.holder.board);
-			
-
-
-			// Draw and autoplay the second random card after the first one
-			let secondRandomIndex = Math.floor(Math.random() * deck.cards.length);
-			let secondRandomCard = deck.cards.splice(secondRandomIndex, 1)[0];
-			await secondRandomCard.autoplay(card.holder.board);
-		},
-		weight: (card, ai) => {
-			// Adjust the weight based on the specific game logic or strategy
-			return 50;
-		}
+	DestroyUnitwih7OrLess:{ //nilfgard leader card from printed version 
+		name:"Destroy a Unit of your choice wih 7 Or Less strenght",
+		description:"Destroy any Unit of your choice wih 7 Or Less strenght",
 	},
-
-
-
-
-
-
-
 	//TO DO SECTION UP !!!
 
-
-
+	
 
 
 
