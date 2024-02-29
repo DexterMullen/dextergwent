@@ -65,28 +65,37 @@ var ability_dict = {
 	//delete down	
 
 
-	playunit_drawcard: { //cantarela from nilfgard card
-		playunit_drawcard: "playunit_drawcard",
-		description: "Play a unit from your hand, then draw a random card from you deck to your hand.",
+
+	play_two_random_from_deck: {
+		name: "play_two_random_from_deck",
+		description: "Play two random units from your deck to the board.",
 		placed: async card => {
-			let units = card.holder.hand.cards.filter(c => c.isUnit());
-			if (units.length === 0) return;
-			let wrapper = {
-				card: null
-			};
-			if (card.holder.controller instanceof ControllerAI) wrapper.card = units[randomInt(units.length)];
-			else await ui.queueCarousel(board.getRow(card, "hand", card.holder), 1, (c, i) => wrapper.card = c.cards[i], c => c.isUnit(), true);
-			wrapper.card.autoplay();
-			card.holder.hand.removeCard(wrapper.card);
-			if (card.holder.deck.cards.length > 0) await card.holder.deck.draw(card.holder.hand);
+			let deck = card.holder.deck;
+	
+			// Filter the deck for unit cards
+			let unitCards = deck.cards.filter(card => card.isUnit());
+	
+			// Check if there are enough unit cards in the deck to draw
+			if (unitCards.length < 2) {
+				console.log("Not enough unit cards in the deck.");
+				return;
+			}
+	
+			// Draw and autoplay the first random unit card
+			let firstRandomIndex = Math.floor(Math.random() * unitCards.length);
+			let firstRandomCard = unitCards.splice(firstRandomIndex, 1)[0];
+			await firstRandomCard.autoplay(card.holder.board);
+	
+			// Draw and autoplay the second random unit card after the first one
+			let secondRandomIndex = Math.floor(Math.random() * unitCards.length);
+			let secondRandomCard = unitCards.splice(secondRandomIndex, 1)[0];
+			await secondRandomCard.autoplay(card.holder.board);
 		},
 		weight: (card, ai) => {
-			let units = card.holder.hand.cards.filter(c => c.isUnit());
-			if (units.length === 0) return 0;
-			return 15;
+			// Adjust the weight based on the specific game logic or strategy
+			return 50;
 		}
-	},	
-
+	},
 
 
 	//delete up
@@ -176,21 +185,21 @@ var ability_dict = {
 	},
 
 	FromOpponentGraveToBoard :{
-		name:"From opponents grave to board",//Caretaker gold universal card from printed version 
+		name:"From opponents grave to board",//Caretaker gold universal card from printed version +++
 		description:"Choose any unit from opponents graveyard and play it instantly",
 	},
 
 	AnySpecialFromDeck :{
-		name:"Any Special (non weather) From Deck",//magic golem universal card from printed version 
+		name:"Any Special (non weather) From Deck",//magic golem universal card from printed version +++
 		description:"Play any special (non weather) card from your deck to board",
 	},
 
 	MoveToThisRow :{
-		name:"Move To This Row",//move golem universal card from printed version 
+		name:"Move To This Row",//move golem universal card from printed version +++
 		description:"Move 2 of your units to this cards row.",
 	},
 
-	SpecialFromHandDrawCard :{ //regis special universal card from printed version 
+	SpecialFromHandDrawCard :{ //regis special universal card from printed version +++
 		name:"Special From Hand Draw Card",
 		description:"Play a special card from your hand, then draw a random card from you deck to your hand.",
 	},
@@ -200,8 +209,20 @@ var ability_dict = {
 		description:"Play BlueStripes Commando or Poor Fucking Infantry from your deck.",
 	},
 
+	PlayFromHandIfboardDesrtoyed:{ //radovid northrealms card from printed version 
+		name:"Auto Play From Hand If Board Destroyed",
+		description:"(if you did not pass) If any unit on your side of the board is destroyed by you or opponent, this card will autoplay to the board, then you draw a card.",
+	},
 
+	TwoFromBothDecksOneToeEchPlayersHand:{ //king bran skelige leader card from printed version 
+		name:"Draw Two From Both Decks, Give One Card Toe Each Player",
+		description:"(if opponent did not pass) draw 2 random cards from you and opponents deck, take one to your hand, give one to your oppoenent",
+	},
 
+	draw2opponentdraw1:{ //king bran skelige leader card from printed version 
+		name:"Draw Two From Both Decks, Give One Card Toe Each Player",
+		description:"(if opponent did not pass) draw 2 random cards from you and opponents deck, take one to your hand, give one to your oppoenent",
+	},
 
 
 
@@ -238,7 +259,35 @@ var ability_dict = {
 	},	
 
 
+	play_two_random_from_deckkk: { //needs fuxing, a bit time out between card 1 and 2, cards like commanders horn or decoy should ask the player what and where to do/target
+		name: "play_two_random_from_deckkk",
+		description: "Play two random units from your deck to the board.",
+		placed: async card => {
+			let deck = card.holder.deck;
+	
+			// Check if there are enough cards in the deck to draw
+			if (deck.cards.length < 2) {
+				console.log("Not enough cards in the deck.");
+				return;
+			}
+	
+			// Draw and autoplay the first random card
+			let firstRandomIndex = Math.floor(Math.random() * deck.cards.length);
+			let firstRandomCard = deck.cards.splice(firstRandomIndex, 1)[0];
+			await firstRandomCard.autoplay(card.holder.board);
+			
 
+
+			// Draw and autoplay the second random card after the first one
+			let secondRandomIndex = Math.floor(Math.random() * deck.cards.length);
+			let secondRandomCard = deck.cards.splice(secondRandomIndex, 1)[0];
+			await secondRandomCard.autoplay(card.holder.board);
+		},
+		weight: (card, ai) => {
+			// Adjust the weight based on the specific game logic or strategy
+			return 50;
+		}
+	},
 
 
 
