@@ -206,7 +206,7 @@ var ability_dict = {
 		description:"Draw 3 random cards from your deck, 2 face up, 1 face down, chose and play one, other cards go back to your deck",
 	},
 
-	ChoiceFromOpponent :{
+	ChoiceFromOpponent :{ 
 		name:"Choice From Opponent",//operator choice universal card from printed version +++
 		description:"Draw 3 random cards from opponents deck, 1 face down, 2 face up, chose and play one, other cards go back to opponents deck",
 	},
@@ -255,7 +255,7 @@ var ability_dict = {
 		name:"Destroy a Unit of your choice wih 7 Or Less strenght",
 		description:"Destroy any Unit of your choice wih 7 Or Less strenght",
 	},
-	//TO DO SECTION UP !!!
+	//TO DO SECTION UP !!!!
 
 	
 
@@ -820,36 +820,7 @@ var ability_dict = {
 			};
 		}
 	},
-	anyweathertospecial: {
-		anyweathertospecial: "anyweathertospecial",
-		description: "Pick any special non weather card from your deck and play it instantly.",
-		placed: async card => {
-			let deck = board.getRow(card, "deck", card.holder);
-			if (card.holder.controller instanceof ControllerAI) await ability_dict["anyspecial"].helper(card).card.autoplay(card.holder.deck);
-			else {
-				try {
-					Carousel.curr.cancel();
-				} catch (err) { }
-				await ui.queueCarousel(deck, 1, (c,i) => board.autoplay(c.cards[i], deck), c => c.faction === "special", true);
-			}
-		},
-		weight: (card, ai, max) => ability_dict["anyspecial"].helper(card).weight,
-		helper: card => {
-			let special = card.holder.deck.cards.filter(c => c.row === "special").reduce((a,c) => a.map(c => c.name).includes(c.name) ? a : a.concat([c]), []);
-			let out, weight = -1;
-			special.forEach(c => {
-				let w = card.holder.controller.weightSpecialFromDeck(c, c.abilities[0]);
-				if (w > weight) {
-					weight = w;
-					out = c;
-				}
-			});
-			return {
-				card: out,
-				weight: weight
-			};
-		}
-	},	
+
 	eredin_treacherous: {
 		description: "Doubles the strength of all spy cards (affects both players).", //should be 15 strenght with no ability 
 		gameStart: () => game.spyPowerMult = 2
@@ -1718,8 +1689,7 @@ var ability_dict = {
 	// 31 - a new spy card (goes to opponents board) Draw X random cards from opponents deck, chose and play 1 instantly, (other two will go to opponents graveyard)
 	// Operater from our printed card game 
 	
-	// 32 - Move 1 opponents unit of your choice, to a different row of your choice.(ability of the moved card is not retrigered)
-	// Geralt aard from our printed card game 
+
 	
 	// 33 - If this card is on the board when the round ends, it will go to your oppoents hand if you won the round. Draw/Lost it goes to your graveyard.
 	//Saskia Dragon from our printed card game
