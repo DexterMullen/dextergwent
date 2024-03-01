@@ -3751,7 +3751,7 @@ function getPreviewElem(elem, card, nb = 0) {
 		elem.classList.add("faction");
 		return elem;
 	}
-	if (card.row != "leader" && !faction.startsWith("special") && faction != "neutral" && !faction.startsWith("weather")) {
+	if (card.row != "leader" && !faction.startsWith("special") && faction != "nnneutral" && !faction.startsWith("weather")) { //added color stripe for neutral cards remove 2x nn from nnneutral to reset to no stripe
 		let factionBand = document.createElement("div");
 		factionBand.style.backgroundImage = iconURL("faction-band-" + faction);
 		factionBand.classList.add("card-large-faction-band");
