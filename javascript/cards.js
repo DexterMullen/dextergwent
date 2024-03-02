@@ -1,8 +1,12 @@
 var default_cards = {
     //devvcards to test abilities ntr_devclose ntr_devranged ntr_devsiege
         
-    
+    //test cards section
     //delete down
+
+
+
+
 
     //delete up
     
@@ -100,7 +104,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "close",
         "strength": "1",
-        "ability": "",//ABILITY Draw X amount of random cards from opponents graeyard, play 1 return others to opponents graveyard. 
+        "ability": "hero FromOpponentGraveToBoard",//ABILITY Draw X amount of random cards from opponents graeyard, play 1 return others to opponents graveyard. 
         "filename": "caretaker",
         "count": "1",
         "quote": "There are more things in heaven and earth than all the world's philosophers have dreamt.",
@@ -111,7 +115,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "ranged",
         "strength": "1",
-        "ability": "", //ABILITY1 draw 3 random cards from you deck, 1 face down, chose and play 1, return others to your deck.
+        "ability": "Choice", //ABILITY1 draw 3 random cards from you deck, 1 face down, chose and play 1, return others to your deck.
         "filename": "priscilla",
         "count": "1",
         "quote": "How about a game of gwent?",
@@ -122,7 +126,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "ranged", //Mobile
         "strength": "10",
-        "ability": "",//ABILITY Draw X amount of random cards from opponents graeyard, play 1 return others to opponents graveyard. neutral_sabrina_sacrifice
+        "ability": "sacrifice",//ABILITY Draw X amount of random cards from opponents graeyard, play 1 return others to opponents graveyard. neutral_sabrina_sacrifice
         "filename": "sabrina_sacrifice",
         "count": "1",
         "quote": "There are more things in heaven and earth than all the world's philosophers have dreamt.",
@@ -179,7 +183,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "close",
         "strength": "5",
-        "ability": "hero",//TARGET CHOICE ABILITY1 chose and destroy 1 your unit, then draw 3 random cards from your deck, play 1, return other 2 to your deck. 
+        "ability": "hero TargeDestroyChoice",//TARGET CHOICE ABILITY1 chose and destroy 1 your unit, then draw 3 random cards from your deck, play 1, return other 2 to your deck. 
         "filename": "ciri_target",
         "count": "1",
         "quote": "Ho-ho, I sense trouble..",
@@ -201,7 +205,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "close",
         "strength": "1",
-        "ability": "hero",//TARGET CHOICE ABILITY1 chose and target any unit on your side of the board, then play any unit of your choice from your eck that has the same value/strenght as your targeted card
+        "ability": "hero TargetSameValue",//TARGET CHOICE ABILITY1 chose and target any unit on your side of the board, then play any unit of your choice from your eck that has the same value/strenght as your targeted card
         "filename": "zoltan_target",
         "count": "1",
         "quote": "Come to pappy!",
@@ -212,7 +216,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "close", //mobile
         "strength": "0",
-        "ability": "hero anyweathertospecial",//special ABILITY1 play any special (non weather card) from your deck
+        "ability": "hero AnySpecialFromDeck",//special ABILITY1 play any special (non weather card) from your deck
         "filename": "golem_special",
         "count": "1",
         "quote": "I exist, because master Dearhenna wills it so!",
@@ -223,7 +227,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "siege",
         "strength": "6",
-        "ability": "", //RETURN ON LOSS ABILITY1 goes back to your hand if you lost the round, on win or draw goes back to your graveyard
+        "ability": "ReturnToHandOnLoss", //RETURN ON LOSS ABILITY1 goes back to your hand if you lost the round, on win or draw goes back to your graveyard
         "filename": "ciri_return",
         "count": "1",
         "quote": "Yield and save me some time!",
@@ -265,7 +269,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "siege",
         "strength": "2",
-        "ability": "", //ABILITY1 play any special card from your hand, then draw random card from your deck to hand
+        "ability": "SpecialFromHandDrawCard", //ABILITY1 play any special card from your hand, then draw random card from your deck to hand
         "filename": "emiel",
         "count": "1",
         "quote": "Your powers of deduction seem to have waned not one bit.",
@@ -287,7 +291,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "close",
         "strength": "5",
-        "ability": "", //AARD ABILITY1 select any of the opponents unit on his side of the board, and then move it to the diferent row of your choice.
+        "ability": "aard", //AARD ABILITY1 select any of the opponents unit on his side of the board, and then move it to the diferent row of your choice.
         "filename": "geralt_aard",
         "count": "1",
         "quote": "If that's what it takes to save the world, it's better to let that world die.",
@@ -311,6 +315,16 @@ var default_cards = {
         "ability": "scorch",
         "filename": "scorch",
         "count": "3",
+        "quote": "Pillars of flame turn the mightiest to ash. All others tremble in shock and awe."
+    },
+    "spe_scorchh": {
+        "name": "Scorchh",
+        "deck": "special scoiatael",
+        "row": "",
+        "strength": "",
+        "ability": "scorch",
+        "filename": "scorch",
+        "count": "1",
         "quote": "Pillars of flame turn the mightiest to ash. All others tremble in shock and awe."
     },
     "spe_rain": {
@@ -340,7 +354,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "ranged",
         "strength": "5",
-        "ability": "", //ABILITY1 cancel / remove only 1 active weather card from the board
+        "ability": "CancleOneActiveWeatherCard", //ABILITY1 cancel / remove only 1 active weather card from the board
         "filename": "triss_weather",
         "count": "1",
         "quote": "I can take care of myself. Trust me.",
@@ -2826,7 +2840,7 @@ var ext_nr_cards = {
         "name": "Blue Stripes Scout",
         "deck": "realms",
         "row": "close",
-        "strength": "5",
+        "strength": "12",
         "ability": "spy",
         "filename": "stripes_scout",
         "count": "1",
@@ -3489,7 +3503,7 @@ var ext_nr_cards = {
         "name": "Dorregaray of Vole",
         "deck": "realms",
         "row": "ranged",
-        "strength": "6",
+        "strength": "14",
         "ability": "spy",
         "filename": "dorregaray",
         "count": "1",
@@ -3605,7 +3619,7 @@ var ext_nr_cards = {
         "name": "Henry var Attre",
         "deck": "realms",
         "row": "siege",
-        "strength": "8",
+        "strength": "14",
         "ability": "spy",
         "filename": "henry_attre",
         "count": "1",
@@ -3635,7 +3649,7 @@ var ext_nr_cards = {
         "name": "Urcheon of Erlenwald",
         "deck": "realms",
         "row": "siege",
-        "strength": "6",
+        "strength": "12",
         "ability": "spy",
         "filename": "urcheon",
         "count": "1",
@@ -3706,7 +3720,7 @@ var ext_nr_cards = {
         "deck": "realms",
         "row": "agile",//mobile
         "strength": "8",
-        "ability": "hero", //ABILITY1 if you did not pass! when any of your units goes from board to graveyard (not on round end) this card will go from your hand to the board on a random row automaticaly, then draw 1 random card from your deck to your hand
+        "ability": "hero PlayFromHandIfboardDesrtoyed", //ABILITY1 if you did not pass! when any of your units goes from board to graveyard (not on round end) this card will go from your hand to the board on a random row automaticaly, then draw 1 random card from your deck to your hand
         "filename": "radovid_ruthless_unit",
         "count": "1",
         "quote": "A king should be merciless towards his enemies and generous to his friends.",
@@ -3898,7 +3912,7 @@ var ext_nr_cards = {
         "name": "Mage Infiltrator",
         "deck": "realms",
         "row": "ranged",
-        "strength": "8",
+        "strength": "13",
         "ability": "spy",
         "filename": "mage_infiltrator",
         "count": "1",
@@ -3961,8 +3975,8 @@ var ext_ne_cards = {
         "name": "Imperial Golem",
         "deck": "neutral",
         "row": "close", //mobile
-        "strength": "2",
-        "ability": "hero", //ABILITY1 target two of your units from any rows, and move them to where you played this card/her row.
+        "strength": "1",
+        "ability": "hero MoveToThisRow", //ABILITY1 target two of your units from any rows, and move them to where you played this card/her row.
         "filename": "imperial_golem",
         "count": "1",
         "quote": "The most powerful of Nilfgaard's mages have mastered the oart of creating golems."
@@ -4025,7 +4039,7 @@ var ext_ne_cards = {
         "name": "Emissary",
         "deck": "nilfgaard",
         "row": "siege",
-        "strength": "10",
+        "strength": "13",
         "ability": "spy",
         "filename": "emissary",
         "count": "1",
@@ -4127,7 +4141,7 @@ var ext_ne_cards = {
         "name": "Bribery",
         "deck": "nilfgaard",
         "row": "agile",
-        "strength": "10",
+        "strength": "14",
         "ability": "spy",
         "filename": "bribery",
         "count": "1",
@@ -4228,7 +4242,7 @@ var ext_ne_cards = {
         "name": "Master of Disguise",
         "deck": "nilfgaard",
         "row": "ranged",
-        "strength": "7",
+        "strength": "12",
         "ability": "hero spy",
         "filename": "master_disguise",
         "count": "1",
@@ -4319,7 +4333,7 @@ var ext_ne_cards = {
         "name": "Dunny",
         "deck": "nilfgaard",
         "row": "siege",
-        "strength": "9",
+        "strength": "13",
         "ability": "spy",
         "filename": "dunny",
         "count": "0",
@@ -4413,7 +4427,7 @@ var ext_ne_cards = {
         "name": "Traheaern var Vdyffir",
         "deck": "nilfgaard",
         "row": "close",
-        "strength": "8",
+        "strength": "14",
         "ability": "spy",
         "filename": "traheaern_vdyffir",
         "count": "1",
@@ -4423,7 +4437,7 @@ var ext_ne_cards = {
         "name": "Spotter",
         "deck": "nilfgaard",
         "row": "ranged",
-        "strength": "10",
+        "strength": "12",
         "ability": "spy",
         "filename": "spotter",
         "count": "1",
@@ -4569,6 +4583,17 @@ var ext_mo_cards = {
         "strength": "6",
         "ability": "hero decoy",
         "filename": "caranthir",
+        "count": "1",
+        "quote": "Zirael! I await.",
+        "sound":"Caranthir_There is no escape.ogg",
+    },
+    "mo_caranthir_destroyer": {
+        "name": "Caranthir Destroyer",
+        "deck": "monsters",
+        "row": "agile",//should be mobile because opposite row is important for his ability
+        "strength": "6",
+        "ability": "hero destroy1weakest",
+        "filename": "caranthirdestroyer",
         "count": "1",
         "quote": "Zirael! I await.",
         "sound":"Caranthir_There is no escape.ogg",
@@ -4800,10 +4825,10 @@ var ext_mo_cards = {
         "deck": "monsters",
         "row": "close",
         "strength": "6",
-        "ability": "",
+        "ability": "hero HighestBackToDeck", //ability1 add this: Return both player's highest unit on the board back to their decks (if there is a draw between units, it is a random decision)
         "filename": "noonwraith",
         "count": "1",
-        "quote": "They are born of some horrible tragedy tied to ill-fated love."
+        "quote": "They are born of some horrible tragedy tied to ill-fated love.)"//
     },
     "mo_vran_warrior": {
         "name": "Vran Warrior",
@@ -4893,7 +4918,7 @@ var ext_mo_cards = {
         "deck": "monsters",
         "row": "close",
         "strength": "6",
-        "ability": "succubuss",
+        "ability": "hero succubus",
         "filename": "succubus",
         "count": "1",
         "quote": "Why fight? There are much better ways to work off excess energy...",
@@ -4987,7 +5012,7 @@ var ext_st_cards = {
         "deck": "neutral",
         "row": "siege",
         "strength": "15",
-        "ability": "hero",//ABILITY1 goes to opponents hand when round ends, if you win the round.
+        "ability": "hero ToOpponentHandOnWin",//ABILITY1 goes to opponents hand when round ends, if you win the round.
         "filename": "saesenthessis_dragon",
         "count": "1",
         "quote": "I care not for kings and their titles. In the east lives one who truly deserves a crown.",
@@ -5388,7 +5413,7 @@ var ext_st_cards = {
         "name": "Elven Scout",
         "deck": "scoiatael",
         "row": "close",
-        "strength": "10",
+        "strength": "13",
         "ability": "spy",
         "filename": "elven_scout",
         "count": "1",
@@ -5408,7 +5433,7 @@ var ext_st_cards = {
         "name": "Vrihedd Saboteur",
         "deck": "scoiatael",
         "row": "siege",
-        "strength": "7",
+        "strength": "14",
         "ability": "spy",
         "filename": "vrihedd_saboteur",
         "count": "1",
@@ -5473,8 +5498,8 @@ var ext_sk_cards = {
         "name": "Clan an Craite Greatsword",
         "deck": "skellige",
         "row": "close",
-        "strength": "6",
-        "ability": "",
+        "strength": "1",
+        "ability": "hero play_two_random_from_deck",
         "filename": "an_craite_greatsword",
         "count": "1",
         "quote": "Ahh, ye gave me a good laugh there, Nordling! Why, this bastard, ye couldn't even grip it, let alone gut me with it."
@@ -5645,7 +5670,7 @@ var ext_sk_cards = {
         "deck": "skellige",
         "row": "leader",
         "strength": "",
-        "ability": "crach_an_craite",
+        "ability": "developerleader",
         "filename": "sigrdrifa",
         "count": "0",
         "quote": "Fall on your knees and beg Modron Freya for forgiveness.",
@@ -5913,7 +5938,7 @@ var ext_wu_cards = {
         "name": "Ralf Blunden",
         "deck": "witcher_universe",
         "row": "ranged",
-        "strength": "7",
+        "strength": "12",
         "ability": "spy",
         "filename": "ralf_blunden",
         "count": "1",
@@ -6088,7 +6113,7 @@ var ext_wu_cards = {
         "deck": "neutral",
         "row": "siege",
         "strength": "4",
-        "ability": "spy", // ABILITY1 draw 3 random crds from opponets deck, chose and play 1, other to will go to opponents graveyard.
+        "ability": "spy ChoiceFromOpponent", // ABILITY1 draw 3 random crds from opponets deck, chose and play 1, other to will go to opponents graveyard.
         "filename": "operator",
         "count": "1",
         "quote": "As time and space collapse before us, they expand behind us..."
@@ -6408,7 +6433,7 @@ var ext_wu_cards = {
         "name": "Doppler",
         "deck": "witcher_universe",
         "row": "agile",
-        "strength": "4",
+        "strength": "13",
         "ability": "spy",
         "filename": "doppler_1",
         "count": "1",
@@ -6434,11 +6459,21 @@ var ext_wu_cards = {
         "count": "1",
         "quote": "I remember so little... Yet when I think of my rose, I begin to recall what was."
     },
+    "mo_iris_von_everec": {
+        "name": "Iris von Everec",
+        "deck": "monsters",
+        "row": "agile",
+        "strength": "0",
+        "ability": "hero horn",
+        "filename": "iris_von_everec",
+        "count": "1",
+        "quote": "I remember so little... Yet when I think of my rose, I begin to recall what was."
+    },
     "wu_sarah": {
         "name": "Sarah",
         "deck": "witcher_universe",
         "row": "siege",
-        "strength": "7",
+        "strength": "14",
         "ability": "spy",
         "filename": "sarah",
         "count": "1",
@@ -6601,7 +6636,7 @@ var ext_wu_cards = {
         "name": "Doppler",
         "deck": "witcher_universe",
         "row": "agile",
-        "strength": "6",
+        "strength": "12",
         "ability": "spy",
         "filename": "doppler_2",
         "count": "1",
@@ -6969,7 +7004,7 @@ var ext_wu_cards = {
         "name": "Johnny",
         "deck": "witcher_universe",
         "row": "siege",
-        "strength": "8",
+        "strength": "13",
         "ability": "spy",
         "filename": "johnny",
         "count": "1",
@@ -7253,7 +7288,7 @@ var ext_to_cards = {
         "name": "Sylvia Anna",
         "deck": "toussaint",
         "row": "siege",
-        "strength": "2",
+        "strength": "14",
         "ability": "hero spy",
         "filename": "syanna",
         "count": "1",
@@ -7544,7 +7579,7 @@ var ext_to_cards = {
         "name": "Roderick of Dun Tynne",
         "deck": "toussaint",
         "row": "close",
-        "strength": "9",
+        "strength": "12",
         "ability": "spy",
         "filename": "roderick",
         "count": "1",
@@ -7589,7 +7624,7 @@ var ext_to_cards = {
         "name": "Bootblack",
         "deck": "toussaint",
         "row": "agile",
-        "strength": "9",
+        "strength": "13",
         "ability": "spy",
         "filename": "bootblack",
         "count": "1",
@@ -7641,7 +7676,7 @@ var ext_to_cards = {
         "name": "Seditious Aristocrats",
         "deck": "toussaint",
         "row": "ranged",
-        "strength": "8",
+        "strength": "14",
         "ability": "spy",
         "filename": "seditious_aristocrats",
         "count": "1",
@@ -7681,7 +7716,7 @@ var ext_to_cards = {
         "name": "Duchess Informant",
         "deck": "toussaint",
         "row": "siege",
-        "strength": "7",
+        "strength": "12",
         "ability": "spy",
         "filename": "duchess_informant",
         "count": "1",
@@ -7949,7 +7984,7 @@ var ext_lr_cards = {
         "name": "Eavesdrop",
         "deck": "lyria_rivia",
         "row": "ranged",
-        "strength": "6",
+        "strength": "13",
         "ability": "spy",
         "filename": "eavesdrop",
         "count": "1",
@@ -8020,7 +8055,7 @@ var ext_lr_cards = {
         "name": "Scout",
         "deck": "lyria_rivia",
         "row": "siege",
-        "strength": "5",
+        "strength": "14",
         "ability": "spy",
         "filename": "scout",
         "count": "1",
@@ -8080,7 +8115,7 @@ var ext_lr_cards = {
         "name": "Count Caldwell",
         "deck": "lyria_rivia",
         "row": "ranged",
-        "strength": "9",
+        "strength": "12",
         "ability": "hero spy",
         "filename": "caldwell",
         "count": "1",
@@ -8409,7 +8444,7 @@ var ext_sy_cards = {
         "name": "Imke",
         "deck": "syndicate",
         "row": "ranged",
-        "strength": "5",
+        "strength": "13",
         "ability": "spy",
         "filename": "imke",
         "count": "1",
@@ -8449,7 +8484,7 @@ var ext_sy_cards = {
         "name": "Walter Veritas",
         "deck": "syndicate",
         "row": "ranged",
-        "strength": "7",
+        "strength": "14",
         "ability": "spy",
         "filename": "walter_veritas",
         "count": "1",
@@ -8479,7 +8514,7 @@ var ext_sy_cards = {
         "name": "Sly Seductress",
         "deck": "syndicate",
         "row": "ranged",
-        "strength": "8",
+        "strength": "12",
         "ability": "spy",
         "filename": "sly_seductress",
         "count": "1",
@@ -8510,7 +8545,7 @@ var ext_sy_cards = {
         "name": "Fisstech",
         "deck": "syndicate",
         "row": "siege",
-        "strength": "8",
+        "strength": "13",
         "ability": "spy",
         "filename": "fisstech",
         "count": "1",
@@ -8677,7 +8712,7 @@ var ext_sy_cards = {
         "name": "Dudu Biberveldt",
         "deck": "syndicate",
         "row": "ranged",
-        "strength": "1",
+        "strength": "14",
         "ability": "spy",
         "filename": "dudu_biberveldt",
         "count": "1",
@@ -8827,7 +8862,7 @@ var ext_sy_cards = {
         "name": "Rico Meiersdorf",
         "deck": "syndicate",
         "row": "agile",
-        "strength": "7",
+        "strength": "12",
         "ability": "spy",
         "filename": "rico_meiersdorf",
         "count": "1",
@@ -8902,7 +8937,7 @@ var ext_sy_cards = {
         "name": "Sewer Raider",
         "deck": "syndicate",
         "row": "ranged",
-        "strength": "8",
+        "strength": "13",
         "ability": "spy",
         "filename": "sewer_raider",
         "count": "1",
@@ -8932,7 +8967,7 @@ var ext_sy_cards = {
         "name": "Halfling Safecracker",
         "deck": "syndicate",
         "row": "ranged",
-        "strength": "8",
+        "strength": "14",
         "ability": "spy",
         "filename": "halfling_safecracker",
         "count": "1",
@@ -8982,7 +9017,7 @@ var ext_sy_cards = {
         "name": "Bincy_Blumerholdt",
         "deck": "syndicate",
         "row": "close",
-        "strength": "7",
+        "strength": "12",
         "ability": "spy",
         "filename": "bincy_blumerholdt",
         "count": "1",
@@ -9136,7 +9171,7 @@ var ext_sy_cards = {
         "name": "Passiflora Peaches",
         "deck": "syndicate",
         "row": "close",
-        "strength": "9",
+        "strength": "13",
         "ability": "spy",
         "filename": "passiflora_peaches",
         "count": "1",
@@ -9793,7 +9828,7 @@ var ext_ze_cards = {
         "name": "Rainforest Pathfinder",
         "deck": "zerrikania",
         "row": "ranged",
-        "strength": "8",
+        "strength": "14",
         "ability": "spy",
         "filename": "rainforest_pathfinder",
         "count": "1",

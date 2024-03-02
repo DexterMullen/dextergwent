@@ -30,7 +30,7 @@ var ability_dict = {
 		description: "Swap with a card on the battlefield to return it to your hand. "
 	},
 	developerleader: { //add this to a leader card in cards.js, in ability section to test fast and easy
-		description: "Discard 5 cards and draw 5 card of your choice from your deck.",
+		description: "Discard 3 cards and draw 3 card of your choice from your deck.",
 		activated: async (card) => {
 			let deck = board.getRow(card, "deck", card.holder);
 			let hand = board.getRow(card, "hand", card.holder);
@@ -45,8 +45,8 @@ var ability_dict = {
 					Carousel.curr.exit();
 				} catch (err) {}
 			}
-			await ui.queueCarousel(deck, 5, (c,i) => board.toHand(c.cards[i], deck), () => true, true);
-			await ui.queueCarousel(hand, 5, (c,i) => board.toGrave(c.cards[i], c), () => true);
+			await ui.queueCarousel(deck, 3, (c,i) => board.toHand(c.cards[i], deck), () => true, true);
+			await ui.queueCarousel(hand, 3, (c,i) => board.toGrave(c.cards[i], c), () => true);
 			
 		},
 		weight: (card, ai) => {
@@ -58,21 +58,206 @@ var ability_dict = {
 	
 	
 	
+	//TESTING SECTION delete once done with testing, keep it clean
+	//delete everything DWON from "delete down" and everything UP from delete up
+
 	
+
 	//delete down	
 
-	play_coww: { // ABILITY1 Play cow from your deck we need to add also play cow from graveyard later
-		name: "play_coww",
-		description: "Pick cow card from your deck and play it instantly.",
-		placed: async card => {
-			let out = card.holder.grave.findCard(c => c.name === "Cow"); //this plays cow from graveyard add play from deck so it is FROM DECK or FROM GRAVEYARD
-			if (out) await out.autoplay(card.holder.grave);{}
-		},
-		weight: (card, ai) => ai.weightWeatherFromDeck(card, "Cow")
-	},
-	
+
+
+
+
+
+
+
+
 
 	//delete up
+
+
+
+
+
+
+
+
+
+
+	//WORKED ON SEMI WORKING SECTION need help down
+	//WORKED ON SEMI WORKING SECTION need help down
+	//WORKED ON SEMI WORKING SECTION need help down
+	AnySpecialFromDeck: {
+		name: "Any Special (non weather) From Deck",
+		description: "Pick any special (non weather) card from your deck and play it instantly.",//last step is not working, selected special card is not played at all, nothing happends.
+		placed: async card => {
+			let deck = board.getRow(card, "deck", card.holder);
+			if (card.holder.controller instanceof ControllerAI) await ability_dict["anyspecial"].helper(card).card.autoplay(card.holder.deck);
+			else {
+				try {
+					Carousel.curr.cancel();
+				} catch (err) { }
+				await ui.queueCarousel(deck, 1, (c,i) => board.autoplay(c.cards[i], deck), c => c.faction === "special", true);
+			}
+		},
+		weight: (card, ai, max) => ability_dict["anyspecial"].helper(card).weight,
+		helper: card => {
+			let special = card.holder.deck.cards.filter(c => c.row === "special").reduce((a,c) => a.map(c => c.name).includes(c.name) ? a : a.concat([c]), []);
+			let out, weight = -1;
+			special.forEach(c => {
+				let w = card.holder.controller.autoplaySpecialFromDeck(c, c.abilities[0]);
+				if (w > weight) {
+					weight = w;
+					out = c;
+				}
+			});
+			return {
+				card: out,
+				weight: weight
+			};
+		}
+	},	
+
+	ReturnBothPlayersStrongestToDeck: {
+		name: "Strongest Back Deck",//need help so this affects players separatly, like regualr schorch but for separatly for player 1 only, then for player 2 only, also if there are multiple cards with the same value, one random should be selected.
+		description: "Return Both Players Strongest Unit(not multiple) Back To Their Deck, on draw it is random",
+		activated: async card => {	
+			await ability_dict["ReturnBothPlayersStrongestToDeck"].placed(card);
+			await board.toDeck(card, card.holder.hand); //managed to remake it so cards go back to players decks instead of their graveyards
+		},
+		placed: async (card, row) => {
+			if (card.isLocked() || game.scorchCancelled) return;
+			if (row !== undefined) row.cards.splice(row.cards.indexOf(card), 1);
+			let maxUnits = board.row.map(r => [r, r.maxUnits()]).filter(p => p[1].length > 0).filter(p => !p[0].isShielded());
+			if (row !== undefined) row.cards.push(card);
+			let maxPower = maxUnits.reduce((a,p) => Math.max(a, p[1][0].power), 0);
+			let scorched = maxUnits.filter(p => p[1][0].power === maxPower);
+			let cards = scorched.reduce((a, p) => a.concat(p[1].map(u => [p[0], u])), []);
+			await Promise.all(cards.map(async u => await u[1].animate("scorch", true, false)));
+			await Promise.all(cards.map(async u => await board.toDeck(u[1], u[0])));
+		}
+	},
+
+	//WORKED ON SEMI WORKING SECTION need help up
+	//WORKED ON SEMI WORKING SECTION need help up
+	//WORKED ON SEMI WORKING SECTION need help up
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+	//TO DO SECTION DOWN !!!
+	//here are all abilities listed and they appear on the cards with proper description and icons but they do nothing at the moment and they need to be implemented
+	//UNITS ON HOLD!! NOT WORKED ON SO FAR BUT ICONS ADDED AND LINKED TO PROPER CARDS
+	HighestBackToDeck :{ //new monster printed card from printed version +++
+		name: "HighestBackToDeck",
+		description: "Return both player's highest unit on the board back to their decks (if there is a draw between units, it is a random decision)",
+		},	
+	
+	CancleOneActiveWeatherCard:{//triss wweather universal card from printed version +++
+		name: "CancleOneActiveWeatherCard",
+		description: "Cancel the effect of 1 active weather card.",
+	},
+	sacrifice : {
+		name:"sacrifice",//Sabrina Sacrifice universal card from printed version +++
+		description:"Target your unit, move it to graveyard, this card will take its place.",
+	},
+	
+	ReturnToHandOnLoss :{
+		name:"ReturnToHandOnLoss",//ciri return universal card from printed version +++
+		description:"Returns to your hand if you lost the round, if you won/draw goes to your graveyard",
+	},
+
+	ToOpponentHandOnWin :{
+		name:"ToOpponentHandOnWin",//saskia dragon universal card from printed version +++
+		description:"Goes to your opponents hand if you win the round, if you lost/draw, goes to your graveyard",
+	},
+
+	aard :{
+		name:"aard",//geralt aard universal card from printed version +++
+		description:"Select any unit on the opponenets side, any move it to any diferent row of your choice",
+	},
+
+	TargetSameValue :{
+		name:"Target Same Value",//zoltan target universal card from printed version +++
+		description:"Target any unit on your side of the board, then play any unit from your deck with same targeted value/points/strenght",
+	},
+
+	TargeDestroyChoice :{
+		name:"Targe Destroy Choice",//ciri target universal card from printed version +++
+		description:"Target any unit on your side of the board, destoy it(targeted unit goes to your graveyard, then draw 3 random cards from your deck, chose and play one",
+	},
+
+	Choice :{
+		name:"Choice",//priscila choice universal card from printed version +++
+		description:"Draw 3 random cards from your deck, 2 face up, 1 face down, chose and play one, other cards go back to your deck",
+	},
+
+	ChoiceFromOpponent :{ 
+		name:"Choice From Opponent",//operator choice universal card from printed version +++
+		description:"Draw 3 random cards from opponents deck, 1 face down, 2 face up, chose and play one, other cards go back to opponents deck",
+	},
+
+	FromOpponentGraveToBoard :{
+		name:"From opponents grave to board",//Caretaker gold universal card from printed version +++
+		description:"Choose any unit from opponents graveyard and play it instantly",
+	},
+
+	AnySpecialFromDeck :{
+		name:"Any Special (non weather) From Deck",//magic golem universal card from printed version +++
+		description:"Play any special (non weather) card from your deck to board",
+	},
+
+	MoveToThisRow :{
+		name:"Move To This Row",//move golem universal card from printed version +++
+		description:"Move 2 of your units to this cards row.",
+	},
+
+	SpecialFromHandDrawCard :{ //regis special universal card from printed version +++
+		name:"Special From Hand Draw Card",
+		description:"Play a special card from your hand, then draw a random card from you deck to your hand.",
+	},
+
+	ChooseFrom2Specific :{ //sweers nilfgard card from printed version 
+		name:"Choose From 2 Specific",
+		description:"Play BlueStripes Commando or Poor Fucking Infantry from your deck.",
+	},
+
+	PlayFromHandIfboardDesrtoyed:{ //radovid northrealms card from printed version 
+		name:"Auto Play From Hand If Board Destroyed",
+		description:"(if you did not pass) If any unit on your side of the board is destroyed by you or opponent, this card will autoplay to the board, then you draw a card.",
+	},
+
+	TwoFromBothDecksOneToeEchPlayersHand:{ //king bran skelige leader card from printed version 
+		name:"Draw Two From Both Decks, Give One Card Toe Each Player",
+		description:"(if opponent did not pass) draw 2 random cards from you and opponents deck, take one to your hand, give one to your oppoenent",
+	},
+
+	draw2opponentdraw1:{ //king bran skelige leader card from printed version 
+		name:"Draw Two From Both Decks, Give One Card Toe Each Player",
+		description:"(if opponent did not pass) draw 2 random cards from you and opponents deck, take one to your hand, give one to your oppoenent",
+	},
+
+	DestroyUnitwih7OrLess:{ //nilfgard leader card from printed version 
+		name:"Destroy a Unit of your choice wih 7 Or Less strenght",
+		description:"Destroy any Unit of your choice wih 7 Or Less strenght",
+	},
+	//TO DO SECTION UP !!!!
+
+	
 
 
 
@@ -203,12 +388,22 @@ var ability_dict = {
 			card.holder = card.holder.opponent();
 		}
 	},
-	play_cow: { // ABILITY1 Play cow from your deck we need to add also play cow from graveyard later
+	play_cow: {
 		name: "play_cow",
-		description: "Pick cow card from your deck and play it instantly.",
+		description: "Pick Cow card from your deck or graveyard and play it instantly.",
 		placed: async card => {
 			let out = card.holder.deck.findCard(c => c.name === "Cow");
-			if (out) await out.autoplay(card.holder.deck);
+			if (out) {
+				await out.autoplay(card.holder.deck);
+			} else {
+				// If "Cow" card is not found in deck, try to find and autoplay it from the graveyard
+				out = card.holder.grave.findCard(c => c.name === "Cow");
+				if (out) {
+					await out.autoplay(card.holder.grave);
+				} else {
+					console.log("Cow card not found in deck or graveyard."); // Add error handling if needed
+				}
+			}
 		},
 		weight: (card, ai) => ai.weightWeatherFromDeck(card, "Cow")
 	},
@@ -625,36 +820,7 @@ var ability_dict = {
 			};
 		}
 	},
-	anyweathertospecial: {
-		anyweathertospecial: "anyweathertospecial",
-		description: "Pick any special non weather card from your deck and play it instantly.",
-		placed: async card => {
-			let deck = board.getRow(card, "deck", card.holder);
-			if (card.holder.controller instanceof ControllerAI) await ability_dict["anyspecial"].helper(card).card.autoplay(card.holder.deck);
-			else {
-				try {
-					Carousel.curr.cancel();
-				} catch (err) { }
-				await ui.queueCarousel(deck, 1, (c,i) => board.autoplay(c.cards[i], deck), c => c.faction === "special", true);
-			}
-		},
-		weight: (card, ai, max) => ability_dict["anyspecial"].helper(card).weight,
-		helper: card => {
-			let special = card.holder.deck.cards.filter(c => c.row === "special").reduce((a,c) => a.map(c => c.name).includes(c.name) ? a : a.concat([c]), []);
-			let out, weight = -1;
-			special.forEach(c => {
-				let w = card.holder.controller.weightSpecialFromDeck(c, c.abilities[0]);
-				if (w > weight) {
-					weight = w;
-					out = c;
-				}
-			});
-			return {
-				card: out,
-				weight: weight
-			};
-		}
-	},	
+
 	eredin_treacherous: {
 		description: "Doubles the strength of all spy cards (affects both players).", //should be 15 strenght with no ability 
 		gameStart: () => game.spyPowerMult = 2
@@ -759,7 +925,7 @@ var ability_dict = {
 	},
 	playunit_drawcard: { //cantarela from nilfgard card
 		playunit_drawcard: "playunit_drawcard",
-		description: "Play a unit then draw a random card from you deck.",
+		description: "Play a unit from your hand, then draw a random card from you deck to your hand.",
 		placed: async card => {
 			let units = card.holder.hand.cards.filter(c => c.isUnit());
 			if (units.length === 0) return;
@@ -1149,24 +1315,31 @@ var ability_dict = {
 		}
 	},
 	
-	succubuss: {
-		name:"succubuss",
-		description: "Seize the unit(s) with the lowest strength of the opponents melee row.",//ability1 this can be used for sucubus to steal unit but one more condition, 6 curent power or less, and no commanders horn units
+	succubus: {
+		name: "succubus",
+		description: "Seize a random unit with the lowest strength of the opponent's melee row.",
 		placed: async card => {
 			let opCloseRow = board.getRow(card, "close", card.holder.opponent());
 			let meCloseRow = board.getRow(card, "close", card.holder);
 			if (opCloseRow.isShielded()) return;
+	
 			let units = opCloseRow.minUnits();
 			if (units.length === 0) return;
-			await Promise.all(units.map(async c => await c.animate("seize")));
-			units.forEach(async c => {
-				c.holder = card.holder;
-				await board.moveToNoEffects(c, meCloseRow, opCloseRow);
-			});
+	
+			// Select a random unit from the array of weakest units
+			let randomIndex = Math.floor(Math.random() * units.length);
+			let randomUnit = units[randomIndex];
+	
+			await randomUnit.animate("seize");
+			randomUnit.holder = card.holder;
+			await board.moveToNoEffects(randomUnit, meCloseRow, opCloseRow);
 		},
 		weight: (card) => {
-			if (card.holder.opponent().getAllRows()[0].isShielded()) return 0;
-			return card.holder.opponent().getAllRows()[0].minUnits().reduce((a, c) => a + c.power, 0) * 2
+			let opMeleeRow = card.holder.opponent().getRow("close");
+			if (opMeleeRow.isShielded()) return 0;
+	
+			let minUnitPowerSum = opMeleeRow.minUnits().reduce((a, c) => a + c.power, 0);
+			return minUnitPowerSum * 2;
 		}
 	},
 	
@@ -1403,6 +1576,37 @@ var ability_dict = {
 		}
 	},
 
+	play_two_random_from_deck: { //greatsword from printed version of the game
+		name: "play_two_random_from_deck",
+		description: "Play two random units from your deck to the board.",
+		placed: async card => {
+			let deck = card.holder.deck;
+	
+			// Filter the deck for unit cards
+			let unitCards = deck.cards.filter(card => card.isUnit());
+	
+			// Check if there are enough unit cards in the deck to draw
+			if (unitCards.length < 2) {
+				console.log("Not enough unit cards in the deck.");
+				return;
+			}
+	
+			// Draw and autoplay the first random unit card
+			let firstRandomIndex = Math.floor(Math.random() * unitCards.length);
+			let firstRandomCard = unitCards.splice(firstRandomIndex, 1)[0];
+			await firstRandomCard.autoplay(card.holder.board);
+	
+			// Draw and autoplay the second random unit card after the first one
+			let secondRandomIndex = Math.floor(Math.random() * unitCards.length);
+			let secondRandomCard = unitCards.splice(secondRandomIndex, 1)[0];
+			await secondRandomCard.autoplay(card.holder.board);
+		},
+		weight: (card, ai) => {
+			// Adjust the weight based on the specific game logic or strategy
+			return 50;
+		}
+	},
+
 	//0 - add any kind of sorting when building/creating/adding cards before the game starts, it can be special, then gold, then ability units, then units with no ability OR
 	// special and then on top sorted by card numbers/strenght/power, it is a mess in this state.
 	
@@ -1485,8 +1689,7 @@ var ability_dict = {
 	// 31 - a new spy card (goes to opponents board) Draw X random cards from opponents deck, chose and play 1 instantly, (other two will go to opponents graveyard)
 	// Operater from our printed card game 
 	
-	// 32 - Move 1 opponents unit of your choice, to a different row of your choice.(ability of the moved card is not retrigered)
-	// Geralt aard from our printed card game 
+
 	
 	// 33 - If this card is on the board when the round ends, it will go to your oppoents hand if you won the round. Draw/Lost it goes to your graveyard.
 	//Saskia Dragon from our printed card game
