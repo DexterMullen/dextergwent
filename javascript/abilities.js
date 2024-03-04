@@ -235,7 +235,32 @@ var ability_dict = {
 	},
 	//TO DO SECTION UP !!!!
 
-	
+	play_coww: { //play specif cards from deck
+
+        name: "play_cow",
+        description: "Pick Cow card from your deck or graveyard and play it instantly.",
+        placed: async card => {
+            //find card from deck
+            let card1 = card.holder.deck.findCard(c => c.name === "Commander's Horn");
+			let card2 = card.holder.deck.findCard(c => c.name === "Dimeritium Shackles");
+			let card3 = card.holder.deck.findCard(c => c.name === "Sabrina Sacrifice");
+			
+			//create container and push card to it
+            let container = new CardContainer();
+            
+			if(card1)container.cards.push(card1);
+			if(card2)container.cards.push(card2);
+			if(card3)container.cards.push(card3);
+            
+			await ui.queueCarousel(container, 1, (c, i) => {
+                let card = c.cards[i];
+                card.autoplay(card.holder.deck);
+            }, () => true, false, true);
+            // Carousel.curr.index = index;
+            // Carousel.curr.update();
+        },
+        weight: (card, ai) => ai.weightWeatherFromDeck(card, "Cow")
+    },
 
 
 
