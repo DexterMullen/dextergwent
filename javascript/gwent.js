@@ -73,15 +73,16 @@ class ControllerAI {
 			await player.passRound();
 		} else {
 			for (var i = 0; i < weights.length; ++i) {
-				// if (weights[i].card) console.log("[" + weights[i].card.name + "] Weight: " + weights[i].weight);
-				// else console.log("[" + weights[i].name + "] Weight: " + weights[i].weight);
+				if (weights[i].card) console.log("[" + weights[i].card.name + "] Weight: " + weights[i].weight);
+				else console.log("[" + weights[i].name + "] Weight: " + weights[i].weight);
 			}
 			let rand = randomInt(weightTotal);
-			// console.log("Chosen weight: " + rand);
+			console.log("Chosen weight: " + rand);
 			for (var i = 0; i < weights.length; ++i) {
 				rand -= weights[i].weight;
 				if (rand < 0) break;
 			}
+			console.log(weights[i]);
 			await weights[i].action();
 		}
 	}
@@ -1785,8 +1786,9 @@ class Board {
 
 	playCardSound(card) {
 		if(card.sound) {
+			console.log('sounds/' + card.sound);
 			let sound = new Audio('sounds/' + card.sound);
-			sound.volume = 0.01;
+			sound.volume = 0.5;
 			sound.play();
 		}
 	}
@@ -2375,7 +2377,6 @@ class UI {
 		function initButton() {
 			if (ui.ytActive !== undefined) return;
 			ui.ytActive = true;
-			ui.youtube.setVolume(10);
 			ui.youtube.playVideo();
 			let timer = setInterval(() => {
 				if (ui.youtube.getPlayerState() !== YT.PlayerState.PLAYING) ui.youtube.playVideo();
@@ -3946,7 +3947,7 @@ function inicio() {
 	iniciou = true;
 	tocar("menu_opening", false);
 	// openFullscreen();
-	// iniciarMusica();
+	iniciarMusica();
 }
 
 function aviso(titulo, texto, apagarFim) {
@@ -3997,14 +3998,14 @@ function cartaNaLinha(id, carta) {
 function tocar(arquivo, pararMusica) {
 	if (arquivo != lastSound && arquivo != "") {
 		var s = new Audio("sfx/" + arquivo + ".mp3");
-		s.volume = 0.01;
+		s.volume = 0.1;
 		if (pararMusica && ui.youtube && ui.youtube.getPlayerState() === YT.PlayerState.PLAYING) {
 			ui.youtube.pauseVideo();
 			ui.toggleMusic_elem.classList.add("fade");
 		}
 		lastSound = arquivo;
 		if (iniciou) {
-			s.volume = 0.01;
+			s.volume = 0.1;
 			s.play();
 		}
 		setTimeout(function() {
@@ -4016,8 +4017,7 @@ function tocar(arquivo, pararMusica) {
 function iniciarMusica() {
 	try {
 		if (ui.youtube.getPlayerState() !== YT.PlayerState.PLAYING) {
-			ui.youtube.setVolume(10);
-			ui.youtube.playVideo();
+			// ui.youtube.playVideo();
 			ui.toggleMusic_elem.classList.remove("fade");
 		}
 	} catch(err) {}

@@ -88,25 +88,154 @@ var ability_dict = {
 		name: "Any Special (non weather) From Deck",
 		description: "Pick any special (non weather) card from your deck and play it instantly.",//last step is not working, selected special card is not played at all, nothing happends.
 		placed: async card => {
-			let out = card.holder.deck.findCard(c => c.name === "Cow"); //this plays cow from graveyard add play from deck so it is FROM DECK or FROM GRAVEYARD
-			// if (out) await out.autoplay(card.holder.grave);{}
-			let container = new CardContainer();
-			container.cards.push(out);
-			let index = container.cards.indexOf(out);
-			console.log(index);
-			await ui.queueCarousel(container, 1, (c, i) => {
-				let data = c.cards[i].data;
-				getPreviewElem(this.preview.getElementsByClassName("card-lg")[0], data.card);
-			}, () => true, false, true);
-			Carousel.curr.index = index;
-			Carousel.curr.update();
-
+			let deck = board.getRow(card, "deck", card.holder);
+			if (card.holder.controller instanceof ControllerAI) await ability_dict["anyspecial"].helper(card).card.autoplay(card.holder.deck);
+			else {
+				try {
+					Carousel.curr.cancel();
+				} catch (err) { }
+				await ui.queueCarousel(deck, 1, (c,i) => board.autoplay(c.cards[i], deck), c => c.faction === "special", true);
+			}
 		},
-		weight: (card, ai) => ai.weightWeatherFromDeck(card, "Cow")
-	},
+		weight: (card, ai, max) => ability_dict["anyspecial"].helper(card).weight,
+		helper: card => {
+			let special = card.holder.deck.cards.filter(c => c.row === "special").reduce((a,c) => a.map(c => c.name).includes(c.name) ? a : a.concat([c]), []);
+			let out, weight = -1;
+			special.forEach(c => {
+				let w = card.holder.controller.autoplaySpecialFromDeck(c, c.abilities[0]);
+				if (w > weight) {
+					weight = w;
+					out = c;
+				}
+			});
+			return {
+				card: out,
+				weight: weight
+			};
+		}
+	},	
+
+
+
+	//WORKED ON SEMI WORKING SECTION need help up
+	//WORKED ON SEMI WORKING SECTION need help up
+	//WORKED ON SEMI WORKING SECTION need help up
+
+
+
+
 	
 
-	//delete up
+
+
+
+
+
+
+
+
+
+
+
+	//TO DO SECTION DOWN !!!
+	//here are all abilities listed and they appear on the cards with proper description and icons but they do nothing at the moment and they need to be implemented
+	//UNITS ON HOLD!! NOT WORKED ON SO FAR BUT ICONS ADDED AND LINKED TO PROPER CARDS
+	HighestBackToDeck :{ //new monster printed card from printed version +++
+		name: "HighestBackToDeck",
+		description: "Return both player's highest unit on the board back to their decks (if there is a draw between units, it is a random decision)",
+		},	
+	
+	CancleOneActiveWeatherCard:{//triss wweather universal card from printed version +++
+		name: "CancleOneActiveWeatherCard",
+		description: "Cancel the effect of 1 active weather card.",
+	},
+	sacrifice : {
+		name:"sacrifice",//Sabrina Sacrifice universal card from printed version +++
+		description:"Target your unit, move it to graveyard, this card will take its place.",
+	},
+	
+	ReturnToHandOnLoss :{
+		name:"ReturnToHandOnLoss",//ciri return universal card from printed version +++
+		description:"Returns to your hand if you lost the round, if you won/draw goes to your graveyard",
+	},
+
+	ToOpponentHandOnWin :{
+		name:"ToOpponentHandOnWin",//saskia dragon universal card from printed version +++
+		description:"Goes to your opponents hand if you win the round, if you lost/draw, goes to your graveyard",
+	},
+
+	aard :{
+		name:"aard",//geralt aard universal card from printed version +++
+		description:"Select any unit on the opponenets side, any move it to any diferent row of your choice",
+	},
+
+	TargetSameValue :{
+		name:"Target Same Value",//zoltan target universal card from printed version +++
+		description:"Target any unit on your side of the board, then play any unit from your deck with same targeted value/points/strenght",
+	},
+
+	TargeDestroyChoice :{
+		name:"Targe Destroy Choice",//ciri target universal card from printed version +++
+		description:"Target any unit on your side of the board, destoy it(targeted unit goes to your graveyard, then draw 3 random cards from your deck, chose and play one",
+	},
+
+	Choice :{
+		name:"Choice",//priscila choice universal card from printed version +++
+		description:"Draw 3 random cards from your deck, 2 face up, 1 face down, chose and play one, other cards go back to your deck",
+	},
+
+	ChoiceFromOpponent :{ 
+		name:"Choice From Opponent",//operator choice universal card from printed version +++
+		description:"Draw 3 random cards from opponents deck, 1 face down, 2 face up, chose and play one, other cards go back to opponents deck",
+	},
+
+	FromOpponentGraveToBoard :{
+		name:"From opponents grave to board",//Caretaker gold universal card from printed version +++
+		description:"Choose any unit from opponents graveyard and play it instantly",
+	},
+
+	AnySpecialFromDeck :{
+		name:"Any Special (non weather) From Deck",//magic golem universal card from printed version +++
+		description:"Play any special (non weather) card from your deck to board",
+	},
+
+	MoveToThisRow :{
+		name:"Move To This Row",//move golem universal card from printed version +++
+		description:"Move 2 of your units to this cards row.",
+	},
+
+	SpecialFromHandDrawCard :{ //regis special universal card from printed version +++
+		name:"Special From Hand Draw Card",
+		description:"Play a special card from your hand, then draw a random card from you deck to your hand.",
+	},
+
+	ChooseFrom2Specific :{ //sweers nilfgard card from printed version 
+		name:"Choose From 2 Specific",
+		description:"Play BlueStripes Commando or Poor Fucking Infantry from your deck.",
+	},
+
+	PlayFromHandIfboardDesrtoyed:{ //radovid northrealms card from printed version 
+		name:"Auto Play From Hand If Board Destroyed",
+		description:"(if you did not pass) If any unit on your side of the board is destroyed by you or opponent, this card will autoplay to the board, then you draw a card.",
+	},
+
+	TwoFromBothDecksOneToeEchPlayersHand:{ //king bran skelige leader card from printed version 
+		name:"Draw Two From Both Decks, Give One Card Toe Each Player",
+		description:"(if opponent did not pass) draw 2 random cards from you and opponents deck, take one to your hand, give one to your oppoenent",
+	},
+
+	draw2opponentdraw1:{ //king bran skelige leader card from printed version 
+		name:"Draw Two From Both Decks, Give One Card Toe Each Player",
+		description:"(if opponent did not pass) draw 2 random cards from you and opponents deck, take one to your hand, give one to your oppoenent",
+	},
+
+	DestroyUnitwih7OrLess:{ //nilfgard leader card from printed version 
+		name:"Destroy a Unit of your choice wih 7 Or Less strenght",
+		description:"Destroy any Unit of your choice wih 7 Or Less strenght",
+	},
+	//TO DO SECTION UP !!!!
+
+	
 
 
 
@@ -237,28 +366,22 @@ var ability_dict = {
 			card.holder = card.holder.opponent();
 		}
 	},
-	play_cow: { // ABILITY1 Play cow from your deck we need to add also play cow from graveyard later
-		// name: "play_cow",
-		// description: "Pick cow card from your deck and play it instantly.",
-		// placed: async card => {
-		// 	let out = card.holder.deck.findCard(c => c.name === "Cow");
-		// 	if (out) await out.autoplay(card.holder.deck);
-		// },
-		// weight: (card, ai) => ai.weightWeatherFromDeck(card, "Cow")
+	play_cow: {
 		name: "play_cow",
 		description: "Pick Cow card from your deck or graveyard and play it instantly.",
 		placed: async card => {
-			//find card from deck
 			let out = card.holder.deck.findCard(c => c.name === "Cow");
-			//create container and push card to it
-			let container = new CardContainer();
-			container.cards.push(out);
-			await ui.queueCarousel(container, 1, (c, i) => {
-				let card = c.cards[i];
-				card.autoplay(card.holder.deck);
-			}, () => true, false, true);
-			// Carousel.curr.index = index;
-			// Carousel.curr.update();
+			if (out) {
+				await out.autoplay(card.holder.deck);
+			} else {
+				// If "Cow" card is not found in deck, try to find and autoplay it from the graveyard
+				out = card.holder.grave.findCard(c => c.name === "Cow");
+				if (out) {
+					await out.autoplay(card.holder.grave);
+				} else {
+					console.log("Cow card not found in deck or graveyard."); // Add error handling if needed
+				}
+			}
 		},
 		weight: (card, ai) => ai.weightWeatherFromDeck(card, "Cow")
 	},
