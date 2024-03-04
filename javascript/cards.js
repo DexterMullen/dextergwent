@@ -18,7 +18,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "close",
         "strength": "14",
-        "ability": "play_coww", 
+        "ability": "", 
         "filename": "devclose",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -29,7 +29,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "ranged",
         "strength": "14",
-        "ability": "play_coww", 
+        "ability": "", 
         "filename": "devranged",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -40,7 +40,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "siege",
         "strength": "14",
-        "ability": "play_coww", 
+        "ability": "", 
         "filename": "devsiege",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -51,7 +51,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "agile",
         "strength": "14",
-        "ability": "play_coww", 
+        "ability": "", 
         "filename": "devagile",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -167,7 +167,7 @@ var default_cards = {
         "count": "1",
         "target": "to_caed_myrkvid_druid",
         "quote": "Play FROST or FOG or RAIN or Clear Skies from your deck",//original quote "We fled here to escape people such as you." return it once we have proper icon and ability description
-        "sound": "35 AEROMANCY_ Keep close! My magic shall protect you.ogg",
+        "sound": "Aeromancy -  Best looking storm I've charmed up in a long while.mp3",
     },
     "nr_avalah_cursed": {
         "name": "Avalah Cursed",
@@ -701,7 +701,7 @@ var default_cards = {
         "deck": "realms",
         "row": "siege",
         "strength": "1",
-        "ability": "morale",//ABILITY1 play poor fucking infantry OR blue stripes commando from your deck
+        "ability": "play_poorinfantryORbluecommando",//ABILITY1 play poor fucking infantry OR blue stripes commando from your deck
         "filename": "kaedwen_siege",
         "count": "1",
         "quote": "'You gotta recalibrate the arm by five degrees.' 'Do what by the what now?'",
@@ -712,7 +712,7 @@ var default_cards = {
         "deck": "realms",
         "row": "siege",
         "strength": "1",
-        "ability": "morale", //ABILITY1 play poor fucking infantry OR blue stripes commando from your deck
+        "ability": "play_poorinfantryORbluecommando", //ABILITY1 play poor fucking infantry OR blue stripes commando from your deck
         "filename": "kaedwen_siege_1",
         "count": "1",
         "quote": "'You gotta recalibrate the arm by five degrees.' 'Do what by the what now?'",
@@ -723,7 +723,7 @@ var default_cards = {
         "deck": "realms",
         "row": "siege",
         "strength": "1",
-        "ability": "morale", //ABILITY1 play poor fucking infantry OR blue stripes commando from your deck
+        "ability": "play_poorinfantryORbluecommando", //ABILITY1 play poor fucking infantry OR blue stripes commando from your deck
         "filename": "kaedwen_siege_2",
         "count": "1",
         "quote": "'You gotta recalibrate the arm by five degrees.' 'Do what by the what now?'",
@@ -756,11 +756,11 @@ var default_cards = {
         "deck": "realms",
         "row": "ranged",
         "strength": "7",
-        "ability": "hero", //ABILITY1 move any two units from any graveyard to the other OR move any two units from any graveyard back to owners deck
+        "ability": "backto_deck", //ABILITY1 move any two units from any graveyard to the other OR move any two units from any graveyard back to owners deck
         "filename": "philippa",
         "count": "1",
         "quote": "Soon the power of kings will wither, and the Lodge shall seize its rightful place.",
-        "sound": "Philippa_Eilhart_You do not deserve to live.ogg",
+        "sound": "Philippa_Eilhart_Ive no mercy for your kind.ogg",
     },
     "nr_poor_infantry_1": {
         "name": "Poor Fucking Infantry",
@@ -817,22 +817,22 @@ var default_cards = {
         "deck": "realms",
         "row": "siege",
         "strength": "0",
-        "ability": "hero",//ABILITY1 play grand catapult (8 tight bond) from your deck OR from your graveyard
+        "ability": "hero play_GrandCatapult",//ABILITY1 play grand catapult (8 tight bond) from your deck OR from your graveyard
         "filename": "redania",
         "count": "1",
         "quote": "I've bled for Redania! I've killed for Redania... Dammit, I've even raped for Redania!",
         "sound":"Redenian Foot_Soldier_Rach sheyss Yn twe.ogg",
     },
-    "nr_redania_1": {
-        "name": "Redanian Foot Soldier", //from printed deck
+    "nr_redania_1": {//john show OR North Realms Wolf Warrior from prineted version
+        "name": "North Realms Wolf Warrior", //from printed deck
         "deck": "realms",
         "row": "siege",
-        "strength": "4",
-        "ability": "",
+        "strength": "6",
+        "ability": "hero destroy1weakest",
         "filename": "redania_1",
         "count": "1",
-        "quote": "I've bled for Redania! I've killed for Redania... Dammit, I've even raped for Redania!",
-        "sound":"Redenian Foot_Soldier_Rach sheyss Yn twe.ogg",
+        "quote": "Northen forces will honor their promises and aligance",
+        "sound":"jon snow Northen forces promises and aligance.mp3",
     },
     "nr_sheldon": {
         "name": "Sheldon Skaggs",
@@ -2885,7 +2885,7 @@ var ext_nr_cards = {
         "deck": "realms",
         "row": "siege",//mobile
         "strength": "1",
-        "ability": "hero",//play specific card from deck OR play some other specific card from deck (grant catapult 8 tight bond) or dragon hunters (5 tight bond) 
+        "ability": "hero play_GrandCatapultORDragonHunters",//play specific card from deck OR play some other specific card from deck (grant catapult 8 tight bond) or dragon hunters (5 tight bond) 
         "filename": "kaedweni_siege_support_1",
         "count": "1",
         "quote": "I never miss twice."
@@ -6122,14 +6122,15 @@ var ext_wu_cards = {
         "quote": "The scar will remain, of course. A new one for your collection."
     },
     "ntr_operator": {
-        "name": "Operator",
-        "deck": "neutral",
-        "row": "siege",
-        "strength": "4",
-        "ability": "spy ChoiceFromOpponent", // ABILITY1 draw 3 random crds from opponets deck, chose and play 1, other to will go to opponents graveyard.
-        "filename": "operator",
-        "count": "1",
-        "quote": "As time and space collapse before us, they expand behind us..."
+        "name":"Operator",
+        "deck":"neutral",
+        "row":"siege",
+        "strength":"4",
+        "ability":"spy ChoiceFromOpponent", // ABILITY1 draw 3 random crds from opponets deck, chose and play 1, other to will go to opponents graveyard.
+        "filename":"operator",
+        "count":"1",
+        "quote":"As time and space collapse before us, they expand behind us...",
+        "sound":"Operater-You blind greedy fool.mp3",
     },
     "wu_cosimo_malaspina": {
         "name": "Cosimo Malaspina: Master of Mutations",

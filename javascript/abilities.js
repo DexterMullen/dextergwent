@@ -65,8 +65,27 @@ var ability_dict = {
 
 	//delete down	
 
-	
-	
+	play_GrandCatapult: {
+		name: "Grand Catapult Reinfocement",
+		description: "Pick Grand Catapult card from your deck OR graveyard and play it instantly.",
+		placed: async card => {
+			let out = card.holder.deck.findCard(c => c.name === "Grand Catapult");
+			if (out) {
+				await out.autoplay(card.holder.deck);
+			} else {
+				// If "Grand Catapult" card is not found in deck, try to find and autoplay it from the graveyard
+				out = card.holder.grave.findCard(c => c.name === "Grand Catapult");
+				if (out) {
+					await out.autoplay(card.holder.grave);
+				} else {
+					console.log("Grand Catapult card not found in deck or graveyard."); // Add error handling if needed
+				}
+			}
+		},
+		weight: (card, ai) => ai.weightWeatherFromDeck(card, "Grand Catapult")
+	},
+
+
 
 
 
@@ -114,6 +133,7 @@ var ability_dict = {
 			};
 		}
 	},	
+
 
 
 
@@ -235,32 +255,8 @@ var ability_dict = {
 	},
 	//TO DO SECTION UP !!!!
 
-	play_coww: { //play specif cards from deck
+	
 
-        name: "play_cow",
-        description: "Pick Cow card from your deck or graveyard and play it instantly.",
-        placed: async card => {
-            //find card from deck
-            let card1 = card.holder.deck.findCard(c => c.name === "Commander's Horn");
-			let card2 = card.holder.deck.findCard(c => c.name === "Dimeritium Shackles");
-			let card3 = card.holder.deck.findCard(c => c.name === "Sabrina Sacrifice");
-			
-			//create container and push card to it
-            let container = new CardContainer();
-            
-			if(card1)container.cards.push(card1);
-			if(card2)container.cards.push(card2);
-			if(card3)container.cards.push(card3);
-            
-			await ui.queueCarousel(container, 1, (c, i) => {
-                let card = c.cards[i];
-                card.autoplay(card.holder.deck);
-            }, () => true, false, true);
-            // Carousel.curr.index = index;
-            // Carousel.curr.update();
-        },
-        weight: (card, ai) => ai.weightWeatherFromDeck(card, "Cow")
-    },
 
 
 
@@ -349,7 +345,7 @@ var ability_dict = {
 	},
 	destroy1weakest: {
 		name: "destroy1weakest",
-		description: "Destroy only 1 weakest unit on the opposite row",
+		description: "Destroy only 1 weakest unit on the opposite row",//game stops and it is stuck if there is nothing to destroy on the opposite row BBUUGG
 		placed: async card => {
 			let row = card.currentLocation.getOppositeRow();
 			if (row.isShielded() || game.scorchCancelled) return;
@@ -365,6 +361,9 @@ var ability_dict = {
 			await board.toGrave(weakestUnit, row);
 		}
 	},
+
+
+
 	muster: {
 		name:"Muster", 
 		description: "Find any cards with the same name in your deck and play them instantly. ",
@@ -691,7 +690,7 @@ var ability_dict = {
 		weight: (card, ai, max, data) => ai.weightMedic(data, 0, card.holder.opponent())
 	},
 	
-	gravetograve1: { //Choose 1 of opponents unit cards in his graveyard, and move it to yours bloody baron 
+	gravetograve1: { //Choose 2 of opponents units in his graveyard, and move it to yours - bloody baron 
 		description: "Move 2 units of your choice, from your opponent's graveyard, to your graveyard.",
 		placed: async card => {
 			let grave = board.getRow(card, "grave", card.holder.opponent());
@@ -703,7 +702,7 @@ var ability_dict = {
 				return;
 			}
 			try {
-				Carousel.curr.cancel();
+				Carousel.curr.cancel(); //if there is 1 or none game gets stuck, BBUUGG
 			} catch (err) {}
 			await ui.queueCarousel(grave, 2, (c,i) => {
 				let newCard = c.cards[i];
@@ -1439,8 +1438,8 @@ var ability_dict = {
 		}
 	},
 	backto_deck: { //ability we need this for printed card we have but also one more option for you or opponents graveyard
-		backto_deck:"backto_deck",
-		description: "Select 2 cards from your opponent's discard pile and shuffle them back into his/her deck.",
+		name:"3 opponents cards from grave to deck",
+		description: "Select any 3 cards from your opponent's graveyard, and shuffle them back into opponents deck.",
 		placed: async (card) => {
 			let grave = card.holder.opponent().grave;
 			if (card.holder.controller instanceof ControllerAI) {
@@ -1452,7 +1451,7 @@ var ability_dict = {
 					Carousel.curr.exit();
 				} catch (err) {}
 			}
-			await ui.queueCarousel(grave, 2, (c, i) => board.toDeck(c.cards[i], c), () => true);
+			await ui.queueCarousel(grave, 3, (c, i) => board.toDeck(c.cards[i], c), () => true);//if there is less than 3 game gets stuck BBUUGG!
 		},
 		weight: (card) => {
 			if (card.holder.opponent().grave.cards.length < 5) return 0;
@@ -1634,6 +1633,85 @@ var ability_dict = {
 		},
 		weight: (card, ai) => ai.weightWeatherFromDeck(card, "Biting Frost")
 	},
+
+	play_poorinfantryORbluecommando: {  //play specific cards from deck 1 !!! NORTH REALMS Poor Fucking Infantry OR Blue Stripes Commando
+	    name: "reinforcement Choice",
+        description: "Play Poor Fukcing Infantry OR Blue Stripes Commando from your deck",
+        placed: async card => {
+            //find card from deck
+            let card1 = card.holder.deck.findCard(c => c.name === "Poor Fucking Infantry");
+			let card2 = card.holder.deck.findCard(c => c.name === "Blue Stripes Commando");
+			
+			
+			//create container and push card to it
+            let container = new CardContainer();
+            
+			if(card1)container.cards.push(card1);
+			if(card2)container.cards.push(card2);
+			
+            
+			await ui.queueCarousel(container, 1, (c, i) => {
+                let card = c.cards[i];
+                card.autoplay(card.holder.deck);
+            }, () => true, false, true);
+            // Carousel.curr.index = index;
+            // Carousel.curr.update();
+        },
+        weight: (card, ai) => ai.weightWeatherFromDeck(card, "Cow")
+    },
+
+	play_poorinfantryORbluecommando: {  //play specific cards from deck 1 !!! NORTH REALMS Poor Fucking Infantry OR Blue Stripes Commando
+	    name: "Reinforcement Choice",
+        description: "Play Poor Fukcing Infantry OR Blue Stripes Commando, from your deck",
+        placed: async card => {
+            //find card from deck
+            let card1 = card.holder.deck.findCard(c => c.name === "Poor Fucking Infantry");
+			let card2 = card.holder.deck.findCard(c => c.name === "Blue Stripes Commando");
+			
+			
+			//create container and push card to it
+            let container = new CardContainer();
+            
+			if(card1)container.cards.push(card1);
+			if(card2)container.cards.push(card2);
+			
+            
+			await ui.queueCarousel(container, 1, (c, i) => {
+                let card = c.cards[i];
+                card.autoplay(card.holder.deck);
+            }, () => true, false, true);
+            // Carousel.curr.index = index;
+            // Carousel.curr.update();
+        },
+        weight: (card, ai) => ai.weightWeatherFromDeck(card, "Cow")
+    },
+
+	
+	play_GrandCatapultORDragonHunters: {  //play specific cards from deck 1 !!! NORTH REALMS GrandCatapult OR Dragon Hunters
+	    name: "Reinforcement Choice",
+        description: "Play Grand Catapult OR Crinfrid Reavers Dragon Hunter, from your deck",
+        placed: async card => {
+            //find card from deck
+            let card1 = card.holder.deck.findCard(c => c.name === "Grand Catapult");
+			let card2 = card.holder.deck.findCard(c => c.name === "Crinfrid Reavers Dragon Hunter");
+			
+			
+			//create container and push card to it
+            let container = new CardContainer();
+            
+			if(card1)container.cards.push(card1);
+			if(card2)container.cards.push(card2);
+			
+            
+			await ui.queueCarousel(container, 1, (c, i) => {
+                let card = c.cards[i];
+                card.autoplay(card.holder.deck);
+            }, () => true, false, true);
+            // Carousel.curr.index = index;
+            // Carousel.curr.update();
+        },
+        weight: (card, ai) => ai.weightWeatherFromDeck(card, "Cow")
+    },
 
 	//0 - add any kind of sorting when building/creating/adding cards before the game starts, it can be special, then gold, then ability units, then units with no ability OR
 	// special and then on top sorted by card numbers/strenght/power, it is a mess in this state.
