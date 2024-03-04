@@ -65,12 +65,8 @@ var ability_dict = {
 
 	//delete down	
 
-
-
-
-
-
-
+	
+	
 
 
 
@@ -119,25 +115,7 @@ var ability_dict = {
 		}
 	},	
 
-	ReturnBothPlayersStrongestToDeck: {
-		name: "Strongest Back Deck",//need help so this affects players separatly, like regualr schorch but for separatly for player 1 only, then for player 2 only, also if there are multiple cards with the same value, one random should be selected.
-		description: "Return Both Players Strongest Unit(not multiple) Back To Their Deck, on draw it is random",
-		activated: async card => {	
-			await ability_dict["ReturnBothPlayersStrongestToDeck"].placed(card);
-			await board.toDeck(card, card.holder.hand); //managed to remake it so cards go back to players decks instead of their graveyards
-		},
-		placed: async (card, row) => {
-			if (card.isLocked() || game.scorchCancelled) return;
-			if (row !== undefined) row.cards.splice(row.cards.indexOf(card), 1);
-			let maxUnits = board.row.map(r => [r, r.maxUnits()]).filter(p => p[1].length > 0).filter(p => !p[0].isShielded());
-			if (row !== undefined) row.cards.push(card);
-			let maxPower = maxUnits.reduce((a,p) => Math.max(a, p[1][0].power), 0);
-			let scorched = maxUnits.filter(p => p[1][0].power === maxPower);
-			let cards = scorched.reduce((a, p) => a.concat(p[1].map(u => [p[0], u])), []);
-			await Promise.all(cards.map(async u => await u[1].animate("scorch", true, false)));
-			await Promise.all(cards.map(async u => await board.toDeck(u[1], u[0])));
-		}
-	},
+
 
 	//WORKED ON SEMI WORKING SECTION need help up
 	//WORKED ON SEMI WORKING SECTION need help up
@@ -1605,6 +1583,31 @@ var ability_dict = {
 			// Adjust the weight based on the specific game logic or strategy
 			return 50;
 		}
+	},
+
+	playallWeatherFromDeck: {
+		name: "Ragnarok",
+		description: "Play Biting Frost, Impenetrable Fog, and Torrential Rain at once from your deck.",
+		placed: async card => {
+			if (card.isLocked()) return;
+	
+			// Find Biting Frost, Impenetrable Fog, and Torrential Rain cards from the player's deck
+			let frostCard = card.holder.deck.findCard(c => c.name === "Biting Frost");
+			let fogCard = card.holder.deck.findCard(c => c.name === "Impenetrable Fog");
+			let rainCard = card.holder.deck.findCard(c => c.name === "Torrential Rain");
+	
+			// If any of the weather cards is not found in the deck, return
+			if (!frostCard || !fogCard || !rainCard) {
+				console.log("One or more weather cards not found in the deck.");
+				return;
+			}
+	
+			// Play Biting Frost, Impenetrable Fog, and Torrential Rain from the player's deck
+			await frostCard.autoplay(card.holder.deck);
+			await fogCard.autoplay(card.holder.deck);
+			await rainCard.autoplay(card.holder.deck);
+		},
+		weight: (card, ai) => ai.weightWeatherFromDeck(card, "Biting Frost")
 	},
 
 	//0 - add any kind of sorting when building/creating/adding cards before the game starts, it can be special, then gold, then ability units, then units with no ability OR

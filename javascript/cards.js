@@ -57,6 +57,19 @@ var default_cards = {
         "quote": "You humans have... unusual tastes.",
         "sound": "51 Avallac'h_GOLD 6 SPY You will see it… in your dream.ogg",
         },
+
+        "ntr_ragnarok": {
+            "name": "Ragnarok",
+            "deck": "neutral",
+            "row": "close",
+            "strength": "0",
+            "ability": "hero playallWeatherFromDeck", 
+            "filename": "ragnarok",
+            "count": "1",
+            "quote": "Raaaaaagraaaaaarok!",
+            "sound": "Ragrnarok.mp3",
+            },    
+
     "ntr_mysterious_elf": {
         "name": "Avallach'h",
         "deck": "neutral",

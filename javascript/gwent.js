@@ -365,53 +365,7 @@ class ControllerAI {
 	}
 	
 	//deleteme if not working down
-	async decoyyy(card, max, data) {
-		let targ, row;
-		if (game.decoyCancelled) return;
-		let usable_data;
-		if (card.row.length > 0) {
-			if (card.row === "close" || card.row === "agile") usable_data = this.countCards(board.getRow(card,"close",this.player), usable_data);
-			if (card.row === "ranged" || card.row === "agile") usable_data = this.countCards(board.getRow(card, "ranged", this.player), usable_data);
-			if (card.row === "siege") usable_data = this.countCards(board.getRow(card, "siege", this.player), usable_data);
-		} else usable_data = data;
-		if (usable_data.spy.length) {
-			let min = usable_data.spy.reduce((a, c) => Math.min(a, c.power), Number.MAX_VALUE);
-			targ = usable_data.spy.filter(c => c.power === min)[0];
-		} else if (usable_data.medic.length) targ = usable_data.medic[randomInt(usable_data.medic.length)];
-		else if (usable_data.scorch.length) targ = usable_data.scorch[randomInt(usable_data.scorch.length)];
-		else {
-			let pairs = max.rmax.filter((r, i) => this.isSelfRowIndex(i) && r.cards.length)
-				.filter((r, i) => card.row.length === 0 || (["close", "agile"].includes(card.row) && (i === 2 || i === 3)) || (["ranged", "agile"].includes(card.row) && (i === 1 || i === 4)) || (card.row === "siege" && (i === 0 || i === 5)))
-				.reduce((a, r) => r.cards.map(c => ({
-					r: r.row,
-					c: c
-				})).concat(a), []);
-			if (pairs.length) {
-				let pair = pairs[randomInt(pairs.length)];
-				targ = pair.c;
-				row = pair.r;
-			}
-		}
-		if (targ) {
-			for (let i = 0; !row; ++i) {
-				if (board.row[i].cards.indexOf(targ) !== -1) {
-					row = board.row[i];
-					break;
-				}
-			}
-			targ.decoyTarget = true;
-			// Removing the card from the board and adding it to the graveyard
-			row.cards.splice(row.cards.indexOf(targ), 1);
-			this.player.graveyard.push(targ);
-		} else row = ["close", "agile"].includes(card.row) ?
-			board.getRow(card, "close", this.player)
-		:
-			card.row === "ranged" ?
-				board.getRow(card, "ranged", this.player)
-			:
-				board.getRow(card, "siege", this.player);
-		await this.player.playCardToRow(card, row);
-	}
+
 	//dellete up
 	async scorch(card, max, data) {
 		await this.player.playScorch(card);
