@@ -127,8 +127,8 @@
 
 #carousel > :nth-child(1) > :nth-child(3),
 #carousel > :nth-child(1) > :nth-child(3):hover {
-	border:.3vw solid goldenrod;
-	box-shadow:0 0 4vw goldenrod;
+	border:.3vw solid rgb(230, 165, 100);
+	box-shadow:0 0 4vw #fc9e51;
 	background-origin:border-box
 }
 
@@ -1346,7 +1346,7 @@ div.abs {
 }
 
 #carousel .selection {
-	border:.3vw solid green;
+	border:.8vw solid green; /*this 8vw increases the frame thicknes and green color */
 	box-shadow:0 0 4vw green
 }
 
