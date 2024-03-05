@@ -466,7 +466,7 @@ var ability_dict = {
 	},
 	medic: {
 		name: "Medic",
-		description: "Choose one card from your discard pile and play it instantly (no Heroes or Special Cards). ",
+		description: "Choose one unit from your discard pile and play it instantly (no Heroes or Special Cards). ",
 		placed: async (card) => {
 			if (card.isLocked() || (card.holder.grave.findCards(c => c.isUnit()) <= 0)) return;
 			let grave = board.getRow(card, "grave", card.holder);
@@ -927,8 +927,8 @@ var ability_dict = {
 		}
 	},
 	playunit_drawcard: { //cantarela from nilfgard card
-		playunit_drawcard: "playunit_drawcard",
-		description: "Play a unit from your hand, then draw a random card from you deck to your hand.",
+		name: "Play unit, draw card",
+		description: "Play a unit from your hand, then draw a random card from your deck.", //Play unit, draw card TO Reinforcement Choice !!Cavalry Rider OR Brigade Guard !! BBUUGG
 		placed: async card => {
 			let units = card.holder.hand.cards.filter(c => c.isUnit());
 			if (units.length === 0) return;
@@ -1635,31 +1635,7 @@ var ability_dict = {
 		weight: (card, ai) => ai.weightWeatherFromDeck(card, "Biting Frost")
 	},
 
-	play_poorinfantryORbluecommando: {  //play specific cards from deck 1 !!! NORTH REALMS Poor Fucking Infantry OR Blue Stripes Commando
-	    name: "reinforcement Choice",
-        description: "Play Poor Fukcing Infantry OR Blue Stripes Commando from your deck",
-        placed: async card => {
-            //find card from deck
-            let card1 = card.holder.deck.findCard(c => c.name === "Poor Fucking Infantry");
-			let card2 = card.holder.deck.findCard(c => c.name === "Blue Stripes Commando");
-			
-			
-			//create container and push card to it
-            let container = new CardContainer();
-            
-			if(card1)container.cards.push(card1);
-			if(card2)container.cards.push(card2);
-			
-            
-			await ui.queueCarousel(container, 1, (c, i) => {
-                let card = c.cards[i];
-                card.autoplay(card.holder.deck);
-            }, () => true, false, true);
-            // Carousel.curr.index = index;
-            // Carousel.curr.update();
-        },
-        weight: (card, ai) => ai.weightWeatherFromDeck(card, "Cow")
-    },
+
 
 	play_poorinfantryORbluecommando: {  //play specific cards from deck 1 !!! NORTH REALMS Poor Fucking Infantry OR Blue Stripes Commando
 	    name: "Reinforcement Choice",
@@ -1733,6 +1709,58 @@ var ability_dict = {
 		},
 		weight: (card, ai) => ai.weightWeatherFromDeck(card, "Grand Catapult")
 	},
+
+	play_CavalryRiderORDYoungEmissary: {  //play specific cards from deck 1 !!! Nilfgard Cavalry Rider OR Young Emissary
+	    name: "Reinforcement Choice",
+        description: "Play Cavalry Rider OR Young Emissary, from your deck",
+        placed: async card => {
+            //find card from deck
+            let card1 = card.holder.deck.findCard(c => c.name === "Cavalry Rider");
+			let card2 = card.holder.deck.findCard(c => c.name === "Young Emissary");
+			
+			
+			//create container and push card to it
+            let container = new CardContainer();
+            
+			if(card1)container.cards.push(card1);
+			if(card2)container.cards.push(card2);
+			
+            
+			await ui.queueCarousel(container, 1, (c, i) => {
+                let card = c.cards[i];
+                card.autoplay(card.holder.deck);
+            }, () => true, false, true);
+            // Carousel.curr.index = index;
+            // Carousel.curr.update();
+        },
+        weight: (card, ai) => ai.weightWeatherFromDeck(card, "Cow")
+    },
+
+	play_CavalryRiderORDBrigadeGuard: {  //play specific cards from deck 1 !!! Nilfgard Cavalry Rider OR Brigade Guard
+	    name: "Reinforcement Choice",
+        description: "Play Cavalry Rider OR Brigade Guard, from your deck",
+        placed: async card => {
+            //find card from deck
+            let card1 = card.holder.deck.findCard(c => c.name === "Cavalry Rider");
+			let card2 = card.holder.deck.findCard(c => c.name === "Brigade Guard");
+			
+			
+			//create container and push card to it
+            let container = new CardContainer();
+            
+			if(card1)container.cards.push(card1);
+			if(card2)container.cards.push(card2);
+			
+            
+			await ui.queueCarousel(container, 1, (c, i) => {
+                let card = c.cards[i];
+                card.autoplay(card.holder.deck);
+            }, () => true, false, true);
+            // Carousel.curr.index = index;
+            // Carousel.curr.update();
+        },
+        weight: (card, ai) => ai.weightWeatherFromDeck(card, "Cow")
+    },
 
 	//0 - add any kind of sorting when building/creating/adding cards before the game starts, it can be special, then gold, then ability units, then units with no ability OR
 	// special and then on top sorted by card numbers/strenght/power, it is a mess in this state.

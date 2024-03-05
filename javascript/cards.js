@@ -18,7 +18,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "close",
         "strength": "14",
-        "ability": "drawAndStealCards", 
+        "ability": "", 
         "filename": "devclose",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -29,7 +29,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "ranged",
         "strength": "14",
-        "ability": "drawAndStealCards", 
+        "ability": "", 
         "filename": "devranged",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -40,7 +40,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "siege",
         "strength": "14",
-        "ability": "drawAndStealCards", 
+        "ability": "", 
         "filename": "devsiege",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -51,7 +51,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "agile",
         "strength": "14",
-        "ability": "drawAndStealCards", 
+        "ability": "", 
         "filename": "devagile",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -1018,8 +1018,8 @@ var default_cards = {
         "name": "Albrich",
         "deck": "nilfgaard",
         "row": "ranged",
-        "strength": "2",
-        "ability": "",
+        "strength": "1",
+        "ability": "medic",
         "filename": "albrich",
         "count": "1",
         "quote": "A fireball? Of course. Whatever Your Imperial Majesty whishes."
@@ -1098,8 +1098,8 @@ var default_cards = {
         "name": "Fringilla Vigo",
         "deck": "nilfgaard",
         "row": "ranged",
-        "strength": "6",
-        "ability": "",
+        "strength": "4",
+        "ability": "draw2discard2",
         "filename": "fringilla",
         "count": "1",
         "quote": "Magic is the highest good. It transcends all borders and divisions."
@@ -1115,7 +1115,7 @@ var default_cards = {
         "quote": "Not the best for taking cities, but great for razing them to the ground."
     },
     "ne_impera_brigade_1": {
-        "name": "Impera Brigade Guard",
+        "name": "Brigade Guard",
         "id": 1,
         "deck": "nilfgaard",
         "row": "siege",
@@ -1127,7 +1127,7 @@ var default_cards = {
         "quote": "The Impera Brigade never surrenders. Ever."
     },
     "ne_impera_brigade_2": {
-        "name": "Impera Brigade Guard",
+        "name": "Brigade Guard",
         "id": 2,
         "deck": "nilfgaard",
         "row": "siege",
@@ -1139,7 +1139,7 @@ var default_cards = {
         "quote": "The Impera Brigade never surrenders. Ever."
     },
     "ne_impera_brigade_3": {
-        "name": "Impera Brigade Guard",
+        "name": "Brigade Guard",
         "id": 3,
         "deck": "nilfgaard",
         "row": "siege",
@@ -1151,7 +1151,7 @@ var default_cards = {
         "quote": "The Impera Brigade never surrenders. Ever."
     },
     "ne_impera_brigade_4": {
-        "name": "Impera Brigade Guard",
+        "name": "Brigade Guard",
         "id": 4,
         "deck": "nilfgaard",
         "row": "siege",
@@ -1204,7 +1204,7 @@ var default_cards = {
         "quote": "Summer sun reflecting in the quiet waters of Alba - that's Nilfgaard to me."
     },
     "ne_nauzicaa_1": {
-        "name": "Nausicaa Cavalry Rider",
+        "name": "Cavalry Rider",
         "id": 1,
         "deck": "nilfgaard",
         "row": "close",
@@ -1216,7 +1216,7 @@ var default_cards = {
         "quote": "The Emperor will teach the North discipline."
     },
     "ne_nauzicaa_2": {
-        "name": "Nausicaa Cavalry Rider",
+        "name": "Cavalry Rider",
         "id": 2,
         "deck": "nilfgaard",
         "row": "ranged",
@@ -1228,7 +1228,7 @@ var default_cards = {
         "quote": "The Emperor will teach the North discipline."
     },
     "ne_nauzicaa_3": {
-        "name": "Nausicaa Cavalry Rider",
+        "name": "Cavalry Rider",
         "id": 3,
         "deck": "nilfgaard",
         "row": "siege",
@@ -1263,8 +1263,8 @@ var default_cards = {
         "name": "Renuald aep Matsen",
         "deck": "nilfgaard",
         "row": "close",
-        "strength": "5",
-        "ability": "morale",
+        "strength": "1",
+        "ability": "playunit_drawcard",
         "filename": "renuald",
         "count": "1",
         "quote": "They say the Impera fear nothing. Untrue. Renuald scares them shitless."
@@ -1324,7 +1324,7 @@ var default_cards = {
         "deck": "nilfgaard",
         "row": "ranged",
         "strength": "1",
-        "ability": "hero muster",
+        "ability": "play_CavalryRiderORDBrigadeGuard",
         "filename": "sweers",
         "count": "1",
         "target": "ne_nauzicaa",
@@ -1364,8 +1364,8 @@ var default_cards = {
         "name": "Vreemde",
         "deck": "nilfgaard",
         "row": "close",
-        "strength": "7",
-        "ability": "",
+        "strength": "1",
+        "ability": "play_CavalryRiderORDYoungEmissary",
         "filename": "vreemde",
         "count": "1",
         "quote": "Discipline is the Empire's deadliest weapon."
@@ -2382,17 +2382,6 @@ var default_cards = {
         "count": "1",
         "quote": "We are drops of rain that together make a ferocious storm."
     },
-    "sk_berserker": {
-        "name": "Berserker",
-        "deck": "skellige",
-        "row": "close",
-        "strength": "4",
-        "ability": "berserker",
-        "filename": "berserker",
-        "count": "1",
-        "target": "sk_vildkaarl",
-        "quote": "Kill, crush, cleave!"
-    },
     "sk_birna": {
         "name": "Birna Bran",
         "deck": "skellige",
@@ -2457,7 +2446,8 @@ var default_cards = {
         "filename": "shield_maiden_1",
         "count": "1",
         "target": "sk_shield_maiden",
-        "quote": "They'll shatter on our shields like waves on a rocky shore."
+        "quote": "They'll shatter on our shields like waves on a rocky shore.",
+        "sound":"shield maiden Give 'em no rest, no reprieve!.mp3",
     },
     "sk_shield_maiden_2": {
         "name": "Shield Maiden",
@@ -2469,7 +2459,8 @@ var default_cards = {
         "filename": "shield_maiden_2",
         "count": "1",
         "target": "sk_shield_maiden",
-        "quote": "They'll shatter on our shields like waves on a rocky shore."
+        "quote": "They'll shatter on our shields like waves on a rocky shore.",
+        "sound":"shield maiden Give 'em no rest, no reprieve!.mp3",
     },
     "sk_shield_maiden_3": {
         "name": "Shield Maiden",
@@ -2481,7 +2472,8 @@ var default_cards = {
         "filename": "shield_maiden_3",
         "count": "1",
         "target": "sk_shield_maiden",
-        "quote": "They'll shatter on our shields like waves on a rocky shore."
+        "quote": "They'll shatter on our shields like waves on a rocky shore.",
+        "sound":"shield maiden Give 'em no rest, no reprieve!.mp3",
     },
     "sk_heymaey": {
         "name": "Clan Heymaey Skald",
@@ -2513,7 +2505,8 @@ var default_cards = {
         "filename": "craite_warrior_1",
         "count": "1",
         "target": "sk_craite_warrior",
-        "quote": "I'll bring the an Craites such glory, bards'll go hoarse singin' me praises!"
+        "quote": "I'll bring the an Craites such glory, bards'll go hoarse singin' me praises!",
+        "sound":"An Craite Warrior we will follow you always into the fire.mp3",
     },
     "sk_craite_warrior_2": {
         "name": "Clan an Craite Warrior",
@@ -2525,7 +2518,8 @@ var default_cards = {
         "filename": "craite_warrior_2",
         "count": "1",
         "target": "sk_craite_warrior",
-        "quote": "I'll bring the an Craites such glory, bards'll go hoarse singin' me praises!"
+        "quote": "I'll bring the an Craites such glory, bards'll go hoarse singin' me praises!",
+        "sound":"An Craite Warrior we will follow you always into the fire.mp3",
     },
     "sk_craite_warrior_3": {
         "name": "Clan an Craite Warrior",
@@ -2537,7 +2531,8 @@ var default_cards = {
         "filename": "craite_warrior_3",
         "count": "1",
         "target": "sk_craite_warrior",
-        "quote": "I'll bring the an Craites such glory, bards'll go hoarse singin' me praises!"
+        "quote": "I'll bring the an Craites such glory, bards'll go hoarse singin' me praises!",
+        "sound":"An Craite Warrior we will follow you always into the fire.mp3",
     },
     "sk_donar": {
         "name": "Donar an Hindar",
@@ -2562,12 +2557,25 @@ var default_cards = {
     "sk_ermion": {
         "name": "Ermion",
         "deck": "skellige",
-        "row": "ranged",
+        "row": "agile",
         "strength": "8",
         "ability": "hero mardroeme",
         "filename": "ermion",
         "count": "1",
-        "quote": "Only the ignorant dismiss the importance of myths."
+        "quote": "Only the ignorant dismiss the importance of myths.",
+        "sound":"Ermion I can help you if you wish..mp3",
+
+    },
+    "sk_coral": {
+        "name": "Coral",
+        "deck": "skellige",
+        "row": "agile",
+        "strength": "8",
+        "ability": "mardroeme",
+        "filename": "coral",
+        "count": "1",
+        "quote": "Her true name's Astrid Lyttneyd Ásgeirrfinnbjornsdottir, but that never fit on any forms.",
+        "sound":"Coral I can do a great deal more for you….mp3",
     },
     "sk_hemdall": {
         "name": "Hemdall",
@@ -2620,7 +2628,8 @@ var default_cards = {
         "filename": "light_longship",
         "count": "3",
         "target": "sk_light_longship",
-        "quote": "Escape them? In the waters of Skellige? Good luck."
+        "quote": "Escape them? In the waters of Skellige? Good luck.",
+        "sound":"32 war longship.mp3",
     },
     "sk_madman_lugos": {
         "name": "Madman Lugos",
@@ -2650,7 +2659,9 @@ var default_cards = {
         "ability": "morale",
         "filename": "olaf",
         "count": "1",
-        "quote": "Many've tried to defeat Olaf. But wont' hear about it from them - they're dead."
+        "quote": "Many've tried to defeat Olaf. But wont' hear about it from them - they're dead.",
+        "sound":"old bear roar.mp3",
+
     },
     /*"spe_storm": {
         "name": "Skellige Storm",
@@ -2672,28 +2683,6 @@ var default_cards = {
         "count": "1",
         "quote": "The emperor also thought him an accidental king. At first."
     },
-    "sk_vildkaarl": {
-        "name": "Transformed Vildkaarl",
-        "deck": "skellige",
-        "row": "close",
-        "strength": "15",
-        "ability": "morale",
-        "filename": "vildkaarl",
-        "count": "0",
-        "quote": "Saw them fight once in my life... and once was enough."
-    },
-    "sk_young_vildkaarl": {
-        "name": "Transformed Young Vildkaarl",
-        "id": 1,
-        "deck": "skellige",
-        "row": "ranged",
-        "strength": "8",
-        "ability": "bond",
-        "filename": "young_vildkaarl",
-        "count": "0",
-        "target": "sk_young_vildkaarl",
-        "quote": "Rooaaar!"
-    },
     "sk_udalryk": {
         "name": "Udalryk",
         "deck": "skellige",
@@ -2714,7 +2703,8 @@ var default_cards = {
         "filename": "war_longship_1",
         "count": "1",
         "target": "sk_war_longship",
-        "quote": "They say Hemdall's heart swells whenever the longships sail out on a raid."
+        "quote": "They say Hemdall's heart swells whenever the longships sail out on a raid.",
+        "sound":"32 war longship.mp3",
     },
     "sk_war_longship_2": {
         "name": "War Longship",
@@ -2726,10 +2716,37 @@ var default_cards = {
         "filename": "war_longship_2",
         "count": "1",
         "target": "sk_war_longship",
-        "quote": "They say Hemdall's heart swells whenever the longships sail out on a raid."
+        "quote": "They say Hemdall's heart swells whenever the longships sail out on a raid.",
+        "sound":"32 war longship.mp3",
+    },
+    "sk_war_longship_3": {
+        "name": "War Longship",
+        "id": 3,
+        "deck": "skellige",
+        "row": "siege",
+        "strength": "5",
+        "ability": "bond",
+        "filename": "war_longship_3",
+        "count": "1",
+        "target": "sk_war_longship",
+        "quote": "They say Hemdall's heart swells whenever the longships sail out on a raid.",
+        "sound":"32 war longship.mp3",
+        
+    },
+    "sk_berserker": {
+        "name": "Old Berserker", //OLD BERSERKER
+        "deck": "skellige",
+        "row": "close",
+        "strength": "4",
+        "ability": "berserker",
+        "filename": "berserker",
+        "count": "1",
+        "target": "sk_vildkaarl",
+        "quote": "Kill, crush, cleave!",
+        "sound":"old berserker You'll beg for death..mp3",
     },
     "sk_young_berserker": {
-        "name": "Young Berserker",
+        "name": "Young Berserker",//YOUNG BERSERKER
         "deck": "skellige",
         "row": "ranged",
         "strength": "2",
@@ -2737,7 +2754,33 @@ var default_cards = {
         "filename": "young_berserker",
         "count": "3",
         "target": "sk_young_vildkaarl",
-        "quote": "Want some?"
+        "quote": "Want some?",
+        "sound":"young berserker Kill maim destroy!.mp3",
+    },
+    "sk_vildkaarl": {
+        "name": "Old Bear", //OLD BEAR
+        "deck": "skellige",
+        "row": "close",
+        "strength": "15",
+        "ability": "morale",
+        "filename": "vildkaarl",
+        "count": "0",
+        "quote": "Saw them fight once in my life... and once was enough.",
+        "sound":"old bear roar.mp3",
+    },
+    "sk_young_vildkaarl": {
+        "name": "Young Bear",//YOUNG BEAR
+        "id": 1,
+        "deck": "skellige",
+        "row": "ranged",
+        "strength": "8",
+        "ability": "bond",
+        "filename": "young_vildkaarl",
+        "count": "0",
+        "target": "sk_young_vildkaarl",
+        "quote": "Rooaaar!",
+        "sound":"young bear roar.mp3",
+        
     },
     "sk_crach_an_craite": {
         "name": "Crach an Craite",
@@ -5580,18 +5623,7 @@ var ext_sk_cards = {
         "quote": "Mind your tone BOY!",
         "sound":"63 cratosfrostaxewarrior.mp3",
     },
-    "sk_war_longship_3": {
-        "name": "War Longship",
-        "id": 3,
-        "deck": "skellige",
-        "row": "siege",
-        "strength": "5",
-        "ability": "bond",
-        "filename": "war_longship_3",
-        "count": "1",
-        "target": "sk_war_longship",
-        "quote": "They say Hemdall's heart swells whenever the longships sail out on a raid."
-    },
+
     "sk_dimun_pirate_captain": {
         "name": "Clan Dimun Pirate Captain",
         "deck": "skellige",
@@ -5600,7 +5632,7 @@ var ext_sk_cards = {
         "ability": "",
         "filename": "dimun_pirate_captain",
         "count": "1",
-        "quote": "Haul together, hoist the colors high!"
+        "quote": "Haul together, hoist the colors high!",
     },
     /*
     "sk_vigi_loon": {
