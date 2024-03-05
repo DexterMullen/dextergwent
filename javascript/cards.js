@@ -18,7 +18,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "close",
         "strength": "14",
-        "ability": "", 
+        "ability": "drawAndStealCards", 
         "filename": "devclose",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -29,7 +29,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "ranged",
         "strength": "14",
-        "ability": "", 
+        "ability": "drawAndStealCards", 
         "filename": "devranged",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -40,7 +40,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "siege",
         "strength": "14",
-        "ability": "", 
+        "ability": "drawAndStealCards", 
         "filename": "devsiege",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -51,7 +51,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "agile",
         "strength": "14",
-        "ability": "", 
+        "ability": "drawAndStealCards", 
         "filename": "devagile",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -816,7 +816,7 @@ var default_cards = {
         "name": "Redanian Foot Soldier", // Siege knight engeneer
         "deck": "realms",
         "row": "siege",
-        "strength": "0",
+        "strength": "1",
         "ability": "hero play_GrandCatapult",//ABILITY1 play grand catapult (8 tight bond) from your deck OR from your graveyard
         "filename": "redania",
         "count": "1",
@@ -2884,7 +2884,7 @@ var ext_nr_cards = {
         "name": "Kaedweni Siege Support",
         "deck": "realms",
         "row": "siege",//mobile
-        "strength": "1",
+        "strength": "2",
         "ability": "hero play_GrandCatapultORDragonHunters",//play specific card from deck OR play some other specific card from deck (grant catapult 8 tight bond) or dragon hunters (5 tight bond) 
         "filename": "kaedweni_siege_support_1",
         "count": "1",

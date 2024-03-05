@@ -86,6 +86,7 @@ var ability_dict = {
 	},
 
 
+	
 
 
 
@@ -1712,6 +1713,26 @@ var ability_dict = {
         },
         weight: (card, ai) => ai.weightWeatherFromDeck(card, "Cow")
     },
+
+	play_GrandCatapult: {
+		name: "Grand Catapult Reinfocement",
+		description: "Pick Grand Catapult card from your deck OR graveyard and play it instantly.",
+		placed: async card => {
+			let out = card.holder.deck.findCard(c => c.name === "Grand Catapult");
+			if (out) {
+				await out.autoplay(card.holder.deck);
+			} else {
+				// If "Grand Catapult" card is not found in deck, try to find and autoplay it from the graveyard
+				out = card.holder.grave.findCard(c => c.name === "Grand Catapult");
+				if (out) {
+					await out.autoplay(card.holder.grave);
+				} else {
+					console.log("Grand Catapult card not found in deck or graveyard."); // Add error handling if needed
+				}
+			}
+		},
+		weight: (card, ai) => ai.weightWeatherFromDeck(card, "Grand Catapult")
+	},
 
 	//0 - add any kind of sorting when building/creating/adding cards before the game starts, it can be special, then gold, then ability units, then units with no ability OR
 	// special and then on top sorted by card numbers/strenght/power, it is a mess in this state.
