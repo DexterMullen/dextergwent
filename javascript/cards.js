@@ -18,7 +18,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "close",
         "strength": "14",
-        "ability": "", 
+        "ability": "drawAndStealCards", 
         "filename": "devclose",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -29,7 +29,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "ranged",
         "strength": "14",
-        "ability": "", 
+        "ability": "drawAndStealCards", 
         "filename": "devranged",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -40,7 +40,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "siege",
         "strength": "14",
-        "ability": "", 
+        "ability": "drawAndStealCards", 
         "filename": "devsiege",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -51,7 +51,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "agile",
         "strength": "14",
-        "ability": "", 
+        "ability": "drawAndStealCards", 
         "filename": "devagile",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -816,7 +816,7 @@ var default_cards = {
         "name": "Redanian Foot Soldier", // Siege knight engeneer
         "deck": "realms",
         "row": "siege",
-        "strength": "0",
+        "strength": "1",
         "ability": "hero play_GrandCatapult",//ABILITY1 play grand catapult (8 tight bond) from your deck OR from your graveyard
         "filename": "redania",
         "count": "1",
@@ -1691,7 +1691,7 @@ var default_cards = {
         "count": "1",
         "target": "mo_ghoul",
         "quote": "If ghouls are part of the Circle of Life... then it's a damn vicious circle.",
-        "sound":"ghouls.WAV",
+        "sound":"ghouls.mp3",
     },
     "mo_ghoul_1": {
         "name": "Ghoul",
@@ -1704,7 +1704,7 @@ var default_cards = {
         "count": "1",
         "target": "mo_ghoul",
         "quote": "If ghouls are part of the Circle of Life... then it's a damn vicious circle.",
-        "sound":"ghouls.WAV",
+        "sound":"ghouls.mp3",
     },
     "mo_ghoul_2": {
         "name": "Ghoul",
@@ -1717,7 +1717,7 @@ var default_cards = {
         "count": "1",
         "target": "mo_ghoul",
         "quote": "If ghouls are part of the Circle of Life... then it's a damn vicious circle.",
-        "sound":"ghouls.WAV",
+        "sound":"ghouls.mp3",
     },
     "mo_gravehag": {
         "name": "water Hag",
@@ -1807,7 +1807,7 @@ var default_cards = {
         "count": "1",
         "target": "mo_nekker",
         "quote": "Damn things are almost cute, if you ignore the whole vicious killer aspect.",
-        "sound":"nekkers.WAV",
+        "sound":"nekkerss.mp3",
     },
     "mo_nekker_1": {
         "name": "Nekker",
@@ -1820,7 +1820,7 @@ var default_cards = {
         "count": "1",
         "target": "mo_nekker",
         "quote": "Damn things are almost cute, if you ignore the whole vicious killer aspect.",
-        "sound":"nekkers.WAV",
+        "sound":"nekkerss.mp3",
     },
     "mo_nekker_2": {
         "name": "Nekker",
@@ -1833,7 +1833,7 @@ var default_cards = {
         "count": "1",
         "target": "mo_nekker",
         "quote": "Damn things are almost cute, if you ignore the whole vicious killer aspect.",
-        "sound":"nekkers.WAV",
+        "sound":"nekkerss.mp3",
     },
     "mo_mighty_maiden": {
         "name": "Plague Maiden",
@@ -2432,7 +2432,7 @@ var default_cards = {
         "strength": "6",
         "ability": "",
         "filename": "brokva_archer",
-        "count": "2",
+        "count": "3",
         "quote": "So ye can hit a movin' target at two hundred paces. Me, too. In a storm."
     },
     "sk_dimun_pirate": { //Elf Scorch Dragon Rider 
@@ -2444,13 +2444,13 @@ var default_cards = {
         "filename": "dimun_pirate",
         "count": "1",
         "quote": "Can see the fear in their eyes. Fear o' me... fear the dragon breath!",
-        "sound":"19 Bork.mp3",
+        "sound":"Elf Scorch Dragon Rider.mp3",
 
     },
     "sk_shield_maiden_1": {
-        "name": "Clan Drummond Shield Maiden",
+        "name": "Shield Maiden",
         "id": 1,
-        "deck": "skellige",
+        "deck": "skellige", 
         "row": "close",
         "strength": "2",
         "ability": "bond",
@@ -2460,7 +2460,7 @@ var default_cards = {
         "quote": "They'll shatter on our shields like waves on a rocky shore."
     },
     "sk_shield_maiden_2": {
-        "name": "Clan Drummond Shield Maiden",
+        "name": "Shield Maiden",
         "id": 2,
         "deck": "skellige",
         "row": "close",
@@ -2472,7 +2472,7 @@ var default_cards = {
         "quote": "They'll shatter on our shields like waves on a rocky shore."
     },
     "sk_shield_maiden_3": {
-        "name": "Clan Drummond Shield Maiden",
+        "name": "Shield Maiden",
         "id": 3,
         "deck": "skellige",
         "row": "close",
@@ -2573,7 +2573,7 @@ var default_cards = {
         "name": "Hemdall",
         "deck": "skellige",
         "row": "close",
-        "strength": "11",
+        "strength": "12",
         "ability": "hero",
         "filename": "hemdall",
         "count": "1",
@@ -2884,7 +2884,7 @@ var ext_nr_cards = {
         "name": "Kaedweni Siege Support",
         "deck": "realms",
         "row": "siege",//mobile
-        "strength": "1",
+        "strength": "2",
         "ability": "hero play_GrandCatapultORDragonHunters",//play specific card from deck OR play some other specific card from deck (grant catapult 8 tight bond) or dragon hunters (5 tight bond) 
         "filename": "kaedweni_siege_support_1",
         "count": "1",
@@ -4728,7 +4728,7 @@ var ext_mo_cards = {
         "count": "1",
         "target": "mo_ghoul",
         "quote": "A particularly large ghoul that is fattened and craves warm meat is called an alghoul.",
-        "sound":"ghouls.WAV",
+        "sound":"ghouls.mp3",
     },
     "mo_archgriffin": {
         "name": "Archgriffin",

@@ -14,6 +14,14 @@
 	position:relative
 }
 
+#carousel .item {
+    transition: transform 0.5s ease; /* Adjust the duration and timing function as needed */
+}
+
+#carousel .item:hover {
+    transform: scale(1.1); /* Example hover effect (optional) */
+}
+
 .card,
 .deck-card,
 #carousel .card-lg,
@@ -127,8 +135,8 @@
 
 #carousel > :nth-child(1) > :nth-child(3),
 #carousel > :nth-child(1) > :nth-child(3):hover {
-	border:.3vw solid goldenrod;
-	box-shadow:0 0 4vw goldenrod;
+	border:.3vw solid rgb(230, 165, 100);
+	box-shadow:0 0 4vw #fc9e51;
 	background-origin:border-box
 }
 
@@ -1346,8 +1354,9 @@ div.abs {
 }
 
 #carousel .selection {
-	border:.3vw solid green;
-	box-shadow:0 0 4vw green
+	border:.4vw solid rgb(5, 24, 192) !important; /*this 8vw increases the frame thicknes and green color for selected cards but not the center one*/
+	box-shadow:0 0 4vw rgb(5, 24, 192) !important;
+
 }
 
 #carousel .card-description {
