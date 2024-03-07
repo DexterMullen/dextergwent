@@ -367,7 +367,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "ranged",
         "strength": "5",
-        "ability": "CancleOneActiveWeatherCard", //ABILITY1 cancel / remove only 1 active weather card from the board
+        "ability": "play_ClearWeather", //ABILITY1 cancel / remove only 1 active weather card from the board for now she clers all weather
         "filename": "triss_weather",
         "count": "1",
         "quote": "I can take care of myself. Trust me.",
@@ -405,7 +405,7 @@ var default_cards = {
         "filename": "yennefer",
         "count": "1",
         "quote": "Magic is Chaos, Art and Science. It is a curse, a blessing and a progression.",
-        "sound":"5 Yennefer_SWAP There'll be nothing to pick up when I’m done with you!.ogg",
+        "sound":"6 Yennefer_SWAP You crossed the wrong sorceress!.ogg",
     },
     "ntr_zoltan": {
         "name": "Zoltan Chivay",
@@ -826,7 +826,7 @@ var default_cards = {
     "nr_redania_1": {//john show OR North Realms Wolf Warrior from prineted version
         "name": "North Realms Wolf Warrior", //from printed deck
         "deck": "realms",
-        "row": "siege",
+        "row": "agile",
         "strength": "6",
         "ability": "hero destroy1weakest",
         "filename": "redania_1",
@@ -838,8 +838,8 @@ var default_cards = {
         "name": "Sheldon Skaggs",
         "deck": "realms",
         "row": "siege",
-        "strength": "3",
-        "ability": "", //AARD ABILITY1 select any of the opponents unit on his side of the board, and then move it to the diferent row of your choice.
+        "strength": "1",
+        "ability": "play_GrandCatapultORDragonHuntersORReinforcedTrebuchet", //AARD ABILITY1 select any of the opponents unit on his side of the board, and then move it to the diferent row of your choice.
         "filename": "sheldon",
         "count": "1",
         "quote": "I was there, on the front lines! Right where the fightin' was the thickest!",
@@ -2009,10 +2009,11 @@ var default_cards = {
         "deck": "scoiatael",
         "row": "agile",
         "strength": "6",
-        "ability": "",
+        "ability": "onecardfromdecktograve",
         "filename": "barclay",
         "count": "1",
-        "quote": "Our mead smells like piss, do it? Easy to fix - I'll break your fuckin' nose!"
+        "quote": "Our mead smells like piss, do it? Easy to fix - I'll break your fuckin' nose!",
+        "sound":"Barclay_Els_Get the move on lads, look alive.ogg",
     },
     "sc_dennis": {
         "name": "Dennis Cranmer",
@@ -2236,7 +2237,7 @@ var default_cards = {
         "name": "Iorveth",
         "deck": "scoiatael",
         "row": "ranged",
-        "strength": "10",
+        "strength": "8",
         "ability": "hero morale",
         "filename": "iorveth",
         "count": "1",
@@ -2246,7 +2247,7 @@ var default_cards = {
         "name": "Isengrim Faoiltiarna",
         "deck": "scoiatael",
         "row": "close",
-        "strength": "10",
+        "strength": "8",
         "ability": "hero morale",
         "filename": "isengrim",
         "count": "1",
@@ -2335,19 +2336,20 @@ var default_cards = {
     "sc_toruviel": {
         "name": "Toruviel",
         "deck": "scoiatael",
-        "row": "ranged",
-        "strength": "2",
-        "ability": "",
+        "row": "agile",
+        "strength": "6",
+        "ability": "hero destroy1weakest",
         "filename": "toruviel",
         "count": "1",
-        "quote": "I'd gladly kill you from up close, stare in your eyese... But you reek, human."
+        "quote": "I'd gladly kill you from up close, stare in your eyese... But you reek, human.",
+        "sound":"Toruviel_I like the way you die, human.ogg",
     },
     "sc_vrihedd_cadet": {
         "name": "Vrihedd Brigade Recruit",
         "deck": "scoiatael",
-        "row": "ranged",
+        "row": "agile",
         "strength": "4",
-        "ability": "",
+        "ability": "reveal1",
         "filename": "vrihedd_cadet",
         "count": "1",
         "quote": "Hatred burns brighter than any fire, and cuts deeper than any blade."
@@ -2412,7 +2414,8 @@ var default_cards = {
         "filename": "cerys",
         "count": "1",
         "target": "sk_shield_maiden",
-        "quote": "They call me Sparrowhawk, know why? Because I eat rats like you for breakfast."
+        "quote": "They call me Sparrowhawk, know why? Because I eat rats like you for breakfast.",
+        "sound":"Cerys an Craite Need a good slappin'.mp3",
     },
     "sk_brokva_archer": {
         "name": "Clan Brokvar Archer",
@@ -2447,7 +2450,7 @@ var default_cards = {
         "count": "1",
         "target": "sk_shield_maiden",
         "quote": "They'll shatter on our shields like waves on a rocky shore.",
-        "sound":"shield maiden Give 'em no rest, no reprieve!.mp3",
+        "sound":"Shieldmaiden you are good real good.mp3",
     },
     "sk_shield_maiden_2": {
         "name": "Shield Maiden",
@@ -2460,7 +2463,7 @@ var default_cards = {
         "count": "1",
         "target": "sk_shield_maiden",
         "quote": "They'll shatter on our shields like waves on a rocky shore.",
-        "sound":"shield maiden Give 'em no rest, no reprieve!.mp3",
+        "sound":"Shieldmaiden you are good real good.mp3",
     },
     "sk_shield_maiden_3": {
         "name": "Shield Maiden",
@@ -2473,7 +2476,7 @@ var default_cards = {
         "count": "1",
         "target": "sk_shield_maiden",
         "quote": "They'll shatter on our shields like waves on a rocky shore.",
-        "sound":"shield maiden Give 'em no rest, no reprieve!.mp3",
+        "sound":"Shieldmaiden you are good real good.mp3",
     },
     "sk_heymaey": {
         "name": "Clan Heymaey Skald",
@@ -2734,7 +2737,7 @@ var default_cards = {
         
     },
     "sk_berserker": {
-        "name": "Old Berserker", //OLD BERSERKER
+        "name": "Old Berserker", //OLD BERSERKER 1
         "deck": "skellige",
         "row": "close",
         "strength": "4",
@@ -2742,6 +2745,18 @@ var default_cards = {
         "filename": "berserker",
         "count": "1",
         "target": "sk_vildkaarl",
+        "quote": "Kill, crush, cleave!",
+        "sound":"old berserker You'll beg for death..mp3",
+    },
+    "sk_berserker2": {
+        "name": "Old Berserker", //OLD BERSERKER 2
+        "deck": "skellige",
+        "row": "siege",
+        "strength": "4",
+        "ability": "berserker",
+        "filename": "berserker",
+        "count": "1",
+        "target": "sk_vildkaarl2",
         "quote": "Kill, crush, cleave!",
         "sound":"old berserker You'll beg for death..mp3",
     },
@@ -2757,17 +2772,6 @@ var default_cards = {
         "quote": "Want some?",
         "sound":"young berserker Kill maim destroy!.mp3",
     },
-    "sk_vildkaarl": {
-        "name": "Old Bear", //OLD BEAR
-        "deck": "skellige",
-        "row": "close",
-        "strength": "15",
-        "ability": "morale",
-        "filename": "vildkaarl",
-        "count": "0",
-        "quote": "Saw them fight once in my life... and once was enough.",
-        "sound":"old bear roar.mp3",
-    },
     "sk_young_vildkaarl": {
         "name": "Young Bear",//YOUNG BEAR
         "id": 1,
@@ -2782,6 +2786,43 @@ var default_cards = {
         "sound":"young bear roar.mp3",
         
     },
+    "sk_vildkaarl": {
+        "name": "Old Bear", //OLD BEAR 
+        "deck": "skellige",
+        "row": "close",
+        "strength": "15",
+        "ability": "morale",
+        "filename": "vildkaarl",
+        "count": "0",
+        "quote": "Saw them fight once in my life... and once was enough.",
+        "sound":"old bear roar.mp3",
+    },
+    "sk_vildkaarl2": {
+        "name": "Old Bear", //OLD BEAR 2
+        "deck": "skellige",
+        "row": "siege",
+        "strength": "15",
+        "ability": "morale",
+        "filename": "vildkaarl",
+        "count": "0",
+        "quote": "Saw them fight once in my life... and once was enough.",
+        "sound":"old bear roar.mp3",
+    },
+    "sk_craite_warrior_1": {
+        "name": "Clan an Craite Warrior",
+        "id": 1,
+        "deck": "skellige",
+        "row": "close",
+        "strength": "5",
+        "ability": "bond",
+        "filename": "craite_warrior_1",
+        "count": "1",
+        "target": "sk_craite_warrior",
+        "quote": "I'll bring the an Craites such glory, bards'll go hoarse singin' me praises!",
+        "sound":"An Craite Warrior we will follow you always into the fire.mp3",
+    },
+
+
     "sk_crach_an_craite": {
         "name": "Crach an Craite",
         "deck": "skellige",
@@ -2980,7 +3021,7 @@ var ext_nr_cards = {
         "id": 1,
         "deck": "realms",
         "row": "siege",
-        "strength": "5",
+        "strength": "4",
         "ability": "bond",
         "filename": "reinforced_trebuchet_1",
         "count": "1",
@@ -2992,7 +3033,19 @@ var ext_nr_cards = {
         "id": 2,
         "deck": "realms",
         "row": "siege",
-        "strength": "5",
+        "strength": "4",
+        "ability": "bond",
+        "filename": "reinforced_trebuchet_2",
+        "count": "1",
+        "target": "nr_reinforced_trebuchet",
+        "quote": "Feel that? The earth trembles each time Big Bertha loose a stone."
+    },
+    "nr_reinforced_trebuchet_3": {
+        "name": "Reinforced Trebuchet",
+        "id": 3,
+        "deck": "realms",
+        "row": "siege",
+        "strength": "4",
         "ability": "bond",
         "filename": "reinforced_trebuchet_2",
         "count": "1",
@@ -4635,8 +4688,8 @@ var ext_mo_cards = {
     "mo_caranthir": {
         "name": "Caranthir Ar-Feiniel",
         "deck": "monsters",
-        "row": "close",
-        "strength": "6",
+        "row": "agile",
+        "strength": "5",
         "ability": "hero decoy",
         "filename": "caranthir",
         "count": "1",
@@ -4647,7 +4700,7 @@ var ext_mo_cards = {
         "name": "Caranthir Destroyer",
         "deck": "monsters",
         "row": "agile",//should be mobile because opposite row is important for his ability
-        "strength": "6",
+        "strength": "5",
         "ability": "hero destroy1weakest",
         "filename": "caranthirdestroyer",
         "count": "1",
@@ -4973,7 +5026,7 @@ var ext_mo_cards = {
         "name": "Succubus",
         "deck": "monsters",
         "row": "close",
-        "strength": "6",
+        "strength": "2",
         "ability": "hero succubus",
         "filename": "succubus",
         "count": "1",
@@ -5332,11 +5385,12 @@ var ext_st_cards = {
         "name": "Malena",
         "deck": "scoiatael",
         "row": "agile",
-        "strength": "1",
-        "ability": "hero horn",
+        "strength": "7",
+        "ability": "hero backto_deck",
         "filename": "malena",
         "count": "1",
-        "quote": "I hate you, dh'oine. You are all the same."
+        "quote": "I hate you, dh'oine. You are all the same.",
+        "sound":"malena we elf have our paths dont worry about me.mp3",
     },
     "sc_dwarven_mercenary_1": {
         "name": "Dwarven Mercenary",

@@ -58,31 +58,21 @@ var ability_dict = {
 	
 	
 	
-	//TESTING SECTION delete once done with testing, keep it clean
-	//delete everything DWON from "delete down" and everything UP from delete up
-
+	//TESTING SECTION delete once done with testing, keep it clean, delete everything DOWN from "delete down" and everything UP from delete up
 	
 
 	//delete down	
 
-	play_GrandCatapult: {
-		name: "Grand Catapult Reinfocement",
-		description: "Pick Grand Catapult card from your deck OR graveyard and play it instantly.",
+	play_ClearWeather: {
+		name: "Clear Weather Triss",
+		description: "Play Clear Weather card from your deck",
 		placed: async card => {
-			let out = card.holder.deck.findCard(c => c.name === "Grand Catapult");
+			let out = card.holder.deck.findCard(c => c.name === "Clear Weather");
 			if (out) {
 				await out.autoplay(card.holder.deck);
-			} else {
-				// If "Grand Catapult" card is not found in deck, try to find and autoplay it from the graveyard
-				out = card.holder.grave.findCard(c => c.name === "Grand Catapult");
-				if (out) {
-					await out.autoplay(card.holder.grave);
-				} else {
-					console.log("Grand Catapult card not found in deck or graveyard."); // Add error handling if needed
-				}
-			}
+			} 
 		},
-		weight: (card, ai) => ai.weightWeatherFromDeck(card, "Grand Catapult")
+		weight: (card, ai) => ai.weightWeatherFromDeck(card, "Clear Weather")
 	},
 
 
@@ -230,11 +220,6 @@ var ability_dict = {
 		description:"Play a special card from your hand, then draw a random card from you deck to your hand.",
 	},
 
-	ChooseFrom2Specific :{ //sweers nilfgard card from printed version 
-		name:"Choose From 2 Specific",
-		description:"Play BlueStripes Commando or Poor Fucking Infantry from your deck.",
-	},
-
 	PlayFromHandIfboardDesrtoyed:{ //radovid northrealms card from printed version 
 		name:"Auto Play From Hand If Board Destroyed",
 		description:"(if you did not pass) If any unit on your side of the board is destroyed by you or opponent, this card will autoplay to the board, then you draw a card.",
@@ -346,7 +331,7 @@ var ability_dict = {
 	},
 	destroy1weakest: {
 		name: "destroy1weakest",
-		description: "Destroy only 1 weakest unit on the opposite row",//game stops and it is stuck if there is nothing to destroy on the opposite row BBUUGG
+		description: "Destroy only 1 weakest unit on the opposite row",//game stops and it is stuck if there is nothing to destroy on the opposite row BBUUGG help marko voja
 		placed: async card => {
 			let row = card.currentLocation.getOppositeRow();
 			if (row.isShielded() || game.scorchCancelled) return;
@@ -356,10 +341,11 @@ var ability_dict = {
 			let weakestUnit = units.reduce((minUnit, currentUnit) => {
 				return currentUnit.power < minUnit.power ? currentUnit : minUnit;
 			});
-	
+			
 			// Destroy the weakest unit
 			await weakestUnit.animate("scorch", true, false);
 			await board.toGrave(weakestUnit, row);
+			
 		}
 	},
 
@@ -392,8 +378,8 @@ var ability_dict = {
 		}
 	},
 	play_cow: {
-		name: "play_cow",
-		description: "Pick Cow card from your deck or graveyard and play it instantly.",
+		name: "Play Cow from deck or graveyard.",
+		description: "Pick Cow card from your deck or graveyard and play it instantly to the board.",
 		placed: async card => {
 			let out = card.holder.deck.findCard(c => c.name === "Cow");
 			if (out) {
@@ -649,12 +635,29 @@ var ability_dict = {
 		}
 	},
 	reveal3: {
-		reveal3: "reveal3",
+		name: "Reveal 3",
 		description: "Permanantly reveal 3 random cards from your opponent's hand.",
 		placed: async card => {
 			if (card.holder.controller instanceof ControllerAI) return;
 			let container = new CardContainer();
 			container.cards = card.holder.opponent().hand.findCardsRandom(() => true, 3);
+			try {
+				Carousel.curr.cancel();
+			} catch (err) {}
+			await ui.viewCardsInContainer(container);
+		},
+		weight: card => {
+			let count = card.holder.opponent().hand.cards.length;
+			return count === 0 ? 0 : Math.max(10, 10 * (8 - count));
+		}
+	},
+	reveal1: {
+		name: "Reveal 1",
+		description: "Permanantly reveal 1 random card from your opponent's hand.",
+		placed: async card => {
+			if (card.holder.controller instanceof ControllerAI) return;
+			let container = new CardContainer();
+			container.cards = card.holder.opponent().hand.findCardsRandom(() => true, 1);
 			try {
 				Carousel.curr.cancel();
 			} catch (err) {}
@@ -696,6 +699,7 @@ var ability_dict = {
 		placed: async card => {
 			let grave = board.getRow(card, "grave", card.holder.opponent());
 			if (grave.findCards(c => c.isUnit()).length === 0) return;
+			if (grave.findCards(c => c.isUnit()).length === 1) return;//temporarely ifx untill it gets properly done so the game does not get stuck.
 			if (card.holder.controller instanceof ControllerAI) {
 				let newCard = card.holder.controller.medic(card, grave);
 				newCard.holder = card.holder;
@@ -1368,12 +1372,12 @@ var ability_dict = {
 	},
 	//delete down if it does not work! 
 	PlayShacklesFromDeck: {
-		name:"cyrus_hemmelfart",
-		description: "Play a Dimeritum Shackles card in any of the opponent's row.", //help marko!
+		name:"Play Dimeritum Shackles from your deck",
+		description: "Play a Dimeritum Shackles card in any of the opponent's row.", //help voja marko!
 		placed: async (card, player) => {
 			player.endTurnAfterAbilityUse = false;
 			ui.showPreviewVisuals(card);
-			ui.enablePlayer(true);
+			ui.enablePlayer(true);			
 			if (!(player.controller instanceof ControllerAI)) ui.setSelectable(card, true);
 		},
 		weight: (card) => 20
@@ -1762,6 +1766,34 @@ var ability_dict = {
         weight: (card, ai) => ai.weightWeatherFromDeck(card, "Cow")
     },
 
+	play_GrandCatapultORDragonHuntersORReinforcedTrebuchet: {  //play specific 3 cards from deck !!! NORTH REALMS GrandCatapult OR Dragon Hunters OR Reinforced Trebuchet
+	    name: "Reinforcement Choice",
+        description: "Play Grand Catapult OR Dragon Hunter OR Reinforced Trebuchet from your deck",
+        placed: async card => {
+            //find card from deck
+            let card1 = card.holder.deck.findCard(c => c.name === "Grand Catapult");
+			let card2 = card.holder.deck.findCard(c => c.name === "Crinfrid Reavers Dragon Hunter");
+			let card3 = card.holder.deck.findCard(c => c.name === "Reinforced Trebuchet");
+			
+			
+			//create container and push card to it
+            let container = new CardContainer();
+            
+			if(card1)container.cards.push(card1);
+			if(card2)container.cards.push(card2);
+			if(card2)container.cards.push(card3);
+			
+            
+			await ui.queueCarousel(container, 1, (c, i) => {
+                let card = c.cards[i];
+                card.autoplay(card.holder.deck);
+            }, () => true, false, true);
+            // Carousel.curr.index = index;
+            // Carousel.curr.update();
+        },
+        weight: (card, ai) => ai.weightWeatherFromDeck(card, "Cow")
+    },
+
 	//0 - add any kind of sorting when building/creating/adding cards before the game starts, it can be special, then gold, then ability units, then units with no ability OR
 	// special and then on top sorted by card numbers/strenght/power, it is a mess in this state.
 	
@@ -1802,8 +1834,6 @@ var ability_dict = {
 	
 	// 17 - clear weather/clear skies (lines from 4 to 6) should have two options for a player to choose from. First one is as it is now, remove all active weather cards from the board(frost AND fog aAND rain)
 	// other options is to play a random unit card from his deck ( no hero/gold or special cards)
-	
-	// 18 - add ability to chose and play a specific card from your deck OR a diferent specific card from your deck.
 	
 	// 19 - add ability of a card to return to your hand if you lose the round (if you win or it is a draw it goes as usual to players graveyard, MONSTER deck ability takes priority, it should override this cards ability)
 	// ciri return from our printed card game
