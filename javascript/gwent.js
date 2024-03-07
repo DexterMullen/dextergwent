@@ -948,6 +948,8 @@ class Player {
 		}
 	}
 
+	
+
 	disableLeader() {
 		this.leaderAvailable = false;
 		let elem = this.elem_leader.cloneNode(true);
@@ -3268,11 +3270,11 @@ class DeckMaker {
 		let stats = document.getElementById("deck-stats");
 		stats.children[1].innerHTML = this.stats.total;
 		stats.children[3].innerHTML = this.stats.units + (this.stats.units < 22 ? "/22" : "");
-		stats.children[5].innerHTML = this.stats.special + "/10";
+		stats.children[5].innerHTML = this.stats.special + "/20"; //10
 		stats.children[7].innerHTML = this.stats.strength;
 		stats.children[9].innerHTML = this.stats.hero;
 		stats.children[3].style.color = this.stats.units < 22 ? "red" : "";
-		stats.children[5].style.color = (this.stats.special > 10) ? "red" : "";
+		stats.children[5].style.color = (this.stats.special > 20) ? "red" : "";
 	}
 
 	selectLeader() {
@@ -3354,7 +3356,7 @@ class DeckMaker {
 		// openFullscreen();
 		let warning = "";
 		if (this.stats.units < 22) warning += "Your deck must have at least 22 unit cards. \n";
-		if (this.stats.special > 10) warning += "Your deck must have no more than 10 special cards. \n";
+		if (this.stats.special > 20) warning += "Your deck must have no more than 20 special cards. \n"; //10
 		if (warning != "") return aviso("Warning", warning);
 		let me_deck = {
 			faction: this.faction,
