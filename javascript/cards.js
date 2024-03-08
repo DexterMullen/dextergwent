@@ -2075,7 +2075,8 @@ var default_cards = {
         "filename": "dwarf",
         "count": "1",
         "target": "sc_dwarf",
-        "quote": "Worked a pickaxe all me life. Battleaxe won't be any trouble."
+        "quote": "Worked a pickaxe all me life. Battleaxe won't be any trouble.",
+        "sound":"Dwarven Skirmisher 1 Everything all right.mp3",
     },
     "sc_dwarf_1": {
         "name": "Dwarven Skirmisher",
@@ -2087,7 +2088,8 @@ var default_cards = {
         "filename": "dwarf_1",
         "count": "1",
         "target": "sc_dwarf",
-        "quote": "Worked a pickaxe all me life. Battleaxe won't be any trouble."
+        "quote": "Worked a pickaxe all me life. Battleaxe won't be any trouble.",
+        "sound":"Dwarven Skirmisher 2 for mahakam.mp3",
     },
     "sc_dwarf_2": {
         "name": "Dwarven Skirmisher",
@@ -2099,7 +2101,8 @@ var default_cards = {
         "filename": "dwarf_2",
         "count": "1",
         "target": "sc_dwarf",
-        "quote": "Worked a pickaxe all me life. Battleaxe won't be any trouble."
+        "quote": "Worked a pickaxe all me life. Battleaxe won't be any trouble.",
+        "sound":"Dwarven Skirmisher 3 water is a poison.mp3",
     },
     "sc_eithne": {
         "name": "Eithné",
@@ -2197,7 +2200,8 @@ var default_cards = {
         "filename": "havekar_support",
         "count": "1",
         "target": "sc_havekar_support",
-        "quote": "I fight for whoever's paying the best. Or whoever's easiest to rob."
+        "quote": "I fight for whoever's paying the best. Or whoever's easiest to rob.",
+        "sound":"skoja smugler 1 if my coin.mp3",
     },
     "sc_havekar_support_1": {
         "name": "Havekar Smuggler",
@@ -2209,7 +2213,8 @@ var default_cards = {
         "filename": "havekar_support_1",
         "count": "1",
         "target": "sc_havekar_support",
-        "quote": "I fight for whoever's paying the best. Or whoever's easiest to rob."
+        "quote": "I fight for whoever's paying the best. Or whoever's easiest to rob.",
+        "sound":"skoja smugler 2 come here.mp3",
     },
     "sc_havekar_support_2": {
         "name": "Havekar Smuggler",
@@ -2221,7 +2226,8 @@ var default_cards = {
         "filename": "havekar_support_2",
         "count": "1",
         "target": "sc_havekar_support",
-        "quote": "I fight for whoever's paying the best. Or whoever's easiest to rob."
+        "quote": "I fight for whoever's paying the best. Or whoever's easiest to rob.",
+        "sound":"skoja smugler 3 youl regrem mom squirt.mp3",
     },
     "sc_ida": {
         "name": "Ida Emean aep Sivney",
@@ -5167,7 +5173,8 @@ var ext_st_cards = {
         "filename": "dryads_1",
         "count": "1",
         "target": "sc_dryads",
-        "quote": "I do not live in the forst of Brokilon. I am part of it."
+        "quote": "I do not live in the forst of Brokilon. I am part of it.",
+        "sound":"Dryads 1 trees feel pain.mp3",
     },
     "sc_dryads_2": {
         "name": "Dryads",
@@ -5179,7 +5186,8 @@ var ext_st_cards = {
         "filename": "dryads_2",
         "count": "1",
         "target": "sc_dryads",
-        "quote": "I do not live in the forst of Brokilon. I am part of it."
+        "quote": "I do not live in the forst of Brokilon. I am part of it.",
+        "sound":"dryiad 2 Not to worry, the wood will make good use of your corpse..mp3",
     },
     "sc_dryads_3": {
         "name": "Dryads",
@@ -5191,7 +5199,8 @@ var ext_st_cards = {
         "filename": "dryads_3",
         "count": "1",
         "target": "sc_dryads",
-        "quote": "I do not live in the forst of Brokilon. I am part of it."
+        "quote": "I do not live in the forst of Brokilon. I am part of it.",
+        "sound":"dryiad 3 humans no species more horrid.mp3",
     },
     "sc_dryads_4": {
         "name": "Dryads",
@@ -5203,7 +5212,8 @@ var ext_st_cards = {
         "filename": "dryads_4",
         "count": "1",
         "target": "sc_dryads",
-        "quote": "I do not live in the forst of Brokilon. I am part of it."
+        "quote": "I do not live in the forst of Brokilon. I am part of it.",
+        "sound":"dryiad 4 leave while you still stand.mp3",
     },
     "sc_brouver_hoog": {
         "name": "Elven Dragon",
