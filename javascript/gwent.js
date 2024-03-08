@@ -2855,6 +2855,7 @@ class UI {
 				else fileira_clicavel = null;
 			} else {
 				row.elem.classList.add("noclick");
+				row.special.elem.classList.add("noclick");
 			}
 		}
 	}
