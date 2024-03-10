@@ -239,6 +239,18 @@ var ability_dict = {
 		name:"Destroy a Unit of your choice wih 7 Or Less strenght",
 		description:"Destroy any Unit of your choice wih 7 Or Less strenght",
 	},
+	unreveal3:{ //north realms nenneke from printed version
+		name:"Unreveal",
+		description:"Un reveal any 3 cards for your opponent not to see anymore",  
+	},
+	JadeFigurine:{ //north realms keira master mage from printed version
+		name:"Turn to Jade Figurine",
+		description:"Targen any unit on the board and turn it into permanatly Jade figurine",  
+	},
+	reenableLeaderORdraw:{ //north realms keira master mage from printed version
+		name:"Leader or Draw",
+		description:"(If your opponent did not pass) Reenable your Leader or draw a random card from the deck to hand (Your opponent will have the same choices)",  
+	},
 	//TO DO SECTION UP !!!!
 
 	
