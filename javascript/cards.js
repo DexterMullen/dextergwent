@@ -66,7 +66,7 @@ var default_cards = {
             "ability": "hero playallWeatherFromDeck", 
             "filename": "ragnarok",
             "count": "1",
-            "quote": "Raaaaaagraaaaaarok!",
+            "quote": "Raaaaaagnaroooooook!",
             "sound": "Ragrnarok.mp3",
             },    
 
@@ -185,7 +185,7 @@ var default_cards = {
         "deck": "realms",
         "row": "siege",
         "strength": "5",
-        "ability": "", //ABILITY1 UNREVEAL x amount of cards in your hand
+        "ability": "unreveal3", //ABILITY1 UNREVEAL x amount of cards in your hand
         "filename": "nenneke",
         "count": "1",
         "quote": "Few know more about healing than Nenneke.",
@@ -672,7 +672,7 @@ var default_cards = {
         "filename": "banner_nurse",
         "count": "1",
         "quote": "Stitch red to red, white to white, and everything will be all right.",
-        "sound": "Dun_Banner_Medic Aye aye sir.ogg",
+        "sound": "dun baned medic.mp3",
     },
     "nr_esterad": {
         "name": "Esterad Thyssen",
@@ -734,7 +734,7 @@ var default_cards = {
         "deck": "realms",
         "row": "ranged",
         "strength": "4",
-        "ability": "hero", //ABILITY1 Target any unit on entire board and turn it into jade figurine (jade figurine should be sumoner pile like cow and bowing defence)
+        "ability": "hero JadeFigurine", //ABILITY1 Target any unit on entire board and turn it into jade figurine (jade figurine should be sumoner pile like cow and bowing defence)
         "filename": "keira",
         "count": "1",
         "quote": "If I'm to die today, I wish to look smashing for the occasion.",
@@ -746,7 +746,7 @@ var default_cards = {
         "row": "ranged",
         "strength": "12",
         "ability": "hero",
-        "filename": "philippa",
+        "filename": "philippaa",
         "count": "1",
         "quote": "Soon the power of kings will wither, and the Lodge shall seize its rightful place.",
         "sound": "Philippa_Eilhart_You do not deserve to live.ogg",
@@ -876,7 +876,7 @@ var default_cards = {
         "filename": "dijkstra",
         "count": "1",
         "quote": "Gwent's like politics, just more honest.",
-        "sound":"5 Harald_the_Cripple_Up and at ‘em lazy mingers! Ye’ll sleep when you’re dead.ogg", //just test sound get a proper one
+        "sound":"Dijkstra Worked With Idiots My Whole Life.mp3", //just test sound get a proper one
     },
     "nr_sheala": {
         "name": "Síle de Tansarville",
@@ -1243,8 +1243,8 @@ var default_cards = {
         "name": "Puttkammer",
         "deck": "nilfgaard",
         "row": "ranged",
-        "strength": "3",
-        "ability": "",
+        "strength": "5",
+        "ability": "unreveal3",
         "filename": "puttkammer",
         "count": "1",
         "quote": "Learned a lot at Braibant Military Academy. How to scrub potatoes, for instance."
@@ -1294,7 +1294,7 @@ var default_cards = {
         "deck": "nilfgaard",
         "row": "siege",
         "strength": "6",
-        "ability": "",
+        "ability": "unreveal3",
         "filename": "siege_engineer",
         "count": "1",
         "quote": "Wielded correctly, a protactor can be a deadly weapon."
@@ -1857,7 +1857,7 @@ var default_cards = {
         "count": "1",
         "target": "mo_vampire",
         "quote": "A vile, bloodthirsty, man-eating hag. Kind of like my mother-in-law.",
-        "sound":"Vampires.WAV",
+        "sound":"vampires monsters.mp3",
     },
     "mo_ekkima": {
         "name": "Vampire - Ekimmara",
@@ -1870,7 +1870,7 @@ var default_cards = {
         "count": "1",
         "target": "mo_vampire",
         "quote": "Who would think overgrown bats would have a taste for gaudy jewelry?",
-        "sound":"Vampires.WAV",
+        "sound":"vampires monsters.mp3",
     },
     "mo_fleder": {
         "name": "Vampire - Fleder",
@@ -1883,7 +1883,7 @@ var default_cards = {
         "count": "1",
         "target": "mo_vampire",
         "quote": "Higher vampieres embrace their victims. Fleders rim them to shreds.",
-        "sound":"Vampires.WAV",
+        "sound":"vampires monsters.mp3",
     },
     "mo_garkain": {
         "name": "Vampire - Garkain",
@@ -1896,7 +1896,7 @@ var default_cards = {
         "count": "1",
         "target": "mo_vampire",
         "quote": "Blood-drinkers and corpse-eaters so foul their very ugliness paralyses foes.",
-        "sound":"Vampires.WAV",
+        "sound":"vampires monsters.mp3",
     },
     "mo_katakan": {
         "name": "Vampire - Katakan",
@@ -1909,7 +1909,7 @@ var default_cards = {
         "count": "1",
         "target": "mo_vampire",
         "quote": "Drinking the blood of the Continent since the Conjunction.",
-        "sound":"Vampires.WAV",
+        "sound":"vampires monsters.mp3",
     },
     "mo_werewolf": {
         "name": "Werewolf",
@@ -2974,8 +2974,8 @@ var ext_nr_cards = {
         "name": "Kaedweni Siege Support",
         "deck": "realms",
         "row": "siege",//mobile
-        "strength": "2",
-        "ability": "hero play_GrandCatapultORDragonHunters",//play specific card from deck OR play some other specific card from deck (grant catapult 8 tight bond) or dragon hunters (5 tight bond) 
+        "strength": "1",
+        "ability": "play_GrandCatapultORDragonHunters",//play specific card from deck OR play some other specific card from deck (grant catapult 8 tight bond) or dragon hunters (5 tight bond) 
         "filename": "kaedweni_siege_support_1",
         "count": "1",
         "quote": "I never miss twice."
@@ -3027,7 +3027,7 @@ var ext_nr_cards = {
         "id": 1,
         "deck": "realms",
         "row": "siege",
-        "strength": "4",
+        "strength": "5",
         "ability": "bond",
         "filename": "reinforced_trebuchet_1",
         "count": "1",
@@ -3039,7 +3039,7 @@ var ext_nr_cards = {
         "id": 2,
         "deck": "realms",
         "row": "siege",
-        "strength": "4",
+        "strength": "5",
         "ability": "bond",
         "filename": "reinforced_trebuchet_2",
         "count": "1",
@@ -3306,9 +3306,9 @@ var ext_nr_cards = {
         "quote": "For whom does the bell toll?"
     },
     "nr_roegner": {
-        "name": "Roegner de Salm",
+        "name": "Rouch The Capitan", //Rouch The Capitan
         "deck": "realms",
-        "row": "close",
+        "row": "siege",
         "strength": "6",
         "ability": "",
         "filename": "roegner",
@@ -3684,6 +3684,7 @@ var ext_nr_cards = {
         "count": "1",
         "quote": "The adepts' every whim is catered to - the live like princesses at Aretuza."
     },
+    
     "nr_blue_stripes_skirmisher_1": {
         "name": "Blue Stripes Skirmisher",
         "id": 1,
@@ -3720,6 +3721,7 @@ var ext_nr_cards = {
         "target": "blue_stripes_skirmisher",
         "quote": "What do you mean 'we're surrounded'? Bah! I feel sorry for those dogs."
     },
+    
     "nr_ethain_cidaris": {
         "name": "Ethain of Cidaris",
         "deck": "realms",
@@ -3844,19 +3846,19 @@ var ext_nr_cards = {
     "nr_redanian_elite": {
         "name": "Redanian Elite",
         "deck": "realms",
-        "row": "close",
+        "row": "siege",
         "strength": "6",
         "ability": "",
         "filename": "redanian_elite",
         "count": "1",
-        "quote": "I'll die for Redania, I'll kill for Redania… I'll even eat worms for Redania!"
+        "quote": "I'll die for Redania, I'll kill for Redania…"
     },
     "nr_donimir_troy": {
         "name": "Donimir of Troy",
         "deck": "realms",
         "row": "close",
-        "strength": "10",
-        "ability": "hero",
+        "strength": "9",
+        "ability": "hero reenableLeaderORdraw",
         "filename": "donimir_troy",
         "count": "1",
         "quote": "I fought twice at Sodden and lived. I think you can surmise I'm not so bad at this sword thing."
@@ -4245,9 +4247,9 @@ var ext_ne_cards = {
     "ne_jan_calveit": {
         "name": "Jan Calveit",
         "deck": "nilfgaard",
-        "row": "ranged",
-        "strength": "8",
-        "ability": "hero",
+        "row": "agile",
+        "strength": "6",
+        "ability": "hero destroy1weakest",
         "filename": "jan_calveit",
         "count": "1",
         "quote": "To prepare for the future, it’s best to first know it."
@@ -4387,8 +4389,8 @@ var ext_ne_cards = {
         "name": "Xarthisius",
         "deck": "nilfgaard",
         "row": "ranged",
-        "strength": "7",
-        "ability": "",
+        "strength": "4",
+        "ability": "hero JadeFigurine",
         "filename": "xarthisius",
         "count": "1",
         "quote": "Astrology, hydromancy, haruspicy, ceromancy. Ovomancy, spodomancy, metroscopy, brontoscopy..."
@@ -4898,8 +4900,8 @@ var ext_mo_cards = {
     "mo_manticore": {
         "name": "Imperial Manticore",
         "deck": "monsters",
-        "row": "ranged",
-        "strength": "7",
+        "row": "close",
+        "strength": "6",
         "ability": "",
         "filename": "manticore",
         "count": "1",
@@ -4946,11 +4948,11 @@ var ext_mo_cards = {
         "quote": "They are born of some horrible tragedy tied to ill-fated love.)"//
     },
     "mo_vran_warrior": {
-        "name": "Vran Warrior",
+        "name": "Imlertih Unreveal",//Unreveal
         "deck": "monsters",
         "row": "close",
         "strength": "5",
-        "ability": "",
+        "ability": "unreveal3",
         "filename": "vran_warrior",
         "count": "1",
         "quote": "He saw their weapons – short spears with wide tips."
@@ -4980,9 +4982,9 @@ var ext_mo_cards = {
     "mo_ruehin": {
         "name": "Ruehin",
         "deck": "monsters",
-        "row": "agile",
-        "strength": "10",
-        "ability": "hero",
+        "row": "siege",
+        "strength": "7",
+        "ability": "hero backto_deck",
         "filename": "ruehin",
         "count": "1",
         "quote": "No one has ever entered that forest and lived to tell the tale..."
@@ -6567,7 +6569,8 @@ var ext_wu_cards = {
         "ability": "hero",
         "filename": "iris_von_everec",
         "count": "1",
-        "quote": "I remember so little... Yet when I think of my rose, I begin to recall what was."
+        "quote": "I remember so little... Yet when I think of my rose, I begin to recall what was.",
+        "sound":"IRIS_I am sadness..mp3",
     },
     "mo_iris_von_everec": {
         "name": "Iris von Everec",
@@ -6577,7 +6580,8 @@ var ext_wu_cards = {
         "ability": "hero horn",
         "filename": "iris_von_everec",
         "count": "1",
-        "quote": "I remember so little... Yet when I think of my rose, I begin to recall what was."
+        "quote": "I remember so little... Yet when I think of my rose, I begin to recall what was.",
+        "sound":"IRIS_I am sadness..mp3",
     },
     "wu_sarah": {
         "name": "Sarah",
