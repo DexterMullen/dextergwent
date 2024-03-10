@@ -2998,7 +2998,8 @@ var ext_nr_cards = {
         "ability": "",
         "filename": "henselt",
         "count": "1",
-        "quote": "King Henselt did not look like a thief, but, with all due respect, that's really what he was."
+        "quote": "King Henselt did not look like a thief, but, with all due respect, that's really what he was.",
+        "sound":"Henselt - Men Of Kaedwen! Attaaaaack.mp3",
     },
     "nr_kaedweni_reinforcement": {
         "name": "Kaedweni Reinforcement",
@@ -3051,7 +3052,7 @@ var ext_nr_cards = {
         "id": 3,
         "deck": "realms",
         "row": "siege",
-        "strength": "4",
+        "strength": "5",
         "ability": "bond",
         "filename": "reinforced_trebuchet_2",
         "count": "1",
@@ -3861,7 +3862,8 @@ var ext_nr_cards = {
         "ability": "hero reenableLeaderORdraw",
         "filename": "donimir_troy",
         "count": "1",
-        "quote": "I fought twice at Sodden and lived. I think you can surmise I'm not so bad at this sword thing."
+        "quote": "I fought twice at Sodden and lived. I think you can surmise I'm not so bad at this sword thing.",
+        "sound":"Donimir of Troy.mp3",
     },
     "nr_joachim_gratz": {
         "name": "Joachim von Gratz",
