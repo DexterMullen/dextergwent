@@ -2404,11 +2404,12 @@ var default_cards = {
         "name": "Blueboy Lugos",
         "deck": "skellige",
         "row": "close",
-        "strength": "6",
-        "ability": "",
+        "strength": "1",
+        "ability": "hero play_frost",
         "filename": "blueboy",
         "count": "1",
-        "quote": "I'm damn near ready to puke from boredom."
+        "quote": "I'm damn near ready to puke from boredom.",
+        "sound":"Blueboy Lugos C'mon, let's go. Time to face our fears..mp3",
     },
     "sk_cerys": {
         "name": "Cerys",
@@ -2488,11 +2489,12 @@ var default_cards = {
         "name": "Clan Heymaey Skald",
         "deck": "skellige",
         "row": "close",
-        "strength": "4",
-        "ability": "",
+        "strength": "1",
+        "ability": "play_OldBerserkerORYoungBerserkerORmushroom",
         "filename": "heymaey",
         "count": "1",
-        "quote": "The deeds of Clan Haymaeu will go down in history."
+        "quote": "The deeds of Clan Haymaeu will go down in history.",
+        "sound":"skald listen here listen well.mp3",
     },
     "sk_tordarroch": {
         "name": "Clan Tordarroch Armorsmith",
@@ -2546,12 +2548,13 @@ var default_cards = {
     "sk_donar": {
         "name": "Donar an Hindar",
         "deck": "skellige",
-        "row": "close",
-        "strength": "4",
-        "ability": "",
+        "row": "ranged",
+        "strength": "1",
+        "ability": "hero play_fog",
         "filename": "donar",
         "count": "1",
-        "quote": "I've gathered all the jarls together. Now make your case."
+        "quote": "I've gathered all the jarls together. Now make your case.",
+        "sound":"24 Donar_An_Hindar_Calm yourselves.ogg",
     },
     "sk_draig": {
         "name": "Draig Bon-Dhu",
@@ -2600,18 +2603,19 @@ var default_cards = {
         "name": "Hjalmar",
         "deck": "skellige",
         "row": "ranged",
-        "strength": "10",
+        "strength": "12",
         "ability": "hero",
         "filename": "hjalmar",
         "count": "1",
-        "quote": "Instead of mournin' the fallen, let's drink to their memory!"
+        "quote": "Instead of mournin' the fallen, let's drink to their memory!",
+        "sound":"Hjalmar an Craite Who's next Who wants to taste Skellige steel!.mp3",
     },
     "sk_holger": {
         "name": "Holger Blackhand",
         "deck": "skellige",
         "row": "siege",
-        "strength": "4",
-        "ability": "",
+        "strength": "1",
+        "ability": "hero play_rain",
         "filename": "holger",
         "count": "1",
         "quote": "Now let's drink to Emperor of Nilfgaard - may his prick forever stay limp!"
@@ -2648,10 +2652,12 @@ var default_cards = {
         "ability": "",
         "filename": "madman_lugos",
         "count": "1",
-        "quote": "WAAAAAAAGH!!!!"
+        "quote": "WAAAAAAAGH!!!!",
+        "sound":"Madman Lugos I make the laws here..mp3",
+
     },
-    "spe_mardroeme": {
-        "name": "Mardroeme",
+    "spe_mardroeme": { //mushroom
+        "name": "Mushroom",
         "deck": "special skellige",
         "row": "",
         "strength": "",
@@ -3314,7 +3320,8 @@ var ext_nr_cards = {
         "ability": "",
         "filename": "roegner",
         "count": "1",
-        "quote": "Roegner de Salm was the son of a prince of Salm in Ebbing."
+        "quote": "Roegner de Salm was the son of a prince of Salm in Ebbing.",
+        "sound":"Roche_The North! Temeria.ogg",
     },
     "nr_pavetta": {
         "name": "Pavetta",
@@ -3801,7 +3808,8 @@ var ext_nr_cards = {
         "ability": "",
         "filename": "battering_ram",
         "count": "1",
-        "quote": "The hulking siege engine rolled to the front, within few bashes the gates crashed open."
+        "quote": "The hulking siege engine rolled to the front, within few bashes the gates crashed open.",
+        "sound":"Roche_Temeria - thats what matters - Copy.ogg",
     },
     "nr_fake_ciri": {
         "name": "Fake Ciri: Empress of Nilfgaard",
@@ -5642,11 +5650,12 @@ var ext_sk_cards = {
         "name": "Tuirseach Bearmaster",
         "deck": "skellige",
         "row": "close",
-        "strength": "7",
-        "ability": "",
+        "strength": "1",
+        "ability": "play_OldBerserkerORYoungBerserkerORmushroom",// bbuugg fix only playes mushroom into sword row
         "filename": "tuirseach_bearmaster",
         "count": "1",
-        "quote": "Blood for Svalblod! Skulls for his throne!"
+        "quote": "Blood for Svalblod! Skulls for his throne!",
+        "sound":"bearmaster sure you can pet him lose an arm.mp3",
     },
     "sk_morkvarg": {
         "name": "Morkvarg",
@@ -5842,7 +5851,7 @@ var ext_sk_cards = {
         "name": "Skjall",
         "deck": "skellige",
         "row": "close",
-        "strength": "4",
+        "strength": "1",
         "ability": "",
         "filename": "skjall",
         "count": "1",
@@ -5871,12 +5880,13 @@ var ext_sk_cards = {
     "sk_djenge_frett": {
         "name": "Djenge Frett",
         "deck": "skellige",
-        "row": "ranged",
-        "strength": "7",
-        "ability": "hero",
+        "row": "agile",//should be mobile
+        "strength": "4",
+        "ability": "hero decoy",//decoy but once card is taken from board to hand, instantly play any card from hand
         "filename": "djenge_frett",
         "count": "1",
-        "quote": "Should I catch you, you'll hang, and I'll tickle your feet as you expire."
+        "quote": "Should I catch you, you'll hang, and I'll tickle your feet as you expire.",
+        "sound":"Djenge Frett You're comin' with me… dead or alive..mp3",
     },
     "sk_heymaey_herbalist": {
         "name": "Heymaey Herbalist",
@@ -5898,16 +5908,6 @@ var ext_sk_cards = {
         "count": "1",
         "quote": "An archdruid, a master of alchemy, and the grumpiest old fart in the Isles."
     },
-    "sk_holger_blackhand": {
-        "name": "Holger Blackhand",
-        "deck": "skellige",
-        "row": "siege",
-        "strength": "4",
-        "ability": "",
-        "filename": "holger_blackhand",
-        "count": "1",
-        "quote": "Now let's drink to the Emperor of Nilfgaard – may he die of somethin' hideous!"
-    },
     "sk_an_craite_blacksmith": {
         "name": "Clan an Craite Blacksmith",
         "deck": "skellige",
@@ -5922,11 +5922,13 @@ var ext_sk_cards = {
         "name": "Hym",
         "deck": "skellige",
         "row": "siege",
-        "strength": "10",
-        "ability": "hero",
+        "strength": "1",
+        "ability": "play_OldBerserkerORYoungBerserkerORmushroom",
         "filename": "hym",
         "count": "1",
-        "quote": "The gods' speak to me... I hear them whisper from the shadows..."
+        "quote": "The gods' speak to me... I hear them whisper from the shadows...",
+        "sound":"uldarik he is here.mp3",
+
     },
     "sk_wild_boar": {
         "name": "Wild Boar of the Sea",
