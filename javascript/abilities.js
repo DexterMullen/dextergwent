@@ -30,7 +30,7 @@ var ability_dict = {
 		description: "Swap with a card on the battlefield to return it to your hand. "
 	},
 	developerleader: { //add this to a leader card in cards.js, in ability section to test fast and easy
-		description: "Discard 3 cards and draw 3 card of your choice from your deck.",
+		description: "Discard 4 cards and draw 4 card of your choice from your deck.",
 		activated: async (card) => {
 			let deck = board.getRow(card, "deck", card.holder);
 			let hand = board.getRow(card, "hand", card.holder);
@@ -45,15 +45,15 @@ var ability_dict = {
 					Carousel.curr.exit();
 				} catch (err) {}
 			}
-			await ui.queueCarousel(deck, 3, (c,i) => board.toHand(c.cards[i], deck), () => true, true);
-			await ui.queueCarousel(hand, 3, (c,i) => board.toGrave(c.cards[i], c), () => true);
+			await ui.queueCarousel(deck, 4, (c,i) => board.toHand(c.cards[i], deck), () => true, true);
+			await ui.queueCarousel(hand, 4, (c,i) => board.toGrave(c.cards[i], c), () => true);
 			
 		},
 		weight: (card, ai) => {
 			let cards = ai.discardOrder(card).splice(0,2).filter(c => c.basePower < 7);
 			if (cards.length < 2) return 0;
 			return cards[0].abilities.includes("muster") ? 50 : 25;
-		}
+		} 
 	},
 	
 	
@@ -62,20 +62,7 @@ var ability_dict = {
 	
 
 	//delete down	
-
-	play_ClearWeather: {
-		name: "Clear Weather Triss",
-		description: "Play Clear Weather card from your deck",
-		placed: async card => {
-			let out = card.holder.deck.findCard(c => c.name === "Clear Weather");
-			if (out) {
-				await out.autoplay(card.holder.deck);
-			} 
-		},
-		weight: (card, ai) => ai.weightWeatherFromDeck(card, "Clear Weather")
-	},
-
-
+	
 	
 
 
@@ -1805,6 +1792,46 @@ var ability_dict = {
         },
         weight: (card, ai) => ai.weightWeatherFromDeck(card, "Cow")
     },
+
+	play_OldBerserkerORYoungBerserkerORmushroom: {  //play specific 3 cards from deck !!! Skelige OldBerserker OR YoungBerserker OR mushroom
+	    name: "Reinforcement Choice",
+        description: "Play Old Berserker OR Young Berserker OR Mushroom from your deck",
+        placed: async card => {
+            //find card from deck
+            let card1 = card.holder.deck.findCard(c => c.name === "Old Berserker");
+			let card2 = card.holder.deck.findCard(c => c.name === "Young Berserker");
+			let card3 = card.holder.deck.findCard(c => c.name === "Mushroom");
+			
+			
+			//create container and push card to it
+            let container = new CardContainer();
+            
+			if(card1)container.cards.push(card1);
+			if(card2)container.cards.push(card2);
+			if(card2)container.cards.push(card3);
+			
+            
+			await ui.queueCarousel(container, 1, (c, i) => {
+                let card = c.cards[i];
+                card.autoplay(card.holder.deck);
+            }, () => true, false, true);
+            // Carousel.curr.index = index;
+            // Carousel.curr.update();
+        },
+        weight: (card, ai) => ai.weightWeatherFromDeck(card, "Cow")
+    },
+
+	play_ClearWeather: {
+		name: "Clear Weather Triss",
+		description: "Play Clear Weather card from your deck",
+		placed: async card => {
+			let out = card.holder.deck.findCard(c => c.name === "Clear Weather");
+			if (out) {
+				await out.autoplay(card.holder.deck);
+			} 
+		},
+		weight: (card, ai) => ai.weightWeatherFromDeck(card, "Clear Weather")
+	},
 
 	//0 - add any kind of sorting when building/creating/adding cards before the game starts, it can be special, then gold, then ability units, then units with no ability OR
 	// special and then on top sorted by card numbers/strenght/power, it is a mess in this state.
