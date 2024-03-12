@@ -2398,7 +2398,8 @@ var default_cards = {
         "ability": "medic",
         "filename": "birna",
         "count": "1",
-        "quote": "Skellige must have a strong king. No matter what it takes."
+        "quote": "Skellige must have a strong king. No matter what it takes.",
+        "sound":"Birna Bran You stand before the queen of Skellige..mp3",
     },
     "sk_blueboy": {
         "name": "Blueboy Lugos",
@@ -2497,9 +2498,9 @@ var default_cards = {
         "sound":"skald listen here listen well.mp3",
     },
     "sk_tordarroch": {
-        "name": "Clan Tordarroch Armorsmith",
+        "name": "Armorsmith",
         "deck": "skellige",
-        "row": "close",
+        "row": "siege",
         "strength": "4",
         "ability": "",
         "filename": "tordarroch",
@@ -2702,11 +2703,13 @@ var default_cards = {
         "name": "Udalryk",
         "deck": "skellige",
         "row": "close",
-        "strength": "4",
-        "ability": "",
+        "strength": "1",
+        "ability": "play_OldBerserkerORYoungBerserkerORmushroom",
         "filename": "udalryk",
         "count": "1",
-        "quote": "Haaaargh! After me, if ye've the bollocks!"
+        "quote": "Haaaargh! After me, if ye've the bollocks!",
+        "sound":"uldarik he is here.mp3",
+
     },
     "sk_war_longship_1": {
         "name": "War Longship",
@@ -5585,14 +5588,15 @@ var ext_sk_cards = {
         "quote": "He proclaimed to his worshippers but one commandement. Kill."
     },
     "sk_an_craite_raiders": {
-        "name": "Clan an Craite Raiders",
+        "name": "An Craite Raiders",
         "deck": "skellige",
-        "row": "close",
-        "strength": "5",
-        "ability": "",
+        "row": "siege",
+        "strength": "1",
+        "ability": "play_ancratewarriorORwarlongship",
         "filename": "an_craite_raiders",
-        "count": "1",
-        "quote": "Cabbage, really? It’s just the worst when there’s nothing good to plunder."
+        "count": "2",
+        "quote": "Cabbage, really? It’s just the worst when there’s nothing good to plunder.",
+        "sound":"",
     },
     "sk_svalblod_fanatic": {
         "name": "Svalblod Fanatic",
@@ -5634,7 +5638,8 @@ var ext_sk_cards = {
         "ability": "hero play_two_random_from_deck",
         "filename": "an_craite_greatsword",
         "count": "1",
-        "quote": "Ahh, ye gave me a good laugh there, Nordling! Why, this bastard, ye couldn't even grip it, let alone gut me with it."
+        "quote": "Ahh, ye gave me a good laugh there, Nordling! Why, this bastard, ye couldn't even grip it, let alone gut me with it.",
+        "sound":"16 An_Craite_Greatsword_ I once lopped off three heads with one blow.ogg",
     },
     "sk_vabjorn": {
         "name": "Vabjorn",
@@ -5647,7 +5652,7 @@ var ext_sk_cards = {
         "quote": "Blood for Svalblod! Skulls for his throne!"
     },
     "sk_tuirseach_bearmaster": {
-        "name": "Tuirseach Bearmaster",
+        "name": "Bearmaster",
         "deck": "skellige",
         "row": "close",
         "strength": "1",
@@ -5681,9 +5686,9 @@ var ext_sk_cards = {
     "sk_chosen_berserker": {
         "name": "Chosen Berserker",
         "deck": "skellige",
-        "row": "agile",
+        "row": "siege",
         "strength": "5",
-        "ability": "berserker",
+        "ability": "",
         "filename": "chosen_berserker",
         "count": "1",
         "target": "sk_champion_svalblod",
@@ -5780,8 +5785,8 @@ var ext_sk_cards = {
     "sk_dagur": {
         "name": "Dagur Two Blades",
         "deck": "skellige",
-        "row": "close",
-        "strength": "7",
+        "row": "siege",
+        "strength": "6",
         "ability": "",
         "filename": "dagur",
         "count": "1",
@@ -5909,9 +5914,9 @@ var ext_sk_cards = {
         "quote": "An archdruid, a master of alchemy, and the grumpiest old fart in the Isles."
     },
     "sk_an_craite_blacksmith": {
-        "name": "Clan an Craite Blacksmith",
+        "name": "Blacksmith",
         "deck": "skellige",
-        "row": "ranged",
+        "row": "siege",
         "strength": "4",
         "ability": "",
         "filename": "an_craite_blacksmith",
