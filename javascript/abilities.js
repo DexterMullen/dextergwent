@@ -1638,6 +1638,17 @@ var ability_dict = {
 		weight: (card, ai) => ai.weightWeatherFromDeck(card, "Biting Frost")
 	},
 
+	play_ClearWeather: {
+		name: "Clear Weather Triss",
+		description: "Play Clear Weather card from your deck",
+		placed: async card => {
+			let out = card.holder.deck.findCard(c => c.name === "Clear Weather");
+			if (out) {
+				await out.autoplay(card.holder.deck);
+			} 
+		},
+		weight: (card, ai) => ai.weightWeatherFromDeck(card, "Clear Weather")
+	},
 
 
 	play_poorinfantryORbluecommando: {  //play specific cards from deck 1 !!! NORTH REALMS Poor Fucking Infantry OR Blue Stripes Commando
@@ -1821,17 +1832,32 @@ var ability_dict = {
         weight: (card, ai) => ai.weightWeatherFromDeck(card, "Cow")
     },
 
-	play_ClearWeather: {
-		name: "Clear Weather Triss",
-		description: "Play Clear Weather card from your deck",
-		placed: async card => {
-			let out = card.holder.deck.findCard(c => c.name === "Clear Weather");
-			if (out) {
-				await out.autoplay(card.holder.deck);
-			} 
-		},
-		weight: (card, ai) => ai.weightWeatherFromDeck(card, "Clear Weather")
-	},
+	play_ancratewarriorORwarlongship: {  //play specific cards from deck 1 !!! skelige an cratewarrior OR warlongship
+	    name: "Reinforcement Choice",
+        description: "Play Clan An Crate Warrior OR War longship, from your deck",
+        placed: async card => {
+            //find card from deck
+            let card1 = card.holder.deck.findCard(c => c.name === "Clan an Craite Warrior");
+			let card2 = card.holder.deck.findCard(c => c.name === "War Longship");
+			
+			
+			//create container and push card to it
+            let container = new CardContainer();
+            
+			if(card1)container.cards.push(card1);
+			if(card2)container.cards.push(card2);
+			
+            
+			await ui.queueCarousel(container, 1, (c, i) => {
+                let card = c.cards[i];
+                card.autoplay(card.holder.deck);
+            }, () => true, false, true);
+            // Carousel.curr.index = index;
+            // Carousel.curr.update();
+        },
+        weight: (card, ai) => ai.weightWeatherFromDeck(card, "Cow")
+    },
+
 
 	//0 - add any kind of sorting when building/creating/adding cards before the game starts, it can be special, then gold, then ability units, then units with no ability OR
 	// special and then on top sorted by card numbers/strenght/power, it is a mess in this state.
