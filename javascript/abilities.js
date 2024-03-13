@@ -63,7 +63,7 @@ var ability_dict = {
 
 	//delete down	
 	
-	
+
 
 
 
@@ -1651,6 +1651,7 @@ var ability_dict = {
 	},
 
 
+
 	play_poorinfantryORbluecommando: {  //play specific cards from deck 1 !!! NORTH REALMS Poor Fucking Infantry OR Blue Stripes Commando
 	    name: "Reinforcement Choice",
         description: "Play Poor Fukcing Infantry OR Blue Stripes Commando, from your deck",
@@ -1858,6 +1859,64 @@ var ability_dict = {
         weight: (card, ai) => ai.weightWeatherFromDeck(card, "Cow")
     },
 
+	play_anyhero: {  //play specific gold/hero cards from deck with 2 strenght or more (done by name) 
+	    name: "Any hero with 2 power or more",
+        description: "Reveal 1 card in your hand, then play any Scoiatel or neutral Hero from your deck with 2 or more power",
+        placed: async card => {
+            //find card from deck
+            let card1 = card.holder.deck.findCard(c => c.name === "Cirilla Fiona Elen Riannon");
+			let card2 = card.holder.deck.findCard(c => c.name === "Geralt of Rivia");
+			let card3 = card.holder.deck.findCard(c => c.name === "Saesenthessis: Dragon");
+			let card4 = card.holder.deck.findCard(c => c.name === "Eithné");
+			let card5 = card.holder.deck.findCard(c => c.name === "Saesenthessis");
+			let card6 = card.holder.deck.findCard(c => c.name === "Avallach'h");
+			let card7 = card.holder.deck.findCard(c => c.name === "Iorveth");
+			let card8 = card.holder.deck.findCard(c => c.name === "Isengrim Faoiltiarna");
+			let card9 = card.holder.deck.findCard(c => c.name === "Malena");
+			let card10 = card.holder.deck.findCard(c => c.name === "Triss Merigold");
+			let card11 = card.holder.deck.findCard(c => c.name === "Toruviel");
+			let card12 = card.holder.deck.findCard(c => c.name === "Aglais");
+			let card13 = card.holder.deck.findCard(c => c.name === "Cirilla Target");
+			let card14 = card.holder.deck.findCard(c => c.name === "Geralt Igni");
+			let card15 = card.holder.deck.findCard(c => c.name === "Mahakam Pyrotechnician");
+			let card16 = card.holder.deck.findCard(c => c.name === "Yennefer of Vengerberg");
+			let card17 = card.holder.deck.findCard(c => c.name === "Ida Emead");
+			let card18 = card.holder.deck.findCard(c => c.name === "Iorveth Destroyer");
+			let card19 = card.holder.deck.findCard(c => c.name === "Schirru Hero Scorch");
+
+			
+			//create container and push card to it
+            let container = new CardContainer();
+            
+			if(card1)container.cards.push(card1);
+			if(card2)container.cards.push(card2);
+			if(card3)container.cards.push(card3);
+			if(card4)container.cards.push(card4);
+			if(card5)container.cards.push(card5);
+			if(card6)container.cards.push(card6);
+			if(card7)container.cards.push(card7);
+			if(card8)container.cards.push(card8);
+			if(card9)container.cards.push(card9);
+			if(card10)container.cards.push(card10);
+			if(card11)container.cards.push(card11);
+			if(card12)container.cards.push(card12);
+			if(card13)container.cards.push(card13);
+			if(card14)container.cards.push(card14);
+			if(card15)container.cards.push(card15);
+			if(card16)container.cards.push(card16);
+			if(card17)container.cards.push(card17);
+			if(card18)container.cards.push(card18);
+			if(card19)container.cards.push(card19);
+            
+			await ui.queueCarousel(container, 1, (c, i) => {
+                let card = c.cards[i];
+                card.autoplay(card.holder.deck);
+            }, () => true, false, true);
+            // Carousel.curr.index = index;
+            // Carousel.curr.update();
+        },
+        weight: (card, ai) => ai.weightWeatherFromDeck(card, "Cow")
+    },
 
 	//0 - add any kind of sorting when building/creating/adding cards before the game starts, it can be special, then gold, then ability units, then units with no ability OR
 	// special and then on top sorted by card numbers/strenght/power, it is a mess in this state.

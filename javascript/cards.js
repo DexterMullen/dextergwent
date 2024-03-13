@@ -18,7 +18,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "close",
         "strength": "14",
-        "ability": "", 
+        "ability": "anyhero", 
         "filename": "devclose",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -29,7 +29,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "ranged",
         "strength": "14",
-        "ability": "", 
+        "ability": "anyhero", 
         "filename": "devranged",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -40,7 +40,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "siege",
         "strength": "14",
-        "ability": "", 
+        "ability": "anyhero", 
         "filename": "devsiege",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -51,7 +51,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "agile",
         "strength": "14",
-        "ability": "", 
+        "ability": "anyhero", 
         "filename": "devagile",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -192,7 +192,7 @@ var default_cards = {
         "sound":"", //Find and download / add sound to this new card
     },
     "ntr_ciri_target": {
-        "name": "Cirilla Fiona Elen Riannon",
+        "name": "Cirilla Target",
         "deck": "neutral",
         "row": "close",
         "strength": "5",
@@ -236,7 +236,7 @@ var default_cards = {
         "sound": "39 Magic golem_ I exist, because master Dearhenna wills it so.ogg",
     },
     "ntr_ciri_return": {
-        "name": "Cirilla Fiona Elen Riannon",
+        "name": "Cirilla Return",
         "deck": "neutral",
         "row": "siege",
         "strength": "6",
@@ -1028,8 +1028,8 @@ var default_cards = {
         "name": "Assire var Anahid",
         "deck": "nilfgaard",
         "row": "ranged",
-        "strength": "6",
-        "ability": "",
+        "strength": "4",
+        "ability": "draw2discard2",
         "filename": "assire",
         "count": "1",
         "quote": "Nilfgaardian mages do have a choice, servile submission, or the gallows."
@@ -1327,18 +1327,19 @@ var default_cards = {
         "ability": "play_CavalryRiderORDBrigadeGuard",
         "filename": "sweers",
         "count": "1",
-        "target": "ne_nauzicaa",
+        "target": "",
         "quote": "And hands off the girl! Whatever we may be, we're not savages."
     },
     "ne_tibor": {
         "name": "Tibor Eggebracht",
         "deck": "nilfgaard",
         "row": "ranged",
-        "strength": "10",
+        "strength": "12",
         "ability": "hero",
         "filename": "tibor",
         "count": "1",
-        "quote": "Albaaaa! Forward!! Alba! Long live the Emperor!"
+        "quote": "Albaaaa! Forward!! Alba! Long live the Emperor!",
+        "sound":"43 Tibor Alba.ogg",
     },
     "ne_vanhemar": {
         "name": "Vanhemar",
@@ -1969,7 +1970,7 @@ var default_cards = {
         "deck": "scoiatael",
         "row": "leader",
         "strength": "",
-        "ability": "scorch", //edit this so it plays scorch from deck, not imaginary from nowhere.
+        "ability": "developerleader", //edit this so it plays scorch from deck, not imaginary from nowhere.
         "filename": "francesca_daisy",
         "count": "1",
         "quote": "Do not let my beauty distract your aim."
@@ -1997,9 +1998,9 @@ var default_cards = {
     "sc_ciaran": {
         "name": "Ciaran aep Easnillien",
         "deck": "scoiatael",
-        "row": "agile",
-        "strength": "3",
-        "ability": "",
+        "row": "siege",
+        "strength": "1",
+        "ability": "hero play_rain",
         "filename": "ciaran",
         "count": "1",
         "quote": "The path to freedom is paved in blood not ink."
@@ -2029,8 +2030,8 @@ var default_cards = {
         "name": "Dol Blathanna Archer",
         "deck": "scoiatael",
         "row": "ranged",
-        "strength": "4",
-        "ability": "",
+        "strength": "3",
+        "ability": "medic",
         "filename": "dol_archer",
         "count": "1",
         "quote": "Take another step, dh'oine. You'd look better with an arrow between your eyes."
@@ -2263,8 +2264,8 @@ var default_cards = {
         "name": "Mahakaman Defender",
         "deck": "scoiatael",
         "row": "close",
-        "strength": "5",
-        "ability": "",
+        "strength": "1",
+        "ability": "hero play_fog",
         "filename": "mahakam",
         "count": "1",
         "quote": "I'm telling ye, we're born for battle - we slash straight at their kneed!"
@@ -2322,9 +2323,9 @@ var default_cards = {
     "sc_riordain": {
         "name": "Riordain",
         "deck": "scoiatael",
-        "row": "ranged",
+        "row": "close",
         "strength": "1",
-        "ability": "",
+        "ability": "hero play_frost",
         "filename": "riordain",
         "count": "1",
         "quote": "Stare into their eyes, feast on their terror. Then go in for the kill."
@@ -2876,7 +2877,8 @@ var default_cards = {
         "ability": "scorch_s",
         "filename": "schirru",
         "count": "1",
-        "quote": "Time to look death in the face."
+        "quote": "Time to look death in the face.",
+        "sound":"Schirrú_Oh… How lovely it burns.ogg",
     }
 };
 
@@ -4303,7 +4305,7 @@ var ext_ne_cards = {
         "deck": "nilfgaard",
         "row": "siege",
         "strength": "7",
-        "ability": "",
+        "ability": "onecardfromdecktograve",
         "filename": "joachim_de_wett",
         "count": "1",
         "quote": "To describe the manner in which Duke de Wett led the Verden Group as incompetent would be far too kind."
@@ -4383,7 +4385,7 @@ var ext_ne_cards = {
         "deck": "nilfgaard",
         "row": "ranged",
         "strength": "2",
-        "ability": "",
+        "ability": "draw3discard3",
         "filename": "fake_ciri",
         "count": "1",
         "quote": "A mock-princess, a mock-queen for Cintra. A mock-ruler for the mouth of the Yarra, future lifeblood of the empire."
@@ -5233,9 +5235,9 @@ var ext_st_cards = {
     "sc_brouver_hoog": {
         "name": "Elven Dragon",
         "deck": "scoiatael",
-        "row": "agile",
+        "row": "siege",
         "strength": "0",
-        "ability": "hero",// play any gold with 3 or more power from your deck
+        "ability": "hero play_anyhero",// play any gold with 3 or more power from your deck
         "filename": "brouver_hoog",
         "count": "1",
         "quote": "Burn!",
@@ -5303,8 +5305,8 @@ var ext_st_cards = {
         "name": "Morenn",
         "deck": "scoiatael",
         "row": "agile",
-        "strength": "8",
-        "ability": "hero",
+        "strength": "1",
+        "ability": "hero medic",
         "filename": "morenn",
         "count": "1",
         "quote": "Lady Eithné's daughter had inherited her sublime beauty and her wild hatred for all that is human."
@@ -5506,8 +5508,8 @@ var ext_st_cards = {
         "name": "Braenn",
         "deck": "scoiatael",
         "row": "ranged",
-        "strength": "5",
-        "ability": "",
+        "strength": "3",
+        "ability": "medic",
         "filename": "braenn",
         "count": "1",
         "quote": "Mona…? No… no. I'm Braenn. A daughter of Brokilon."
