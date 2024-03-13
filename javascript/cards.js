@@ -1022,7 +1022,8 @@ var default_cards = {
         "ability": "medic",
         "filename": "albrich",
         "count": "1",
-        "quote": "A fireball? Of course. Whatever Your Imperial Majesty whishes."
+        "quote": "A fireball? Of course. Whatever Your Imperial Majesty whishes.",
+        "sound":"16 Albrich_Utter your wish and I shall make it so.ogg",
     },
     "ne_assire": {
         "name": "Assire var Anahid",
@@ -1032,7 +1033,8 @@ var default_cards = {
         "ability": "draw2discard2",
         "filename": "assire",
         "count": "1",
-        "quote": "Nilfgaardian mages do have a choice, servile submission, or the gallows."
+        "quote": "Nilfgaardian mages do have a choice, servile submission, or the gallows.",
+        "sound":"58 Assire_var_Anahid_ If magic dies, this world dies with it..ogg",
     },
     "ne_black_archer": {
         "name": "Black Infantry Archer",
@@ -1042,7 +1044,8 @@ var default_cards = {
         "ability": "",
         "filename": "black_archer",
         "count": "1",
-        "quote": "I aim for the knee. Always."
+        "quote": "I aim for the knee. Always.",
+        "sound":"57 Archer 10ka 2 The Nordlings’ hatred for us will never wane.ogg",
     },
     "ne_black_archer_1": {
         "name": "Black Infantry Archer",
@@ -1052,7 +1055,8 @@ var default_cards = {
         "ability": "",
         "filename": "black_archer_1",
         "count": "1",
-        "quote": "I aim for the knee. Always."
+        "quote": "I aim for the knee. Always.",
+        "sound":"56 Archer 10ka 2 The common folk - I care for them.ogg",
     },
     "ne_cahir": {
         "name": "Cahir Mawr Dyffryn aep Ceallach",
@@ -1062,7 +1066,8 @@ var default_cards = {
         "ability": "",
         "filename": "cahir",
         "count": "1",
-        "quote": "His eyes flashed under his winged helmet. Fire gleamed from his sword's blade."
+        "quote": "His eyes flashed under his winged helmet. Fire gleamed from his sword's blade.",
+        "sound":"53 Cahir Mavr My boots – got sand aplenty in them.ogg",  
     },
     "ne_cynthia": {
         "name": "Cynthia",
@@ -1072,7 +1077,8 @@ var default_cards = {
         "ability": "hero play_fog",//ability1 add icon for this card
         "filename": "cynthia",
         "count": "1",
-        "quote": "Cynthia's talents can be deadly. She needs a tight leash."
+        "quote": "Cynthia's talents can be deadly. She needs a tight leash.",
+        "sound":"23 Cynthia_For the Emperor.ogg", 
     },
     "ne_archer_support": {
         "name": "Etolian Auxiliary Archers",
@@ -1082,7 +1088,8 @@ var default_cards = {
         "ability": "medic",
         "filename": "archer_support",
         "count": "1",
-        "quote": "Double or nothing, aim for his cock"
+        "quote": "Double or nothing, aim for his cock",
+        "sound":"35 archer medik PRVI Greetings! What is it.ogg",
     },
     "ne_archer_support_1": {
         "name": "Etolian Auxiliary Archers",
@@ -1092,7 +1099,8 @@ var default_cards = {
         "ability": "medic",
         "filename": "archer_support_1",
         "count": "1",
-        "quote": "Double or nothing, aim for his cock"
+        "quote": "Double or nothing, aim for his cock",
+        "sound":"36 archer medik PRVI Theres been a mistake Im no mage.ogg",
     },
     "ne_fringilla": {
         "name": "Fringilla Vigo",
@@ -1102,7 +1110,8 @@ var default_cards = {
         "ability": "draw2discard2",
         "filename": "fringilla",
         "count": "1",
-        "quote": "Magic is the highest good. It transcends all borders and divisions."
+        "quote": "Magic is the highest good. It transcends all borders and divisions.",
+        "sound":"18 Fringilla_Vigo_Wield my magic as if it were your own.ogg",
     },
     "ne_heavy_zerri": {
         "name": "Heavy Zerrikanian Fire Scorpion",
@@ -1124,7 +1133,8 @@ var default_cards = {
         "filename": "impera_brigade_1",
         "count": "1",
         "target": "ne_impera_brigade",
-        "quote": "The Impera Brigade never surrenders. Ever."
+        "quote": "The Impera Brigade never surrenders. Ever.",
+        "sound":"62 impera brigade guard Victory is in our grasp!.ogg", 
     },
     "ne_impera_brigade_2": {
         "name": "Brigade Guard",
@@ -1136,7 +1146,8 @@ var default_cards = {
         "filename": "impera_brigade_2",
         "count": "1",
         "target": "ne_impera_brigade",
-        "quote": "The Impera Brigade never surrenders. Ever."
+        "quote": "The Impera Brigade never surrenders. Ever.",
+        "sound":"61 impera brigade guard  Make your emperor proud.ogg",
     },
     "ne_impera_brigade_3": {
         "name": "Brigade Guard",
@@ -1148,7 +1159,8 @@ var default_cards = {
         "filename": "impera_brigade_3",
         "count": "1",
         "target": "ne_impera_brigade",
-        "quote": "The Impera Brigade never surrenders. Ever."
+        "quote": "The Impera Brigade never surrenders. Ever.",
+        "sound":"60 impera brigade guard Give it all you've got.ogg",
     },
     "ne_impera_brigade_4": {
         "name": "Brigade Guard",
@@ -1160,7 +1172,8 @@ var default_cards = {
         "filename": "impera_brigade_4",
         "count": "1",
         "target": "ne_impera_brigade",
-        "quote": "The Impera Brigade never surrenders. Ever."
+        "quote": "The Impera Brigade never surrenders. Ever.",
+        "sound":"60 impera brigade guard Give it all you've got.ogg",
     },
     "ne_letho": {
         "name": "Letho of Gulet",
@@ -1170,7 +1183,8 @@ var default_cards = {
         "ability": "hero",
         "filename": "letho",
         "count": "1",
-        "quote": "Witchers never die in the beds."
+        "quote": "Witchers never die in the beds.",
+        "sound":"49 Letho_ I'm comin' for you..ogg",
     },
     "ne_menno": {
         "name": "Menno Coehoorn",
@@ -1180,7 +1194,8 @@ var default_cards = {
         "ability": "hero medic",
         "filename": "menno",
         "count": "1",
-        "quote": "I'll take an attentive reconnaissance unit over a fine cavalry brigade any day."
+        "quote": "I'll take an attentive reconnaissance unit over a fine cavalry brigade any day.",
+        "sound":"27 Menno_Coehoorn_The empire will be victorious.ogg",
     },
     "ne_morteisen": {
         "name": "Morteisen",
@@ -1201,7 +1216,8 @@ var default_cards = {
         "ability": "hero",
         "filename": "moorvran",
         "count": "1",
-        "quote": "Summer sun reflecting in the quiet waters of Alba - that's Nilfgaard to me."
+        "quote": "Summer sun reflecting in the quiet waters of Alba - that's Nilfgaard to me.",
+        "sound":"47 Morvran_Voorhis_ If it’s peace you desire, prepare for war.ogg",
     },
     "ne_nauzicaa_1": {
         "name": "Cavalry Rider",
@@ -1213,7 +1229,8 @@ var default_cards = {
         "filename": "nauzicaa_1",
         "count": "1",
         "target": "ne_nauzicaa",
-        "quote": "The Emperor will teach the North discipline."
+        "quote": "The Emperor will teach the North discipline.", 
+        "sound":"7 Nausica calvary rider Off to the front yet again.ogg",
     },
     "ne_nauzicaa_2": {
         "name": "Cavalry Rider",
@@ -1225,7 +1242,8 @@ var default_cards = {
         "filename": "nauzicaa_2",
         "count": "1",
         "target": "ne_nauzicaa",
-        "quote": "The Emperor will teach the North discipline."
+        "quote": "The Emperor will teach the North discipline.",
+        "sound":"8 Nausica calvary rider Rach, sheyss! Yn, twe.ogg",
     },
     "ne_nauzicaa_3": {
         "name": "Cavalry Rider",
@@ -1237,7 +1255,8 @@ var default_cards = {
         "filename": "nauzicaa_3",
         "count": "1",
         "target": "ne_nauzicaa",
-        "quote": "The Emperor will teach the North discipline."
+        "quote": "The Emperor will teach the North discipline.",
+        "sound":"8 Nausica calvary rider Rach, sheyss! Yn, twe.ogg",
     },
     "ne_puttkammer": {
         "name": "Puttkammer",
@@ -1247,7 +1266,8 @@ var default_cards = {
         "ability": "unreveal3",
         "filename": "puttkammer",
         "count": "1",
-        "quote": "Learned a lot at Braibant Military Academy. How to scrub potatoes, for instance."
+        "quote": "Learned a lot at Braibant Military Academy. How to scrub potatoes, for instance.",
+        "sound":"64 puttakamer Mashed potatoes with thick gravy.ogg",
     },
     "ne_rainfarn": {
         "name": "Rainfarn",
@@ -1257,7 +1277,8 @@ var default_cards = {
         "ability": "hero play_rain",//add icon for this ability to the card
         "filename": "rainfarn",
         "count": "1",
-        "quote": "You'll die as painfully as the pathetic traitor Windhalm did."
+        "quote": "You'll die as painfully as the pathetic traitor Windhalm did.",
+        "sound":"25 Rainfarn There will be rain - or frost, perhaps.ogg",
     },
     "ne_renuald": {
         "name": "Renuald aep Matsen",
@@ -1267,7 +1288,8 @@ var default_cards = {
         "ability": "playunit_drawcard",
         "filename": "renuald",
         "count": "1",
-        "quote": "They say the Impera fear nothing. Untrue. Renuald scares them shitless."
+        "quote": "They say the Impera fear nothing. Untrue. Renuald scares them shitless.",
+        "sound":"20 Renuald You will not regret this, good sir.ogg"
     },
     "ne_rotten": {
         "name": "Rotten Mangonel",
@@ -1287,7 +1309,8 @@ var default_cards = {
         "ability": "spy",
         "filename": "shilard",
         "count": "1",
-        "quote": "Warfare is mere sound and fury - diplomacy is what truly shapes history."
+        "quote": "Warfare is mere sound and fury - diplomacy is what truly shapes history.",
+        "sound":"33 Shilard_An extraordinary plan.ogg",
     },
     "ne_siege_engineer": {
         "name": "Siege Engineer",
@@ -1297,7 +1320,8 @@ var default_cards = {
         "ability": "unreveal3",
         "filename": "siege_engineer",
         "count": "1",
-        "quote": "Wielded correctly, a protactor can be a deadly weapon."
+        "quote": "Wielded correctly, a protactor can be a deadly weapon.",
+        "sound":"45  Siege engenier Nilfgaard cannot be defeated….ogg",
     },
     "ne_siege_support": {
         "name": "Siege Technician",
@@ -1307,7 +1331,8 @@ var default_cards = {
         "ability": "medic",
         "filename": "siege_support",
         "count": "1",
-        "quote": "I never miss twice."
+        "quote": "I never miss twice.",
+        "sound":"45  Siege engenier Nilfgaard cannot be defeated….ogg",
     },
     "ne_stefan": {
         "name": "Stefan Skellen",
@@ -1317,7 +1342,8 @@ var default_cards = {
         "ability": "spy",
         "filename": "stefan",
         "count": "1",
-        "quote": "My mark scards the face of our future empress. That is my proudest achievement."
+        "quote": "My mark scards the face of our future empress. That is my proudest achievement.",
+        "sound":"31 Stefan_Skellen_The revolution is inevitable, merely a matter of time.ogg",
     },
     "ne_sweers": {
         "name": "Sweers",
@@ -1328,7 +1354,8 @@ var default_cards = {
         "filename": "sweers",
         "count": "1",
         "target": "",
-        "quote": "And hands off the girl! Whatever we may be, we're not savages."
+        "quote": "And hands off the girl! Whatever we may be, we're not savages.",
+        "sound":"9 Sweers_Come on, Stalkers! We ride.ogg",
     },
     "ne_tibor": {
         "name": "Tibor Eggebracht",
@@ -1349,7 +1376,8 @@ var default_cards = {
         "ability": "hero play_frost",//ability1 add icon
         "filename": "vanhemar",
         "count": "1",
-        "quote": "For a fire mage, he's not very... flamboyant."
+        "quote": "For a fire mage, he's not very... flamboyant.",
+        "sound":"21 Vanhemar_Show me what you’ve got.ogg",
     },
     "ne_vattier": {
         "name": "Vattier de Rideaux",
@@ -1359,7 +1387,8 @@ var default_cards = {
         "ability": "spy",
         "filename": "vattier",
         "count": "1",
-        "quote": "There's never been a problem a well-planned assassination couldn't solve."
+        "quote": "There's never been a problem a well-planned assassination couldn't solve.",
+        "sound":"30 Vattier_de_Rideaux_Proceed according to plan.ogg",
     },
     "ne_vreemde": {
         "name": "Vreemde",
@@ -1369,7 +1398,8 @@ var default_cards = {
         "ability": "play_CavalryRiderORDYoungEmissary",
         "filename": "vreemde",
         "count": "1",
-        "quote": "Discipline is the Empire's deadliest weapon."
+        "quote": "Discipline is the Empire's deadliest weapon.",
+        "sound":"12 Vreemde_We live and die for the emperor.ogg",
     },
     "ne_young_emissary_1": {
         "name": "Young Emissary",
@@ -1381,7 +1411,8 @@ var default_cards = {
         "filename": "young_emissary_1",
         "count": "1",
         "target": "ne_young_emissary",
-        "quote": "If I acquit myself well, perhaps next they'll post me somewhere more civilized."
+        "quote": "If I acquit myself well, perhaps next they'll post me somewhere more civilized.",
+        "sound":"42 young emisary We need no help from outsiders.ogg",
     },
     "ne_young_emissary_2": {
         "name": "Young Emissary",
@@ -1393,7 +1424,21 @@ var default_cards = {
         "filename": "young_emissary_2",
         "count": "1",
         "target": "ne_young_emissary",
-        "quote": "If I acquit myself well, perhaps next they'll post me somewhere more civilized."
+        "quote": "If I acquit myself well, perhaps next they'll post me somewhere more civilized.",
+        "sound":"41 young emisary Vigilance is a virtue.ogg",
+    },
+    "ne_young_emissary_3": {
+        "name": "Young Emissary",
+        "id": 3,
+        "deck": "nilfgaard",
+        "row": "close",
+        "strength": "5",
+        "ability": "bond",
+        "filename": "young_emissary_2",
+        "count": "1",
+        "target": "ne_young_emissary",
+        "quote": "If I acquit myself well, perhaps next they'll post me somewhere more civilized.",
+        "sound":"41 young emisary Vigilance is a virtue.ogg",
     },
     "ne_zerri": {
         "name": "Zerrikanian Fire Scorpion",
@@ -4073,7 +4118,8 @@ var ext_ne_cards = {
         "ability": "hero medic",
         "filename": "vicovaro_medic",
         "count": "1",
-        "quote": "Both war and plague always take men by surprise."
+        "quote": "Both war and plague always take men by surprise.",
+        "sound":"vicarvio medic kill me with poison.mp3",
     },
     "ne_alba_pikeman_1": {
         "name": "Alba Pikeman",
@@ -4146,7 +4192,8 @@ var ext_ne_cards = {
         "filename": "slave_infantry_1",
         "count": "1",
         "target": "ne_slave_infantry",
-        "quote": "A free man's got a choice. A slave's choices are made for him."
+        "quote": "A free man's got a choice. A slave's choices are made for him.",
+        "sound":"slave hunter catch him he is worth 20 florens.mp3",
     },
     "ne_slave_infantry_2": {
         "name": "Slave Infantry",
@@ -4260,7 +4307,8 @@ var ext_ne_cards = {
         "filename": "impera_brigade_5",
         "count": "1",
         "target": "ne_impera_brigade",
-        "quote": "The Impera Brigade never surrenders. Ever."
+        "quote": "The Impera Brigade never surrenders. Ever.",
+
     },
     "ne_jan_calveit": {
         "name": "Jan Calveit",
@@ -4270,7 +4318,8 @@ var ext_ne_cards = {
         "ability": "hero destroy1weakest",
         "filename": "jan_calveit",
         "count": "1",
-        "quote": "To prepare for the future, it’s best to first know it."
+        "quote": "To prepare for the future, it’s best to first know it.",
+        "sound":"jan calveit onward sons of nilfgard.mp3",
     },
     "ne_bribery": {
         "name": "Bribery",
@@ -4311,7 +4360,8 @@ var ext_ne_cards = {
         "ability": "onecardfromdecktograve",
         "filename": "joachim_de_wett",
         "count": "1",
-        "quote": "To describe the manner in which Duke de Wett led the Verden Group as incompetent would be far too kind."
+        "quote": "To describe the manner in which Duke de Wett led the Verden Group as incompetent would be far too kind.",
+        "sound":"joachim i shel flog them into submision.mp3",
     },
     "ne_ardal_aep_dahy": {
         "name": "Ardal aep Dahy",
@@ -4331,7 +4381,9 @@ var ext_ne_cards = {
         "ability": "hero playunit_drawcard",//ABILITY1 play a unit from your hand, then draw random card from deck to hand !! add icon for this ablity to the card
         "filename": "cantarella",
         "count": "1",
-        "quote": "play a unit from your hand, then draw random card from deck to hand."//Men require constant alluring. Mystique and refinement do the job quite well
+        "quote": "Men require constant alluring. Mystique and refinement do the job quite well",
+        "sound":"3 Cantarella_ I shall be your eyes, my lord.ogg",
+        
     },
     "ne_treason": {
         "name": "Treason",
@@ -4411,7 +4463,8 @@ var ext_ne_cards = {
         "ability": "hero JadeFigurine",
         "filename": "xarthisius",
         "count": "1",
-        "quote": "Astrology, hydromancy, haruspicy, ceromancy. Ovomancy, spodomancy, metroscopy, brontoscopy..."
+        "quote": "Astrology, hydromancy, haruspicy, ceromancy. Ovomancy, spodomancy, metroscopy, brontoscopy...",
+        "sound":"xarthisius we shal see what the future holds.mp3",
     },
     "ne_impera_enforcers": {
         "name": "Impera Enforcers",
@@ -4596,7 +4649,8 @@ var ext_ne_cards = {
         "ability": "medic",
         "filename": "imperial_practitioner",
         "count": "1",
-        "quote": "The body is a slab of wet clay. One need only use the correct tools to shape it into something... more."
+        "quote": "The body is a slab of wet clay. One need only use the correct tools to shape it into something... more.",
+        "sound":"SAY.Battlecries_part4.156.mp3",
     }
 };
 
@@ -6457,7 +6511,8 @@ var ext_wu_cards = {
         "ability": "scorch_c witcher_viper_school",
         "filename": "letho",
         "count": "1",
-        "quote": "Witchers never die in their beds."
+        "quote": "Witchers never die in their beds.",
+        "sound":"49 Letho_ I'm comin' for you..ogg",
     },
     "wu_eskel": {
         "name": "Eskel",
