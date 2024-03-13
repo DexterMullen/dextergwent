@@ -18,7 +18,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "close",
         "strength": "14",
-        "ability": "anyhero", 
+        "ability": "", 
         "filename": "devclose",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -29,7 +29,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "ranged",
         "strength": "14",
-        "ability": "anyhero", 
+        "ability": "", 
         "filename": "devranged",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -40,7 +40,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "siege",
         "strength": "14",
-        "ability": "anyhero", 
+        "ability": "", 
         "filename": "devsiege",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -51,7 +51,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "agile",
         "strength": "14",
-        "ability": "anyhero", 
+        "ability": "", 
         "filename": "devagile",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -121,7 +121,7 @@ var default_cards = {
         "filename": "caretaker",
         "count": "1",
         "quote": "There are more things in heaven and earth than all the world's philosophers have dreamt.",
-        "sound": "20 Caretaker_Resistance is futile..ogg",
+        "sound": "20 Caretaker_Resistance is futile..ogg", //replace with original later
     },     
     "ntr_priscilla": {
         "name": "Priscilla",
@@ -189,7 +189,7 @@ var default_cards = {
         "filename": "nenneke",
         "count": "1",
         "quote": "Few know more about healing than Nenneke.",
-        "sound":"", //Find and download / add sound to this new card
+        "sound":"neneke.mp3",
     },
     "ntr_ciri_target": {
         "name": "Cirilla Target",
@@ -278,7 +278,7 @@ var default_cards = {
         "sound": "48 Dandelion_For you, my friend, always.ogg",
     },
     "ntr_emiel": { 
-        "name": "Emiel Regis Rohellec Terzieff",
+        "name": "Emiel Regis Special",
         "deck": "neutral",
         "row": "siege",
         "strength": "2",
@@ -637,7 +637,7 @@ var default_cards = {
         "count": "1",
         "target": "nr_crinfrid",
         "quote": "Haven't had much luck with monsters of late, so we enlisted.",
-        "sound": "Reaver_Hunter_Dont recognize your old mates.ogg",
+        "sound": "Reaver_Hunter_This is no time to whimper.ogg",
     },
     "nr_crinfrid_3": {
         "name": "Crinfrid Reavers Dragon Hunter",
@@ -672,7 +672,7 @@ var default_cards = {
         "filename": "banner_nurse",
         "count": "1",
         "quote": "Stitch red to red, white to white, and everything will be all right.",
-        "sound": "dun baned medic.mp3",
+        "sound": "dun baner medic are you wounded again.mp3",
     },
     "nr_esterad": {
         "name": "Esterad Thyssen",
@@ -786,7 +786,7 @@ var default_cards = {
         "count": "1",
         "target": "nr_poor_infantry",
         "quote": "I's a war veteran! ... spare me a crown?",
-        "sound":"Poor_Fuckinging_Infantry_Got any vittles Hungry like a wolf I am.ogg",
+        "sound":"Poor_Fucking_Infantry_Can’t take it anymore..ogg",
     },
     "nr_poor_infantry_3": {
         "name": "Poor Fucking Infantry",
@@ -876,7 +876,7 @@ var default_cards = {
         "filename": "dijkstra",
         "count": "1",
         "quote": "Gwent's like politics, just more honest.",
-        "sound":"Dijkstra Worked With Idiots My Whole Life.mp3", //just test sound get a proper one
+        "sound":"Dijkstra Worked With Idiots My Whole Life.mp3", 
     },
     "nr_sheala": {
         "name": "Síle de Tansarville",
@@ -1920,7 +1920,8 @@ var default_cards = {
         "ability": "",
         "filename": "werewolf",
         "count": "1",
-        "quote": "Wolves aren't as bad as they say. Werewolves, though - they're worse."
+        "quote": "Wolves aren't as bad as they say. Werewolves, though - they're worse.",
+        "sound":"warewolf.WAV",
     },
     "mo_wyvern": {
         "name": "Wyvern",
@@ -2989,7 +2990,8 @@ var ext_nr_cards = {
         "ability": "play_GrandCatapultORDragonHunters",//play specific card from deck OR play some other specific card from deck (grant catapult 8 tight bond) or dragon hunters (5 tight bond) 
         "filename": "kaedweni_siege_support_1",
         "count": "1",
-        "quote": "I never miss twice."
+        "quote": "I never miss twice.",
+        "sound":"46  Siege engenier Only a fool tries to reroute the Pontar with a stick.ogg",
     },
     "nr_kaedweni_siege_support_2": {
         "name": "Kaedweni Siege Support",
@@ -3079,7 +3081,7 @@ var ext_nr_cards = {
         "filename": "ban_ard_tutor",
         "count": "1",
         "quote": "Play RAIN from your deck",//Ban Ard deserved a mention, for it is famous for the school of young adepts of the magical arts.
-        "sound":"",
+        "sound":"ban ard tudor remember what  i thought you.mp3",
     },
     "nr_demavend": {
         "name": "Sabrina Fire Mage",//7 siege no ability Sabrina Fire Mage from printed version
@@ -4111,7 +4113,8 @@ var ext_ne_cards = {
         "ability": "hero MoveToThisRow", //ABILITY1 target two of your units from any rows, and move them to where you played this card/her row.
         "filename": "imperial_golem",
         "count": "1",
-        "quote": "The most powerful of Nilfgaard's mages have mastered the oart of creating golems."
+        "quote": "The most powerful of Nilfgaard's mages have mastered the oart of creating golems.",
+        "sound":"38 Tamed golem_Greet guests, foil intruders.ogg",
     },
     "ne_daerlan_soldier": {
         "name": "Daerlan Foot Soldier",
@@ -4686,7 +4689,8 @@ var ext_mo_cards = {
         "ability": "",
         "filename": "nithral",
         "count": "1",
-        "quote": "Eredin's personal cavalcade includes only the most brutal and most ferocious of the Aen Elle."
+        "quote": "Eredin's personal cavalcade includes only the most brutal and most ferocious of the Aen Elle.",
+        "sound":"nihtril i wonder how long you will last.mp3",
     },
     "mo_therazane": {
         "name": "Therazane",
@@ -4920,7 +4924,8 @@ var ext_mo_cards = {
         "ability": "",
         "filename": "manticore",
         "count": "1",
-        "quote": "Thoug many have seen manticores, very few have lived to tell their tale."
+        "quote": "Thoug many have seen manticores, very few have lived to tell their tale.",
+        "sound":"mantocore.wav",
     },
     "mo_manticore_venom": {
         "name": "Manticore Venom",
@@ -4960,7 +4965,8 @@ var ext_mo_cards = {
         "ability": "hero HighestBackToDeck", //ability1 add this: Return both player's highest unit on the board back to their decks (if there is a draw between units, it is a random decision)
         "filename": "noonwraith",
         "count": "1",
-        "quote": "They are born of some horrible tragedy tied to ill-fated love.)"//
+        "quote": "They are born of some horrible tragedy tied to ill-fated love.)",//
+        "sound":"wraith.wav",
     },
     "mo_vran_warrior": {
         "name": "Imlertih Unreveal",//Unreveal
@@ -5002,7 +5008,8 @@ var ext_mo_cards = {
         "ability": "hero backto_deck",
         "filename": "ruehin",
         "count": "1",
-        "quote": "No one has ever entered that forest and lived to tell the tale..."
+        "quote": "No one has ever entered that forest and lived to tell the tale...",
+        "sound":"ruehin.mp3",
     },
     "mo_queen_night": {
         "name": "Queen of the Night",
@@ -5023,7 +5030,7 @@ var ext_mo_cards = {
         "filename": "moonlight",
         "count": "1",
         "quote": "Play FROST from your deck",//remove this once we have ability and icon description
-        "sound": "",
+        "sound": "Wild hunt hound frost.WAV",
     },
     "mo_dagon": {
         "name": "Dagon",
