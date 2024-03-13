@@ -472,11 +472,12 @@ var default_cards = {
         "name": "Bovine Defense Force", //cow calls this card when round ends.
         "deck": "neutral",
         "row": "close",
-        "strength": "10",
+        "strength": "9",
         "ability": "",
         "filename": "chort",
         "count": "0",
-        "quote": "Grrrrr!"
+        "quote": "Grrrrr!",
+        "sound":"Fiend.mp3",
     },
     "ntr_jade_figurine": {
         "name": "Jade_Figurine",
@@ -989,7 +990,7 @@ var default_cards = {
         "deck": "nilfgaard",
         "row": "leader",
         "strength": "",
-        "ability": "emhyr_relentless",
+        "ability": "developerleader",
         "filename": "emhyr_whiteflame",
         "count": "1",
         "quote": "A sword is but one of many tools at a ruler's disposal."
