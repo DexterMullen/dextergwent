@@ -62,6 +62,7 @@ var ability_dict = {
 	
 
 	//delete down	
+
 	
 
 
@@ -1863,7 +1864,7 @@ var ability_dict = {
 	    name: "Any hero with 2 power or more",
         description: "Reveal 1 card in your hand, then play any Scoiatel or neutral Hero from your deck with 2 or more power",
         placed: async card => {
-            //find card from deck
+            //find cards from deck by their name
             let card1 = card.holder.deck.findCard(c => c.name === "Cirilla Fiona Elen Riannon");
 			let card2 = card.holder.deck.findCard(c => c.name === "Geralt of Rivia");
 			let card3 = card.holder.deck.findCard(c => c.name === "Saesenthessis: Dragon");
@@ -1885,7 +1886,7 @@ var ability_dict = {
 			let card19 = card.holder.deck.findCard(c => c.name === "Schirru Hero Scorch");
 
 			
-			//create container and push card to it
+			//create container and push cards into it
             let container = new CardContainer();
             
 			if(card1)container.cards.push(card1);
@@ -1918,17 +1919,14 @@ var ability_dict = {
         weight: (card, ai) => ai.weightWeatherFromDeck(card, "Cow")
     },
 
-	//0 - add any kind of sorting when building/creating/adding cards before the game starts, it can be special, then gold, then ability units, then units with no ability OR
-	// special and then on top sorted by card numbers/strenght/power, it is a mess in this state.
+
 	
 	// 1 - create agile2 and agile3, curent agile (LINE 89) is sword OR bow, agile2 should be sword OR catapult, agile3 should be bow OR catapult.
 	
 	// 2 - create full mobile ability, those cards can go anywhere on your side of the board, sword OR bow OR catapult
 	
 	// 3 - All leader cards should have numbers/value and should be mobile, they should no longer be just ability but they go out on the board same as regular or gold units
-	
-	// 4 - add mouse scroll up and down to card selecter/card picker/carusel
-	
+
 	// 5 - add option not just to turn ON and OFF music but also to increase and decrease volume
 	
 	// 6 - select X amount of cards from your deck(you choose, not random) and put them in your graveyard. (change nilfgardian leader that cancels opponents leader) eredin (lines 326 to 349) has similar
