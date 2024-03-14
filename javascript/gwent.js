@@ -87,6 +87,8 @@ class ControllerAI {
 		}
 	}
 
+
+
 	isSelfRowIndex(i) {
 		return (this.player === player_me && i > 2) || (this.player === player_op && i < 3);
 	}
@@ -2151,11 +2153,11 @@ class Card {
 			"medic" : "med",
 			"muster" : "ally",
 			"morale" : "moral",
-			"bond" : "moral"
+			"bond" : "moral", 		
 		}
 		var temSom = new Array();
 		for (var x in guia) temSom[temSom.length] = x;
-		var literais = ["scorch", "spy", "horn", "shield", "lock", "seize", "knockback", "resilience"];
+		var literais = ["scorch", "spy", "horn", "shield", "lock", "seize", "knockback", "resilience",]; 
 		var som = literais.indexOf(name) > -1 ? literais[literais.indexOf(name)] : temSom.indexOf(name) > -1 ? guia[name] : "";
 		if (som != "") tocar(som, false);
 		if (name === "scorch") return await this.scorch(name);
@@ -4145,3 +4147,4 @@ function isMobile() {
 		return navigator.userAgentData.mobile;
 	return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
+

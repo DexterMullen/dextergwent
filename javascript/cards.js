@@ -4,12 +4,33 @@ var default_cards = {
     //test cards section
     //delete down
 
-
+    "sy_flyndr_crew": {
+        "name": "test leader",
+        "deck": "syndicate",
+        "row": "close",
+        "strength": "5",  //delete this one after testing !!!
+        "ability": "hero",
+        "filename": "flyndr_crew",
+        "count": "0",
+        "quote": "Wretches and thieves drunk on grog, bloodshed and booty - could you ever hope for a better crew?",
+        "sound":"Eredin_Ess’tedd, esse creasa.ogg",
+    },
+    /*
+    "sy_flyndr_crew": {
+        "name": "Flyndr' Crew",
+        "deck": "syndicate",
+        "row": "close",
+        "strength": "",      //this is original just uncoment it to set back to default !!!
+        "ability": "horn",
+        "filename": "flyndr_crew",
+        "count": "0",
+        "quote": "Wretches and thieves drunk on grog, bloodshed and booty - could you ever hope for a better crew?"
+    },
+    */
 
 
 
     //delete up
-    
 
 
 
@@ -18,7 +39,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "close",
         "strength": "14",
-        "ability": "", 
+        "ability": "meve_princesss", 
         "filename": "devclose",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -29,7 +50,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "ranged",
         "strength": "14",
-        "ability": "", 
+        "ability": "meve_princesss", 
         "filename": "devranged",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -40,7 +61,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "siege",
         "strength": "14",
-        "ability": "", 
+        "ability": "meve_princesss", 
         "filename": "devsiege",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -51,7 +72,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "agile",
         "strength": "14",
-        "ability": "", 
+        "ability": "meve_princesss", 
         "filename": "devagile",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -4154,7 +4175,7 @@ var ext_ne_cards = {
         "filename": "vicovaro_medic",
         "count": "1",
         "quote": "Both war and plague always take men by surprise.",
-        "sound":"vicarvio medic kill me with poison.mp3",
+        "sound":"vicarvo medic realone.mp3",
     },
     "ne_alba_pikeman_1": {
         "name": "Alba Pikeman",
@@ -8492,16 +8513,7 @@ var ext_sy_cards = {
         "count": "0",
         "quote": "You sure he don't look the least bit familar...?"
     },
-    "sy_flyndr_crew": {
-        "name": "Flyndr' Crew",
-        "deck": "syndicate",
-        "row": "close",
-        "strength": "4",
-        "ability": "horn",
-        "filename": "flyndr_crew",
-        "count": "0",
-        "quote": "Wretches and thieves drunk on grog, bloodshed and booty - could you ever hope for a better crew?"
-    },
+
     "spe_dimeritium_shackles": {
         "name": "Dimeritium Shackles",
         "deck": "special",

@@ -54,7 +54,10 @@ var ability_dict = {
 			if (cards.length < 2) return 0;
 			return cards[0].abilities.includes("muster") ? 50 : 25;
 		} 
-	},
+		
+	}
+	
+	,
 	
 	
 	
@@ -62,9 +65,22 @@ var ability_dict = {
 	
 
 	//delete down	
-	
-	
+	meve_princesss: {
+		name:"meve_princesss",
+		description: "If the opponent has a total of 10 or higher on one row, destroy that row's strongest card(s) (affects only the opponent's side of the battle field).",
+		placed: async (card, player) => {
+			player.endTurnAfterAbilityUse = false;
+			ui.showPreviewVisuals(card);
+			ui.enablePlayer(true);
+			if (!(player.controller instanceof ControllerAI)) ui.setSelectable(card, true);
+		},
+		weight: (card, ai, max) => {
+			return Math.max(ai.weightScorchRow(card, max, "close"), ai.weightScorchRow(card, max, "ranged"), ai.weightScorchRow(card, max, "siege"));
+		}
+	},
 
+	
+		
 
 
 
@@ -1288,6 +1304,7 @@ var ability_dict = {
 			return Math.max(ai.weightScorchRow(card, max, "close"), ai.weightScorchRow(card, max, "ranged"), ai.weightScorchRow(card, max, "siege"));
 		}
 	},
+
 	francis_bedlam: {
 		description: "Send all spy unit cards to the grave of the side they are on.",
 		activated: async (card, player) => {
@@ -1370,19 +1387,7 @@ var ability_dict = {
 		},
 		weight: (card) => 20
 	},
-	//delete down if it does not work! 
-	PlayShacklesFromDeck: {
-		name:"Play Dimeritum Shackles from your deck",
-		description: "Play a Dimeritum Shackles card in any of the opponent's row.", //help voja marko!
-		placed: async (card, player) => {
-			player.endTurnAfterAbilityUse = false;
-			ui.showPreviewVisuals(card);
-			ui.enablePlayer(true);			
-			if (!(player.controller instanceof ControllerAI)) ui.setSelectable(card, true);
-		},
-		weight: (card) => 20
-	},
-	//delete up if it does not work!
+
 	azar_javed: {
 		description: "Destroy the enemy's weakest hero card (max 1 card).",
 		activated: async (card, player) => {
@@ -1919,6 +1924,22 @@ var ability_dict = {
         weight: (card, ai) => ai.weightWeatherFromDeck(card, "Cow")
     },
 
+	anyBackToHandRestBackToDeck: { //this works but created card advantige, needs to go -1 somehow leave it for later !!!
+		Name: "Draw Any random card, rest back to deck",
+		description: "Draw any random card from your graveyard to your hand (it can be gold/hero special or unit) and then shuffle the all the rest of the cards, back into your deck.",
+		placed: async (card) => {
+			if (card.holder.grave.cards.length === 0) return;
+			let grave = card.holder.grave;
+			let c = grave.findCardsRandom(false, 1)[0];
+			await board.toHand(c, c.holder.grave);
+			Promise.all(card.holder.grave.cards.map(c => board.toDeck(c, card.holder.grave)));
+		},
+		weight: (card) => {
+			let medics = card.holder.hand.cards.filter(c => c.abilities.includes("medic"));
+			if (medics.length > 0 || card.holder.grave.cards.length == 0) return 0;
+			else return 15;
+		}
+	},
 
 	
 	// 1 - create agile2 and agile3, curent agile (LINE 89) is sword OR bow, agile2 should be sword OR catapult, agile3 should be bow OR catapult.
