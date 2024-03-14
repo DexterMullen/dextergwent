@@ -2050,7 +2050,8 @@ var default_cards = {
         "ability": "hero play_rain",
         "filename": "ciaran",
         "count": "1",
-        "quote": "The path to freedom is paved in blood not ink."
+        "quote": "The path to freedom is paved in blood not ink.",
+        "sound":"ciaran rain humans are not to be trusted.mp3",
     },
     "sc_barclay": {
         "name": "Barclay Els",
@@ -2067,11 +2068,12 @@ var default_cards = {
         "name": "Dennis Cranmer",
         "deck": "scoiatael",
         "row": "close",
-        "strength": "10",
+        "strength": "8",
         "ability": "morale",
         "filename": "dennis",
         "count": "1",
-        "quote": "I know how to carry out orders, so you can shove you advice up your coal chute."
+        "quote": "I know how to carry out orders, so you can shove you advice up your coal chute.",
+        "sound":"Dennis_Cranmer_I've never run from no one and I'm not about to start.ogg",
     },
     "sc_dol_archer": {
         "name": "Dol Blathanna Archer",
@@ -2081,7 +2083,8 @@ var default_cards = {
         "ability": "medic",
         "filename": "dol_archer",
         "count": "1",
-        "quote": "Take another step, dh'oine. You'd look better with an arrow between your eyes."
+        "quote": "Take another step, dh'oine. You'd look better with an arrow between your eyes.",
+        "sound":"Dol_Blathanna_Archer_Medik They can hide, but there is no escape.ogg",
     },
     "sc_dol_infantry": {
         "name": "Dol Blathanna Scout",
@@ -2091,7 +2094,8 @@ var default_cards = {
         "ability": "",
         "filename": "dol_infantry",
         "count": "1",
-        "quote": "They track like hounds, run like deer and kill like cold-hearted bastards."
+        "quote": "They track like hounds, run like deer and kill like cold-hearted bastards.",
+        "sound":"Dol Blahtana Scout_What.ogg",
     },
     "sc_dol_infantry_1": {
         "name": "Dol Blathanna Scout",
@@ -2101,7 +2105,8 @@ var default_cards = {
         "ability": "",
         "filename": "dol_infantry_1",
         "count": "1",
-        "quote": "They track like hounds, run like deer and kill like cold-hearted bastards."
+        "quote": "They track like hounds, run like deer and kill like cold-hearted bastards.",
+        "sound":"Dol Blahtana Scout_You annoy me.ogg",
     },
     "sc_dol_infantry_2": {
         "name": "Dol Blathanna Scout",
@@ -2111,14 +2116,15 @@ var default_cards = {
         "ability": "",
         "filename": "dol_infantry_2",
         "count": "1",
-        "quote": "They track like hounds, run like deer and kill like cold-hearted bastards."
+        "quote": "They track like hounds, run like deer and kill like cold-hearted bastards.",
+        "sound":"Dol blahtana scout_Right, fine.ogg",
     },
     "sc_dwarf": {
-        "name": "Dwarven Skirmisher",
+        "name": "Dwarven Skirmisher 1",
         "id": 1,
         "deck": "scoiatael",
         "row": "close",
-        "strength": "5",
+        "strength": "4",
         "ability": "muster",
         "filename": "dwarf",
         "count": "1",
@@ -2127,11 +2133,11 @@ var default_cards = {
         "sound":"Dwarven Skirmisher 1 Everything all right.mp3",
     },
     "sc_dwarf_1": {
-        "name": "Dwarven Skirmisher",
+        "name": "Dwarven Skirmisher 2",
         "id": 2,
         "deck": "scoiatael",
         "row": "close",
-        "strength": "5",
+        "strength": "4",
         "ability": "muster",
         "filename": "dwarf_1",
         "count": "1",
@@ -2140,11 +2146,11 @@ var default_cards = {
         "sound":"Dwarven Skirmisher 2 for mahakam.mp3",
     },
     "sc_dwarf_2": {
-        "name": "Dwarven Skirmisher",
+        "name": "Dwarven Skirmisher 3",
         "id": 3,
         "deck": "scoiatael",
         "row": "close",
-        "strength": "5",
+        "strength": "4",
         "ability": "muster",
         "filename": "dwarf_2",
         "count": "1",
@@ -2160,43 +2166,47 @@ var default_cards = {
         "ability": "hero",
         "filename": "eithne",
         "count": "1",
-        "quote": "The dryad queen has eyes of molten silver, and a heart of cold-forged steel."
+        "quote": "The dryad queen has eyes of molten silver, and a heart of cold-forged steel.",
+        "sound":"Eithne_Humans have no place in Brokilon.ogg",
     },
     "sc_elf_skirmisher": {
-        "name": "Elven Skirmisher",
+        "name": "Elven Skirmisher 1",
         "id": 1,
         "deck": "scoiatael",
         "row": "ranged",
-        "strength": "5",
+        "strength": "4",
         "ability": "muster",
         "filename": "elf_skirmisher",
         "count": "1",
         "target": "sc_elf_skirmisher",
-        "quote": "No matter what you may have heard, elves don't take human scalps. Too much lice."
+        "quote": "No matter what you may have heard, elves don't take human scalps. Too much lice.",
+        "sound":"elven skirmisher caeym.mp3",
     },
     "sc_elf_skirmisher_1": {
-        "name": "Elven Skirmisher",
+        "name": "Elven Skirmisher 2",
         "id": 2,
         "deck": "scoiatael",
         "row": "ranged",
-        "strength": "5",
+        "strength": "4",
         "ability": "muster",
         "filename": "elf_skirmisher_1",
         "count": "1",
         "target": "sc_elf_skirmisher",
-        "quote": "No matter what you may have heard, elves don't take human scalps. Too much lice."
+        "quote": "No matter what you may have heard, elves don't take human scalps. Too much lice.",
+        "sound":"elven skirmisher keay admen en she.mp3",
     },
     "sc_elf_skirmisher_2": {
-        "name": "Elven Skirmisher",
+        "name": "Elven Skirmisher 3",
         "id": 3,
         "deck": "scoiatael",
         "row": "ranged",
-        "strength": "5",
+        "strength": "4",
         "ability": "muster",
         "filename": "elf_skirmisher_2",
         "count": "1",
         "target": "sc_elf_skirmisher",
-        "quote": "No matter what you may have heard, elves don't take human scalps. Too much lice."
+        "quote": "No matter what you may have heard, elves don't take human scalps. Too much lice.",
+        "sound":"elven skirmisher dol blathana.mp3",
     },
     "sc_filavandrel": {
         "name": "Filavandrel aen Fidhail",
@@ -2206,7 +2216,8 @@ var default_cards = {
         "ability": "",
         "filename": "filavandrel",
         "count": "1",
-        "quote": "Though we are now few and scattered, our hearts burn brighter than ever."
+        "quote": "Though we are now few and scattered, our hearts burn brighter than ever.",
+        "sound":"Filavandrel_Pride is all we've left.ogg",
     },
     "sc_havekar_nurse": {
         "name": "Havekar Healer",
@@ -2216,7 +2227,8 @@ var default_cards = {
         "ability": "medic",
         "filename": "havekar_nurse",
         "count": "1",
-        "quote": "Sure, I'll patch you up. Gonna cost you, though."
+        "quote": "Sure, I'll patch you up. Gonna cost you, though.",
+        "sound":"Hawker_Healer_Oh, my.ogg",
     },
     "sc_havekar_nurse_1": {
         "name": "Havekar Healer",
@@ -2226,7 +2238,8 @@ var default_cards = {
         "ability": "medic",
         "filename": "havekar_nurse_1",
         "count": "1",
-        "quote": "Sure, I'll patch you up. Gonna cost you, though."
+        "quote": "Sure, I'll patch you up. Gonna cost you, though.",
+        "sound":"Hawker_Healer_We oughta help one or t' other.ogg",
     },
     "sc_havekar_nurse_2": {
         "name": "Havekar Healer",
@@ -2236,14 +2249,15 @@ var default_cards = {
         "ability": "medic",
         "filename": "havekar_nurse_2",
         "count": "1",
-        "quote": "Sure, I'll patch you up. Gonna cost you, though."
+        "quote": "Sure, I'll patch you up. Gonna cost you, though.",
+        "sound":"healer 3.mp3",
     },
     "sc_havekar_support": {
-        "name": "Havekar Smuggler",
+        "name": "Smuggler 1",
         "id": 1,
         "deck": "scoiatael",
         "row": "close",
-        "strength": "5",
+        "strength": "4",
         "ability": "muster",
         "filename": "havekar_support",
         "count": "1",
@@ -2252,11 +2266,11 @@ var default_cards = {
         "sound":"skoja smugler 1 if my coin.mp3",
     },
     "sc_havekar_support_1": {
-        "name": "Havekar Smuggler",
+        "name": "Smuggler 2",
         "id": 2,
         "deck": "scoiatael",
         "row": "close",
-        "strength": "5",
+        "strength": "4",
         "ability": "muster",
         "filename": "havekar_support_1",
         "count": "1",
@@ -2265,11 +2279,11 @@ var default_cards = {
         "sound":"skoja smugler 2 come here.mp3",
     },
     "sc_havekar_support_2": {
-        "name": "Havekar Smuggler",
+        "name": "Smuggler 3",
         "id": 3,
         "deck": "scoiatael",
         "row": "close",
-        "strength": "5",
+        "strength": "4",
         "ability": "muster",
         "filename": "havekar_support_2",
         "count": "1",
@@ -2285,7 +2299,8 @@ var default_cards = {
         "ability": "",
         "filename": "ida",
         "count": "1",
-        "quote": "I am a Sage. My power lies in possessing knowledge. Not sharing it."
+        "quote": "I am a Sage. My power lies in possessing knowledge. Not sharing it.",
+        "sound":"Ida_The time of the White Frost and White Light is nigh.ogg",
     },
     "sc_iorveth": {
         "name": "Iorveth",
@@ -2295,7 +2310,8 @@ var default_cards = {
         "ability": "hero morale",
         "filename": "iorveth",
         "count": "1",
-        "quote": "King or beggar, what's the difference? One dh'oine less."
+        "quote": "King or beggar, what's the difference? One dh'oine less.",
+        "sound":"Iorveth_Spar’le.ogg",
     },
     "sc_isengrim": {
         "name": "Isengrim Faoiltiarna",
@@ -2305,7 +2321,8 @@ var default_cards = {
         "ability": "hero morale",
         "filename": "isengrim",
         "count": "1",
-        "quote": "It dawns on them once they notice my scar: a realization of imminent death."
+        "quote": "It dawns on them once they notice my scar: a realization of imminent death.",
+        "sound":"Isengrim_ The only good human is a dead human.ogg",
     },
     "sc_mahakam": {
         "name": "Mahakaman Defender",
@@ -2315,7 +2332,8 @@ var default_cards = {
         "ability": "hero play_fog",
         "filename": "mahakam",
         "count": "1",
-        "quote": "I'm telling ye, we're born for battle - we slash straight at their kneed!"
+        "quote": "I'm telling ye, we're born for battle - we slash straight at their kneed!",
+        "sound":"Mahakam_Defender_Mahakam.ogg",
     },
     "sc_mahakam_1": {
         "name": "Mahakaman Defender",
@@ -2325,7 +2343,8 @@ var default_cards = {
         "ability": "",
         "filename": "mahakam_1",
         "count": "1",
-        "quote": "I'm telling ye, we're born for battle - we slash straight at their kneed!"
+        "quote": "I'm telling ye, we're born for battle - we slash straight at their kneed!",
+        "sound":"Mahakam_Defender_Mahakam.ogg",
     },
     "sc_mahakam_2": {
         "name": "Mahakaman Defender",
@@ -2335,7 +2354,8 @@ var default_cards = {
         "ability": "",
         "filename": "mahakam_2",
         "count": "1",
-        "quote": "I'm telling ye, we're born for battle - we slash straight at their kneed!"
+        "quote": "I'm telling ye, we're born for battle - we slash straight at their kneed!",
+        "sound":"Mahakam_Defender_Wanna whiff of me axe.ogg",
     },
     "sc_mahakam_3": {
         "name": "Mahakaman Defender",
@@ -2345,7 +2365,8 @@ var default_cards = {
         "ability": "",
         "filename": "mahakam_3",
         "count": "1",
-        "quote": "I'm telling ye, we're born for battle - we slash straight at their kneed!"
+        "quote": "I'm telling ye, we're born for battle - we slash straight at their kneed!",
+        "sound":"Mahakam_Defender_Wanna whiff of me axe.ogg",
     },
     "sc_mahakam_4": {
         "name": "Mahakaman Defender",
@@ -2355,17 +2376,19 @@ var default_cards = {
         "ability": "",
         "filename": "mahakam_4",
         "count": "1",
-        "quote": "I'm telling ye, we're born for battle - we slash straight at their kneed!"
+        "quote": "I'm telling ye, we're born for battle - we slash straight at their kneed!",
+        "sound":"Mahakam_Defender_Wanna whiff of me axe.ogg",
     },
     "sc_milva": {
         "name": "Milva",
         "deck": "scoiatael",
         "row": "ranged",
-        "strength": "10",
+        "strength": "8",
         "ability": "morale",
         "filename": "milva",
         "count": "1",
-        "quote": "With each arrow I loose, I think of my da. He'd be proud. I think."
+        "quote": "With each arrow I loose, I think of my da. He'd be proud. I think.",
+        "sound":"Milva_ Don’t you fret about me. Can take care o' meself.ogg",
     },
     "sc_riordain": {
         "name": "Riordain",
@@ -2375,7 +2398,8 @@ var default_cards = {
         "ability": "hero play_frost",
         "filename": "riordain",
         "count": "1",
-        "quote": "Stare into their eyes, feast on their terror. Then go in for the kill."
+        "quote": "Stare into their eyes, feast on their terror. Then go in for the kill.",
+        "sound":"Riordain_An ill wind blows.ogg",
     },
     "sc_saskia": {
         "name": "Saesenthessis",
@@ -2385,7 +2409,8 @@ var default_cards = {
         "ability": "hero",
         "filename": "saskia",
         "count": "1",
-        "quote": "Beautiful, pure, fierce - the perfect icon for a rebellion."
+        "quote": "Beautiful, pure, fierce - the perfect icon for a rebellion.",
+        "sound":"saskia saense i kneel before no one.mp3",
     },
     "sc_toruviel": {
         "name": "Toruviel",
@@ -2406,7 +2431,9 @@ var default_cards = {
         "ability": "reveal1",
         "filename": "vrihedd_cadet",
         "count": "1",
-        "quote": "Hatred burns brighter than any fire, and cuts deeper than any blade."
+        "quote": "Hatred burns brighter than any fire, and cuts deeper than any blade.",
+        "sound":"Vrihed_Recruit_Allow me to play you an elven folk tune.ogg",
+
     },
     "sc_vrihedd_brigade": {
         "name": "Vrihedd Brigade Veteran",
@@ -2416,7 +2443,8 @@ var default_cards = {
         "ability": "",
         "filename": "vrihedd_brigade",
         "count": "1",
-        "quote": "'Vrihedd? What's that mean?' 'Trouble.'"
+        "quote": "'Vrihedd? What's that mean?' 'Trouble.'",
+        "sound":"Vrihed_Recruit_These trees will be your grave stones.ogg",
     },
     "sc_vrihedd_brigade_1": {
         "name": "Vrihedd Brigade Veteran",
@@ -2426,7 +2454,8 @@ var default_cards = {
         "ability": "",
         "filename": "vrihedd_brigade_1",
         "count": "1",
-        "quote": "'Vrihedd? What's that mean?' 'Trouble.'"
+        "quote": "'Vrihedd? What's that mean?' 'Trouble.'",
+        "sound":"Vrihed_Veteran_What are you doing in my wood.ogg",
     },
     "sc_yaevinn": {
         "name": "Yaevinn",
@@ -2436,7 +2465,8 @@ var default_cards = {
         "ability": "",
         "filename": "yaevinn",
         "count": "1",
-        "quote": "We are drops of rain that together make a ferocious storm."
+        "quote": "We are drops of rain that together make a ferocious storm.",
+        "sound":"Yaevinn_We were not the ones to start this war.ogg",
     },
     "sk_birna": {
         "name": "Birna Bran",
@@ -2481,7 +2511,8 @@ var default_cards = {
         "ability": "",
         "filename": "brokva_archer",
         "count": "3",
-        "quote": "So ye can hit a movin' target at two hundred paces. Me, too. In a storm."
+        "quote": "So ye can hit a movin' target at two hundred paces. Me, too. In a storm.",
+        "sound":"clan brokvar archer 1.mp3",
     },
     "sk_dimun_pirate": { //Elf Scorch Dragon Rider 
         "name": "Elf Scorch Dragon Rider",
@@ -2553,7 +2584,8 @@ var default_cards = {
         "ability": "",
         "filename": "tordarroch",
         "count": "1",
-        "quote": "Ye're in for poundin'."
+        "quote": "Ye're in for poundin'.",
+        "sound":"armorsmith swords are for wenches get an axe.mp3",
     },
     "sk_craite_warrior_1": {
         "name": "Clan an Craite Warrior",
@@ -2579,7 +2611,7 @@ var default_cards = {
         "count": "1",
         "target": "sk_craite_warrior",
         "quote": "I'll bring the an Craites such glory, bards'll go hoarse singin' me praises!",
-        "sound":"An Craite Warrior we will follow you always into the fire.mp3",
+        "sound":"An Craite Warrior we will great them with fire and iron.mp3",
     },
     "sk_craite_warrior_3": {
         "name": "Clan an Craite Warrior",
@@ -2613,7 +2645,8 @@ var default_cards = {
         "ability": "horn",
         "filename": "draig",
         "count": "1",
-        "quote": "Hear ye now the tale of the heroic deeds of Clan an Craite."
+        "quote": "Hear ye now the tale of the heroic deeds of Clan an Craite.",
+        "sound":"drag bon dhy gloty to he.mp3",
     },
     "sk_ermion": {
         "name": "Ermion",
@@ -2678,7 +2711,8 @@ var default_cards = {
         "filename": "kambi",
         "count": "1",
         "target": "sk_hemdall",
-        "quote": "When the time comes, the cockerel Kambi shall crow and awaken Hemdall."
+        "quote": "When the time comes, the cockerel Kambi shall crow and awaken Hemdall.",
+        "sound":"40 Kambi Rooster.mp3",
     },
     "sk_light_longship": {
         "name": "Light Longship",
@@ -2719,7 +2753,7 @@ var default_cards = {
         "name": "Olaf",
         "deck": "skellige",
         "row": "agile",
-        "strength": "10",
+        "strength": "8",
         "ability": "morale",
         "filename": "olaf",
         "count": "1",
@@ -5350,7 +5384,8 @@ var ext_st_cards = {
         "ability": "hero draw3discard3",//Ability1 draw 3 from deck to hand then discard 3 to graveyard
         "filename": "aglais",
         "count": "1",
-        "quote": "Brokilon bleeds… and not even I can heal it."
+        "quote": "Brokilon bleeds… and not even I can heal it.",
+        "sound":"Aglaïs_Drink this, you’ll feel better.ogg",
     },
     
     "sc_elven_deadeye": {
@@ -5371,7 +5406,8 @@ var ext_st_cards = {
         "ability": "hero medic",
         "filename": "morenn",
         "count": "1",
-        "quote": "Lady Eithné's daughter had inherited her sublime beauty and her wild hatred for all that is human."
+        "quote": "Lady Eithné's daughter had inherited her sublime beauty and her wild hatred for all that is human.",
+        "sound":"morren they will not leave here alive.mp3",
     },
     "sc_mahakam_pyrotechnician": {
         "name": "Mahakam Pyrotechnician",
@@ -5381,7 +5417,8 @@ var ext_st_cards = {
         "ability": "hero",//ability1 Replace a card in your hand (goes to your graveyard) with Scorch from your deck.
         "filename": "mahakam_pyrotechnician",
         "count": "1",
-        "quote": "An extraordinarily risky, and thus much revered, Mahakam trade. Its best-known practitioner was a dwarf by the name of Mikkel Bay."
+        "quote": "An extraordinarily risky, and thus much revered, Mahakam trade. Its best-known practitioner was a dwarf by the name of Mikkel Bay.",
+        "sound":"Pyrotechnician_Hmm… huvnae seen a fuse lyin' aboot, hae you.ogg",
     },
     "sc_mahakam_guard_1": {
         "name": "Mahakam Guard",
@@ -5534,7 +5571,8 @@ var ext_st_cards = {
         "ability": "",
         "filename": "mahakam_marauder", //Hattori
         "count": "1",
-        "quote": "Hunting on Mahakam's craggy cliffs is not particularly easy… but nor are dwarves particularly put off by danger."
+        "quote": "Hunting on Mahakam's craggy cliffs is not particularly easy… but nor are dwarves particularly put off by danger.",
+        "sound":"Hattori_A sword to outshine all others.ogg",
     },
     "sc_fauve": {
         "name": "Fauve",
@@ -5574,7 +5612,8 @@ var ext_st_cards = {
         "ability": "medic",
         "filename": "braenn",
         "count": "1",
-        "quote": "Mona…? No… no. I'm Braenn. A daughter of Brokilon."
+        "quote": "Mona…? No… no. I'm Braenn. A daughter of Brokilon.",
+        "sound":"braeen let them dange for a while.mp3",
     },
     "sc_hawker_support": { //ida emean
         "name": "Ida Emead",
@@ -5985,7 +6024,8 @@ var ext_sk_cards = {
         "ability": "",
         "filename": "an_craite_blacksmith",
         "count": "1",
-        "quote": "Remember me words – a good shield can save yer life."
+        "quote": "Remember me words – a good shield can save yer life.",
+        "sound":"blacksmith poker.mp3",
     },
     "sk_hym": {
         "name": "Hym",
