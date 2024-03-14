@@ -62,7 +62,7 @@ var ability_dict = {
 	
 
 	//delete down	
-
+	
 	
 
 
