@@ -912,6 +912,8 @@ class Player {
 			Carousel.curr.cancel();
 		} catch (err) {}
 		if (this.leaderAvailable) {
+			//let new_card = new Card("sy_flyndr_crew", card_dict["sy_flyndr_crew"], player);/// !!!
+			//await board.addCardToRow(new_card, new_card.row, card.holder);	// !!!		
 			this.endTurnAfterAbilityUse = true;
 			await this.leader.activated[0](this.leader, this);
 			this.disableLeader();
