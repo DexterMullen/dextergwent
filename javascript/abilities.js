@@ -54,7 +54,10 @@ var ability_dict = {
 			if (cards.length < 2) return 0;
 			return cards[0].abilities.includes("muster") ? 50 : 25;
 		} 
-	},
+		
+	}
+	
+	,
 	
 	
 	
@@ -62,9 +65,10 @@ var ability_dict = {
 	
 
 	//delete down	
-	
-	
 
+
+	
+		
 
 
 
@@ -331,23 +335,38 @@ var ability_dict = {
 	},
 	destroy1weakest: {
 		name: "destroy1weakest",
-		description: "Destroy only 1 weakest unit on the opposite row",//game stops and it is stuck if there is nothing to destroy on the opposite row BBUUGG help marko voja
+		description: "Destroy only 1 weakest unit on the opposite row",
 		placed: async card => {
 			let row = card.currentLocation.getOppositeRow();
 			if (row.isShielded() || game.scorchCancelled) return;
+			
 			let units = row.minUnits();
 	
 			// Find the weakest unit
 			let weakestUnit = units.reduce((minUnit, currentUnit) => {
 				return currentUnit.power < minUnit.power ? currentUnit : minUnit;
 			});
-			
+	
 			// Destroy the weakest unit
 			await weakestUnit.animate("scorch", true, false);
 			await board.toGrave(weakestUnit, row);
-			
+		},
+		aiPlaced: async card => {
+			let row = card.currentLocation.getOppositeRow();
+			if (row.isShielded() || game.scorchCancelled) return;
+	
+			let units = row.minUnits();
+	
+			// Find the weakest unit
+			let weakestUnit = units.reduce((minUnit, currentUnit) => {
+				return currentUnit.power < minUnit.power ? currentUnit : minUnit;
+			});
+	
+			// Destroy the weakest unit
+			await board.toGrave(weakestUnit, row);
 		}
 	},
+	
 
 
 
@@ -396,6 +415,8 @@ var ability_dict = {
 		},
 		weight: (card, ai) => ai.weightWeatherFromDeck(card, "Cow")
 	},
+
+	/* activate this code if the one bellow does not work !!!
 	draw2discard2: { //Draw 2 random cards from your deck to your hand, then move 2 cards of your choice from hand to your graveyard 
 		name: "Draw 2 Discard 2",
 		description: "Draw 2 random cards from your deck to your hand, then move 2 cards of your choice from hand to your graveyard",
@@ -423,6 +444,42 @@ var ability_dict = {
 			await ui.queueCarousel(hand, 2, (c,i) => board.toGrave(c.cards[i], c), () => true);
 		}
 	},
+	*/
+
+	draw2discard2: {
+		name: "Draw 2 Discard 2",
+		description: "Draw 2 random cards from your deck to your hand, then move 2 cards of your choice from hand to your graveyard",
+		placed: async (card) => {
+			if (card.isLocked()) return;
+			await card.animate("spy");
+			let hand = card.holder.hand;
+			let deck = card.holder.deck;
+			
+			// Draw 2 random cards from deck to hand
+			for (let i = 0; i < 2; i++) {
+				if (deck.cards.length > 0) await deck.draw(hand);
+			}
+	
+			// Prompt player to choose 2 cards from hand to move to graveyard
+			if (card.holder.controller instanceof ControllerAI) {
+				let cardsToDiscard = card.holder.controller.discardOrder(card).splice(0, 2);
+				await Promise.all(cardsToDiscard.map(async c => await board.toGrave(c, hand)));
+				return;
+			} else {
+				try {
+					Carousel.curr.exit();
+				} catch (err) {}
+			}
+			await ui.queueCarousel(hand, 2, (c,i) => board.toGrave(c.cards[i], c), () => true);
+		},
+		aiPlaced: async (card) => {
+			let hand = card.holder.hand;
+			let cardsToDiscard = card.holder.controller.discardOrder(card).splice(0, 2);
+			await Promise.all(cardsToDiscard.map(async c => await board.toGrave(c, hand)));
+		}
+	},
+	
+
 	draw3discard3: { //Draw 3 random to hand, then discard 3 of your choice from hand to your graveyard 
 		name: "Draw 3 Discard 3",
 		description: "Draw 3 random cards from your deck to your hand, then move 3 cards of your choice from hand to your graveyard.",
@@ -557,8 +614,11 @@ var ability_dict = {
 		activated: async card => {
 			let out = card.holder.deck.findCard(c => c.name === "Impenetrable Fog");
 			if (out) await out.autoplay(card.holder.deck);
-		},
+		},		
 		weight: (card, ai) => ai.weightWeatherFromDeck(card, "fog")
+		
+		
+		
 	},
 	foltest_lord: {
 		description: "Clear any weather effects (resulting from Biting Frost, Torrential Rain or Impenetrable Fog cards) in play.",
@@ -1288,6 +1348,7 @@ var ability_dict = {
 			return Math.max(ai.weightScorchRow(card, max, "close"), ai.weightScorchRow(card, max, "ranged"), ai.weightScorchRow(card, max, "siege"));
 		}
 	},
+
 	francis_bedlam: {
 		description: "Send all spy unit cards to the grave of the side they are on.",
 		activated: async (card, player) => {
@@ -1370,19 +1431,7 @@ var ability_dict = {
 		},
 		weight: (card) => 20
 	},
-	//delete down if it does not work! 
-	PlayShacklesFromDeck: {
-		name:"Play Dimeritum Shackles from your deck",
-		description: "Play a Dimeritum Shackles card in any of the opponent's row.", //help voja marko!
-		placed: async (card, player) => {
-			player.endTurnAfterAbilityUse = false;
-			ui.showPreviewVisuals(card);
-			ui.enablePlayer(true);			
-			if (!(player.controller instanceof ControllerAI)) ui.setSelectable(card, true);
-		},
-		weight: (card) => 20
-	},
-	//delete up if it does not work!
+
 	azar_javed: {
 		description: "Destroy the enemy's weakest hero card (max 1 card).",
 		activated: async (card, player) => {
@@ -1725,14 +1774,15 @@ var ability_dict = {
 		},
 		weight: (card, ai) => ai.weightWeatherFromDeck(card, "Grand Catapult")
 	},
-
-	play_CavalryRiderORDYoungEmissary: {  //play specific cards from deck 1 !!! Nilfgard Cavalry Rider OR Young Emissary
+	/* return to active if code bellow causes problems !!!
+	play_CavalryRiderORDYoungEmissary: {  //play specific cards from deck 1 !!! Nilfgard Cavalry Rider OR Young Emissary OR Brigade Guard
 	    name: "Reinforcement Choice",
-        description: "Play Cavalry Rider OR Young Emissary, from your deck",
+        description: "Play: Cavalry Rider OR Young Emissary OR Brigade Guard, from your deck",
         placed: async card => {
             //find card from deck
             let card1 = card.holder.deck.findCard(c => c.name === "Cavalry Rider");
 			let card2 = card.holder.deck.findCard(c => c.name === "Young Emissary");
+			let card3 = card.holder.deck.findCard(c => c.name === "Brigade Guard");
 			
 			
 			//create container and push card to it
@@ -1740,6 +1790,7 @@ var ability_dict = {
             
 			if(card1)container.cards.push(card1);
 			if(card2)container.cards.push(card2);
+			if(card3)container.cards.push(card3);
 			
             
 			await ui.queueCarousel(container, 1, (c, i) => {
@@ -1751,21 +1802,67 @@ var ability_dict = {
         },
         weight: (card, ai) => ai.weightWeatherFromDeck(card, "Cow")
     },
+	*/
 
-	play_CavalryRiderORDBrigadeGuard: {  //play specific cards from deck 1 !!! Nilfgard Cavalry Rider OR Brigade Guard
+	play_CavalryRiderORDYoungEmissary: {
+		name: "Reinforcement Choice",
+		description: "Play: Cavalry Rider OR Young Emissary OR Brigade Guard, from your deck",
+		placed: async card => {
+			// find card from deck
+			let card1 = card.holder.deck.findCard(c => c.name === "Cavalry Rider");
+			let card2 = card.holder.deck.findCard(c => c.name === "Young Emissary");
+			let card3 = card.holder.deck.findCard(c => c.name === "Brigade Guard");
+	
+			// create container and push cards to it
+			let container = new CardContainer();
+			if (card1) container.cards.push(card1);
+			if (card2) container.cards.push(card2);
+			if (card3) container.cards.push(card3);
+	
+			await ui.queueCarousel(container, 1, (c, i) => {
+				let card = c.cards[i];
+				card.autoplay(card.holder.deck);
+			}, () => true, false, true);
+		},
+		aiPlaced: async card => {
+			// find card from deck
+			let card1 = card.holder.deck.findCard(c => c.name === "Cavalry Rider");
+			let card2 = card.holder.deck.findCard(c => c.name === "Young Emissary");
+			let card3 = card.holder.deck.findCard(c => c.name === "Brigade Guard");
+	
+			// create container and push cards to it
+			let container = new CardContainer();
+			if (card1) container.cards.push(card1);
+			if (card2) container.cards.push(card2);
+			if (card3) container.cards.push(card3);
+	
+			// Choose a card based on AI logic (randomly choosing for simplicity)
+			let chosenIndex = Math.floor(Math.random() * container.cards.length);
+			let chosenCard = container.cards[chosenIndex];
+	
+			// Play the chosen card
+			if (chosenCard) {
+				chosenCard.autoplay(card.holder.deck);
+			}
+		},
+		weight: (card, ai) => ai.weightWeatherFromDeck(card, "Cow")
+	},
+
+	play_CavalryRiderORDBrigadeGuard: {  //play specific cards from deck 1 !!! Nilfgard Cavalry Rider OR Brigade Guard OR Young Emissary
 	    name: "Reinforcement Choice",
-        description: "Play Cavalry Rider OR Brigade Guard, from your deck",
+        description: "Play: Cavalry Rider OR Brigade Guard OR Young Emisary, from your deck",
         placed: async card => {
             //find card from deck
             let card1 = card.holder.deck.findCard(c => c.name === "Cavalry Rider");
 			let card2 = card.holder.deck.findCard(c => c.name === "Brigade Guard");
-			
+			let card3 = card.holder.deck.findCard(c => c.name === "Young Emissary");
 			
 			//create container and push card to it
             let container = new CardContainer();
             
 			if(card1)container.cards.push(card1);
 			if(card2)container.cards.push(card2);
+			if(card3)container.cards.push(card3);
 			
             
 			await ui.queueCarousel(container, 1, (c, i) => {
@@ -1919,6 +2016,22 @@ var ability_dict = {
         weight: (card, ai) => ai.weightWeatherFromDeck(card, "Cow")
     },
 
+	anyBackToHandRestBackToDeck: { //this works but created card advantige, needs to go -1 somehow leave it for later !!!
+		Name: "Draw Any random card, rest back to deck",
+		description: "Draw any random card from your graveyard to your hand (it can be gold/hero special or unit) and then shuffle the all the rest of the cards, back into your deck.",
+		placed: async (card) => {
+			if (card.holder.grave.cards.length === 0) return;
+			let grave = card.holder.grave;
+			let c = grave.findCardsRandom(false, 1)[0];
+			await board.toHand(c, c.holder.grave);
+			Promise.all(card.holder.grave.cards.map(c => board.toDeck(c, card.holder.grave)));
+		},
+		weight: (card) => {
+			let medics = card.holder.hand.cards.filter(c => c.abilities.includes("medic"));
+			if (medics.length > 0 || card.holder.grave.cards.length == 0) return 0;
+			else return 15;
+		}
+	},
 
 	
 	// 1 - create agile2 and agile3, curent agile (LINE 89) is sword OR bow, agile2 should be sword OR catapult, agile3 should be bow OR catapult.

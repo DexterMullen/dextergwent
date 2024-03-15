@@ -87,6 +87,8 @@ class ControllerAI {
 		}
 	}
 
+
+
 	isSelfRowIndex(i) {
 		return (this.player === player_me && i > 2) || (this.player === player_op && i < 3);
 	}
@@ -910,6 +912,8 @@ class Player {
 			Carousel.curr.cancel();
 		} catch (err) {}
 		if (this.leaderAvailable) {
+			//let new_card = new Card("sy_flyndr_crew", card_dict["sy_flyndr_crew"], player);/// !!!
+			//await board.addCardToRow(new_card, new_card.row, card.holder);	// !!!		
 			this.endTurnAfterAbilityUse = true;
 			await this.leader.activated[0](this.leader, this);
 			this.disableLeader();
@@ -2151,11 +2155,11 @@ class Card {
 			"medic" : "med",
 			"muster" : "ally",
 			"morale" : "moral",
-			"bond" : "moral"
+			"bond" : "moral", 		
 		}
 		var temSom = new Array();
 		for (var x in guia) temSom[temSom.length] = x;
-		var literais = ["scorch", "spy", "horn", "shield", "lock", "seize", "knockback", "resilience"];
+		var literais = ["scorch", "spy", "horn", "shield", "lock", "seize", "knockback", "resilience",]; 
 		var som = literais.indexOf(name) > -1 ? literais[literais.indexOf(name)] : temSom.indexOf(name) > -1 ? guia[name] : "";
 		if (som != "") tocar(som, false);
 		if (name === "scorch") return await this.scorch(name);
@@ -4145,3 +4149,4 @@ function isMobile() {
 		return navigator.userAgentData.mobile;
 	return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
+

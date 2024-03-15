@@ -4,12 +4,33 @@ var default_cards = {
     //test cards section
     //delete down
 
-
+    "sy_flyndr_crew": {
+        "name": "test leader",
+        "deck": "syndicate",
+        "row": "close",
+        "strength": "5",  //delete this one after testing !!!
+        "ability": "hero",
+        "filename": "flyndr_crew",
+        "count": "0",
+        "quote": "Wretches and thieves drunk on grog, bloodshed and booty - could you ever hope for a better crew?",
+        "sound":"Eredin_Ess’tedd, esse creasa.ogg",
+    },
+    /*
+    "sy_flyndr_crew": {
+        "name": "Flyndr' Crew",
+        "deck": "syndicate",
+        "row": "close",
+        "strength": "",      //this is original just uncoment it to set back to default !!!
+        "ability": "horn",
+        "filename": "flyndr_crew",
+        "count": "0",
+        "quote": "Wretches and thieves drunk on grog, bloodshed and booty - could you ever hope for a better crew?"
+    },
+    */
 
 
 
     //delete up
-    
 
 
 
@@ -18,7 +39,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "close",
         "strength": "14",
-        "ability": "", 
+        "ability": "meve_princesss", 
         "filename": "devclose",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -29,7 +50,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "ranged",
         "strength": "14",
-        "ability": "", 
+        "ability": "meve_princesss", 
         "filename": "devranged",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -40,7 +61,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "siege",
         "strength": "14",
-        "ability": "", 
+        "ability": "meve_princesss", 
         "filename": "devsiege",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -51,7 +72,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "agile",
         "strength": "14",
-        "ability": "", 
+        "ability": "meve_princesss", 
         "filename": "devagile",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -429,6 +450,19 @@ var default_cards = {
         "quote": "At least you now know I don't easily lose my head.",
         "sound":"50 Olgierd I’m in no mood for jests..ogg",
     },
+    "ntr_gaunter_odimm_darkness": {
+        "name": "Gaunter O'Dimm - Darkness",
+        "id": 2,
+        "deck": "neutral",
+        "row": "ranged",
+        "strength": "4",
+        "ability": "muster",
+        "filename": "gaunter_odimm_darkness",
+        "count": "3",
+        "target": "ntr_gaunter_odimm",
+        "quote": "Fear not the shadows, but the light.",
+        "sound":"63 Gaunter_SHADOWS.WAV",
+    },
     "ntr_gaunter_odimm": {
         "name": "Gaunter O'Dimm",
         "id": 1,
@@ -443,19 +477,7 @@ var default_cards = {
         "sound":"61 Gaunter_O'Dimm You wished to play So let us play.ogg",
 
     },
-    "ntr_gaunter_odimm_darkness": {
-        "name": "Gaunter O'Dimm - Darkness",
-        "id": 2,
-        "deck": "neutral",
-        "row": "ranged",
-        "strength": "4",
-        "ability": "muster",
-        "filename": "gaunter_odimm_darkness",
-        "count": "3",
-        "target": "ntr_gaunter_odimm",
-        "quote": "Fear not the shadows, but the light.",
-        "sound":"63 Gaunter_SHADOWS.WAV",
-    },
+
     "ntr_cow": {
         "name": "Cow",
         "deck": "neutral",
@@ -822,7 +844,7 @@ var default_cards = {
         "filename": "redania",
         "count": "1",
         "quote": "I've bled for Redania! I've killed for Redania... Dammit, I've even raped for Redania!",
-        "sound":"Redenian Foot_Soldier_Rach sheyss Yn twe.ogg",
+        "sound":"if you insist .mp3",
     },
     "nr_redania_1": {//john show OR North Realms Wolf Warrior from prineted version
         "name": "North Realms Wolf Warrior", //from printed deck
@@ -1225,7 +1247,7 @@ var default_cards = {
         "id": 1,
         "deck": "nilfgaard",
         "row": "close",
-        "strength": "4",
+        "strength": "5",
         "ability": "muster",
         "filename": "nauzicaa_1",
         "count": "1",
@@ -1238,7 +1260,7 @@ var default_cards = {
         "id": 2,
         "deck": "nilfgaard",
         "row": "ranged",
-        "strength": "4",
+        "strength": "5",
         "ability": "muster",
         "filename": "nauzicaa_2",
         "count": "1",
@@ -1251,7 +1273,7 @@ var default_cards = {
         "id": 3,
         "deck": "nilfgaard",
         "row": "siege",
-        "strength": "4",
+        "strength": "5",
         "ability": "muster",
         "filename": "nauzicaa_3",
         "count": "1",
@@ -2327,7 +2349,7 @@ var default_cards = {
     "sc_mahakam": {
         "name": "Mahakaman Defender",
         "deck": "scoiatael",
-        "row": "close",
+        "row": "ranged",
         "strength": "1",
         "ability": "hero play_fog",
         "filename": "mahakam",
@@ -2537,7 +2559,7 @@ var default_cards = {
         "count": "1",
         "target": "sk_shield_maiden",
         "quote": "They'll shatter on our shields like waves on a rocky shore.",
-        "sound":"Shieldmaiden you are good real good.mp3",
+        "sound":"shiled maiden may freya choose the wictor.mp3",
     },
     "sk_shield_maiden_2": {
         "name": "Shield Maiden",
@@ -2563,7 +2585,7 @@ var default_cards = {
         "count": "1",
         "target": "sk_shield_maiden",
         "quote": "They'll shatter on our shields like waves on a rocky shore.",
-        "sound":"Shieldmaiden you are good real good.mp3",
+        "sound":"Shieldmaiden so no one dares to face me.mp3",
     },
     "sk_heymaey": {
         "name": "Clan Heymaey Skald",
@@ -4154,7 +4176,7 @@ var ext_ne_cards = {
         "filename": "vicovaro_medic",
         "count": "1",
         "quote": "Both war and plague always take men by surprise.",
-        "sound":"vicarvio medic kill me with poison.mp3",
+        "sound":"vicarvo medic realone.mp3",
     },
     "ne_alba_pikeman_1": {
         "name": "Alba Pikeman",
@@ -4211,7 +4233,7 @@ var ext_ne_cards = {
         "name": "Hefty Helge",
         "deck": "nilfgaard",
         "row": "siege",
-        "strength": "7",
+        "strength": "10",
         "ability": "",
         "filename": "hefty_helge",
         "count": "1",
@@ -4276,11 +4298,12 @@ var ext_ne_cards = {
         "name": "Deithwen Arbalest",
         "deck": "nilfgaard",
         "row": "ranged",
-        "strength": "7",
+        "strength": "10",
         "ability": "",
         "filename": "deithwen_arbalest",
         "count": "1",
-        "quote": "I aim for the knees. Always."
+        "quote": "I aim for the knees. Always.",
+        "sound":"deithwen love for them to beg for mercy.mp3",
     },
     "ne_guardian": {
         "name": "The Guardian",
@@ -4295,22 +4318,24 @@ var ext_ne_cards = {
     "ne_nausicaa_standard_bearer": {
         "name": "Nausicaa Standard Bearer",
         "deck": "nilfgaard",
-        "row": "close",
+        "row": "agile",
         "strength": "1",
-        "ability": "horn",
+        "ability": "decoy",
         "filename": "nausicaa_standard_bearer",
         "count": "1",
-        "quote": "The Emperor will teach the North discipline."
+        "quote": "The Emperor will teach the North discipline.",
+        "sound":"nausicaa calvary begone you devils.mp3",
     },
     "ne_knight": {
         "name": "Nilfgaardian Knight",
         "deck": "nilfgaard",
         "row": "close",
         "strength": "10",
-        "ability": "hero",
+        "ability": "",
         "filename": "knight",
         "count": "1",
-        "quote": "Sons of noble houses, born in the City of the Golden Towers, form the elite backbone of the Imperial Army."
+        "quote": "Sons of noble houses, born in the City of the Golden Towers, form the elite backbone of the Imperial Army.",
+        "sound":"nilfgardian knight by my honor they will hang.mp3",
     },
     "ne_alba_armored_cavalry": {
         "name": "Alba Armored Cavalry",
@@ -5624,7 +5649,7 @@ var ext_st_cards = {
         "filename": "hawker_support",
         "count": "1",
         "quote": "Ida_The time of the White Frost and White Light is nigh.ogg.",
-        "sound":"The time of the White Frost and White Light is nigh.ogg",
+        "sound":"Ida_The time of the White Frost and White Light is nigh.ogg",
     },
     "sc_eldain": {
         "name": "Eldain",
@@ -5795,7 +5820,8 @@ var ext_sk_cards = {
         "filename": "chosen_berserker",
         "count": "1",
         "target": "sk_champion_svalblod",
-        "quote": "Strike me! C'mon, harder! You call this pain?! "
+        "quote": "Strike me! C'mon, harder! You call this pain?!",
+        "sound":"chosen berserker cursed are the meek we say hahaha.mp3",
     },
     "sk_cratos": {
         "name": "Frost Axe Warrior",
@@ -5893,7 +5919,8 @@ var ext_sk_cards = {
         "ability": "",
         "filename": "dagur",
         "count": "1",
-        "quote": "Shields are for flower-pickin' saps."
+        "quote": "Shields are for flower-pickin' saps.",
+        "sound":"dagur two godes freeeya.mp3",
     },
     "sk_sigrdrifa": {
         "name": "Sigrdrifa",
@@ -6047,7 +6074,8 @@ var ext_sk_cards = {
         "ability": "",
         "filename": "wild_boar",
         "count": "1",
-        "quote": "Merely mention this name to a Nilfgaardian, and they'll feel a spreading warmth in their knickers..."
+        "quote": "Merely mention this name to a Nilfgaardian, and they'll feel a spreading warmth in their knickers...",
+        "sound":"32 war longship.mp3",
     },
     "sk_whale_harpooner": {
         "name": "Whale Harpooner",
@@ -6057,7 +6085,8 @@ var ext_sk_cards = {
         "ability": "",
         "filename": "whale_harpooner",
         "count": "1",
-        "quote": "Skelligers have long known that harpoons are effective against more than mere whales..."
+        "quote": "Skelligers have long known that harpoons are effective against more than mere whales...",
+        "sound":"32 war longship.mp3",
     },
     "sk_blue_whale": {
         "name": "Blue Whale",
@@ -8492,16 +8521,7 @@ var ext_sy_cards = {
         "count": "0",
         "quote": "You sure he don't look the least bit familar...?"
     },
-    "sy_flyndr_crew": {
-        "name": "Flyndr' Crew",
-        "deck": "syndicate",
-        "row": "close",
-        "strength": "4",
-        "ability": "horn",
-        "filename": "flyndr_crew",
-        "count": "0",
-        "quote": "Wretches and thieves drunk on grog, bloodshed and booty - could you ever hope for a better crew?"
-    },
+
     "spe_dimeritium_shackles": {
         "name": "Dimeritium Shackles",
         "deck": "special",
