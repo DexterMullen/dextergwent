@@ -2867,17 +2867,17 @@ var default_cards = {
         "quote": "Kill, crush, cleave!",
         "sound":"old berserker You'll beg for death..mp3",
     },
-    "sk_berserker2": {
-        "name": "Old Berserker", //OLD BERSERKER 2
+    "sk_drummond_berserker": {
+        "name": "Old Drummond Berserker", //old berserker 2 siege
         "deck": "skellige",
         "row": "siege",
         "strength": "4",
         "ability": "berserker",
-        "filename": "berserker",
+        "filename": "drummond_berserker",
         "count": "1",
         "target": "sk_vildkaarl2",
-        "quote": "Kill, crush, cleave!",
-        "sound":"old berserker You'll beg for death..mp3",
+        "quote": "The vilest man Skellige's ever known.",
+        "sound":"berserger old siege drummon show me what flows in your veins.mp3",
     },
     "sk_young_berserker": {
         "name": "Young Berserker",//YOUNG BERSERKER
@@ -5724,7 +5724,7 @@ var ext_sk_cards = {
         "filename": "an_craite_raiders",
         "count": "2",
         "quote": "Cabbage, really? It’s just the worst when there’s nothing good to plunder.",
-        "sound":"",
+        "sound":"an craite raiders tommorow il dring with my forefathers.mp3",
     },
     "sk_svalblod_fanatic": {
         "name": "Svalblod Fanatic",
@@ -5798,17 +5798,6 @@ var ext_sk_cards = {
         "ability": "radovid_ruthless",
         "filename": "morkvarg",
         "count": "1",
-        "quote": "The vilest man Skellige's ever known."
-    },
-    "sk_drummond_berserker": {
-        "name": "Drummond Berserker",
-        "deck": "skellige",
-        "row": "close",
-        "strength": "5",
-        "ability": "berserker",
-        "filename": "drummond_berserker",
-        "count": "1",
-        "target": "sk_vildkaarl",
         "quote": "The vilest man Skellige's ever known."
     },
     "sk_chosen_berserker": {

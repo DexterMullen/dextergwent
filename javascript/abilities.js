@@ -1911,6 +1911,7 @@ var ability_dict = {
             let card1 = card.holder.deck.findCard(c => c.name === "Old Berserker");
 			let card2 = card.holder.deck.findCard(c => c.name === "Young Berserker");
 			let card3 = card.holder.deck.findCard(c => c.name === "Mushroom");
+			let card4 = card.holder.deck.findCard(c => c.name === "Old Drummond Berserker");				
 			
 			
 			//create container and push card to it
@@ -1918,7 +1919,8 @@ var ability_dict = {
             
 			if(card1)container.cards.push(card1);
 			if(card2)container.cards.push(card2);
-			if(card2)container.cards.push(card3);
+			if(card3)container.cards.push(card3);
+			if(card4)container.cards.push(card4);
 			
             
 			await ui.queueCarousel(container, 1, (c, i) => {
