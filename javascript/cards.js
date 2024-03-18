@@ -1040,7 +1040,7 @@ var default_cards = {
     "ne_albrich": {
         "name": "Albrich",
         "deck": "nilfgaard",
-        "row": "ranged",
+        "row": "close",
         "strength": "1",
         "ability": "medic",
         "filename": "albrich",
@@ -1243,7 +1243,7 @@ var default_cards = {
         "sound":"47 Morvran_Voorhis_ If it’s peace you desire, prepare for war.ogg",
     },
     "ne_nauzicaa_1": {
-        "name": "Cavalry Rider",
+        "name": "Cavalry Rider 1",
         "id": 1,
         "deck": "nilfgaard",
         "row": "close",
@@ -1256,7 +1256,7 @@ var default_cards = {
         "sound":"7 Nausica calvary rider Off to the front yet again.ogg",
     },
     "ne_nauzicaa_2": {
-        "name": "Cavalry Rider",
+        "name": "Cavalry Rider 2",
         "id": 2,
         "deck": "nilfgaard",
         "row": "ranged",
@@ -1269,7 +1269,7 @@ var default_cards = {
         "sound":"8 Nausica calvary rider Rach, sheyss! Yn, twe.ogg",
     },
     "ne_nauzicaa_3": {
-        "name": "Cavalry Rider",
+        "name": "Cavalry Rider 3",
         "id": 3,
         "deck": "nilfgaard",
         "row": "siege",
@@ -1418,6 +1418,17 @@ var default_cards = {
         "deck": "nilfgaard",
         "row": "close",
         "strength": "1",
+        "ability": "medic", //for AI to work
+        "filename": "vreemde",
+        "count": "1",
+        "quote": "Discipline is the Empire's deadliest weapon.",
+        "sound":"12 Vreemde_We live and die for the emperor.ogg",
+    },
+    "ne_vreemdee": {
+        "name": "Vreemde",
+        "deck": "nilfgaard",
+        "row": "close",
+        "strength": "1",
         "ability": "play_CavalryRiderORDYoungEmissary",
         "filename": "vreemde",
         "count": "1",
@@ -1525,7 +1536,7 @@ var default_cards = {
         "quote": "I'm enjoying this. You are my toy."
     },
     "mo_arachas": {
-        "name": "Arachas ",
+        "name": "Arachas 1",
         "id": 1,
         "deck": "monsters",
         "row": "close",
@@ -1538,7 +1549,7 @@ var default_cards = {
         "sound":"Arakhas.mp3",
     },
     "mo_arachas_1": {
-        "name": "Arachas ",
+        "name": "Arachas 2",
         "id": 2,
         "deck": "monsters",
         "row": "close",
@@ -1551,7 +1562,7 @@ var default_cards = {
         "sound":"Arakhas.mp3",
     },
     "mo_arachas_2": {
-        "name": "Arachas ",
+        "name": "Arachas 3",
         "id": 3,
         "deck": "monsters",
         "row": "close",
@@ -1564,7 +1575,7 @@ var default_cards = {
         "sound":"Arakhas.mp3",
     },
     "mo_arachas_behemoth": {
-        "name": "Arachas- Behemoth",
+        "name": "Arachas- Behemoth 4",
         "id": 4,
         "deck": "monsters",
         "row": "siege",
@@ -1611,7 +1622,7 @@ var default_cards = {
 
     },
     "mo_witch_velen": {
-        "name": "Crone - Brewess",
+        "name": "Crone - Brewess 1",
         "id": 1,
         "deck": "monsters",
         "row": "close",
@@ -1624,7 +1635,7 @@ var default_cards = {
         "sound":"Brewess_ I’d suck every last drop out of you.ogg",
     },
     "mo_witch_velen_1": {
-        "name": "Crone - Weavess",
+        "name": "Crone - Weavess 2",
         "id": 2,
         "deck": "monsters",
         "row": "close",
@@ -1637,7 +1648,7 @@ var default_cards = {
         "sound":"Weavess_I sense your pain, I see your fear.ogg",
     },
     "mo_witch_velen_2": {
-        "name": "Crone - Whispess",
+        "name": "Crone - Whispess 3",
         "id": 3,
         "deck": "monsters",
         "row": "close",
@@ -1750,7 +1761,7 @@ var default_cards = {
         "sound":"Gargojl.WAV",
     },
     "mo_ghoul": {
-        "name": "Ghoul",
+        "name": "Ghoul 2",
         "id": 1,
         "deck": "monsters",
         "row": "close",
@@ -1763,7 +1774,7 @@ var default_cards = {
         "sound":"ghouls.mp3",
     },
     "mo_ghoul_1": {
-        "name": "Ghoul",
+        "name": "Ghoul 3",
         "id": 2,
         "deck": "monsters",
         "row": "close",
@@ -1776,7 +1787,7 @@ var default_cards = {
         "sound":"ghouls.mp3",
     },
     "mo_ghoul_2": {
-        "name": "Ghoul",
+        "name": "Ghoul 4",
         "id": 3,
         "deck": "monsters",
         "row": "close",
@@ -1866,7 +1877,7 @@ var default_cards = {
         "sound":"woodland spirit leshen.mp3",
     },
     "mo_nekker": {
-        "name": "Nekker",
+        "name": "Nekker 1",
         "id": 1,
         "deck": "monsters",
         "row": "close",
@@ -1879,7 +1890,7 @@ var default_cards = {
         "sound":"nekkerss.mp3",
     },
     "mo_nekker_1": {
-        "name": "Nekker",
+        "name": "Nekker 2",
         "id": 1,
         "deck": "monsters",
         "row": "close",
@@ -1892,7 +1903,7 @@ var default_cards = {
         "sound":"nekkerss.mp3",
     },
     "mo_nekker_2": {
-        "name": "Nekker",
+        "name": "Nekker 3",
         "id": 3,
         "deck": "monsters",
         "row": "close",
@@ -1916,7 +1927,7 @@ var default_cards = {
         "sound":"plauge maidens.WAV",
     },
     "mo_bruxa": {
-        "name": "Vampire - Bruxa",
+        "name": "Vampire - Bruxa 1",
         "id": 1,
         "deck": "monsters",
         "row": "close",
@@ -1929,7 +1940,7 @@ var default_cards = {
         "sound":"vampires monsters.mp3",
     },
     "mo_ekkima": {
-        "name": "Vampire - Ekimmara",
+        "name": "Vampire - Ekimmara 2",
         "id": 2,
         "deck": "monsters",
         "row": "close",
@@ -1942,7 +1953,7 @@ var default_cards = {
         "sound":"vampires monsters.mp3",
     },
     "mo_fleder": {
-        "name": "Vampire - Fleder",
+        "name": "Vampire - Fleder 3",
         "id": 3,
         "deck": "monsters",
         "row": "close",
@@ -1955,7 +1966,7 @@ var default_cards = {
         "sound":"vampires monsters.mp3",
     },
     "mo_garkain": {
-        "name": "Vampire - Garkain",
+        "name": "Vampire - Garkain 4",
         "id": 4,
         "deck": "monsters",
         "row": "close",
@@ -1968,7 +1979,7 @@ var default_cards = {
         "sound":"vampires monsters.mp3",
     },
     "mo_katakan": {
-        "name": "Vampire - Katakan",
+        "name": "Vampire - Katakan 5",
         "id": 5,
         "deck": "monsters",
         "row": "close",
@@ -2244,7 +2255,7 @@ var default_cards = {
     "sc_havekar_nurse": {
         "name": "Havekar Healer",
         "deck": "scoiatael",
-        "row": "ranged",
+        "row": "close",
         "strength": "0",
         "ability": "medic",
         "filename": "havekar_nurse",
@@ -4956,7 +4967,7 @@ var ext_mo_cards = {
         "quote": "Two long, mantis-like forelimbs bristling with spikes shot out from the murk."
     },
     "mo_alghoul": {
-        "name": "Alghoul",
+        "name": "Alghoul 1",
         "id": 4,
         "deck": "monsters",
         "row": "ranged",
@@ -5303,7 +5314,7 @@ var ext_st_cards = {
         "quote": "As long as we stand, no human foot shall trample Dol Blathanna's meadows."
     },
     "sc_dryads_1": {
-        "name": "Dryads",
+        "name": "Dryad 1",
         "deck": "scoiatael",
         "id": 1,
         "row": "ranged",
@@ -5316,7 +5327,7 @@ var ext_st_cards = {
         "sound":"Dryads 1 trees feel pain.mp3",
     },
     "sc_dryads_2": {
-        "name": "Dryads",
+        "name": "Dryad 2",
         "id": 2,
         "deck": "scoiatael",
         "row": "ranged",
@@ -5329,7 +5340,7 @@ var ext_st_cards = {
         "sound":"dryiad 2 Not to worry, the wood will make good use of your corpse..mp3",
     },
     "sc_dryads_3": {
-        "name": "Dryads",
+        "name": "Dryad 3",
         "id": 3,
         "deck": "scoiatael",
         "row": "ranged",
@@ -5342,7 +5353,7 @@ var ext_st_cards = {
         "sound":"dryiad 3 humans no species more horrid.mp3",
     },
     "sc_dryads_4": {
-        "name": "Dryads",
+        "name": "Dryad 4",
         "id": 4,
         "deck": "scoiatael",
         "row": "ranged",
