@@ -4,29 +4,10 @@ var default_cards = {
     //test cards section
     //delete down
 
-    "sy_flyndr_crew": {
-        "name": "test leader",
-        "deck": "syndicate",
-        "row": "close",
-        "strength": "5",  //delete this one after testing !!!
-        "ability": "hero",
-        "filename": "flyndr_crew",
-        "count": "0",
-        "quote": "Wretches and thieves drunk on grog, bloodshed and booty - could you ever hope for a better crew?",
-        "sound":"Eredin_Ess’tedd, esse creasa.ogg",
-    },
-    /*
-    "sy_flyndr_crew": {
-        "name": "Flyndr' Crew",
-        "deck": "syndicate",
-        "row": "close",
-        "strength": "",      //this is original just uncoment it to set back to default !!!
-        "ability": "horn",
-        "filename": "flyndr_crew",
-        "count": "0",
-        "quote": "Wretches and thieves drunk on grog, bloodshed and booty - could you ever hope for a better crew?"
-    },
-    */
+
+    
+
+    
 
 
 
@@ -39,7 +20,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "close",
         "strength": "14",
-        "ability": "meve_princesss", 
+        "ability": "", 
         "filename": "devclose",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -50,7 +31,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "ranged",
         "strength": "14",
-        "ability": "meve_princesss", 
+        "ability": "", 
         "filename": "devranged",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -61,7 +42,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "siege",
         "strength": "14",
-        "ability": "meve_princesss", 
+        "ability": "", 
         "filename": "devsiege",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -72,7 +53,7 @@ var default_cards = {
         "deck": "neutral",
         "row": "agile",
         "strength": "14",
-        "ability": "meve_princesss", 
+        "ability": "", 
         "filename": "devagile",
         "count": "1",
         "quote": "You humans have... unusual tastes.",
@@ -1243,7 +1224,7 @@ var default_cards = {
         "sound":"47 Morvran_Voorhis_ If it’s peace you desire, prepare for war.ogg",
     },
     "ne_nauzicaa_1": {
-        "name": "Cavalry Rider 1",
+        "name": "Cavalry Rider",
         "id": 1,
         "deck": "nilfgaard",
         "row": "close",
@@ -1256,7 +1237,7 @@ var default_cards = {
         "sound":"7 Nausica calvary rider Off to the front yet again.ogg",
     },
     "ne_nauzicaa_2": {
-        "name": "Cavalry Rider 2",
+        "name": "Cavalry Rider",
         "id": 2,
         "deck": "nilfgaard",
         "row": "ranged",
@@ -1269,7 +1250,7 @@ var default_cards = {
         "sound":"8 Nausica calvary rider Rach, sheyss! Yn, twe.ogg",
     },
     "ne_nauzicaa_3": {
-        "name": "Cavalry Rider 3",
+        "name": "Cavalry Rider",
         "id": 3,
         "deck": "nilfgaard",
         "row": "siege",
@@ -10196,6 +10177,16 @@ var ext_ze_cards = {
         "filename": "dragon_wrath",
         "count": "3",
         "quote": "Blackened skies from wisps of smoke, the greenery's vanished in a fiery stroke."
+    },
+    "sy_flyndr_crew": {
+        "name": "Flyndr' Crew",
+        "deck": "syndicate",
+        "row": "close",
+        "strength": "",      
+        "ability": "horn",
+        "filename": "flyndr_crew",
+        "count": "0",
+        "quote": "Wretches and thieves drunk on grog, bloodshed and booty - could you ever hope for a better crew?"
     },
 };
 

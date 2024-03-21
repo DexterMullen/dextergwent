@@ -338,7 +338,7 @@ var ability_dict = {
 		description: "Destroy only 1 weakest unit on the opposite row",
 		placed: async card => {
 			let row = card.currentLocation.getOppositeRow();
-			if (row.isShielded() || game.scorchCancelled) return;
+			if (row.isShielded() || game.scorchCancelled || !row.cards.length) return;
 			
 			let units = row.minUnits();
 	
@@ -759,7 +759,7 @@ var ability_dict = {
 		placed: async card => {
 			let grave = board.getRow(card, "grave", card.holder.opponent());
 			if (grave.findCards(c => c.isUnit()).length === 0) return;
-			if (grave.findCards(c => c.isUnit()).length === 1) return;//temporarely ifx untill it gets properly done so the game does not get stuck.
+			//if (grave.findCards(c => c.isUnit()).length === 1) return;//temporarely ifx untill it gets properly done so the game does not get stuck.
 			if (card.holder.controller instanceof ControllerAI) {
 				let newCard = card.holder.controller.medic(card, grave);
 				newCard.holder = card.holder;
@@ -769,7 +769,7 @@ var ability_dict = {
 			try {
 				Carousel.curr.cancel(); //if there is 1 or none game gets stuck, BBUUGG
 			} catch (err) {}
-			await ui.queueCarousel(grave, 2, (c,i) => {
+			await ui.queueCarousel(grave, grave.findCards(c => c.isUnit()).length === 1 ? 1 : 2, (c,i) => {
 				let newCard = c.cards[i];
 				newCard.holder = card.holder;
 				board.toGrave(newCard, grave);
@@ -1505,7 +1505,7 @@ var ability_dict = {
 					Carousel.curr.exit();
 				} catch (err) {}
 			}
-			await ui.queueCarousel(grave, 3, (c, i) => board.toDeck(c.cards[i], c), () => true);//if there is less than 3 game gets stuck BBUUGG!
+			await ui.queueCarousel(grave, card.holder.opponent().grave.cards.length === 1 ? 1 : card.holder.opponent().grave.cards.length === 2 ? 2 : 3, (c, i) => board.toDeck(c.cards[i], c), () => true);//if there is less than 3 game gets stuck BBUUGG!
 		},
 		weight: (card) => {
 			if (card.holder.opponent().grave.cards.length < 5) return 0;
